@@ -1,0 +1,23 @@
+{
+    "info": "Dataset Specific Settings",
+    "isDownloaded": false,
+    "isPreprocessed": false,
+    "datasetSource": "OpenNeuro",
+    "includeDataset": true,
+    "downloadFrom": "s3://openneuro.org/ds003097",
+    "download": [
+        "CHANGES",
+        "README",
+        "stimuli/*",
+        "dataset_description.json",
+        "participants.json",
+        "participants.tsv",
+        " task-moviewatching_events.tsv", 
+        "T1w.json",
+        "dwi.json",
+        "sub-*/anat/*"
+    ], 
+    "mriDataMapping": {
+
+    }
+}

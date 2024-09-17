@@ -1,0 +1,34 @@
+{
+    "info": "Dataset Specific Settings",
+    "isDownloaded": true,
+    "isPreprocessed": false,
+    "datasetSource": "OpenNeuro",
+    "includeDataset": true,
+    "downloadFrom": "s3://openneuro.org/ds004513",
+    "download": [
+        "CHANGES",
+        "README",
+        "dataset_description.json",
+        "participants.json",
+        "participants.tsv",
+        "sub-*/ses-*/anat/*"
+    ],
+    "mriDataMapping": {
+        "participantId": "participant_id",
+        "sessionId": "session_id",
+        "age": "age",
+        "gender": "sex",
+        "handedness": "handedness",
+        "weight": "body_weight ",
+        "height": "body_height",
+        "haematocrit": "haematocrit",
+        "glucoseConcentration": "glucose_concentration",
+        "sessions": "ses-*/anat",
+        "source": {
+            "T1W": "*T1w.nii.gz"
+        },
+        "image": {
+            "T1W": "*T1w.nii.gz"
+        }
+    }
+}

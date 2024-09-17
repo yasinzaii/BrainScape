@@ -1,0 +1,11 @@
+{
+    "info": "Default Dataset Settings", 
+    "isDownloadable": true, 
+    "includeDataset": true,
+    "downloadDirName": "Download",
+    "preprocessDirName": "Dataset",
+    
+    "preprocessing": [
+        "Pipeline"
+    ]   
+}
