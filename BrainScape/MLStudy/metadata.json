@@ -5,7 +5,7 @@
     "isPreprocessed": false,
     "datasetSource": "OpenNeuro",
     "includeDataset": true,
-    "downloadFrom": "s3://openneuro.org/ds003823",
+    "downloadFrom": "s3://openneuro.org/ds005027",
     "download": [
         "CHANGES",
         "README",
@@ -21,12 +21,12 @@
                 "DIR"
             ],
             "sessions": [
-                "^ses-.*/anat",
+                "^ses-.*/anat$",
                 "DIR"
             ],
             "images": {
                 "T1W": [
-                    "^.*wholebrain_T1w.nii.gz$",
+                    "^.*T1w.nii.gz$",
                     "FILE"
                 ]
             }

@@ -1,0 +1,151 @@
+{
+    "download": "./BrainScape/ECStudy/Download",
+    "dataset": "./BrainScape/ECStudy/Dataset",
+    "data": [
+        {
+            "T1W": "sub-s020/ses-open/anat/sub-s020_ses-open_T1w.nii.gz",
+            "participantId": "sub-s020",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s020/ses-closed/anat/sub-s020_ses-closed_T1w.nii.gz",
+            "participantId": "sub-s020",
+            "sessionId": "ses-closed/anat"
+        },
+        {
+            "T1W": "sub-s003/ses-open/anat/sub-s003_ses-open_T1w.nii.gz",
+            "participantId": "sub-s003",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s003/ses-closed/anat/sub-s003_ses-closed_T1w.nii.gz",
+            "participantId": "sub-s003",
+            "sessionId": "ses-closed/anat"
+        },
+        {
+            "T1W": "sub-s023/ses-closed/anat/sub-s023_ses-closed_T1w.nii.gz",
+            "participantId": "sub-s023",
+            "sessionId": "ses-closed/anat"
+        },
+        {
+            "T1W": "sub-s023/ses-open/anat/sub-s023_ses-open_T1w.nii.gz",
+            "participantId": "sub-s023",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s030/ses-open/anat/sub-s030_ses-open_T1w.nii.gz",
+            "participantId": "sub-s030",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s007/ses-open/anat/sub-s007_ses-open_T1w.nii.gz",
+            "participantId": "sub-s007",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s007/ses-closed/anat/sub-s007_ses-closed_T1w.nii.gz",
+            "participantId": "sub-s007",
+            "sessionId": "ses-closed/anat"
+        },
+        {
+            "T1W": "sub-s025/ses-closed/anat/sub-s025_ses-closed_T1w.nii.gz",
+            "participantId": "sub-s025",
+            "sessionId": "ses-closed/anat"
+        },
+        {
+            "T1W": "sub-s025/ses-open/anat/sub-s025_ses-open_T1w.nii.gz",
+            "participantId": "sub-s025",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s035/ses-open/anat/sub-s035_ses-open_T1w.nii.gz",
+            "participantId": "sub-s035",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s017/ses-closed/anat/sub-s017_ses-closed_T1w.nii.gz",
+            "participantId": "sub-s017",
+            "sessionId": "ses-closed/anat"
+        },
+        {
+            "T1W": "sub-s017/ses-open/anat/sub-s017_ses-open_T1w.nii.gz",
+            "participantId": "sub-s017",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s037/ses-open/anat/sub-s037_ses-open_T1w.nii.gz",
+            "participantId": "sub-s037",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s029/ses-open/anat/sub-s029_ses-open_T1w.nii.gz",
+            "participantId": "sub-s029",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s031/ses-open/anat/sub-s031_ses-open_T1w.nii.gz",
+            "participantId": "sub-s031",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s036/ses-open/anat/sub-s036_ses-open_T1w.nii.gz",
+            "participantId": "sub-s036",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s034/ses-open/anat/sub-s034_ses-open_T1w.nii.gz",
+            "participantId": "sub-s034",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s033/ses-open/anat/sub-s033_ses-open_T1w.nii.gz",
+            "participantId": "sub-s033",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s014/ses-open/anat/sub-s014_ses-open_T1w.nii.gz",
+            "participantId": "sub-s014",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s014/ses-closed/anat/sub-s014_ses-closed_T1w.nii.gz",
+            "participantId": "sub-s014",
+            "sessionId": "ses-closed/anat"
+        },
+        {
+            "T1W": "sub-s012/ses-closed/anat/sub-s012_ses-closed_T1w.nii.gz",
+            "participantId": "sub-s012",
+            "sessionId": "ses-closed/anat"
+        },
+        {
+            "T1W": "sub-s012/ses-open/anat/sub-s012_ses-open_T1w.nii.gz",
+            "participantId": "sub-s012",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s026/ses-closed/anat/sub-s026_ses-closed_T1w.nii.gz",
+            "participantId": "sub-s026",
+            "sessionId": "ses-closed/anat"
+        },
+        {
+            "T1W": "sub-s026/ses-open/anat/sub-s026_ses-open_T1w.nii.gz",
+            "participantId": "sub-s026",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s032/ses-open/anat/sub-s032_ses-open_T1w.nii.gz",
+            "participantId": "sub-s032",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s028/ses-open/anat/sub-s028_ses-open_T1w.nii.gz",
+            "participantId": "sub-s028",
+            "sessionId": "ses-open/anat"
+        },
+        {
+            "T1W": "sub-s038/ses-open/anat/sub-s038_ses-open_T1w.nii.gz",
+            "participantId": "sub-s038",
+            "sessionId": "ses-open/anat"
+        }
+    ]
+}

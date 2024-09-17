@@ -1,0 +1,1621 @@
+{
+    "download": "./BrainScape/HRVStudy/Download",
+    "dataset": "./BrainScape/HRVStudy/Dataset",
+    "data": [
+        {
+            "T1W": "sub-6003/ses-pre/anat/sub-6003_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6003",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6003/ses-post/anat/sub-6003_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6003",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5010/ses-pre/anat/sub-5010_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5010",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6025/ses-pre/anat/sub-6025_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6025",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6025/ses-post/anat/sub-6025_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6025",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5059/ses-post/anat/sub-5059_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5059",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5059/ses-pre/anat/sub-5059_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5059",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8008/ses-pre/anat/sub-8008_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8008",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8008/ses-post/anat/sub-8008_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8008",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6012/ses-post/anat/sub-6012_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6012",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6012/ses-pre/anat/sub-6012_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6012",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7004/ses-pre/anat/sub-7004_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7004",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7004/ses-post/anat/sub-7004_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7004",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6009/ses-pre/anat/sub-6009_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6009",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6009/ses-post/anat/sub-6009_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6009",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7021/ses-pre/anat/sub-7021_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7021",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7021/ses-post/anat/sub-7021_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7021",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5005/ses-post/anat/sub-5005_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5005",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5005/ses-pre/anat/sub-5005_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5005",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6032/ses-pre/anat/sub-6032_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6032",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6032/ses-post/anat/sub-6032_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6032",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7029/ses-post/anat/sub-7029_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7029",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6014/ses-pre/anat/sub-6014_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6014",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6014/ses-post/anat/sub-6014_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6014",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5056/ses-post/anat/sub-5056_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5056",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5056/ses-pre/anat/sub-5056_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5056",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5061/ses-pre/anat/sub-5061_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5061",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5061/ses-post/anat/sub-5061_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5061",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7013/ses-pre/anat/sub-7013_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7013",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7013/ses-post/anat/sub-7013_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7013",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6052/ses-post/anat/sub-6052_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6052",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6052/ses-pre/anat/sub-6052_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6052",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7011/ses-post/anat/sub-7011_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7011",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7011/ses-pre/anat/sub-7011_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7011",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6034/ses-post/anat/sub-6034_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6034",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6034/ses-pre/anat/sub-6034_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6034",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6044/ses-pre/anat/sub-6044_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6044",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6044/ses-post/anat/sub-6044_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6044",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6024/ses-post/anat/sub-6024_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6024",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6024/ses-pre/anat/sub-6024_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6024",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7023/ses-post/anat/sub-7023_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7023",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6002/ses-pre/anat/sub-6002_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6002",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6002/ses-post/anat/sub-6002_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6002",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7009/ses-post/anat/sub-7009_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7009",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7009/ses-pre/anat/sub-7009_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7009",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5009/ses-post/anat/sub-5009_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5009",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5009/ses-pre/anat/sub-5009_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5009",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8021/ses-pre/anat/sub-8021_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8021",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5002/ses-post/anat/sub-5002_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5002",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5002/ses-pre/anat/sub-5002_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5002",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6017/ses-pre/anat/sub-6017_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6017",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6017/ses-post/anat/sub-6017_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6017",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6027/ses-post/anat/sub-6027_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6027",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6027/ses-pre/anat/sub-6027_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6027",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5018/ses-pre/anat/sub-5018_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5018",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5018/ses-post/anat/sub-5018_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5018",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6016/ses-post/anat/sub-6016_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6016",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6016/ses-pre/anat/sub-6016_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6016",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6015/ses-pre/anat/sub-6015_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6015",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6015/ses-post/anat/sub-6015_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6015",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6006/ses-pre/anat/sub-6006_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6006",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6006/ses-post/anat/sub-6006_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6006",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8011/ses-pre/anat/sub-8011_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8011",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8011/ses-post/anat/sub-8011_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8011",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6039/ses-post/anat/sub-6039_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6039",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6039/ses-pre/anat/sub-6039_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6039",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6004/ses-pre/anat/sub-6004_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6004",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6004/ses-post/anat/sub-6004_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6004",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6008/ses-post/anat/sub-6008_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6008",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6008/ses-pre/anat/sub-6008_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6008",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6047/ses-pre/anat/sub-6047_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6047",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5028/ses-post/anat/sub-5028_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5028",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5028/ses-pre/anat/sub-5028_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5028",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6046/ses-post/anat/sub-6046_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6046",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6046/ses-pre/anat/sub-6046_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6046",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5017/ses-pre/anat/sub-5017_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5017",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5017/ses-post/anat/sub-5017_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5017",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7033/ses-pre/anat/sub-7033_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7033",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5039/ses-post/anat/sub-5039_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5039",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5039/ses-pre/anat/sub-5039_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5039",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6043/ses-post/anat/sub-6043_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6043",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6043/ses-pre/anat/sub-6043_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6043",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7010/ses-post/anat/sub-7010_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7010",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7010/ses-pre/anat/sub-7010_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7010",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6018/ses-pre/anat/sub-6018_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6018",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6018/ses-post/anat/sub-6018_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6018",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6053/ses-post/anat/sub-6053_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6053",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6053/ses-pre/anat/sub-6053_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6053",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5046/ses-post/anat/sub-5046_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5046",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5046/ses-pre/anat/sub-5046_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5046",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5052/ses-post/anat/sub-5052_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5052",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5052/ses-pre/anat/sub-5052_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5052",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6037/ses-pre/anat/sub-6037_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6037",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6037/ses-post/anat/sub-6037_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6037",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8026/ses-post/anat/sub-8026_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8026",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8026/ses-pre/anat/sub-8026_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8026",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6023/ses-pre/anat/sub-6023_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6023",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6023/ses-post/anat/sub-6023_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6023",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6021/ses-post/anat/sub-6021_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6021",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6021/ses-pre/anat/sub-6021_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6021",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6007/ses-pre/anat/sub-6007_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6007",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6007/ses-post/anat/sub-6007_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6007",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6029/ses-pre/anat/sub-6029_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6029",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6029/ses-post/anat/sub-6029_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6029",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5062/ses-post/anat/sub-5062_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5062",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5062/ses-pre/anat/sub-5062_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5062",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6038/ses-post/anat/sub-6038_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6038",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6038/ses-pre/anat/sub-6038_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6038",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6058/ses-post/anat/sub-6058_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6058",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6058/ses-pre/anat/sub-6058_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6058",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6040/ses-post/anat/sub-6040_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6040",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6040/ses-pre/anat/sub-6040_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6040",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5019/ses-pre/anat/sub-5019_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5019",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5019/ses-post/anat/sub-5019_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5019",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5014/ses-post/anat/sub-5014_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5014",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5014/ses-pre/anat/sub-5014_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5014",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8020/ses-pre/anat/sub-8020_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8020",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8020/ses-post/anat/sub-8020_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8020",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6056/ses-pre/anat/sub-6056_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6056",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6056/ses-post/anat/sub-6056_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6056",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5041/ses-pre/anat/sub-5041_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5041",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5041/ses-post/anat/sub-5041_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5041",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8018/ses-pre/anat/sub-8018_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8018",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8018/ses-post/anat/sub-8018_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8018",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6035/ses-pre/anat/sub-6035_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6035",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6035/ses-post/anat/sub-6035_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6035",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6013/ses-post/anat/sub-6013_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6013",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6013/ses-pre/anat/sub-6013_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6013",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6049/ses-post/anat/sub-6049_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6049",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6049/ses-pre/anat/sub-6049_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6049",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8016/ses-pre/anat/sub-8016_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8016",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8016/ses-post/anat/sub-8016_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8016",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5063/ses-post/anat/sub-5063_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5063",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5063/ses-pre/anat/sub-5063_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5063",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5049/ses-post/anat/sub-5049_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5049",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5049/ses-pre/anat/sub-5049_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5049",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5026/ses-pre/anat/sub-5026_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5026",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5026/ses-post/anat/sub-5026_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5026",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6019/ses-pre/anat/sub-6019_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6019",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6019/ses-post/anat/sub-6019_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6019",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8009/ses-pre/anat/sub-8009_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8009",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8009/ses-post/anat/sub-8009_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8009",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5034/ses-post/anat/sub-5034_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5034",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5034/ses-pre/anat/sub-5034_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5034",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8006/ses-post/anat/sub-8006_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8006",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8006/ses-pre/anat/sub-8006_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8006",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5011/ses-pre/anat/sub-5011_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5011",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5011/ses-post/anat/sub-5011_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5011",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5013/ses-pre/anat/sub-5013_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5013",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5013/ses-post/anat/sub-5013_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5013",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5022/ses-post/anat/sub-5022_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5022",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5022/ses-pre/anat/sub-5022_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5022",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8029/ses-pre/anat/sub-8029_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8029",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8029/ses-post/anat/sub-8029_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8029",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8001/ses-pre/anat/sub-8001_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8001",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8001/ses-post/anat/sub-8001_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8001",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7024/ses-post/anat/sub-7024_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7024",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7024/ses-pre/anat/sub-7024_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7024",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5038/ses-pre/anat/sub-5038_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5038",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5038/ses-post/anat/sub-5038_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5038",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5032/ses-post/anat/sub-5032_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5032",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5032/ses-pre/anat/sub-5032_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5032",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6051/ses-pre/anat/sub-6051_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6051",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5043/ses-post/anat/sub-5043_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5043",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5043/ses-pre/anat/sub-5043_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5043",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5030/ses-pre/anat/sub-5030_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5030",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5048/ses-pre/anat/sub-5048_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5048",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7035/ses-pre/anat/sub-7035_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7035",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8028/ses-pre/anat/sub-8028_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8028",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8028/ses-post/anat/sub-8028_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8028",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7012/ses-post/anat/sub-7012_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7012",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7012/ses-pre/anat/sub-7012_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7012",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7032/ses-post/anat/sub-7032_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7032",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7032/ses-pre/anat/sub-7032_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7032",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7008/ses-pre/anat/sub-7008_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7008",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7008/ses-post/anat/sub-7008_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7008",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5008/ses-pre/anat/sub-5008_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5008",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7028/ses-post/anat/sub-7028_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7028",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7028/ses-pre/anat/sub-7028_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7028",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5058/ses-pre/anat/sub-5058_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5058",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5058/ses-post/anat/sub-5058_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5058",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5007/ses-pre/anat/sub-5007_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5007",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5007/ses-post/anat/sub-5007_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5007",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5033/ses-pre/anat/sub-5033_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5033",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5033/ses-post/anat/sub-5033_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5033",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6057/ses-pre/anat/sub-6057_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6057",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8032/ses-pre/anat/sub-8032_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8032",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5042/ses-post/anat/sub-5042_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5042",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5042/ses-pre/anat/sub-5042_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5042",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5016/ses-pre/anat/sub-5016_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5016",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5016/ses-post/anat/sub-5016_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5016",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8013/ses-post/anat/sub-8013_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8013",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8013/ses-pre/anat/sub-8013_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8013",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5023/ses-pre/anat/sub-5023_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5023",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5023/ses-post/anat/sub-5023_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5023",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8004/ses-pre/anat/sub-8004_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8004",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8004/ses-post/anat/sub-8004_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8004",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5045/ses-pre/anat/sub-5045_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5045",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5045/ses-post/anat/sub-5045_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5045",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7014/ses-pre/anat/sub-7014_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7014",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7014/ses-post/anat/sub-7014_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7014",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6045/ses-pre/anat/sub-6045_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6045",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6045/ses-post/anat/sub-6045_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6045",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7027/ses-pre/anat/sub-7027_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7027",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7027/ses-post/anat/sub-7027_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7027",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5006/ses-post/anat/sub-5006_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5006",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5006/ses-pre/anat/sub-5006_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5006",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5051/ses-pre/anat/sub-5051_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5051",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5051/ses-post/anat/sub-5051_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5051",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8022/ses-post/anat/sub-8022_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8022",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8015/ses-pre/anat/sub-8015_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8015",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8015/ses-post/anat/sub-8015_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8015",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5060/ses-post/anat/sub-5060_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5060",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5060/ses-pre/anat/sub-5060_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5060",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5003/ses-pre/anat/sub-5003_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5003",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5003/ses-post/anat/sub-5003_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5003",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5027/ses-post/anat/sub-5027_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5027",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5027/ses-pre/anat/sub-5027_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5027",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8002/ses-pre/anat/sub-8002_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8002",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8002/ses-post/anat/sub-8002_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8002",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8017/ses-pre/anat/sub-8017_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8017",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8017/ses-post/anat/sub-8017_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8017",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8014/ses-post/anat/sub-8014_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8014",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8014/ses-pre/anat/sub-8014_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8014",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5040/ses-pre/anat/sub-5040_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5040",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5040/ses-post/anat/sub-5040_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5040",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5024/ses-pre/anat/sub-5024_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5024",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5024/ses-post/anat/sub-5024_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5024",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5053/ses-post/anat/sub-5053_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5053",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5053/ses-pre/anat/sub-5053_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5053",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7025/ses-pre/anat/sub-7025_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7025",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7025/ses-post/anat/sub-7025_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7025",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7022/ses-post/anat/sub-7022_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7022",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7022/ses-pre/anat/sub-7022_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7022",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8019/ses-post/anat/sub-8019_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8019",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8019/ses-pre/anat/sub-8019_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8019",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5044/ses-post/anat/sub-5044_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5044",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5044/ses-pre/anat/sub-5044_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5044",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6005/ses-pre/anat/sub-6005_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6005",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6005/ses-post/anat/sub-6005_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6005",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8034/ses-pre/anat/sub-8034_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8034",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6020/ses-post/anat/sub-6020_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6020",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6020/ses-pre/anat/sub-6020_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6020",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8033/ses-pre/anat/sub-8033_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8033",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6010/ses-pre/anat/sub-6010_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6010",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5054/ses-pre/anat/sub-5054_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5054",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5054/ses-post/anat/sub-5054_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5054",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7036/ses-pre/anat/sub-7036_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7036",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5021/ses-post/anat/sub-5021_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5021",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5021/ses-pre/anat/sub-5021_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5021",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7019/ses-pre/anat/sub-7019_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7019",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7019/ses-post/anat/sub-7019_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7019",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7026/ses-post/anat/sub-7026_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7026",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7026/ses-pre/anat/sub-7026_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7026",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6022/ses-pre/anat/sub-6022_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6022",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6022/ses-post/anat/sub-6022_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6022",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6028/ses-post/anat/sub-6028_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6028",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6028/ses-pre/anat/sub-6028_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6028",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6048/ses-pre/anat/sub-6048_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6048",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6048/ses-post/anat/sub-6048_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6048",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5025/ses-pre/anat/sub-5025_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5025",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5050/ses-pre/anat/sub-5050_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5050",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5050/ses-post/anat/sub-5050_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5050",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8010/ses-pre/anat/sub-8010_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8010",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8010/ses-post/anat/sub-8010_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8010",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6042/ses-pre/anat/sub-6042_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6042",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6042/ses-post/anat/sub-6042_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6042",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6011/ses-pre/anat/sub-6011_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6011",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6011/ses-post/anat/sub-6011_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6011",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7031/ses-post/anat/sub-7031_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7031",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7031/ses-pre/anat/sub-7031_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7031",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7030/ses-pre/anat/sub-7030_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7030",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7030/ses-post/anat/sub-7030_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7030",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7017/ses-post/anat/sub-7017_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7017",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7017/ses-pre/anat/sub-7017_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7017",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7018/ses-pre/anat/sub-7018_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7018",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7018/ses-post/anat/sub-7018_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7018",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7016/ses-pre/anat/sub-7016_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7016",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7016/ses-post/anat/sub-7016_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7016",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5004/ses-post/anat/sub-5004_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5004",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5004/ses-pre/anat/sub-5004_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5004",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6050/ses-pre/anat/sub-6050_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6050",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5036/ses-pre/anat/sub-5036_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5036",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6054/ses-pre/anat/sub-6054_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6054",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6041/ses-pre/anat/sub-6041_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6041",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6041/ses-post/anat/sub-6041_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6041",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6031/ses-post/anat/sub-6031_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6031",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6031/ses-pre/anat/sub-6031_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6031",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8003/ses-pre/anat/sub-8003_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8003",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8003/ses-post/anat/sub-8003_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8003",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7034/ses-pre/anat/sub-7034_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7034",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5035/ses-post/anat/sub-5035_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5035",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5035/ses-pre/anat/sub-5035_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5035",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8030/ses-post/anat/sub-8030_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8030",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8030/ses-pre/anat/sub-8030_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8030",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6030/ses-post/anat/sub-6030_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6030",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6030/ses-pre/anat/sub-6030_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6030",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7003/ses-pre/anat/sub-7003_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7003",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7003/ses-post/anat/sub-7003_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7003",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8031/ses-pre/anat/sub-8031_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8031",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8031/ses-post/anat/sub-8031_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8031",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-8027/ses-pre/anat/sub-8027_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8027",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8027/ses-post/anat/sub-8027_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8027",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5020/ses-post/anat/sub-5020_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5020",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5020/ses-pre/anat/sub-5020_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5020",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-8023/ses-pre/anat/sub-8023_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-8023",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7007/ses-post/anat/sub-7007_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7007",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7007/ses-pre/anat/sub-7007_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7007",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5031/ses-pre/anat/sub-5031_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5031",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-7015/ses-pre/anat/sub-7015_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7015",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5029/ses-pre/anat/sub-5029_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5029",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5029/ses-post/anat/sub-5029_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5029",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6033/ses-post/anat/sub-6033_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6033",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-6033/ses-pre/anat/sub-6033_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6033",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5047/ses-post/anat/sub-5047_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5047",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5047/ses-pre/anat/sub-5047_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5047",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5037/ses-pre/anat/sub-5037_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5037",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5037/ses-post/anat/sub-5037_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5037",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-5015/ses-pre/anat/sub-5015_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5015",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5001/ses-pre/anat/sub-5001_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5001",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-5001/ses-post/anat/sub-5001_ses-post_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-5001",
+            "sessionId": "ses-post/anat"
+        },
+        {
+            "T1W": "sub-7002/ses-pre/anat/sub-7002_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-7002",
+            "sessionId": "ses-pre/anat"
+        },
+        {
+            "T1W": "sub-6055/ses-pre/anat/sub-6055_ses-pre_acq-wholebrain_T1w.nii.gz",
+            "participantId": "sub-6055",
+            "sessionId": "ses-pre/anat"
+        }
+    ]
+}

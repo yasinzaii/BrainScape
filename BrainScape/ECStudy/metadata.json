@@ -1,6 +1,7 @@
 {
     "info": "Dataset Specific Settings",
     "isDownloaded": true,
+    "isDatasetJsonCreated": true,
     "isPreprocessed": false,
     "datasetSource": "OpenNeuro",
     "includeDataset": true,
@@ -14,6 +15,22 @@
         "sub-*/ses-*/anat/*"
     ],
     "mriDataMapping": {
+        "regex": {
+            "subjects": [
+                "^sub-.*$",
+                "DIR"
+            ],
+            "sessions": [
+                "^ses-.*/anat",
+                "DIR"
+            ],
+            "images": {
+                "T1W": [
+                    "^.*T1w.nii.gz$",
+                    "FILE"
+                ]
+            }
+        },
         "participantId": "participant_id",
         "sessionId": "session_id",
         "age": "age",
@@ -22,13 +39,6 @@
         "weight": "body_weight ",
         "height": "body_height",
         "haematocrit": "haematocrit",
-        "glucoseConcentration": "glucose_concentration",
-        "sessions": "ses-*/anat",
-        "source": {
-            "T1W": "*T1w.nii.gz"
-        },
-        "image": {
-            "T1W": "*T1w.nii.gz"
-        }
+        "glucoseConcentration": "glucose_concentration"
     }
 }

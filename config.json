@@ -1,7 +1,8 @@
 {
-    "info": "Main Config Settings, Don't reuse config same as args (they are merged)",
+    "info": "Main Config Settings, Don't reuse config same as args (they are merged!)",
     "pathDataset": "./BrainScape", 
     "pathDefaults": "./metadata.json",
     "pathOverrides": "./index.json", 
-    "datasetSettingsJson": "metadata.json"
+    "datasetSettingsJson": "metadata.json", 
+    "datsetMriJson": "dataset.json"
 }

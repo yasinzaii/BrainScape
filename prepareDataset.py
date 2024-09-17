@@ -7,6 +7,7 @@ requiredSettingsKeys = [
     "preprocessDirName",
     "preprocessing",
     "isDownloaded",
+    "isDatasetJsonCreated",
     "isPreprocessed",
     "datasetSource",
     "download",
@@ -14,12 +15,14 @@ requiredSettingsKeys = [
     "mriDataMapping"
 ]
 
+import re
 import argparse, os, sys, glob  
 import json, shutil, subprocess
 import fnmatch, logging
 from pathlib import Path
 from threading import Lock
 from omegaconf import OmegaConf
+from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Configure logging based on the provided log level.
@@ -35,6 +38,7 @@ def configure_logging(logLevel: str, logFileName: str):
     # Configure logging
     logging.basicConfig(
         level=numericLevel,
+        datefmt='%Y-%m-%d %H:%M',  # Format without seconds
         format='%(asctime)s - %(levelname)s - %(message)s',
         handlers=[
             logging.StreamHandler(sys.stdout),  # Log to console
@@ -50,9 +54,9 @@ def get_parser(**parser_kwargs):
     def str2bool(v):
         if isinstance(v, bool):
             return v
-        if v.lower() in ("yes", "true", "t", "y", "1"):
+        if v.lower().strip() in ("yes", "true", "t", "y", "1"):
             return True
-        elif v.lower() in ("no", "false", "f", "n", "0"):
+        elif v.lower().strip() in ("no", "false", "f", "n", "0"):
             return False
         else:
             raise argparse.ArgumentTypeError("Boolean value expected.")
@@ -98,7 +102,7 @@ def get_parser(**parser_kwargs):
     )
     
     parser.add_argument(
-        "-l",
+        "-ll",
         "--logLevel",
         type=str,
         choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
@@ -107,7 +111,7 @@ def get_parser(**parser_kwargs):
     )
     
     parser.add_argument(
-        "-l",
+        "-lf",
         "--logFilePath",
         type=str,
         default="./prepareDataset.log",
@@ -239,7 +243,7 @@ def validate_parameters(datasets, defaultSettings, config):
                     logger.info(f"Directory '{downloadPath}' has been removed successfully ('reDownload' ON).")
                 except Exception as e:    
                     logger.error(f"Failed to remove directory '{downloadPath}': {e}, ('reDownload' ON)")
-                    datasetSettings.update_json({"isDownloaded":False}).save_json()
+                datasetSettings.update_json({"isDownloaded":False, "isDatasetJsonCreated": False}).save_json()
             
         # Remove datasetDir[pre-processed] and update settings if enforced
         if config.reProcess:
@@ -304,7 +308,7 @@ class DownloadDataset:
         if finalSettings["isDownloaded"] and ( not Path(downloadDirPath).is_dir() or not any(Path(downloadDirPath).iterdir())):
             logger.error(f"{datasetPath} Dataset 'isDownloaded' settings set to True, yet Download folder ('{downloadDirPath}') is Missing or Empty")
             logger.warning(f"Resetting 'isDownloaded' of '{datasetPath}' Dataset to False and Redownloading")
-            datasetSettings.update_json({"isDownloaded":False}).save_json() 
+            datasetSettings.update_json({"isDownloaded":False, "isDatasetJsonCreated": False}).save_json() 
             finalSettings["isDownloaded"] = False
                   
         # TO-DO 
@@ -334,10 +338,14 @@ class DownloadDataset:
             status = downloadMethod(finalSettings=finalSettings, datasetPath=datasetPath)
             # Update the 'isDownloaded' flag in dataset settings
             if status:
-                datasetSettings.update_json({"isDownloaded":True}).save_json() # Note not updating final settings
+                # TO-DO
+                # Note: The download method is also used to verify the contents of the dataset from the actual remote source without downloading.
+                # If Its in verification mode, then it sets "isDatasetJsonCreated":False because we are assuming a sucessful download and 
+                # DatasetJson file needs to be recreated! It Just recreates the DatasetJson File, doesn't do harm, but might slow the proces.
+                datasetSettings.update_json({"isDownloaded":True, "isDatasetJsonCreated":False}).save_json() # Note not updating final settings
             else:
                 logger.error(f"Download Failed for {datasetPath} Dataset.")
-                datasetSettings.update_json({"isDownloaded":False}).save_json()
+                datasetSettings.update_json({"isDownloaded":False, "isDatasetJsonCreated":False}).save_json()
                 try:
                     shutil.rmtree(downloadDirPath)    
                 except Exception as e:
@@ -358,8 +366,6 @@ class DownloadDataset:
             logger.error(f"Failed Executing AWS Command: {e}")
             return False, str(e)
 
-    
-    
     # Downloads each pattern sequentially [AWS CLI]
     def download_patterns_aws_cli(self, s3Path: str, downloadPath: str,  downloadPatterns: list, dryrun: bool) -> tuple[bool,list]:
         outputs = []
@@ -517,20 +523,6 @@ class DownloadDataset:
             logger.error(f"Error: Download or filePresenceCheck failed Resetting 'isDownload' Flag, '{downloadPath}'")
             return False
         
-        
-        # If Files are already downloaded and checkDownloadFiles just comparing paths as above is enough.
-        #filePresenceCheck = False
-        #if finalSettings["isDownloaded"] and self.config.checkDownloadFiles:
-        #    pass
-            
-            
-            
-        
-        # Check All Paths is compareAllFiles == True
-        #status, cliOutputs = self.download_patterns_aws_cli(s3Path, str(downloadPath),  downloadPatterns, dryrun=True)
-        
-        # Download Code Should be here
-        #status, cliOutputs = self.download_patterns_aws_cli(s3Path, str(downloadPath),  downloadPatterns, dryrun=False)
         return True
 
     def download_from_custom_source(self):
@@ -539,6 +531,228 @@ class DownloadDataset:
         raise NotImplementedError("Custom download sources are not yet implemented.")
 
 
+# Class for Dynamically Mapping Dataset Info to dataset.json file.
+class DatasetJson:
+    
+    def __init__(self, config: OmegaConf, targetDatasets: list, defaultDatasetSettings: dict):
+        
+        self.config = config
+        self.targetDatasets = targetDatasets
+        self.defaultDatasetSettings = defaultDatasetSettings        
+        
+    def initiate_creating_dataset_json(self) -> None:
+        logger.info(f"DatasetJson - Started creating {self.config.datsetMriJson} file for each dataset.")
+        for datasetName in self.targetDatasets:
+            self.create_dataset_json(datasetName)
+            
+    def create_dataset_json(self, datasetName: str):
+        
+        logger.info(f"DatasetJson - Creating {self.config.datsetMriJson} file for {datasetName} dataset.")
+        
+        # MRI DATASET [List of Dict] - Dict holds extensive info on individual MRI.
+        datasetInfo = [] 
+        datasetInfoJsonPath = os.path.join(self.config.pathDataset, datasetName,  self.config.datsetMriJson)
+        
+        # Path to this specific dataset directory
+        datasetPath = os.path.join(self.config.pathDataset, datasetName)
+        
+        # Getting Dataset Specific Settings
+        datasetSettings = JsonHandler(os.path.join(datasetPath, self.config.datasetSettingsJson))  
+        finalSettings =  merge_settings(defaults=self.defaultDatasetSettings, overrides=datasetSettings.get_data())
+
+        # Path of the download directory
+        downloadDirPath = os.path.join(datasetPath, finalSettings["downloadDirName"])
+        
+        # Path of the pre-processed dataset directory (Not yet created)
+        datasetDirPath  = os.path.join(datasetPath, finalSettings["preprocessDirName"])
+        
+        # Proceed only if dataset is properly downloaded and the "isDownloaded" flag is set.
+        if finalSettings["isDownloaded"] and Path(downloadDirPath).is_dir() and any(Path(downloadDirPath).iterdir()):
+            logger.info(f"DatasetJson - downloaded Files Present for dataset {datasetPath} - Proceeding further.")
+        else: 
+            logger.error(f"DatasetJson - 'isDownload'flag not set or Download Directory Missing or Empty for dataset {datasetPath}.")
+            logger.info(f"DatasetJson - Removing {datasetDirPath} and {datasetInfoJsonPath}  if present.")
+            Path(datasetDirPath).unlink(missing_ok=True)
+            Path(datasetInfoJsonPath).unlink(missing_ok=True)
+            return 
+        
+        # Check if the Json file (datasetDirPath) is already present and not empty, skip creating and "isDatasetJsonCreated" is set.
+        if finalSettings["isDatasetJsonCreated"]:
+            logger.info(f"DatasetJson - 'isDatasetJsonCreated'flag set for dataset {datasetPath}.")
+            if not Path(datasetInfoJsonPath).is_file() or not JsonHandler(datasetInfoJsonPath).get_data():
+                logger.error(f"DatasetJson - 'isDatasetJsonCreated'flag set for dataset {datasetPath}, but file missing or empty, Recreating.")
+                logger.info(f"DatasetJson - Removing {datasetDirPath} and {datasetInfoJsonPath}  if present.")
+                Path(datasetDirPath).unlink(missing_ok=True) # Removing Preprocessed dataset if present.
+                Path(datasetInfoJsonPath).unlink(missing_ok=True) # Removing Dataset Json file if present.
+            else: # Flag Set, File Present and not Empty
+                return # Everything is good - Nothing to do.
+            
+        # Gather all downloaded files
+        downloadedFiles = set([str(p.relative_to(Path(downloadDirPath))) for p in Path(downloadDirPath).rglob('*') if p.is_file()])  
+        
+        regexPatterns = finalSettings["mriDataMapping"]["regex"]
+        """
+        regexCompiled = { "subjects": re.compile(regexPatterns["subjects"][0]), 
+                          "sessions": re.compile(regexPatterns["sessions"][0])  }
+        regexCompiled["images"] = {key: re.compile(value) for key, value in regexPatterns["images"].items()}
+        """
+        
+        # Recursively Compiling the Regix Patterns
+        def compile_regex_patterns(regexPatterns:dict):
+            isSuccessful = True
+            regexCompiled = {}
+            for key in regexPatterns:
+                if isinstance(regexPatterns[key], dict):
+                    regexCompiled[key], status = compile_regex_patterns(regexPatterns[key])
+                    isSuccessful = status # If status becomes false isSuccessful becomes false
+                else:
+                    try:
+                        regexCompiled[key] = re.compile(regexPatterns[key][0])
+                    except re.error as e:
+                        logger.error(f"Error compiling regex for pattern '{regexPatterns[key]}': {e}")
+                        isSuccessful = status
+            return regexCompiled, isSuccessful
+        regexCompiled, status = compile_regex_patterns(regexPatterns)
+        
+        if not status:
+            logger.error(f"Compiling regex patterns failed")
+            return
+        
+        
+        # Initialize nested defaultdict
+        # Subject -> Sessions -> Images (T1W, T2W, FLAR) -> list of image files.
+        grouped = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
+        
+        for filePath in downloadedFiles:
+            
+            pathParts = filePath.strip().split('/')
+            
+            # Initialized Vars
+            subject = None
+            session = None
+            
+            # Matching The Subjects Regex Patter.   
+            if regexPatterns["subjects"][1] == "DIR":
+                if len(pathParts)>=1 and regexCompiled["subjects"].match(pathParts[0]):
+                    subject = pathParts[0]
+                else:
+                    logger.debug(f"Skipping '{filePath}': as it does not 'subject' match pattern { regexPatterns['subjects'][0]}.")
+                    continue
+            else:
+                logger.error(f"The Regex Pattern for Subjects must be DIR, not {regexPatterns['subjects'][1]} ")
+             
+            # Matching The Session Regex Patter. 
+            if len(pathParts) == 3 and regexPatterns["sessions"][1] == "DIR":
+                
+                # Match the Second Directory
+                if regexCompiled["sessions"].match(pathParts[1]):
+                    session = pathParts[1]
+                else:
+                    logger.debug(f"Skipping '{filePath}': as it does not match 'session' pattern { regexPatterns['sessions'][0]}.")
+                    continue
+                
+            elif len(pathParts) == 4 and regexPatterns["sessions"][1] == "DIR":
+                
+                # One extra Directory Inbetween - Match Dir 2 and 3
+                if regexCompiled["sessions"].match(os.path.join(pathParts[1], pathParts[2])):
+                    session = os.path.join(pathParts[1], pathParts[2])
+                else:
+                    logger.debug(f"Skipping '{filePath}': as it does not 'session' match pattern {regexPatterns['sessions'][0]}.")
+                    continue          
+            
+            elif len(pathParts) == 3 and regexPatterns["sessions"][1] == "EXP":
+            
+                print("Error")
+                raise
+            else:
+                logger.critical(f"Some Weird Path and Regex Combination, Path={filePath}, 'sessions' Regex={regexPatterns['sessions']}")
+                
+            
+            # Matching with the Type of File
+            for modality, pattern in regexCompiled['images'].items():
+                if pattern.match(pathParts[-1]) and regexPatterns['images'][modality][1] == "FILE":
+                    grouped[subject][session][modality] = filePath
+                    
+                    # Verifying if the combination of subject/session and pathParts[-1] rebuilds the path
+                    if not os.path.join(subject, session, pathParts[-1]) == filePath:
+                        logger.error(f"Invalid Grouping/Mapping of MRI for Subject='{subject}', Session='{session}', Modality='{modality}', FilePath={filePath}")
+                    else: 
+                        continue
+            logger.debug(f"Unable to Match the File,  Subject='{subject}', Session='{session}', Modality='{modality}', FilePath={filePath}")
+
+        
+        # Creating the Dataset Info dict
+        for subject, subData in grouped.items():
+            for session, sessData in subData.items():
+                data = {}
+                for image, imagePath in sessData.items():
+                    data[image] = imagePath
+                data['participantId'] = subject
+                data['sessionId'] = session
+                datasetInfo.append(data)
+        
+        datasetJsonDict = {
+            'download': downloadDirPath, 
+            'dataset': datasetDirPath,
+            'data': datasetInfo
+        }
+        
+        logger.info(f"Saving {datasetInfoJsonPath} File for Dataset {datasetPath}")        
+        JsonHandler(datasetInfoJsonPath).update_json(datasetJsonDict).save_json()
+        datasetSettings.update_json({'isDatasetJsonCreated':True}).save_json() # Updating Json Flag 
+        
+        return True 
+    
+        
+        """
+        downloadedFiles = {datasetName: list(downloadedFiles)} # Wrapped in Dict
+       
+        # Will Sequentiall Group by folder type.
+        #  -> datasetName  -> subjectFolder  -> sessionFolder/Image -> MRI modalilty 
+        
+        # Group Files on the subjects/Participants.
+        mapping = finalSettings["mriDataMapping"]
+        groupBySubject = self.group_files_by_pattern(files=downloadedFiles, pattern=mapping["subjects"][0], seperationType=mapping["subjects"][1])
+        groupBySession = self.group_files_by_pattern(files=downloadedFiles, pattern=mapping["subjects"][0], seperationType=mapping["subjects"][1])
+        
+
+    # Recursively Seperating 
+    def group_files_by_pattern(self, files: dict, pattern: str = 'sub-*', seperationType: str = "DIR" ) -> dict:
+        
+        # Recursively Seperate 
+        if isinstance(files, dict):
+            for key in files.keys():
+                files[key] = self.group_files_by_pattern(files=files[key], pattern=pattern, seperationType=seperationType)
+        
+        else:
+    
+            if seperationType == "DIR": # Seperting based on directory pattern.
+                
+                # Acquiring  First Level Files/Folders and then matching with the pattern
+                firstLevelFiles  = set([file.split("/")[0] for file in files])
+                
+                # Only Keeping Files Following the Pattern
+                firstLevelFilteredFiles = [file for file in firstLevelFiles if fnmatch.fnmatch(file, pattern)]
+                
+                # Making a child dictionary
+                outDict = {}
+                for flf in firstLevelFilteredFiles:
+                    outDict[flf] = ["/".join(file.split("/")[1:]) for file in files if fnmatch.fnmatch(file, pattern)]
+                return outDict
+            
+            else: 
+                logger.error("DatasetJson - Invalid seperationType ({seperationType})")
+    """
+  
+            
+
+        
+
+
+        
+    
+    
+    
 
 if __name__ == "__main__":
             
@@ -586,30 +800,16 @@ if __name__ == "__main__":
                     targetDatasets=targetDatasets, 
                     defaultDatasetSettings=defaultDatasetSettings)
     downloadDS.initiate_downloads()
+    
+    dsJSON = DatasetJson(config = config, 
+                    targetDatasets=targetDatasets, 
+                    defaultDatasetSettings=defaultDatasetSettings)
+    
+    dsJSON.initiate_creating_dataset_json()
+    
+    
+    
+    
+    
     exit()
     
-    print(targetDatasets)
-    
-    
-    #pathAllDatasets = os.path.join(os.path.normpath(pathDataset.strip()), '*' if not pathAllDatasets.strip().endswith('*') else '')
-    print(pathAllDatasets)
-    exit()
-    
-    #print(datasets)
-    
-    
-    subdirs = [d for d in ps]
-    print(subdirs)
-    config = OmegaConf.create(vars(args))
-    
- 
-    
-    # Read all 
-    get_subdirs = get_subdirs(pathDS, basenameOnly=True)
-    
-    print(json.dumps(get_subdirs))
-    
-    
-    print(config.reDownload)
-    print(config.reProcess)
-
