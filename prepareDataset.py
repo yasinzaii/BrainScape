@@ -1,3 +1,7 @@
+# TO-DO
+# To be deleted...
+
+
 maxAwsCliWorkers = 32 
 
 requiredSettingsKeys = [
@@ -15,6 +19,7 @@ requiredSettingsKeys = [
     "mriDataMapping"
 ]
 
+import logging.config
 import re
 import argparse, os, sys, glob  
 import json, shutil, subprocess
@@ -25,100 +30,15 @@ from omegaconf import OmegaConf
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# Configure logging based on the provided log level.
-def configure_logging(logLevel: str, logFileName: str):
-    numericLevel = getattr(logging, logLevel.upper(), None)
-    if not isinstance(numericLevel, int):
-        raise ValueError(f"Invalid log level: {logLevel}")
+# TO-DO
+# The Following Paths Will be updated
+from src.utils.json_handler import JsonHandler
+from src.utils.logging_setup import configure_logging
+from src.utils.args_parser import get_parser
 
-    # Get the root logger
-    logger = logging.getLogger()
-    logger.setLevel(numericLevel)
-        
-    # Configure logging
-    logging.basicConfig(
-        level=numericLevel,
-        datefmt='%Y-%m-%d %H:%M',  # Format without seconds
-        format='%(asctime)s - %(levelname)s - %(message)s',
-        handlers=[
-            logging.StreamHandler(sys.stdout),  # Log to console
-            logging.FileHandler(logFileName)  # Log to a file
-        ]
-    )
-    logger = logging.getLogger(__name__)
-    return logger
 
-# Returns Arguments Parser
-def get_parser(**parser_kwargs):
-    
-    def str2bool(v):
-        if isinstance(v, bool):
-            return v
-        if v.lower().strip() in ("yes", "true", "t", "y", "1"):
-            return True
-        elif v.lower().strip() in ("no", "false", "f", "n", "0"):
-            return False
-        else:
-            raise argparse.ArgumentTypeError("Boolean value expected.")
 
-    parser = argparse.ArgumentParser(**parser_kwargs)
-    
-    parser.add_argument(
-        "-d",
-        "--reDownload",
-        type=str2bool,
-        const=True,
-        default=False,
-        nargs="?",
-        help="Removes and Redownloads all Datasets",
-    )
-    
-    parser.add_argument(
-        "-p",
-        "--reProcess",
-        type=str2bool,
-        const=True,
-        default=False,
-        nargs="?",
-        help="Removes and Reprocesses all Datasets",
-    )
-    
-    parser.add_argument(
-        "-c",
-        "--configPath",
-        type=str,
-        default="./config.json",
-        help="Path to the configuration JSON file",
-    )
-    
-    parser.add_argument(
-        "-k",
-        "--checkDownloadFiles",
-        type=str2bool,
-        const=True,
-        default=True,
-        nargs="?",
-        help="Validate all downloaded file with corresponding File-Hashs",
-    )
-    
-    parser.add_argument(
-        "-ll",
-        "--logLevel",
-        type=str,
-        choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
-        default="INFO",
-        help="Set the logging level"
-    )
-    
-    parser.add_argument(
-        "-lf",
-        "--logFilePath",
-        type=str,
-        default="./prepareDataset.log",
-        help="Path to the log file",
-    )
-    
-    return parser
+
 
 # Return all Subdiretories - {Paths | Dir-Names}
 def get_subdirs(path, basenameOnly = False):
@@ -131,55 +51,7 @@ def get_subdirs(path, basenameOnly = False):
 def get_paths(pathPattern):
     return glob.glob(pathPattern)
 
-# JsonHandler class can Loads | Updates | Saves JSON
-class JsonHandler:
-    def __init__(self, jsonPath):
-        self.jsonPath = jsonPath
-        self.data = self.load_json()
 
-    def load_json(self):
-        try:
-            with open(self.jsonPath, 'r') as file:
-                data = json.load(file)
-            return data
-        except FileNotFoundError:
-            logger.error(f"File not found, file:'{self.jsonPath}'.")
-            return {}  
-        except PermissionError:
-            logger.error(f"Permission denied for file '{self.jsonPath}'.")
-            return {}
-        except json.JSONDecodeError:
-            logger.error(f"The file '{self.jsonPath}' contains invalid JSON.")
-            return {}
-        except Exception as e:
-            logger.error(f"An unexpected error occurred while loading JSON file: '{self.jsonPath}' {e}")
-            return {}
-
-    def update_json(self, updates: dict) -> 'JsonHandler':
-        if not isinstance(updates, dict):
-            raise TypeError("Updates must be provided as a dictionary.")
-        try:
-            json.dumps(updates)  # Test if updates are JSON serializable
-        except (TypeError, OverflowError) as e:
-            raise ValueError(f"Updates contain non-serializable values: {e}")
-        self.data.update(updates)
-        return self
-
-    def save_json(self):
-        try:
-            with open(self.jsonPath, 'w') as file:
-                json.dump(self.data, file, indent=4)
-        except Exception as e:
-            logger.error(f"Error Saving JSON data: {e}")
-            
-    def delete_keys(self, keys):
-        if not isinstance(keys, (list, tuple)):
-            keys = [keys]
-        for key in keys:
-            self.data.pop(key, None)
-                    
-    def get_data(self):
-        return self.data.copy()
 
 # Returns Merged settings {Defaults, Overrides}
 def merge_settings(defaults, overrides):
@@ -193,9 +65,9 @@ def merge_settings(defaults, overrides):
 
 # Validate Dataset Settings/Parameters provided in metadata.json
 def validate_parameters(datasets, defaultSettings, config):
-    if config.reDownload:
+    if config.re_download:
         logger.warning("Force Redownload Enabled, downloaded datasets will be removed (if downloadable) and redownloaded.")
-    if config.reProcess:
+    if config.re_process:
         logger.warning("Force reProcess Enabled, preprocessed datasets will be removed and reprocessed.")
     
     # TO-DO 
@@ -317,8 +189,8 @@ class DownloadDataset:
         
         # If downloaded Skip Downloadig
         if finalSettings["isDownloaded"] and Path(downloadDirPath).is_dir() and any(Path(downloadDirPath).iterdir()):
-            if self.config.checkDownloadFiles:
-                logger.info(f"'checkDownloadFiles' ON - Verifiying validity of downloaded files")
+            if self.config.check_download_files:
+                logger.info(f"'check-download-files' ON - Verifiying validity of downloaded files")
             else:
                 logger.info(f"'{datasetPath}' Dataset already downloaded skipping download job")
                 return  # Skip Downloaded
@@ -464,6 +336,10 @@ class DownloadDataset:
         # Path for download directory
         downloadPath = Path(datasetPath) / finalSettings["downloadDirName"]
         
+        # Flags for download and Check/Verification of download files
+        downloadRequired = True
+        checkRequired = self.config.check_download_files # Check download by default
+        
         # Check if download directory is present
         if downloadPath.exists():
             if any(downloadPath.iterdir()):
@@ -476,6 +352,8 @@ class DownloadDataset:
             try: 
                 downloadPath.mkdir(parents=True, exist_ok=True)
                 logger.info(f"Created download directory: '{downloadPath}'")
+                downloadRequired = True  # Must be Redownloaded
+                checkRequired = True # Must be 
             except Exception as e:
                 logger.error(f"Error creating download directory '{downloadPath}': {e}")
                 return False
@@ -597,7 +475,7 @@ class DatasetJson:
         regexCompiled["images"] = {key: re.compile(value) for key, value in regexPatterns["images"].items()}
         """
         
-        # Recursively Compiling the Regix Patterns
+        # Recursively Compiling the Regex Patterns
         def compile_regex_patterns(regexPatterns:dict):
             isSuccessful = True
             regexCompiled = {}
@@ -669,6 +547,7 @@ class DatasetJson:
                 
             
             # Matching with the Type of File
+            match_check = False
             for modality, pattern in regexCompiled['images'].items():
                 if pattern.match(pathParts[-1]) and regexPatterns['images'][modality][1] == "FILE":
                     grouped[subject][session][modality] = filePath
@@ -677,8 +556,13 @@ class DatasetJson:
                     if not os.path.join(subject, session, pathParts[-1]) == filePath:
                         logger.error(f"Invalid Grouping/Mapping of MRI for Subject='{subject}', Session='{session}', Modality='{modality}', FilePath={filePath}")
                     else: 
-                        continue
-            logger.debug(f"Unable to Match the File,  Subject='{subject}', Session='{session}', Modality='{modality}', FilePath={filePath}")
+                        match_check = True
+                        break
+                        
+            if match_check:
+                logger.debug(f"Target File Matched, Dataset: {datasetPath},  Subject='{subject}', Session='{session}', Modality='{modality}', FilePath={filePath}")
+            else:
+                logger.warning(f"Unable to Match the File, Dataset: {datasetPath},  Subject='{subject}', Session='{session}', Modality='{modality}', FilePath={filePath}")
 
         
         # Creating the Dataset Info dict
@@ -698,7 +582,7 @@ class DatasetJson:
         }
         
         logger.info(f"Saving {datasetInfoJsonPath} File for Dataset {datasetPath}")        
-        JsonHandler(datasetInfoJsonPath).update_json(datasetJsonDict).save_json()
+        JsonHandler(datasetInfoJsonPath, create_if_missing=True).set_data(datasetJsonDict).save_json()
         datasetSettings.update_json({'isDatasetJsonCreated':True}).save_json() # Updating Json Flag 
         
         return True 
@@ -749,11 +633,6 @@ class DatasetJson:
         
 
 
-        
-    
-    
-    
-
 if __name__ == "__main__":
             
     # Parsing Args | Omega Config
@@ -762,10 +641,15 @@ if __name__ == "__main__":
     argsConfig = OmegaConf.create(vars(args))
     
     # Configure logging - Make sure logger is not called Before.
-    logger = configure_logging(args.logLevel, argsConfig.logFilePath)
+    logger = configure_logging(argsConfig.logger_config_file)
+    
+    # Logging The Start of a new Program Run
+    logger.critical("End of Previous Script \n\n" +  # Append to previous run + empty line.
+                    "Script execution started")      # New script execution.
+    
     
     # Loading the Config File | Merging
-    jsonConfig = JsonHandler(argsConfig.configPath).get_data()
+    jsonConfig = JsonHandler(argsConfig.config_path).get_data()
     config = OmegaConf.merge(jsonConfig, argsConfig)
     
     # Getting Dataset Lists and applying Overrides

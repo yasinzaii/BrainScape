@@ -1,7 +1,8 @@
 {
     "info": "Dataset Specific Settings",
-    "isDownloaded": false,
-    "isDatasetJsonCreated": false,
+    "isDownloaded": true,
+    "downloader": "OpenNeuroDownloader",
+    "isDatasetJsonCreated": true,
     "isPreprocessed": false,
     "datasetSource": "OpenNeuro",
     "includeDataset": true,
