@@ -1,0 +1,12 @@
+name: dat
+channels:
+  - defaults
+  - conda-forge  
+dependencies:
+  - python=3.11.10
+  - numpy
+  - pandas
+  - pip
+  - pip:
+    - omegaconf==2.3.0
+    - docker==7.1.0

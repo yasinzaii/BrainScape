@@ -6,6 +6,8 @@ from utils.logging_setup import configure_logging
 from utils.json_handler import JsonHandler
 
 from download.download_manager import DownloadManager
+from dataset.dataset_manager import DatasetManager
+from preprocess.preprocess_manager import PreprocessManager
 
 from utils.common_utils import get_subdirectories
 
@@ -46,17 +48,36 @@ def prepare_dataset():
     else:
         target_datasets =  all_datasets   
     
-    # Getting the Default Settings for all Datasets
-    default_dataset_settings = JsonHandler(config.pathDefaults).get_data()
+    # Logging Target Datasets.
     logger.info(f"Target Datasets: {target_datasets}")
     
+
+    # Getting the Default Settings for all Datasets
+    default_dataset_settings = JsonHandler(config.pathDefaults).get_data()
+    if not default_dataset_settings:
+        logger.error("Unable to load Default Settings. Exiting!")
+        return()    
     
-    # Dowloading Datasets via DownloadManager Module.
+    # Dowloading Datasets via "download" Module.
     download_man = DownloadManager(config=config, 
                                    target_datasets=target_datasets, 
                                    default_dataset_settings=default_dataset_settings)
     download_man.initiate_downloads()
+
+    # Create Mapping/Record of The Dataset via "dataset" Module
+    dataset_man = DatasetManager(config=config, 
+                                 target_datasets=target_datasets, 
+                                 default_dataset_settings=default_dataset_settings)
+    dataset_man.initiate_mapping()
+
+    # Preprocessing Datasets via "preprocess" Module 
+    preprocess_man = PreprocessManager(config=config, 
+                                    target_datasets=target_datasets, 
+                                    default_dataset_settings=default_dataset_settings,
+                                    mapping = dataset_man.get_mapping())
     
+    preprocess_man.initiate_preprocessing()
+
 
 if __name__ == "__main__":
     prepare_dataset()

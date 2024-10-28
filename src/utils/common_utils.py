@@ -57,3 +57,33 @@ def get_subdirectories(path: Union[str, Path], basename_only: bool = False) -> L
     if basename_only:
         return [x.name for x in subdirs]
     return [str(x.resolve()) for x in subdirs]
+
+
+
+
+def find_path_upwards(starting_path: Path, target_relative_path: str) -> Path:
+    """
+    Searches upward from the starting_path to find the target_relative_path.
+
+    Args:
+        starting_path (Path): The path from which to start the search.
+        target_relative_path (str): The relative path to the target directory or file.
+
+    Returns:
+        Path: The full path to the target directory or file.
+
+    Raises:
+        FileNotFoundError: If the target is not found in any parent directories.
+    """
+    current_path = starting_path.resolve()
+    target_relative_path = Path(target_relative_path)
+
+    while True:
+        potential_target = current_path / target_relative_path
+        if potential_target.exists():
+            return potential_target
+        if current_path == current_path.parent:
+            break  # Reached the root directory
+        current_path = current_path.parent
+
+    raise FileNotFoundError(f"'{target_relative_path}' not found in any parent directories of {starting_path}")
