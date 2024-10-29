@@ -1,6 +1,6 @@
 {
     "info": "Dataset Specific Settings",
-    "isDownloaded": true,
+    "isDownloaded": false,
     "downloader": "OpenNeuroDownloader",
     "isDatasetJsonCreated": false,
     "isPreprocessed": false,
@@ -15,23 +15,19 @@
         "participants.tsv",
         "sub-*/ses-*/anat/*"
     ],
-    "mriDataMapping": {
+    "mapping": {
+        "plugin": "RegexMapper",
         "regex": {
-            "subjects": [
-                "^sub-.*$",
-                "DIR"
-            ],
-            "sessions": [
-                "^ses-.*/anat",
-                "DIR"
-            ],
-            "images": {
-                "T1W": [
-                    "^.*T1w.nii.gz$",
-                    "FILE"
-                ]
+            "subject": "^sub-.*$",
+            "session": "^ses-.*$",
+            "type": "^anat",
+            "modality": {
+                "t1w": "^.*T1w.nii.gz$"
             }
         },
+        "excludeSub": []
+    },
+    "other": {
         "participantId": "participant_id",
         "sessionId": "session_id",
         "age": "age",
