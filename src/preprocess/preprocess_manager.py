@@ -61,7 +61,7 @@ class PreprocessManager:
                 continue
 
             # Initialize the preprocessor
-            preprocessor = preprocessor_cls(dataset_settings=final_settings, dataset_path=dataset_path, mapping=mapping)
+            preprocessor = preprocessor_cls(dataset_settings=final_settings, dataset_path=dataset_path, mapping=mapping, config=self.config)
 
             # Perform preprocessing
             success = preprocessor.run()

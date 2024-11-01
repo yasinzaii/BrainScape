@@ -23,7 +23,7 @@ class SMRIPrepPreprocessor(PreprocessorPlugin):
         return cls.plugin_name
     
     
-    def __init__(self, dataset_settings: dict, dataset_path: Path, mapping: dict):
+    def __init__(self, dataset_settings: dict, dataset_path: Path, mapping: dict, config: dict):
         super().__init__(dataset_settings, dataset_path, mapping)
         
         self.logger = logging.getLogger(__name__)

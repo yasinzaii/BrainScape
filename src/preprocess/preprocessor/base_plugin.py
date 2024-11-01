@@ -14,17 +14,19 @@ class PreprocessorPlugin(ABC):
         return cls.plugin_name
     
 
-    def __init__(self, dataset_settings: dict, dataset_path: Path, mapping: dict):
+    def __init__(self, dataset_settings: dict, dataset_path: Path, mapping: dict, config: dict):
         """
         Args:
             dataset_settings (dict): Dataset-specific settings.
             dataset_path (str): Path to the dataset directory.
             mapping (dict): Dataset Mapping - Aquired from Mapper Module. 
+            config (dict): Configurations
 
         """
         self.dataset_settings = dataset_settings
         self.dataset_path = dataset_path
         self.mapping = mapping
+        self.config = config
 
     @abstractmethod
     def run(self) -> bool:
