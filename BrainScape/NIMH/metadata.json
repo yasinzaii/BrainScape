@@ -6,7 +6,7 @@
     "isPreprocessed": true,
     "datasetSource": "OpenNeuro",
     "includeDataset": true,
-    "downloadFrom": "s3://openneuro.org/ds005027",
+    "downloadFrom": "s3://openneuro.org/ds004513",
     "download": [
         "CHANGES",
         "README",
@@ -25,6 +25,19 @@
                 "t1w": "^.*T1w.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-55"
+        ]
+    },
+    "other": {
+        "participantId": "participant_id",
+        "sessionId": "session_id",
+        "age": "age",
+        "gender": "sex",
+        "handedness": "handedness",
+        "weight": "body_weight ",
+        "height": "body_height",
+        "haematocrit": "haematocrit",
+        "glucoseConcentration": "glucose_concentration"
     }
 }

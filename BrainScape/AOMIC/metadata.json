@@ -1,8 +1,9 @@
 {
     "info": "Dataset Specific Settings",
-    "isDownloaded": false,
+    "isDownloaded": true,
     "downloader": "OpenNeuroDownloader",
-    "isPreprocessed": false,
+    "isDatasetJsonCreated": false,
+    "isPreprocessed": true,
     "datasetSource": "OpenNeuro",
     "includeDataset": true,
     "downloadFrom": "s3://openneuro.org/ds003097",
@@ -13,12 +14,21 @@
         "dataset_description.json",
         "participants.json",
         "participants.tsv",
-        " task-moviewatching_events.tsv", 
+        " task-moviewatching_events.tsv",
         "T1w.json",
         "dwi.json",
         "sub-*/anat/*"
-    ], 
-    "mriDataMapping": {
-
+    ],
+    "mapping": {
+        "plugin": "RegexMapper",
+        "regex": {
+            "subject": "^sub-.*$",
+            "session": "",
+            "type": "^anat",
+            "modality": {
+                "t1w": "^.*T1w.nii.gz$"
+            }
+        },
+        "excludeSub": []
     }
 }

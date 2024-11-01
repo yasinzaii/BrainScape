@@ -2,11 +2,11 @@
     "info": "Dataset Specific Settings",
     "isDownloaded": true,
     "downloader": "OpenNeuroDownloader",
-    "isDatasetJsonCreated": true,
-    "isPreprocessed": false,
+    "isDatasetJsonCreated": false,
+    "isPreprocessed": true,
     "datasetSource": "OpenNeuro",
     "includeDataset": true,
-    "downloadFrom": "s3://openneuro.org/ds002837",
+    "downloadFrom": "s3://openneuro.org/ds003469",
     "download": [
         "CHANGES",
         "README",
@@ -15,22 +15,16 @@
         "participants.tsv",
         "sub-*/anat/*"
     ],
-    "mriDataMapping": {
+    "mapping": {
+        "plugin": "RegexMapper",
         "regex": {
-            "subjects": [
-                "^sub-.*$",
-                "DIR"
-            ],
-            "sessions": [
-                "^anat$",
-                "DIR"
-            ],
-            "images": {
-                "T1W": [
-                    "^.*T1w.nii.gz$",
-                    "FILE"
-                ]
+            "subject": "^sub-.*$",
+            "session": "",
+            "type": "^anat",
+            "modality": {
+                "t1w": "^.*T1w.nii.gz$"
             }
-        }
+        },
+        "excludeSub": []
     }
 }

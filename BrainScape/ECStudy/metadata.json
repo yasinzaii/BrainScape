@@ -1,9 +1,9 @@
 {
     "info": "Dataset Specific Settings",
-    "isDownloaded": false,
+    "isDownloaded": true,
     "downloader": "OpenNeuroDownloader",
     "isDatasetJsonCreated": false,
-    "isPreprocessed": false,
+    "isPreprocessed": true,
     "datasetSource": "OpenNeuro",
     "includeDataset": true,
     "downloadFrom": "s3://openneuro.org/ds004513",
