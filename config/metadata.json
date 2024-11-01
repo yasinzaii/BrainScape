@@ -3,9 +3,18 @@
     "isDownloadable": true, 
     "includeDataset": true,
     "downloadDirName": "Download",
-    "preprocessDirName": "Dataset",
     
-    "preprocessing": [
-        "Pipeline"
-    ]   
+    
+    "preprocess": {
+        "preprocessor": "brats",
+        "preprocessDirName": "preprocessed",
+        "brats": {
+            "tempDirName": "temp",
+            "modPriority": ["t1w", "t2w", "t1ce", "flair"]
+
+
+
+        }
+        
+    }
 }
