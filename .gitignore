@@ -1,4 +1,6 @@
 Download/
+visualize/
+preprocessed/
 Docker/license.txt
 .vscode/
 logs/*.log
