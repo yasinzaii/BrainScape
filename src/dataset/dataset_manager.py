@@ -90,3 +90,52 @@ class DatasetManager:
 
     def get_mapping(self):
         return self.mapping
+    
+    
+    # TODO - This following code is hardcoded fix it.
+    def preprocessed_mapping(self):
+        for dataset_name in self.target_datasets:
+            
+            self.logger.info(f"Preprocessed Mapping - Dataset:{dataset_name}")
+            
+            # Merging Default Settings with Dataset Settings.
+            dataset_path = Path(self.config.pathDataset) / dataset_name
+            dataset_settings_path = dataset_path / self.config.datasetSettingsJson
+            dataset_settings = JsonHandler(dataset_settings_path)
+            final_settings = merge_settings(
+                defaults=self.default_dataset_settings,
+                overrides=dataset_settings.get_data()
+            )
+
+            # Path of the preprocessed directory
+            preprocessed_dir_name = final_settings["preprocess"]["preprocessDirName"]
+            preprocessed_dir_path = dataset_path / preprocessed_dir_name
+
+            # Check if the dataset has been downloaded
+            if not final_settings.get("isPreprocessed"):
+                self.logger.error(f"Dataset '{dataset_name}' is not Preprocessed yet. Skipping preprocessing job.")
+                continue  # Skipping
+            
+            """
+            # Check if dataset JSON has already been created
+            if final_settings.get("isDatasetJsonCreated"):
+                self.logger.info(f"Dataset JSON for '{dataset_name}' already created. Skipping mapping job.")
+                continue  # Skipping
+            """
+            
+            for entry in self.mapping[dataset_name]:
+                entry[preprocessed_dir_name] = {}
+                for mri in entry['mris'].keys():
+                    prep_mod_mri_dir = preprocessed_dir_path / f"{entry['subject']}.{entry['session']}.{entry['type']}.{entry['group']}"
+                    prep_mod_mri_dir = prep_mod_mri_dir / "norm_bet"
+                    prep_mod_mri_imgs = list(prep_mod_mri_dir.rglob(f"*{mri}.nii.gz"))
+                    if len(prep_mod_mri_imgs) != 1:
+                        self.logger.error("Preprocessed Mapping - MRIs Image Expectation and Actuality Mismatch")
+                        raise
+                    else:
+                        relative_path = prep_mod_mri_imgs[0].relative_to(preprocessed_dir_path)
+                        entry[preprocessed_dir_name][mri] = str(relative_path)
+                        pass
+            
+            self.logger.info(f"Preprocessed Mapping - Finished Mapping, Dataset:{dataset_name}")
+
