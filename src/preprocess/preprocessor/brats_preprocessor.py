@@ -48,7 +48,7 @@ class BratsPreprocessor(PreprocessorPlugin):
         self.preprocessor_logger = configure_session_logging(
             session_log_file=self.preprocessor_log_file,
             log_config_path=self.config.logger_config_file,
-            logger_name=f'preprocess.{self.download_dir_name}',
+            logger_name=f'preprocess.{self.dataset_path.name}',
         )
 
     def run(self) -> bool:
