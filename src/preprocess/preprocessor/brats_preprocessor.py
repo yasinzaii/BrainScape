@@ -36,15 +36,21 @@ class BratsPreprocessor(PreprocessorPlugin):
         self.output_dir_name =  self.dataset_settings.get("preprocessedDirName", "preprocessed")
         self.output_dir = dataset_path / self.output_dir_name
         
-        # Temp Directory
-        self.temp_dir_name = self.dataset_settings.get("tempDirName", "preprocessed")
-        self.temp_dir = self.dataset_path / self.temp_dir_name
-        
         # Preprocessor settings (if any)
         self.brats_config = self.dataset_settings["preprocess"].get("brats", {})
         
         # Processor Logger configuration
-        self.preprocessor_log_file = self.output_dir / "preprocess.log"
+        self.preprocessor_log_file = self.dataset_path / "preprocess.log"
+        
+        # Delete the existing log file if it exists
+        if self.dataset_log_file.exists():
+            try:
+                self.dataset_log_file.unlink()
+                self.main_logger.info(f"Deleted existing log file: {self.dataset_log_file}")
+            except Exception as e:
+                self.main_logger.error(f"Failed to delete log file: {e}")
+        
+        
         self.preprocessor_logger = configure_session_logging(
             session_log_file=self.preprocessor_log_file,
             log_config_path=self.config.logger_config_file,
