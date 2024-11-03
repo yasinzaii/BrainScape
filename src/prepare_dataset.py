@@ -9,6 +9,11 @@ from download.download_manager import DownloadManager
 from dataset.dataset_manager import DatasetManager
 from preprocess.preprocess_manager import PreprocessManager
 
+
+from validate.validate_manager import ValidateManager
+
+from visualizer import VisualizerManager
+
 from utils.common_utils import get_subdirectories
 
 
@@ -70,6 +75,14 @@ def prepare_dataset():
                                  default_dataset_settings=default_dataset_settings)
     dataset_man.initiate_mapping()
 
+    # Validate Nifti Brain MRI files
+    validate_man = ValidateManager(config=config, 
+                                    target_datasets=target_datasets, 
+                                    default_dataset_settings=default_dataset_settings,
+                                    mapping = dataset_man.get_mapping())
+    validate_man.validate_nifti()
+    
+    
     # Preprocessing Datasets via "preprocess" Module 
     preprocess_man = PreprocessManager(config=config, 
                                     target_datasets=target_datasets, 
@@ -77,6 +90,23 @@ def prepare_dataset():
                                     mapping = dataset_man.get_mapping())
     
     preprocess_man.initiate_preprocessing()
+    
+    
+    # TODO - Preprocessed Mapping Hardcoded Fixit
+    dataset_man.preprocessed_mapping()
+    
+    
+    # TODO - Cleanup the Visualizer Manager
+    visualizer_man = VisualizerManager(config=config, 
+                                        target_datasets=target_datasets, 
+                                        default_dataset_settings=default_dataset_settings,
+                                        mapping = dataset_man.get_mapping())
+    
+    visualizer_man.initiate_vis()
+    
+    
+    mapping = dataset_man.get_mapping() 
+    pass
 
 
 if __name__ == "__main__":

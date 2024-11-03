@@ -6,6 +6,7 @@ Docker/license.txt
 logs/*.log
 **/dataset.json
 .venv
+*.log
 **/__pycache__
 TODO.txt
 
