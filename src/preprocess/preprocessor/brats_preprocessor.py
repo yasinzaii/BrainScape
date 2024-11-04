@@ -43,13 +43,12 @@ class BratsPreprocessor(PreprocessorPlugin):
         self.preprocessor_log_file = self.dataset_path / "preprocess.log"
         
         # Delete the existing log file if it exists
-        if self.dataset_log_file.exists():
+        if self.preprocessor_log_file.exists():
             try:
-                self.dataset_log_file.unlink()
-                self.main_logger.info(f"Deleted existing log file: {self.dataset_log_file}")
+                self.preprocessor_log_file.unlink()
+                self.main_logger.info(f"Deleted existing log file: {self.preprocessor_log_file}")
             except Exception as e:
                 self.main_logger.error(f"Failed to delete log file: {e}")
-        
         
         self.preprocessor_logger = configure_session_logging(
             session_log_file=self.preprocessor_log_file,

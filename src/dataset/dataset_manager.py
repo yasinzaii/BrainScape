@@ -128,7 +128,7 @@ class DatasetManager:
                 for mri in entry['mris'].keys():
                     prep_mod_mri_dir = preprocessed_dir_path / f"{entry['subject']}.{entry['session']}.{entry['type']}.{entry['group']}"
                     prep_mod_mri_dir = prep_mod_mri_dir / "norm_bet"
-                    prep_mod_mri_imgs = list(prep_mod_mri_dir.rglob(f"*{mri}.nii.gz"))
+                    prep_mod_mri_imgs = list(prep_mod_mri_dir.rglob(f"*{mri}.nii*"))
                     if len(prep_mod_mri_imgs) != 1:
                         self.logger.error("Preprocessed Mapping - MRIs Image Expectation and Actuality Mismatch")
                         raise

@@ -56,7 +56,7 @@ def get_parser(**parser_kwargs):
         help="Removes and Re-processes all Datasets",
     )
     
-     # Argument to specify the path to the configuration JSON file
+    # Argument to specify the path to the configuration JSON file
     parser.add_argument(
         "-cp",
         "--config-path",
@@ -64,6 +64,16 @@ def get_parser(**parser_kwargs):
         default="./config/config.json",
         help="Path to the configuration JSON file",
     )
+    
+    # Argument to specify the path to the credentials.ini file
+    parser.add_argument(
+        "-ip",
+        "--credential-path",
+        type=str,
+        default="./config/credentials.ini",
+        help="Path to the credentials.ini file",
+    )
+    
     
     # Argument to validate all downloaded files with corresponding source files
     parser.add_argument(
