@@ -1,24 +1,28 @@
 {
     "info": "Dataset Specific Settings",
     "isDownloaded": true,
-    "downloader": "OpenNeuroDownloader",
     "isDatasetJsonCreated": false,
     "isPreprocessed": true,
-    "datasetSource": "OpenNeuro",
     "includeDataset": true,
-    "downloadFrom": "s3://openneuro.org/ds003097",
-    "download": [
-        "CHANGES",
-        "README",
-        "stimuli/*",
-        "dataset_description.json",
-        "participants.json",
-        "participants.tsv",
-        " task-moviewatching_events.tsv",
-        "T1w.json",
-        "dwi.json",
-        "sub-*/anat/*"
-    ],
+
+    "download": {
+        "isDownloadable": true,
+        "plugin": "OpenNeuroDownloader",
+        "profile": "",
+        "source": "s3://openneuro.org/ds003097",
+        "include": [
+            "CHANGES",
+            "README",
+            "stimuli/*",
+            "dataset_description.json",
+            "participants.json",
+            "participants.tsv",
+            " task-moviewatching_events.tsv",
+            "T1w.json",
+            "dwi.json",
+            "sub-*/anat/*"
+        ]
+    },
     "mapping": {
         "plugin": "RegexMapper",
         "regex": {

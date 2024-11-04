@@ -1,15 +1,15 @@
 {
     "info": "Dataset Specific Settings",
-    "isDownloaded": true,
+    "isDownloaded": false,
     "isDatasetJsonCreated": false,
-    "isPreprocessed": true,
+    "isPreprocessed": false,
     "includeDataset": true,
     
     "download": {
         "isDownloadable": true,
         "plugin": "OpenNeuroDownloader",
         "profile": "",
-        "source": "s3://openneuro.org/ds003469",
+        "source": "s3://openneuro.org/ds005123",
         "include": [
             "CHANGES",
             "README",
@@ -27,7 +27,8 @@
             "session": "",
             "type": "^anat",
             "modality": {
-                "t1w": "^.*T1w.nii.gz$"
+                "t1w": "^.*T1w.nii.gz$",
+                "flair": "^.*FLAIR.nii.gz$"
             }
         },
         "excludeSub": []

@@ -1,19 +1,24 @@
 {
     "info": "Dataset Specific Settings",
     "isDownloaded": true,
-    "downloader": "OpenNeuroDownloader",
     "isDatasetJsonCreated": false,
     "isPreprocessed": true,
-    "datasetSource": "OpenNeuro",
     "includeDataset": true,
-    "downloadFrom": "s3://openneuro.org/ds000030",
-    "download": [
-        "CHANGES",
-        "README",
-        "dataset_description.json",
-        "participants.tsv",
-        "sub-*/anat/*"
-    ],
+    
+    "download": {
+        "isDownloadable": true,
+        "plugin": "OpenNeuroDownloader",
+        "profile": "",
+        "source": "s3://openneuro.org/ds000030",
+        "include": [
+            "CHANGES",
+            "README",
+            "dataset_description.json",
+            "participants.tsv",
+            "sub-*/anat/*"
+        ]
+    },
+
     "mapping": {
         "plugin": "RegexMapper",
         "regex": {

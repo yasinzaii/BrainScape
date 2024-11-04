@@ -1,15 +1,15 @@
 {
     "info": "Dataset Specific Settings",
-    "isDownloaded": true,
+    "isDownloaded": false,
     "isDatasetJsonCreated": false,
-    "isPreprocessed": true,
+    "isPreprocessed": false,
     "includeDataset": true,
     
     "download": {
         "isDownloadable": true,
         "plugin": "OpenNeuroDownloader",
         "profile": "",
-        "source": "s3://openneuro.org/ds003469",
+        "source": "s3://openneuro.org/ds004648",
         "include": [
             "CHANGES",
             "README",
@@ -19,7 +19,6 @@
             "sub-*/anat/*"
         ]
     },
-
     "mapping": {
         "plugin": "RegexMapper",
         "regex": {
