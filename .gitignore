@@ -9,4 +9,4 @@ logs/*.log
 *.log
 **/__pycache__
 TODO.txt
-
+*.ini

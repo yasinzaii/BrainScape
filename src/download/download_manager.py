@@ -47,9 +47,9 @@ class DownloadManager:
             # TO-DO
             # Move it to confgurtion File
             try:
-                downloader_name = final_settings['downloader']
+                downloader_name = final_settings["download"]["plugin"]
             except Exception as e:
-                self.logger.error(f"Downloader (Key:'downloader') Missing from Dataset:{dataset_name} Settings, Skipping Download Job, Error: {e}")
+                self.logger.error(f"Downloader (Key:'plugin') Missing from Dataset:{dataset_name} Settings, Skipping Download Job, Error: {e}")
                 continue # Skipping
             
             
@@ -75,7 +75,7 @@ class DownloadManager:
                 
             
             # Check if Dataset is downloadable...
-            if not final_settings["isDownloadable"]:
+            if not final_settings["download"]["isDownloadable"]:
                 if Path(download_dir_path).is_dir() and any(Path(download_dir_path).iterdir()):
                     self.logger.info(f"'{dataset_path}' Dataset is not downloadable and but already downloaded skipping download/Check job")
                 else :
@@ -85,7 +85,16 @@ class DownloadManager:
             
             # Creating download directory if not Present...
             if download_dir_path.exists():
-                if any(download_dir_path.iterdir()):
+                
+                if self.config.re_download:
+                    self.logger.critical(f"Dataset Download Folder '{dataset_path}' already exists and not empty yet 'isDownloaded' Flag not set, Force Redownload On, Redownloading!")
+                    try:
+                        shutil.rmtree(download_dir_path)
+                        download_dir_path.mkdir(parents=True, exist_ok=True)    
+                    except Exception as e:
+                        self.logger.error(f"Failed to Remove and Recreate the Download Directory: {download_dir_path}")
+                
+                elif any(download_dir_path.iterdir()):
                     self.logger.critical(f"Dataset Download Folder '{dataset_path}' already exists and not empty yet 'isDownloaded' Flag not set, Skipping Download")
                     continue 
                 else: 
@@ -102,7 +111,16 @@ class DownloadManager:
             
             # Dynamically load correct downloader plugin based on 'downloader' Dataset Setting.
             downloader_cls = self.plugin_loader.get_plugin_by_name(downloader_name)
-            downloader = downloader_cls(dataset_settings=final_settings, dataset_path=dataset_path)
+            if not downloader_cls:
+                self.logger.error(f"Requested Downloader Plugin '{downloader_name}' not found, skipping download for dataset '{dataset_name}'")
+                continue  # Skipping Download
+            
+            
+            downloader = downloader_cls(
+                dataset_settings=final_settings, 
+                dataset_path=dataset_path, 
+                config=self.config
+            )
             
             if not downloader:
                 self.logger.error(f"Requested Dowloader Plugin:{downloader_name} Not Found, Skipping Download! Dataset: {dataset_path}")

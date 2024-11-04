@@ -1,6 +1,6 @@
 # src/download/downloader/base.py
 
-from typing import List
+from typing import List, Tuple
 from abc import ABC, abstractmethod
 
 class DownloaderPlugin(ABC):
@@ -13,27 +13,21 @@ class DownloaderPlugin(ABC):
         # Return the name of the plugin.
         return cls.plugin_name
     
+    
     @abstractmethod
-    def download(self, final_settings: dict, dataset_path: str) -> bool:
+    def download(self) -> Tuple[bool, List[str]]:
         """
         Download the dataset.
 
-        Args:
-            final_settings (dict): Dataset-specific settings.
-            dataset_path (str): Path to the dataset directory.
-
         Returns:
-            bool: True if download was successful, False otherwise.
+            tuple: (success flag, output data)
         """
         pass
 
     @abstractmethod
-    def get_source_file_list(self, final_settings: dict) -> List[str]:
+    def get_source_file_list(self) -> List[str]:
         """
-        Acquire Source File List.
-
-        Args:
-            final_settings (dict): Dataset-specific settings.
+        Acquire source file list.
 
         Returns:
             list: A list of paths from the source

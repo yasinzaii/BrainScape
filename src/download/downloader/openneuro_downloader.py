@@ -29,7 +29,7 @@ class OpenNeuroDownloader(DownloaderPlugin):
         return cls.plugin_name
     
     
-    def __init__(self, dataset_settings: Dict[str, Any], dataset_path: str):
+    def __init__(self, dataset_settings: Dict[str, Any], dataset_path: str, config: Dict[str, Any] ):
         """
         Initializes the OpenNeuroDownloader with dataset settings and path.
 
@@ -41,8 +41,14 @@ class OpenNeuroDownloader(DownloaderPlugin):
         self.dataset_settings = dataset_settings
         self.dataset_path = Path(dataset_path)
         self.download_dir_path = self.dataset_path / dataset_settings["downloadDirName"]
-        self.download_from = dataset_settings["downloadFrom"]
-        self.download_glob_patterns = dataset_settings["download"]
+        self.config = config
+        
+        self.download_from = dataset_settings["download"]["source"]
+        self.download_glob_patterns = dataset_settings["download"]["include"]
+        self.profile=dataset_settings["download"]["profile"]
+        
+        # Get the credential path from the config
+        self.credential_path = self.config.get('credential_path')
         
         
     def _check_aws_cli_installed(self) -> bool:
@@ -71,14 +77,35 @@ class OpenNeuroDownloader(DownloaderPlugin):
         Returns:
             List[str]: The AWS CLI command as a list of arguments.
         """
-        
+    
         aws_download_command = [
-            "aws", "s3", "sync", "--no-sign-request", self.download_from, str(self.download_dir_path),
+            "aws", "s3", "sync", self.download_from, str(self.download_dir_path),
             "--exclude", "*", "--include", pattern
         ]
+        
+        # Add '--profile' if profile is provided
+        if self.profile:
+            aws_download_command.extend(['--profile', self.profile])
+        else:
+            aws_download_command.append('--no-sign-request')
+
+        
+        
         return aws_download_command
     
+    
+    def _set_aws_profiles(self):
+        # Verify that the profiles file exists
+        if not os.path.isfile(self.credential_path):
+            logger.error(f"The specified profiles file does not exist: {self.credential_path}")
+            return False
 
+        # Set the AWS_SHARED_CREDENTIALS_FILE environment variable
+        abs_path = os.path.abspath(self.credential_path)
+        os.environ['AWS_SHARED_CREDENTIALS_FILE'] = abs_path
+        logger.info(f"AWS_SHARED_CREDENTIALS_FILE set to: {abs_path}")
+
+    
     def download(self) -> Tuple[bool, List[str]]:
         """
         Executes the download process for the dataset.
@@ -87,10 +114,16 @@ class OpenNeuroDownloader(DownloaderPlugin):
             Tuple[bool, List[str]]: A tuple containing the success status and a list of outputs from each download command.
         """
         
+        logger.info(f"Starting download for dataset:{self.dataset_path.name}, from '{self.download_from}'")
+        
         # open neuro datasets require AWS CLI
         if not self._check_aws_cli_installed():
             logger.critical("- OpenNeuro DL - AWS CLI is not installed. Cannot download OpenNeuro datasets.")
             return False, []
+        
+        
+        # Set the enviroment for file containing aws profiles
+        self._set_aws_profiles()
 
         # Downloads each pattern sequentially [AWS CLI]
         outputs = []
@@ -122,11 +155,18 @@ class OpenNeuroDownloader(DownloaderPlugin):
         Returns:
             List[str]: The AWS CLI command as a list of arguments.
         """
-        aws_list_command = ["aws", "s3", "--no-sign-request", "ls", path]
+        aws_list_command = ["aws", "s3", "ls", path]
 
          
         if recursive: 
             aws_list_command.append("--recursive")
+        
+        # Add '--profile' if profile is provided
+        if self.profile:
+            aws_list_command.extend(['--profile', self.profile])
+        else:
+            aws_list_command.append('--no-sign-request')
+        
         return aws_list_command
     
     
