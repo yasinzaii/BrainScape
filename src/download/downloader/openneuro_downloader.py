@@ -214,6 +214,19 @@ class OpenNeuroDownloader(DownloaderPlugin):
             List[str]: A filtered list of file paths that match the glob patterns.
         """
     
+        # Note:
+        # Download Manager expects an actual list of File which were supposed to be downloaded.
+        # This is possible for Open Neuro Dataset. Furthermore, The Human Connectome Project 
+        # is also using open Neuro Downloader. But I have disabled the download check by passing 
+        # the actually downloaded files which is what the download manager compares with. So if the
+        # if the verifyFiles key is false in the metadata.json for the dataset. The check will be off.
+        # else if verifyFiles == true or not provided (defaults to true) then it will skip checking
+        verify_downlaoded_files = self.dataset_settings["download"].get("verifyFiles", True)
+        if not verify_downlaoded_files:
+            return [str(p.relative_to(self.download_dir_path)) for p in self.download_dir_path.rglob('*') if p.is_file()]
+        
+        
+        
         # Just List The Parent Diretory Content
         main_dir_contents = self._list_aws_dir_contents(path=self.download_from, recursive=False)
         
