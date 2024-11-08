@@ -43,6 +43,16 @@ class DownloadManager:
                 overrides=dataset_settings.get_data()
             )
             
+            
+            # Check if Dataset is downloadable...
+            if not final_settings["download"]["isDownloadable"]:
+                if Path(download_dir_path).is_dir() and any(Path(download_dir_path).iterdir()):
+                    self.logger.info(f"'{dataset_path}' Dataset is not downloadable and but already downloaded skipping download/Check job")
+                else :
+                    self.logger.error(f"'{dataset_path}' Dataset is not downloadable and the download folder is empty, skipping download Job")
+                continue
+            
+            
             # Acquiring Plugin Downloader Name
             # TO-DO
             # Move it to confgurtion File
@@ -74,13 +84,7 @@ class DownloadManager:
                     continue 
                 
             
-            # Check if Dataset is downloadable...
-            if not final_settings["download"]["isDownloadable"]:
-                if Path(download_dir_path).is_dir() and any(Path(download_dir_path).iterdir()):
-                    self.logger.info(f"'{dataset_path}' Dataset is not downloadable and but already downloaded skipping download/Check job")
-                else :
-                    self.logger.error(f"'{dataset_path}' Dataset is not downloadable and the download folder is empty, skipping download Job")
-                continue
+            
 
             
             # Creating download directory if not Present...
