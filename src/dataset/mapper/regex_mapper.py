@@ -83,6 +83,19 @@ class RegexMapper(DatasetMapperPlugin):
         return compiled_patterns, is_successful
 
 
+    def _match_path_parts(self, regex, path_parts, path_index):
+        """
+        Attempts to match the regex against combinations of path parts starting from path_index.
+        Returns (matched_value, new_path_index) if a match is found, else (None, path_index).
+        """
+        max_parts = len(path_parts)  # Including the filename
+        for end_index in range(path_index + 1, max_parts + 1):
+            candidate = '/'.join(path_parts[path_index:end_index])
+            if regex.match(candidate):
+                return candidate, end_index
+        return None, path_index
+    
+    
     def map(self) -> Dict[str, Any]:
         """
         Maps and saves the Subject-Session-MRI Modality paths into a JSON file.
@@ -130,9 +143,10 @@ class RegexMapper(DatasetMapperPlugin):
             path_index = 0  # Path Parts index
 
             # Match subject
-            if len(path_parts) >= 1 and regex_compiled["subject"].match(path_parts[path_index]):
-                subject = path_parts[path_index]
-                path_index += 1
+            matched_subject, new_path_index = self._match_path_parts(regex_compiled["subject"], path_parts, path_index)
+            if matched_subject:
+                subject = matched_subject
+                path_index = new_path_index
             else:
                 logger.info(f"Skipping '{file_path}': as it does not match 'subject' pattern '{regex_compiled['subject'].pattern}'.")
                 continue
@@ -147,13 +161,10 @@ class RegexMapper(DatasetMapperPlugin):
             
             # Match Session if regex is provided
             if regex_compiled["session"] is not None: 
-                # Match the Second Directory
-                if path_index >= len(path_parts) - 1: # Excluding the end File
-                    logger.error(f"Skipping '{file_path}': insufficient path parts for 'session' matching.")
-                    continue
-                if regex_compiled["session"].match(path_parts[path_index]):
-                    session = path_parts[path_index]
-                    path_index += 1
+                matched_session, new_path_index = self._match_path_parts(regex_compiled["session"], path_parts, path_index)
+                if matched_session:
+                    session = matched_session
+                    path_index = new_path_index
                 else:
                     logger.info(f"Skipping '{file_path}': as it does not match 'session' pattern {regex_compiled['session'].pattern}.")
                     continue
@@ -164,13 +175,10 @@ class RegexMapper(DatasetMapperPlugin):
             
             # Match Type if regex is provided
             if regex_compiled["type"] is not None:
-                if path_index >= len(path_parts) - 1: # Excluding the end File
-                    logger.error(f"Skipping '{file_path}': insufficient path parts for 'type' matching.")
-                    continue
-                # Match the Second or Third Directory
-                if regex_compiled["type"].match(path_parts[path_index]):
-                    type_ = path_parts[path_index]
-                    path_index += 1
+                matched_type, new_path_index = self._match_path_parts(regex_compiled["type"], path_parts, path_index)
+                if matched_type:
+                    type_ = matched_type
+                    path_index = new_path_index
                 else:
                     logger.info(f"Skipping '{file_path}': as it does not match 'type' pattern {regex_compiled['type'].pattern}.")
                     continue
@@ -178,22 +186,30 @@ class RegexMapper(DatasetMapperPlugin):
                 logger.debug(f"Regex pattern for type is empty - type = '' ")
                 type_ = ""     
             
+            # Ensure path_index is within bounds before accessing file_name
+            if path_index >= len(path_parts):
+                logger.error(f"Skipping '{file_path}': insufficient path parts for 'modality' matching.")
+                continue
 
             # Match modalities
             image_matched = False
-            file_name = path_parts[path_index]
+            rem_path_file_name = '/'.join(path_parts[path_index:])
+            
+            
             for modality, modality_pattern in regex_compiled["modality"].items():
                 
-                if modality_pattern.match(file_name):
+                matched_rem_path, _ = self._match_path_parts(modality_pattern, path_parts, path_index)
+                
+                if matched_rem_path:
                     
-                    #grouped[subject][session][type_][modality].append(str(file_name))
+                    #grouped[subject][session][type_][modality].append(str(rem_path_file_name))
                     grouped[subject][session][type_][modality].append(str(file_path))
 
                     image_matched = True
                     logger.debug(f"Matched modality '{modality}' for file '{file_path}'.")
                     
                     # Verifying if the combination of subject/session and pathParts[-1] rebuilds the path
-                    if os.path.join(subject, session, type_, file_name) != file_path:
+                    if os.path.join(subject, session, type_, rem_path_file_name) != file_path:
                         logger.error(f"Invalid Grouping/Mapping of MRI for Subject='{subject}', Session='{session}', Modality='{modality}', FilePath={file_path}")
                     break # Stop after matching the first modality
                     
