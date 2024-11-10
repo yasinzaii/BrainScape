@@ -1,20 +1,20 @@
 {
     "info": "Dataset Specific Settings",
-    "isDownloaded": true,
+    "isDownloaded": false,
     "isDatasetJsonCreated": false,
-    "isPreprocessed": true,
+    "isPreprocessed": false,
     "includeDataset": true,
     "download": {
         "isDownloadable": true,
         "plugin": "OpenNeuroDownloader",
         "profile": "",
-        "source": "s3://openneuro.org/ds005503",
+        "source": "s3://openneuro.org/ds005604",
         "include": [
             "CHANGES",
-            "README",
             "dataset_description.json",
-            "participants.tsv",
-            "sub-*/ses-*/anat/*"
+            "scans.json",
+            "sub-*/ses-*/anat/*",
+            "sub-*/ses-*/*.tsv"
         ]
     },
     "mapping": {
@@ -24,7 +24,8 @@
             "session": "^ses-.*$",
             "type": "^anat",
             "modality": {
-                "t1w": "^.*T1w.nii$"
+                "t1w": "^.*T1w.nii.gz$",
+                "t2w": "^.*T2w.nii.gz$"
             }
         },
         "excludeSub": []

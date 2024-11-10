@@ -1,19 +1,21 @@
 {
     "info": "Dataset Specific Settings",
-    "isDownloaded": true,
+    "isDownloaded": false,
     "isDatasetJsonCreated": false,
-    "isPreprocessed": true,
+    "isPreprocessed": false,
     "includeDataset": true,
     "download": {
         "isDownloadable": true,
         "plugin": "OpenNeuroDownloader",
         "profile": "",
-        "source": "s3://openneuro.org/ds005503",
+        "source": "s3://openneuro.org/ds003798",
         "include": [
             "CHANGES",
             "README",
             "dataset_description.json",
-            "participants.tsv",
+            "Conte_data_dictionary.csv",
+            "behData.csv",
+            "fmriprep_output_manual_QA.csv",
             "sub-*/ses-*/anat/*"
         ]
     },
@@ -22,9 +24,10 @@
         "regex": {
             "subject": "^sub-.*$",
             "session": "^ses-.*$",
-            "type": "^anat",
+            "type": "^anat$",
             "modality": {
-                "t1w": "^.*T1w.nii$"
+                "t1w": "^.*T1w.nii.gz$",
+                "t2w": "^.*T2w.nii.gz$"
             }
         },
         "excludeSub": []
