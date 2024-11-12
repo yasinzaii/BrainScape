@@ -151,11 +151,11 @@ class NiftiValidator(Validator):
         self.check_units(hdr)
         self.check_qfac(hdr)
         #self.check_affine(nii_img)
-        self.check_data_range(nii_img)
+        self.check_data_range(nii_img, file_path)
         self.check_sform_qform_codes(hdr)
         self.check_intent_codes(hdr)
-        self.check_empty_data(nii_img)
-        self.check_data_mean_range(nii_img)
+        self.check_empty_data(nii_img, file_path)
+        self.check_data_mean_range(nii_img, file_path)
         #self.check_image_orientation(hdr)
         # Add more checks as needed
         
@@ -240,9 +240,15 @@ class NiftiValidator(Validator):
 
 
 
-    def check_data_range(self, nii_img):
+    def check_data_range(self, nii_img, file_path):
         """Check that the data values are within expected ranges."""
-        data = nii_img.get_fdata()
+        try:
+            data = nii_img.get_fdata()
+        except Exception as e:
+            error_string = f"Error reading NIfTI data, Dataset:{self.dataset_path}, file: {file_path}: {e}"
+            self.main_logger.error(error_string)
+            self.errors.append(error_string)
+            
         data_min = np.min(data)
         data_max = np.max(data)
         expected_min = self.expected_values.get('data_min')
@@ -277,16 +283,28 @@ class NiftiValidator(Validator):
             self.errors.append(f"intent_code mismatch: Expected {expected_intent_code}, got {intent_code}")
 
 
-    def check_empty_data(self, nii_img):
+    def check_empty_data(self, nii_img, file_path):
         """Check if the image data is empty or contains only zeros."""
-        data = nii_img.get_fdata()
+        try:
+            data = nii_img.get_fdata()
+        except Exception as e:
+            error_string = f"Error reading NIfTI data, Dataset:{self.dataset_path}, file: {file_path}: {e}"
+            self.main_logger.error(error_string)
+            self.errors.append(error_string)
+            
         if not np.any(data):
             self.errors.append("Image data is empty or contains only zeros.")
 
     
-    def check_data_mean_range(self, nii_img):
+    def check_data_mean_range(self, nii_img, file_path):
         """Check that the data mean is within expected ranges."""
-        data = nii_img.get_fdata()
+        try:
+            data = nii_img.get_fdata()
+        except Exception as e:
+            error_string = f"Error reading NIfTI data, Dataset:{self.dataset_path}, file: {file_path}: {e}"
+            self.main_logger.error(error_string)
+            self.errors.append(error_string)
+            
         data_mean = np.mean(data)
         expected_mean_min = self.expected_values.get('data_mean_min')
         expected_mean_max = self.expected_values.get('data_mean_max')
