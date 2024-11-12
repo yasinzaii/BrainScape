@@ -1,0 +1,32 @@
+{
+    "info": "Dataset Specific Settings",
+    "isDownloaded": true,
+    "isDatasetJsonCreated": false,
+    "isPreprocessed": true,
+    "includeDataset": true,
+    "download": {
+        "isDownloadable": true,
+        "plugin": "OpenNeuroDownloader",
+        "profile": "HCP",
+        "source": "s3://hcp-openaccess/HCP_1200/",
+        "verifyFiles": false,
+        "include": [
+            "*/unprocessed/3T/T1w_MPR1/*T1w_MPR1*",
+            "*/unprocessed/3T/T2w_SPC1/*T2w_SPC1*",
+            "*/unprocessed/3T/*.csv"
+        ]
+    },
+    "mapping": {
+        "plugin": "RegexMapper",
+        "regex": {
+            "subject": "^.*$",
+            "session": "^unprocessed$",
+            "type": "^3T$",
+            "modality": {
+                "t1w": "^.*T1w_MPR1/.*T1w_MPR1.nii.gz$",
+                "t2w": "^.*T2w_SPC1/.*T2w_SPC1.nii.gz$"
+            }
+        },
+        "excludeSub": []
+    }
+}

@@ -10,3 +10,5 @@ logs/*.log
 **/__pycache__
 TODO.txt
 *.ini
+*.zip
+*_backup/

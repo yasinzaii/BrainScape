@@ -1,0 +1,31 @@
+{
+    "info": "Dataset Specific Settings",
+    "isDownloaded": true,
+    "isDatasetJsonCreated": false,
+    "isPreprocessed": false,
+    "includeDataset": true,
+    "download": {
+        "isDownloadable": true,
+        "plugin": "OpenNeuroDownloader",
+        "profile": "",
+        "source": "s3://openneuro.org/ds003148",
+        "include": [
+            "CHANGES",
+            "README",
+            "dataset_description.json",
+            "sub-*/anat/*"
+        ]
+    },
+    "mapping": {
+        "plugin": "RegexMapper",
+        "regex": {
+            "subject": "^sub-.*$",
+            "session": "",
+            "type": "^anat$",
+            "modality": {
+                "t1w": "^.*T1w.nii.gz$"
+            }
+        },
+        "excludeSub": []
+    }
+}
