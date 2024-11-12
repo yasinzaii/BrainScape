@@ -248,6 +248,8 @@ class NiftiValidator(Validator):
             error_string = f"Error reading NIfTI data, Dataset:{self.dataset_path}, file: {file_path}: {e}"
             self.main_logger.error(error_string)
             self.errors.append(error_string)
+            return
+            
             
         data_min = np.min(data)
         data_max = np.max(data)
@@ -291,6 +293,7 @@ class NiftiValidator(Validator):
             error_string = f"Error reading NIfTI data, Dataset:{self.dataset_path}, file: {file_path}: {e}"
             self.main_logger.error(error_string)
             self.errors.append(error_string)
+            return
             
         if not np.any(data):
             self.errors.append("Image data is empty or contains only zeros.")
@@ -304,6 +307,7 @@ class NiftiValidator(Validator):
             error_string = f"Error reading NIfTI data, Dataset:{self.dataset_path}, file: {file_path}: {e}"
             self.main_logger.error(error_string)
             self.errors.append(error_string)
+            return
             
         data_mean = np.mean(data)
         expected_mean_min = self.expected_values.get('data_mean_min')
