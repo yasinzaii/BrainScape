@@ -12,7 +12,21 @@ from brainles_preprocessing.registration import ANTsRegistrator
 
 
 class BratsPreprocessor(PreprocessorPlugin):
+    """
+    Preprocessing pipeline similar to that of the BRATS dataset.
+
+    Preprocessing steps include:
+        1. Co-registration: Align moving modalities to the central modality (e.g., T1w if available).
+        2. Atlas Registration: Align the central modality to a predefined atlas.
+        3. Atlas Correction: Apply additional corrections in atlas space if specified.
+        4. Brain Extraction: Extract the brain from the downloaded MRI.
+        5. Normalization: Normalize image intensities.
+
+    NOTE: Some downloaded MRIs have already undergone brain extraction.
+          Brain extraction will be skipped for those datasets.
+    """
     
+
     # Class-specific plugin name
     plugin_name = "brats"
 
@@ -39,6 +53,9 @@ class BratsPreprocessor(PreprocessorPlugin):
         # Preprocessor settings 
         self.brats_config = self.dataset_settings["preprocess"].get("brats", {})
         
+        # Settings for skipping brain extraction. 
+        self.skip_brain_extraction = self.brats_config.get("skipBrainExtraction", "False")
+        
 
     def run(self) -> bool:
         
@@ -61,6 +78,9 @@ class BratsPreprocessor(PreprocessorPlugin):
             # Specify Intermediate output directories
             entry_out_dir = self.output_dir / f"{entry['subject']}.{entry['session']}.{entry['type']}.{entry['group']}"
             #raw_bet = entry_out_dir / "raw_bet"  # Raw Brain Extracted MRI
+            
+            # Note: Same file name is used for Dataset which skips brain extaction.
+            # TODO: This should be improved.
             norm_bet = entry_out_dir / "norm_bet"  # Nomalized Brain Extracted MRI
             #raw_skull = entry_out_dir / "raw_skull"  # Raw with Skull MRI
             #norm_skull = entry_out_dir / "norm_skull" # Normalized with Skull MRI
@@ -76,22 +96,36 @@ class BratsPreprocessor(PreprocessorPlugin):
             )
             
 
-            
-            
             # Center + Other Modalities
             center_modality = None
             moving_modalities = []
             for mod_name in modalities:
-                mod_obj = Modality(
-                    modality_name=mod_name,
-                    input_path=self.download_dir / entry['download'][mod_name],
-                    #raw_bet_output_path=raw_bet / f"{entry['mris'][mod_name].split('.')[0]}_raw_bet_{mod_name}.nii.gz",
-                    normalized_bet_output_path=norm_bet / f"{entry['mris'][mod_name].split('.')[0]}_norm_bet_{mod_name}.nii.gz",
-                    #raw_skull_output_path= raw_skull / f"{entry['mris'][mod_name].split('.')[0]}_raw_skull_{mod_name}.nii.gz",
-                    #normalized_skull_output_path=norm_skull / f"{entry['mris'][mod_name].split('.')[0]}_norm_skull_{mod_name}.nii.gz",
-                    atlas_correction=True,
-                    normalizer=percentile_normalizer,
-                )
+                
+                if self.skip_brain_extraction:
+                    
+                    mod_obj = Modality(
+                        modality_name=mod_name,
+                        input_path=self.download_dir / entry['download'][mod_name],
+                        # Still Saving in norm_bet folder as already skull stripped
+                        normalized_skull_output_path= norm_bet / f"{entry['mris'][mod_name].split('.')[0]}_raw_skull_{mod_name}.nii.gz",
+                        atlas_correction=True,
+                        normalizer=percentile_normalizer,
+                    )
+                
+                else:
+                    mod_obj = Modality(
+                        modality_name=mod_name,
+                        input_path=self.download_dir / entry['download'][mod_name],
+                        #raw_bet_output_path=raw_bet / f"{entry['mris'][mod_name].split('.')[0]}_raw_bet_{mod_name}.nii.gz",
+                        normalized_bet_output_path=norm_bet / f"{entry['mris'][mod_name].split('.')[0]}_norm_bet_{mod_name}.nii.gz",
+                        #raw_skull_output_path= raw_skull / f"{entry['mris'][mod_name].split('.')[0]}_raw_skull_{mod_name}.nii.gz",
+                        #normalized_skull_output_path=norm_skull / f"{entry['mris'][mod_name].split('.')[0]}_norm_skull_{mod_name}.nii.gz",
+                        atlas_correction=True,
+                        normalizer=percentile_normalizer,
+                    )
+                
+                
+                
                 if mod_obj.modality_name == center_mod_name:
                     center_modality = mod_obj
                 else:
@@ -99,12 +133,16 @@ class BratsPreprocessor(PreprocessorPlugin):
                     
                 all_modalities = moving_modalities + [center_modality]
             
+            
+            # Passing brain extractor as None If Skipping Required
+            brain_extractor = None if self.skip_brain_extraction else HDBetExtractor()
+            
             # Preprocessor Object
             preprocessor = Preprocessor(
                 center_modality=center_modality,
                 moving_modalities=moving_modalities,
                 registrator=ANTsRegistrator(),
-                brain_extractor=HDBetExtractor(),
+                brain_extractor=brain_extractor,
                 temp_folder=temp_dir,
                 limit_cuda_visible_devices="0",
             )

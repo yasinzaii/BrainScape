@@ -1,5 +1,7 @@
 # src/preprocess/preprocessor/base_plugin.py
 
+import logging
+
 from pathlib import Path
 from abc import ABC, abstractmethod
 
@@ -25,6 +27,9 @@ class PreprocessorPlugin(ABC):
             config (dict): Configurations
 
         """
+        
+        logger = logging.getLogger(__name__)
+        
         self.dataset_settings = dataset_settings
         self.dataset_path = dataset_path
         self.mapping = mapping
@@ -38,9 +43,9 @@ class PreprocessorPlugin(ABC):
         if self.preprocessor_log_file.exists():
             try:
                 self.preprocessor_log_file.unlink()
-                self.logger.info(f"Deleted existing log file: {self.preprocessor_log_file}")
+                logger.info(f"Deleted existing log file: {self.preprocessor_log_file}")
             except Exception as e:
-                self.logger.error(f"Failed to delete log file: {e}")
+                logger.error(f"Failed to delete log file: {e}")
                 
         self.preprocessor_logger = configure_session_logging(
             session_log_file=self.preprocessor_log_file,
@@ -48,7 +53,7 @@ class PreprocessorPlugin(ABC):
             logger_name=f'preprocess.{self.dataset_path.name}',
         )
         
-        
+ 
         
 
     @abstractmethod

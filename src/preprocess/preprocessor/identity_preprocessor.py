@@ -63,8 +63,9 @@ class IdentityPreprocessor(PreprocessorPlugin):
                 # Preprocessed Image Path Structure - Intermediate Structure - Same as BRATS Plugin.
                 out_inter_path = f"{entry['subject']}.{entry['session']}.{entry['type']}.{entry['group']}"
                 
+                # TODO Move out 'norm_bet' from here.
                 # Absolute path in the preprocessed directory
-                preprocessed_file_path = self.preprocess_dir / out_inter_path / mod_image_name
+                preprocessed_file_path = self.preprocess_dir / out_inter_path / 'norm_bet' / mod_image_name
 
                 # Ensure the destination directory exists
                 preprocessed_file_path.parent.mkdir(parents=True, exist_ok=True)
