@@ -2,7 +2,7 @@
     "info": "Dataset Specific Settings",
     "isDownloaded": true,
     "isDatasetJsonCreated": false,
-    "isPreprocessed": false,
+    "isPreprocessed": true,
     "includeDataset": true,
     "download": {
         "isDownloadable": true,
@@ -25,7 +25,7 @@
             "session": "^ses-.*$",
             "type": "^anat$",
             "modality": {
-                "t1w": "^.*T1w.nii.gz$"
+                "t1w": "^.*T1w.nii$"
             }
         },
         "excludeSub": []

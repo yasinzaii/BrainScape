@@ -1,0 +1,29 @@
+{
+    "info": "Dataset Specific Settings",
+    "isDownloaded": false,
+    "isDatasetJsonCreated": false,
+    "isPreprocessed": false,
+    "includeDataset": true,
+    "download": {
+        "isDownloadable": true,
+        "plugin": "OpenBHBDownloader",
+        "urls": [
+            {
+                "url": "https://ieee-dataport.s3.amazonaws.com/open/99787/missing_data.zip?response-content-disposition=attachment%3B%20filename%3D%22missing_data.zip%22&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJOHYI4KJCE6Q7MIQ%2F20241107%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241107T031711Z&X-Amz-SignedHeaders=Host&X-Amz-Expires=3600&X-Amz-Signature=1435bebfd48a514eb0067abe5fed5a20d4dd02de1789a68cbac12b54bd4893a4",
+                "name": "data-with-missing-labels.zip"
+            }
+        ]
+    },
+    "mapping": {
+        "plugin": "RegexMapper",
+        "regex": {
+            "subject": "^sub-.*$",
+            "session": "",
+            "type": "^anat",
+            "modality": {
+                "t1w": "^.*T1w.nii.gz$"
+            }
+        },
+        "excludeSub": []
+    }
+}

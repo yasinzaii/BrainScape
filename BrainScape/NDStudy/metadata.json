@@ -4,18 +4,16 @@
     "isDatasetJsonCreated": false,
     "isPreprocessed": true,
     "includeDataset": true,
-    
     "download": {
         "isDownloadable": true,
         "plugin": "OpenNeuroDownloader",
         "profile": "",
-        "source": "s3://openneuro.org/ds003849",
+        "source": "s3://openneuro.org/ds003764",
         "include": [
             "CHANGES",
             "README",
             "dataset_description.json",
-            "sub-*/anat/*",
-            "sub-*/*.tsv"
+            "sub-*/ses-*/anat/*"
         ]
     },
     "mapping": {
@@ -25,8 +23,7 @@
             "session": "^ses-.*$",
             "type": "^anat",
             "modality": {
-                "t1w": "^.*T1w.nii.gz$",
-                "t2w": "^.*T2w.nii.gz$"
+                "t1w": "^.*T1w.nii$"
             }
         },
         "excludeSub": []

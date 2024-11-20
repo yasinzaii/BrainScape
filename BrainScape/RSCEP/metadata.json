@@ -2,7 +2,7 @@
     "info": "Dataset Specific Settings",
     "isDownloaded": true,
     "isDatasetJsonCreated": false,
-    "isPreprocessed": false,
+    "isPreprocessed": true,
     "includeDataset": true,
     "download": {
         "isDownloadable": true,
@@ -22,12 +22,27 @@
         "plugin": "RegexMapper",
         "regex": {
             "subject": "^sub-.*$",
-            "session": "^ses-.*$",
+            "session": "",
             "type": "^anat$",
             "modality": {
                 "t1w": "^.*T1w.nii.gz$"
             }
         },
         "excludeSub": []
+    },
+    "alreadyPreprocessed": true,
+    "preprocess": {
+        "preprocessor": "brats",
+        "preprocessDirName": "preprocessed",
+        "brats": {
+            "tempDirName": "temp",
+            "skipBrainExtraction": true,
+            "modPriority": [
+                "t1w",
+                "t2w",
+                "t1ce",
+                "flair"
+            ]
+        }
     }
 }

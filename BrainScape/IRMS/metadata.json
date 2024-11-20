@@ -1,6 +1,6 @@
 {
     "info": "Dataset Specific Settings",
-    "isDownloaded": false,
+    "isDownloaded": true,
     "isDatasetJsonCreated": false,
     "isPreprocessed": false,
     "includeDataset": true,

@@ -1,9 +1,10 @@
 {
     "info": "Default Dataset Settings", 
-    "isDownloadable": true, 
-    "includeDataset": true,
-    "downloadDirName": "Download",
     
+    "includeDataset": true,
+    "alreadyPreprocessed": false,
+    
+    "downloadDirName": "Download",
     
     "preprocess": {
         "preprocessor": "brats",
@@ -11,10 +12,6 @@
         "brats": {
             "tempDirName": "temp",
             "modPriority": ["t1w", "t2w", "t1ce", "flair"]
-
-
-
         }
-        
     }
 }

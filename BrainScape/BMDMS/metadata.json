@@ -1,8 +1,8 @@
 {
     "info": "Dataset Specific Settings",
-    "isDownloaded": false,
+    "isDownloaded": true,
     "isDatasetJsonCreated": false,
-    "isPreprocessed": false,
+    "isPreprocessed": true,
     "includeDataset": true,
     "download": {
         "isDownloadable": true,
@@ -25,6 +25,20 @@
                 "t1w": "^.*T1w.nii$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-36",
+            "sub-37",
+            "sub-38",
+            "sub-39",
+            "sub-40",
+            "sub-41",
+            "sub-45",
+            "sub-46",
+            "sub-49",
+            "sub-50",
+            "sub-53",
+            "sub-54",
+            "sub-103"
+        ]
     }
 }
