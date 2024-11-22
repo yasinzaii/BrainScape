@@ -3,6 +3,7 @@
 import os
 import re
 import logging
+import fnmatch
 import subprocess
 from pathlib import Path
 from collections import defaultdict
@@ -151,11 +152,11 @@ class RegexMapper(DatasetMapperPlugin):
                 logger.info(f"Skipping '{file_path}': as it does not match 'subject' pattern '{regex_compiled['subject'].pattern}'.")
                 continue
 
-            # Check includeSub and excludeSub
-            if include_subs and subject not in include_subs:
+            # Check includeSub and excludeSub - Supports simple wildcard matching
+            if include_subs and not any(fnmatch.fnmatch(subject, pattern) for pattern in include_subs):
                 logger.info(f"Subject '{subject}' not in includeSub list; Skipping.")
                 continue
-            if exclude_subs and subject in exclude_subs:
+            if exclude_subs and any(fnmatch.fnmatch(subject, pattern) for pattern in exclude_subs):
                 logger.info(f"Subject '{subject}' in excludeSub list; Skipping.")
                 continue
             
