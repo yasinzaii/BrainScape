@@ -1,5 +1,7 @@
 #src/prepare_dataset.py
 
+from pathlib import Path
+
 from utils.args_parser import get_parser
 from omegaconf import OmegaConf
 from utils.logging_setup import configure_logging
@@ -15,6 +17,8 @@ from validate.validate_manager import ValidateManager
 from visualizer import VisualizerManager
 
 from utils.common_utils import get_subdirectories
+
+from utils.common_utils import merge_settings
 
 
 def prepare_dataset():
@@ -53,15 +57,35 @@ def prepare_dataset():
     else:
         target_datasets =  all_datasets   
     
-    # Logging Target Datasets.
-    logger.info(f"Target Datasets: {target_datasets}")
     
-
+    
     # Getting the Default Settings for all Datasets
     default_dataset_settings = JsonHandler(config.pathDefaults).get_data()
     if not default_dataset_settings:
         logger.error("Unable to load Default Settings. Exiting!")
-        return()    
+        return()   
+    
+    
+    # Checking includeDataset flag in Dataset Settings.
+    # Removing dataset with includeDataset set to False.
+    screened_target_datasets = list(target_datasets)
+    for dataset_name in target_datasets:
+        # Merging Default Settings With Dataset Settigs.
+        dataset_path = Path(config.pathDataset) / dataset_name
+        dataset_settings = JsonHandler(dataset_path / config.datasetSettingsJson)
+        final_settings = merge_settings(
+            defaults=default_dataset_settings,
+            overrides=dataset_settings.get_data()
+        )
+        if not final_settings["includeDataset"]:
+            logger.info(f"includeDataset flag is not set for {dataset_name} Dataset")
+            logger.warning(f"Removing Dataset:{dataset_name} from target datasets list")
+            screened_target_datasets.remove(dataset_name)
+    target_datasets = screened_target_datasets
+        
+    # Logging Target Datasets.
+    logger.info(f"Target Datasets: {target_datasets}")
+     
     
     # Dowloading Datasets via "download" Module.
     download_man = DownloadManager(config=config, 
