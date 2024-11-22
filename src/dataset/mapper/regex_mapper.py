@@ -126,7 +126,12 @@ class RegexMapper(DatasetMapperPlugin):
         # Get includeSub and excludeSub lists
         include_subs = self.dataset_settings["mapping"].get("includeSub", [])
         exclude_subs = self.dataset_settings["mapping"].get("excludeSub", [])
-
+        
+        # Get Flag for mapFirstGroupOnly for only mapping a single copy of Modality if there are multiple MRIs of same modality inside (sub/ses/type) dir
+        map_first_group_only = self.dataset_settings["mapping"].get("mapFirstGroupOnly", False)  # Defaults to False.
+        if map_first_group_only:
+            logger.warning(f"RegexMapper - 'mapFirstGroupOnly' is set for Dataset:{dataset_name}, will only Map Firs Group (Group Index == 0).")
+        
         # Initialize nested defaultdict
         # Subject -> Sessions -> Type -> Images (T1W, T2W, FLAR) -> list of image files.
         grouped = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: defaultdict(list))))
@@ -258,9 +263,19 @@ class RegexMapper(DatasetMapperPlugin):
                                 entry['mris'][modality] = Path(modality_list[group_indx]).name
                                 entry_flag = True 
                         
+                        
+                        # Check if mapFirstGroupOnly is Set. Will have to skip adding the group into Mapping.
+                        if map_first_group_only and entry_flag and group_indx > 0:
+                            logger.warning(f"RegexMapper - Skipping Group:{group_indx}, sub:{entry['subject']}, ses:{entry['session']}, type:{entry['type']}, MRIs:{entry['mris']}")
+                            continue
+                            
+                            
                         # Appending The Entry to the Dataset Mapping
                         if entry_flag:
                             dataset_mapping.append(entry)
+
+                            
+
                         
         logger.info(f"RegexMapper - Completed creating dataset JSON for {dataset_name} Dataset.")
         return dataset_mapping
