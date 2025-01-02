@@ -1,0 +1,24 @@
+note: "Note: This README file is Auto Generated."
+
+title: Lausanne_TOF-MRA_Aneurysm_Cohort
+
+description: |
+  This dataset was obtained from the Lausanne University Hospital (CHUV). Accession #: ds-aneurysms-lausanne Description: This dataset set is composed of 284 TOF-MRA subjects, of which 127 are healthy controls and 157 are patients with brain aneurysm(s).
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{di2023towards,
+    title={Towards automated brain aneurysm detection in TOF-MRA: open data, weak labels, and anatomical knowledge},
+    author={Di Noto, Tommaso and Marie, Guillaume and Tourbier, Sebastien and Alem{\'a}n-G{\'o}mez, Yasser and Esteban, Oscar and Saliou, Guillaume and Cuadra, Meritxell Bach and Hagmann, Patric and Richiardi, Jonas},
+    journal={Neuroinformatics},
+    volume={21},
+    number={1},
+    pages={21--34},
+    year={2023},
+    publisher={Springer}
+  }
+
+download: https://openneuro.org/datasets/ds003949/versions/1.0.1

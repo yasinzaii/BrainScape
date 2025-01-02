@@ -1,0 +1,27 @@
+note: "Note: This README file is Auto Generated."
+
+title: Magic, Memory, and Curiosity (MMC) fMRI Dataset
+
+description: |
+  
+  * The Magic, Memory, Curiosity (MMC) dataset contains data from 50 healthy human adults incidentally encoding 36 videos of magic tricks inside the MRI scanner across three runs.
+  * Before and after incidental learning, a 10-min resting-state scan was acquired.
+  * The MMC dataset includes contextual incentive manipulation, curiosity ratings for the magic tricks, as well as incidental memory performance tested a week later using a surprise cued recall and recognition test .
+  * Working memory and constructs potentially relevant in the context of motivated learning (e.g., need for cognition, fear of failure) were additionally assessed.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{ozono2021magic,
+    title={Magic Curiosity Arousing Tricks (MagicCATs): A novel stimulus collection to induce epistemic emotions},
+    author={Ozono, Hiroki and Komiya, Asuka and Kuratomi, Kei and Hatano, Aya and Fastrich, Greta and Raw, Jasmine April Louise and Haffey, Anthony and Meliss, Stefanie and Lau, Johnny King L and Murayama, Kou},
+    journal={Behavior Research Methods},
+    volume={53},
+    pages={188--215},
+    year={2021},
+    publisher={Springer}
+  }
+
+download: https://openneuro.org/datasets/ds004182/versions/1.0.1

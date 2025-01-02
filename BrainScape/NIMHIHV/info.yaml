@@ -1,0 +1,44 @@
+note: "Note: This README file is Auto Generated."
+
+title: The NIMH intramural healthy volunteer dataset
+
+description: |
+  Note: The Mapping Creates 2 Groups for some of the Subjects. 
+
+  The Second Group Just has an extra flair image. 
+
+  Note: Regex Mapper divides Data based on 
+  Sub -> Ses -> Type Which usually have their own directories. 
+
+  Then if there are 2 or more MRI of a modality falling in the same directory they are divided into group. 
+
+
+  For this particular dataset I want to ignore the second group.
+
+
+  This setting:
+
+  "mapFirstGroupOnly": true,
+
+  will only MAP first Group with group index 0. 
+
+
+  The remaining groups will be ignored.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{nugent2022nimh,
+    title={The NIMH intramural healthy volunteer dataset: A comprehensive MEG, MRI, and behavioral resource},
+    author={Nugent, Allison C and Thomas, Adam G and Mahoney, Margaret and Gibbons, Alison and Smith, Jarrod T and Charles, Antoinette J and Shaw, Jacob S and Stout, Jeffrey D and Namyst, Anna M and Basavaraj, Arshitha and others},
+    journal={Scientific Data},
+    volume={9},
+    number={1},
+    pages={518},
+    year={2022},
+    publisher={Nature Publishing Group UK London}
+  }
+
+download: https://openneuro.org/datasets/ds004215

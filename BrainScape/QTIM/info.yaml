@@ -1,0 +1,25 @@
+note: "Note: This README file is Auto Generated."
+
+title: Queensland Twin IMaging (QTIM)
+
+description: |
+  We present the Queensland Twin IMaging (QTIM) dataset: a multimodal neuroimaging dataset of young adult twins and siblings (18-30 years, N = 1026), including a subsample of participants, scanned a second time to assess test-retest reliability (N = 78, test-retest interval ~ 3.5 months). The QTAB dataset additionally includes adolescent twins scanned at age 12 (N = 88) or 16 (N = 88) years. Approximately a third of these 12- and 16-year-old participants were scanned four years later as part of a longitudinal pilot study (scanned at 12 and 16 years N = 24, scanned at 16 and 20 years N = 38).
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{strike2023queensland,
+    title={The Queensland Twin Adolescent Brain Project, a longitudinal study of adolescent brain development},
+    author={Strike, Lachlan T and Hansell, Narelle K and Chuang, Kai-Hsiang and Miller, Jessica L and de Zubicaray, Greig I and Thompson, Paul M and McMahon, Katie L and Wright, Margaret J},
+    journal={Scientific Data},
+    volume={10},
+    number={1},
+    pages={195},
+    year={2023},
+    publisher={Nature Publishing Group UK London}
+  }
+
+
+download: https://openneuro.org/datasets/ds004169/versions/1.0.7

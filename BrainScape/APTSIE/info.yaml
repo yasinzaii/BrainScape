@@ -1,0 +1,28 @@
+note: "Note: This README file is Auto Generated."
+
+title: "Agreeableness personality trait and social information encoding"
+  
+description: |
+  This dataset contains the fMRI data used for the study: "Representation of social content in dorsomedial prefrontal cortex underlies individual differences in agreeableness trait", Arbula S., Pisanu E., Rumiati I. R., Unpublished
+
+  Fifty-five participants were presented with short animations representing different shapes that moved randomly or interacted in a socially meaningful way. Each animations lasted 20 s. During each of the 4 runs 5 different animations were presented interleaved with 15 s long fixation blocks. After each animation, participants had to indicate by pressing a key if according to them the shapes were moving randomly or interacted as if they were taking into consideration each other feelings and thoughts. A third key could be pressed if they were not sure about the type of interaction. Each run consisted of 2 or 3 videos of each condition. One social and one random video were presented prior to scanning for practice and were not reused during the testing phase.
+
+  Data from 6 participants were classified as outliers based on the following quality metrics: AFNI's outlier ratio and quality index, intensity changes (DVARS) and frame-wise displacement (FD). A full report of image quality metrics is available in derivatives.
+
+usage_agreement: ""
+
+
+license: "CC0"
+
+citation: |
+  @article{arbula2021representation,
+    title={Representation of social content in dorsomedial prefrontal cortex underlies individual differences in agreeableness trait},
+    author={Arbula, Sandra and Pisanu, Elisabetta and Rumiati, Raffaella I},
+    journal={NeuroImage},
+    volume={235},
+    pages={118049},
+    year={2021},
+    publisher={Elsevier}
+  }
+
+download: "https://openneuro.org/datasets/ds003436/versions/1.0.0"

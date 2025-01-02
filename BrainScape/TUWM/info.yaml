@@ -1,0 +1,25 @@
+note: "Note: This README file is Auto Generated."
+
+title: Tidying Up White Matter: Neuroplastic Transformations in Sensorimotor Tracts following Slackline Skill Acquisition
+
+description: |
+  This longitudinal intervention study investigated the influence of a 2-3 weeks slackline training on white-matter plasticity. 60 subjects were randomly assigned to either the slackline-intervention (SG) group or to a control group (CG). For each participant, we acquired MR-data of 3 time points, including a high-resolution T1 and a multi-shell diffusion dataset (including reverse phase encoding direction). For the SG, the measurement took place for the training (TP1) directly after the 2-3 weeks intervention (TP2) and the 3 weeks afterwards (TP3). Participants in the CG were investigated following the same time table.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{koschutnig2024tidying,
+    title={Tidying up white matter: Neuroplastic transformations in sensorimotor tracts following slackline skill acquisition},
+    author={Koschutnig, Karl and Weber, Bernhard and Fink, Andreas},
+    journal={Human Brain Mapping},
+    volume={45},
+    number={16},
+    pages={e26791},
+    year={2024},
+    publisher={Wiley Online Library}
+  }
+
+
+download: https://openneuro.org/datasets/ds003138/versions/1.0.1

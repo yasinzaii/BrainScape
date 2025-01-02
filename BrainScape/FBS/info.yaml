@@ -1,0 +1,27 @@
+note: "Note: This README file is Auto Generated."
+
+title: Food and Brain Study
+
+description: |
+  This dataset includes raw neuroimaging data from the Food and Brain Study Study (PI Keller) collected at The Pennsylvania State University's University Park campus in State College, PA. Data were collected between 2017 and 2022. Participants were 7-8 years old at enrollment. Protocol details can be found at https://osf.io/ynjqw/
+
+  MRI data were collected on the 6th (final) baseline visit of a 1-year longitudinal study. Scanning involved an MPRage, 6 functional runs (1 resting state* scan and 5 foodcue task scans), and field map. MPRage scans were defaced using pydeface.
+
+  * During the resting state scan, children watched an abstract video; see Vanderwal et al. 2015 (doi:10.1016/j.neuroimage.2015.07.069)
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{keller2023children,
+    title={Children with lower ratings of executive functions have a greater response to the portion size effect},
+    author={Keller, Kathleen L and Pearce, Alaina L and Fuchs, Bari and Hallisky, Kyle and Rolls, Barbara J and Wilson, Stephen J and Geier, Charles and Rose, Emma J},
+    journal={Appetite},
+    volume={186},
+    pages={106569},
+    year={2023},
+    publisher={Elsevier}
+  }
+
+download: https://openneuro.org/datasets/ds004697/versions/1.0.2

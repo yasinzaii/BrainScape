@@ -1,0 +1,25 @@
+note: "Note: This README file is Auto Generated."
+
+title: Queensland Twin Adolescent Brain (QTAB)
+
+description: |
+  We describe the Queensland Twin Adolescent Brain (QTAB) dataset and provide a detailed methodology and technical validation to facilitate data usage. The QTAB dataset comprises multimodal neuroimaging, as well as cognitive and mental health data collected in adolescent twins over two sessions (session 1: N = 422, age 9-14 years; session 2: N = 304, 10-16 years). The MRI protocol consisted of T1-weighted (MP2RAGE), T2-weighted, FLAIR, high-resolution TSE, SWI, resting-state fMRI, DWI, and ASL scans. Two fMRI tasks were added in session 2 to probe emotion-relevant neural processes (emotional conflict task) and evoke activity in the Theory of Mind network (passive movie watching task). Outside of the scanner, we assessed cognitive function using standardised tests, obtained self-reports of symptoms for anxiety and depression, perceived stress, sleepiness, as well as measures of pubertal development, peer relationships, early life factors, and family sociodemographic factors. We additionally collected several biological samples for genomic and metagenomic analysis. The QTAB project was established with the purpose of promoting the conduct of health-related research in adolescence.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{strike2023queensland,
+    title={The Queensland Twin Adolescent Brain Project, a longitudinal study of adolescent brain development},
+    author={Strike, Lachlan T and Hansell, Narelle K and Chuang, Kai-Hsiang and Miller, Jessica L and de Zubicaray, Greig I and Thompson, Paul M and McMahon, Katie L and Wright, Margaret J},
+    journal={Scientific Data},
+    volume={10},
+    number={1},
+    pages={195},
+    year={2023},
+    publisher={Nature Publishing Group UK London}
+  }
+
+
+download: https://openneuro.org/datasets/ds004146/versions/1.0.4

@@ -1,0 +1,24 @@
+note: "Note: This README file is Auto Generated."
+
+title: Movement-related artefacts (MR-ART) dataset
+
+description: |
+  Here we present MR-ART (Movement-Related ARTefacts), a dataset of T1-weighted 3D structural MRI images of heads of 148 healthy adults covering the adult lifespan. Images have been acquired while staying still and while slight and more excessive head motion (i.e. three sets of data for each participant). The 3D structural images are anonymized and organized according to the Brain Imaging Data Structure (BIDS). Facial information was removed using PyDeface. We also include the MRIQC report for each scan to provide general image quality metrics, which allows for more granular labelling. Finally, we provide artefact scores obtained from trained neuroradiologists for each scan to characterize the impact of the movement artefacts on the clinical use of the images.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{narai2022movement,
+    title={Movement-related artefacts (MR-ART) dataset of matched motion-corrupted and clean structural MRI brain scans},
+    author={N{\'a}rai, {\'A}d{\'a}m and Hermann, Petra and Auer, Tibor and Kemenczky, P{\'e}ter and Szalma, J{\'a}nos and Homolya, Istv{\'a}n and Somogyi, Eszter and Vakli, P{\'a}l and Weiss, B{\'e}la and Vidny{\'a}nszky, Zolt{\'a}n},
+    journal={Scientific data},
+    volume={9},
+    number={1},
+    pages={630},
+    year={2022},
+    publisher={Nature Publishing Group UK London}
+  }
+
+download: https://openneuro.org/datasets/ds004173/versions/1.0.2

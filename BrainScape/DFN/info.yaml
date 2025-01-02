@@ -1,0 +1,27 @@
+note: "Note: This README file is Auto Generated."
+
+title: "Differentiation of functional networks during long-term memory retrieval in children and adolescents"
+  
+description: |
+  fMRI data of long-term memory retrieval in children (aged 10-12), adolescents (aged 14-16), and young adults (aged 20-35 years).
+  
+  The paradigm is based on Burianová, H., Grady, CL. (2007). Common and unique neural activations in autobiographical, episodic, and semantic retrieval. Journal of Cognitive Neuroscience, 19(9), 1520-34. https://doi.org/10.1162/jocn.2007.19.9.1520
+
+
+usage_agreement: ""
+
+
+license: "CC0"
+
+citation: |
+  @article{fynes2019differentiation,
+    title={Differentiation of functional networks during long-term memory retrieval in children and adolescents},
+    author={Fynes-Clinton, Samuel and Marstaller, Lars and Burianov{\'a}, Hana},
+    journal={NeuroImage},
+    volume={191},
+    pages={93--103},
+    year={2019},
+    publisher={Elsevier}
+  }
+
+download: "https://openneuro.org/datasets/ds001748/versions/1.0.4"

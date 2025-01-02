@@ -1,0 +1,26 @@
+note: "Note: This README file is Auto Generated."
+
+title: Magnetoencephalographic (MEG) Pitch and Duration Mismatch Negativity (MMN) in First-Episode Psychosis
+
+description: |
+  Project Description: Oddball paradigm with standards, pitch deviants and duration deviants. Extended description at: https://doi.org/10.1111/ejn.16107
+
+  Participant categories: Healthy controls (HC), First-episode Schizophrenia (FESZ), First-episode Affective Psychosis (FEAFF) Further information about clinical, neuropsychological, demographic and medication data can be found in derivatives/participants.csv
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{lopez2024source,
+    title={Is source-resolved magnetoencephalographic mismatch negativity a viable biomarker for early psychosis?},
+    author={L{\'o}pez-Caballero, Fran and Curtis, Mark and Coffman, Brian A and Salisbury, Dean F},
+    journal={European Journal of Neuroscience},
+    volume={59},
+    number={8},
+    pages={1889--1906},
+    year={2024},
+    publisher={Wiley Online Library}
+  }
+
+download: https://openneuro.org/datasets/ds004837/versions/1.0.0

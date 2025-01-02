@@ -1,0 +1,30 @@
+note: "Note: This README file is Auto Generated."
+
+title: An fMRI dataset of social and nonsocial reward processing in young adults
+
+description: |
+  The sourcedata directory contains the subdirectory 'redcap'. This subdirectory contains .txt files that includes all collected behavioral data, including data for participants who do not have fMRI data.
+
+  We note that 6 out of 59 participants are missing the childhood trauma questionnaire short form, questionnaire of unpredictability in childhood, and the social experience questionnaire. These questionnaires were to be completed during a followup survey, but were not completed by these participants.
+
+  Code related to this dataset can be found on GitHub (https://github.com/DVS-Lab/ISTART-DataInBrief). This includes sourcedata for the scanner tasks and file generation scripts.
+
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{smith2024fmri,
+    title={An fMRI dataset of social and nonsocial reward processing in young adults},
+    author={Smith, David V and Wyngaarden, James and Sharp, Cooper J and Sazhin, Daniel and Zaff, Ori and Fareri, Dominic and Jarcho, Johanna},
+    journal={Data in Brief},
+    volume={53},
+    pages={110197},
+    year={2024},
+    publisher={Elsevier}
+  }
+
+
+
+download: https://openneuro.org/datasets/ds004920/versions/1.1.1

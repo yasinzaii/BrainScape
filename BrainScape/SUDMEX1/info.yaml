@@ -1,0 +1,30 @@
+note: "Note: This README file is Auto Generated."
+
+title: "SUDMEX_CONN: The Mexican dataset of cocaine use disorder patients."
+
+description: |
+  The SUDMEX_CONN dataset is the result of a case-control study of cocaine use disorder patients. The study was done at the National Institute of Psychiatry in Mexico City by PIs Dr. Eduardo A. Garza-Villarreal and Jorge J. Gonzalez Olvera.
+
+  The MRI sequences were: 1) T1-weighted, 2) rsfMRI 10 min, 3) HARDI-DWI multishell.
+
+  Full clinical data will be uploaded to Zenodo soon. This is the first official release.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{garza2017effect,
+    title={The effect of crack cocaine addiction and age on the microstructure and morphology of the human striatum and thalamus using shape analysis and fast diffusion kurtosis imaging},
+    author={Garza-Villarreal, Eduardo A and Chakravarty, M Mallar and Hansen, Brian and Eskildsen, Simon F and Devenyi, Gabriel A and Castillo-Padilla, Diana and Balducci, Thania and Reyes-Zamorano, Ernesto and Jespersen, Sune N and Perez-Palacios, Pamela and others},
+    journal={Translational psychiatry},
+    volume={7},
+    number={5},
+    pages={e1122--e1122},
+    year={2017},
+    publisher={Nature Publishing Group}
+  }
+
+
+
+download: https://openneuro.org/datasets/ds003346/versions/1.1.2

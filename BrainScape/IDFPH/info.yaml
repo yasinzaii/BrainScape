@@ -1,0 +1,24 @@
+note: "Note: This README file is Auto Generated."
+
+title: Individual differences in frontoparietal plasticity in humans
+
+description: |
+  
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{boroshok2022individual,
+    title={Individual differences in frontoparietal plasticity in humans},
+    author={Boroshok, Austin L and Park, Anne T and Fotiadis, Panagiotis and Velasquez, Gerardo H and Tooley, Ursula A and Simon, Katrina R and Forde, Jasmine CP and Delgado Reyes, Lourdes M and Tisdall, M Dylan and Bassett, Dani S and others},
+    journal={npj Science of Learning},
+    volume={7},
+    number={1},
+    pages={14},
+    year={2022},
+    publisher={Nature Publishing Group UK London}
+  }
+
+download: https://openneuro.org/datasets/ds003849/versions/1.0.0

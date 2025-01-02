@@ -1,0 +1,23 @@
+note: "Note: This README file is Auto Generated."
+
+title: "Cognitive Training"
+  
+description: |
+  Each participant completed a resting scan, ITC task, and risky choice task. In ITC task, they were shown a large delayed monetary option on the screen, and they were asked to either accept that offer or to reject it and opt for $20 immediately, In risky choice task, they were shown a large risky monetary option on the screen, and they were asked to either accept that offer or to reject it and opt for $20 with certainty. They used their two thumbs to indicate accept/reject.
+
+  **Note:** The low quality T2 images are not dropped because the Spatial Resolution (voxel size) info is passed along with the dataset JSON. 
+usage_agreement: ""
+
+
+license: "CC0"
+
+citation: |
+  @dataset{ds002843:1.0.1,
+    author = {Sangil Lee and Joseph Kable},
+    title = {"Cognitive Training"},
+    year = {2021},
+    doi = {10.18112/openneuro.ds002843.v1.0.1},
+    publisher = {OpenNeuro}
+  }
+
+download: "https://openneuro.org/datasets/ds002843/versions/1.0.1"

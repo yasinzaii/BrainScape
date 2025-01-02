@@ -1,0 +1,24 @@
+note: "Note: This README file is Auto Generated."
+
+title: magic_carpet
+
+description: |
+  The associated behavioural and eye-tracking data are available at https://github.com/carolfs/fmri_magic_carpet
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{feher2023rethinking,
+    title={Rethinking model-based and model-free influences on mental effort and striatal prediction errors},
+    author={Feher da Silva, Carolina and Lombardi, Gaia and Edelson, Micah and Hare, Todd A},
+    journal={Nature Human Behaviour},
+    volume={7},
+    number={6},
+    pages={956--969},
+    year={2023},
+    publisher={Nature Publishing Group UK London}
+  }
+
+download: https://openneuro.org/datasets/ds004455/versions/1.1.0

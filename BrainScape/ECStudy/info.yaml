@@ -1,0 +1,37 @@
+note: "Note: This README file is Auto Generated."
+
+title: "The Energetic Costs of the Human Connectome"
+
+description: |
+  This dataset consists of quantitative FDG-PET, BOLD-fMRI, and DWI data from 30 right-handed, 
+  healthy individuals, acquired during rest on a Siemens Biograph mMR 3T PET-MR scanner from 
+  three independent cohorts:
+
+  1. The raw data and derivatives of a within-subject exploration cohort (TUM.exp) with nine participants 
+    acquired across two sessions, one with their eyes open and the other with their eyes closed (participants 
+    s003 to s026; mean age = 43 years, std = 7 years; 4 females).
+
+  2. The raw data and derivatives of a prospective replication cohort (TUM.rep) with eleven participants 
+    acquired with their eyes open (participants s028 to s038; mean age = 27 years, std = 5 years; 6 females).
+
+  3. The derivatives of an external within-subject replication sample (VIE.rep) (Sundar et al., 2018) of 
+    ten participants acquired with their eyes open (participants HC002 to HC014; mean age = 27 years, std= 7 
+    years; 5 females). Two participants from the VIE.rep cohort had only one session.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{castrillon2023energy,
+    title={An energy costly architecture of neuromodulators for human brain evolution and cognition},
+    author={Castrillon, Gabriel and Epp, Samira and Bose, Antonia and Fraticelli, Laura and Hechler, Andr{\'e} and Belenya, Roman and Ranft, Andreas and Yakushev, Igor and Utz, Lukas and Sundar, Lalith and others},
+    journal={Science advances},
+    volume={9},
+    number={50},
+    pages={eadi7632},
+    year={2023},
+    publisher={American Association for the Advancement of Science}
+  }
+
+download: "https://openneuro.org/datasets/ds004513/versions/1.0.4"

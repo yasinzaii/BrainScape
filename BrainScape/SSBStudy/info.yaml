@@ -1,0 +1,25 @@
+note: "Note: This README file is Auto Generated."
+
+title: The Stockholm Sleepy Brain Study: Effects of Sleep Deprivation on Cognitive and Emotional Processing in Young and Old
+
+description: |
+  
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{tamm2020combined,
+    title={A combined fMRI and EMG study of emotional contagion following partial sleep deprivation in young and older humans},
+    author={Tamm, Sandra and Schwarz, Johanna and Thun{\'e}, Hanna and Kecklund, G{\"o}ran and Petrovic, Predrag and {\AA}kerstedt, Torbj{\"o}rn and Fischer, H{\aa}kan and Lekander, Mats and Nilsonne, Gustav},
+    journal={Scientific reports},
+    volume={10},
+    number={1},
+    pages={17944},
+    year={2020},
+    publisher={Nature Publishing Group UK London}
+  }
+
+
+
+download: https://openneuro.org/datasets/ds000201/versions/1.0.3

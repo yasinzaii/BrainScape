@@ -1,0 +1,32 @@
+note: "Note: This README file is Auto Generated."
+
+title: Evaluating methods for measuring background connectivity in slow event-related fMRI designs
+
+description: |
+  fMRI task where participants passively viewed blended face stimuli (nine faces total). A resting-state scan was complete prior to the passive viewing task.
+
+  Task order: rest, expo_run-1, expo_run-2, expo_run-3, expo_run-4
+
+  Information related to the task for each trial (onsets, duration of stimulus on the screen, category-relevant and category-irrelevant faces that constitute each blend) are included in a _events.tsv file for each subject and each run of the training task.
+
+  **NOTE:** Ignoring T2 MRIs as the brain is cropped. 
+
+
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{frank2023evaluating,
+    title={Evaluating methods for measuring background connectivity in slow event-related functional magnetic resonance imaging designs},
+    author={Frank, Lea E and Zeithamova, Dagmar},
+    journal={Brain and Behavior},
+    volume={13},
+    number={6},
+    pages={e3015},
+    year={2023},
+    publisher={Wiley Online Library}
+  }
+
+download: https://openneuro.org/datasets/ds004349/versions/1.0.0

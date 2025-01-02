@@ -1,0 +1,28 @@
+note: "Note: This README file is Auto Generated."
+
+title: "DP-pCASL data (CBF, ATT, BBB kw) from 186 cognitively normal participants (8-92 years)"
+  
+description: |
+  
+  This study included 186 participants aged 8 to 92 years (89 males and 97 females) with a diverse racial distribution including 65 White/Caucasian (29 males, 36 females), 27 Latinx (11 males, 16 females), 47 African American (21 males, 26 females), and 47 Asian (28 males, 19 females). Since race may influence the changes in perfusion and kw with aging.
+ 
+  For questions, please contact Dr. Xingfeng Shao (xshao@ini.usc.edu) and Dr. Danny JJ Wang (jj.wang@loni.usc.edu).
+
+  **Note:** The dataset contains poorly skullstripped brain MRIs. Therefore Dropping/Excluding Most of the MRIs. 
+
+
+usage_agreement: ""
+
+
+license: "CC0"
+
+citation: |
+  @article{shao2024age,
+    title={Age-related decline in BBB function is more pronounced in males than females},
+    author={Shao, Xingfeng and Shou, Qinyang and Felix, Kimberly and Ojogho, Brandon and Jiang, Xuejuan and Gold, Brian T and Herting, Megan M and Goldwaser, Eric L and Kochunov, Peter and Hong, L Elliot and others},
+    journal={bioRxiv},
+    year={2024},
+    publisher={Cold Spring Harbor Laboratory Preprints}
+  } 
+
+download: "https://openneuro.org/datasets/ds005529/versions/1.0.1"

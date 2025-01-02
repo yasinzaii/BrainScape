@@ -1,0 +1,31 @@
+note: "Note: This README file is Auto Generated."
+
+title: "Cross-Sectional Multidomain Lexical Processing"
+  
+description: |
+  Pydeface was used on all anatomical images to ensure 
+  deindentification of subjects. The code
+  can be found at https://github.com/poldracklab/pydeface
+
+  **Notes:**
+
+  - Slices were acquired interleaved from bottom to top, odd first.
+  - Age at phenotype / standardized testing and shifted(deidentified) date of birth is provided in participant.tsv. Shifted(deidentified) acquisition date of each imagining file is provided in sidecar json file for each image. Date of standardized testing is not available.
+
+usage_agreement: ""
+
+
+license: "CC0"
+
+citation: |
+  @article{lytle2020neuroimaging,
+    title={A neuroimaging dataset on orthographic, phonological and semantic word processing in school-aged children},
+    author={Lytle, Marisa N and Bitan, Tali and Booth, James R},
+    journal={Data in brief},
+    volume={28},
+    pages={105091},
+    year={2020},
+    publisher={Elsevier}
+  }
+
+download: "https://openneuro.org/datasets/ds002236/versions/1.1.1"

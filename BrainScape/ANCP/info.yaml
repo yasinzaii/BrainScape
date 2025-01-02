@@ -1,0 +1,21 @@
+note: "Note: This README file is Auto Generated."
+
+title: "An fMRI Dataset for Appetite Neural Correlates in People Living with Motor Neuron Disease"
+  
+description: |
+  The download plugin is unable to download this dataset. No idea why this is happening.
+
+  I have set "includeDataset" Flag to Flase
+
+  Therefore, this dataset will be skipped. 
+
+
+usage_agreement: ""
+
+
+license: "CC0"
+
+citation: |
+  
+
+download: "https://openneuro.org/datasets/ds005401/versions/1.0.1"

@@ -1,0 +1,25 @@
+note: "Note: This README file is Auto Generated."
+
+title: Temporal Lobe Epilepsy - UNAM
+
+description: |
+  Data set with resting state fMRI and fMRI task for evaluation of working memory. Includes data from patients with temporal lobe epilepsy and healthy participants. Cognitive data is included: Wechsler's Adult Intelligence Scale (WAIS-IV) and Weschsler's Memory Scale (WMS-IV).
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{fajardo2024functional,
+    title={Functional correlates of cognitive performance and working memory in temporal lobe epilepsy: Insights from task-based and resting-state fMRI},
+    author={Fajardo-Valdez, Alfonso and Camacho-T{\'e}llez, Vicente and Rodr{\'\i}guez-Cruces, Ra{\'u}l and Garc{\'\i}a-Gomar, Mar{\'\i}a Luisa and Pasaye, Erick Humberto and Concha, Luis},
+    journal={Plos one},
+    volume={19},
+    number={3},
+    pages={e0295142},
+    year={2024},
+    publisher={Public Library of Science San Francisco, CA USA}
+  }
+
+
+download: https://openneuro.org/datasets/ds004469/versions/1.1.4

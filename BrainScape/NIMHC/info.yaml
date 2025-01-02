@@ -1,0 +1,23 @@
+note: "Note: This README file is Auto Generated."
+
+title: NIMH-CompyPsych MMI
+
+description: |
+  
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{keren2021temporal,
+    title={The temporal representation of experience in subjective mood},
+    author={Keren, Hanna and Zheng, Charles and Jangraw, David C and Chang, Katharine and Vitale, Aria and Rutledge, Robb B and Pereira, Francisco and Nielson, Dylan M and Stringaris, Argyris},
+    journal={Elife},
+    volume={10},
+    pages={e62051},
+    year={2021},
+    publisher={eLife Sciences Publications, Ltd}
+  }
+
+download: https://openneuro.org/datasets/ds003709/versions/1.0.0

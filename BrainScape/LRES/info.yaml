@@ -1,0 +1,24 @@
+note: "Note: This README file is Auto Generated."
+
+title: Learning rules of engagement for social exchange within and between groups
+
+description: |
+  
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{rojek2023learning,
+    title={Learning rules of engagement for social exchange within and between groups},
+    author={Rojek-Giffin, Michael and Lebreton, Ma{\"e}l and Daunizeau, Jean and Fari{\~n}a, Andrea and Gross, J{\"o}rg and De Dreu, Carsten KW},
+    journal={Proceedings of the National Academy of Sciences},
+    volume={120},
+    number={19},
+    pages={e2218443120},
+    year={2023},
+    publisher={National Acad Sciences}
+  }
+
+download: https://openneuro.org/datasets/ds004553/versions/1.0.1

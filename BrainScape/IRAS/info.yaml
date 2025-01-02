@@ -1,0 +1,22 @@
+note: "Note: This README file is Auto Generated."
+
+title: Individual risk attitudes arise from noise in neurocognitive magnitude representations.
+
+description: |
+  
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{garcia2022individual,
+    title={Individual risk attitudes arise from noise in neurocognitive magnitude representations},
+    author={Garcia, Miguel Barretto and de Hollander, Gilles and Grueschow, Marcus and Polania, Rafael and Woodford, Michael and Ruff, Christian C},
+    journal={bioRxiv},
+    pages={2022--08},
+    year={2022},
+    publisher={Cold Spring Harbor Laboratory}
+  }
+
+download: https://openneuro.org/datasets/ds004259/versions/1.0.0

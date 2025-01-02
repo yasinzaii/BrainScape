@@ -1,0 +1,25 @@
+note: "Note: This README file is Auto Generated."
+
+title: The heterogeneity in retrieved relations between the personality trait 'Harm avoidance' and gray matter volumes due to variations in the VBM and ROI labeling processing settings
+
+description: |
+  95 healthy female volunteers (age: 18-30 years) were recruited to participate in the study. All underwent a T1 weighted anatomical scan of the head (TI/TR/TE=940.4/7.6/3.7ms, flip angle=8°, FOV=240x240x200mm³, resolution=1x1x2mm³) at a Philips 3T Achieva MRI scanner. 
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{van2016heterogeneity,
+    title={The heterogeneity in retrieved relations between the personality trait ‘harm avoidance’and gray matter volumes due to variations in the VBM and ROI labeling processing settings},
+    author={Van Schuerbeek, Peter and Baeken, Chris and De Mey, Johan},
+    journal={PloS one},
+    volume={11},
+    number={4},
+    pages={e0153865},
+    year={2016},
+    publisher={Public Library of Science San Francisco, CA USA}
+  }
+
+
+download: https://openneuro.org/datasets/ds000202/versions/00001

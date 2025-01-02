@@ -1,0 +1,23 @@
+note: "Note: This README file is Auto Generated."
+
+title: Handedness and Symbolic Number Representation
+
+description: |
+  
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{goffin2019does,
+    title={Does writing handedness affect neural representation of symbolic number? An fMRI adaptation study},
+    author={Goffin, Celia and Sokolowski, H Moriah and Slipenkyj, Michael and Ansari, Daniel},
+    journal={Cortex},
+    volume={121},
+    pages={27--43},
+    year={2019},
+    publisher={Elsevier}
+  } 
+
+download: https://openneuro.org/datasets/ds001838/versions/1.0.1

@@ -1,0 +1,23 @@
+note: "Note: This README file is Auto Generated."
+
+title: Hearing loss Connectome
+
+description: |
+  
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{ponticorvo2022cross,
+    title={Cross-modal connectivity effects in age-related hearing loss},
+    author={Ponticorvo, Sara and Manara, Renzo and Cassandro, Ettore and Canna, Antonietta and Scarpa, Alfonso and Troisi, Donato and Cassandro, Claudia and Cuoco, Sofia and Cappiello, Arianna and Pellecchia, Maria Teresa and others},
+    journal={Neurobiology of Aging},
+    volume={111},
+    pages={1--13},
+    year={2022},
+    publisher={Elsevier}
+  }
+
+download: https://openneuro.org/datasets/ds005026/versions/1.0.0

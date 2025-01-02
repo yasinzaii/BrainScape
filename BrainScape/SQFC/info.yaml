@@ -1,0 +1,25 @@
+note: "Note: This README file is Auto Generated."
+
+title: Sympathovagal quotient and functional connectivity of control networks are related to gut Ruminococcaceae abundance in healthy men
+
+description: |
+  We characterized the gut microbiota genera and families related to the heart rate variability (HRV) and resting-state functional connectivity (rsFC), their interaction effect over the gut microbiota taxa abundance, and the mediation effect of diet in these relationships in eighty-eight healthy Colombian men in a cross-sectional study.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{miranda2024sympathovagal,
+    title={Sympathovagal quotient and resting-state functional connectivity of control networks are related to gut Ruminococcaceae abundance in healthy men},
+    author={Miranda-Angulo, Ana L and S{\'a}nchez-L{\'o}pez, Juan D and Vargas-Tejada, Daniel A and Hawkins-Caicedo, Valentina and Calder{\'o}n, Juan C and Gallo-Villegas, Jaime and Alzate-Restrepo, Juan F and Suarez-Revelo, Jazmin X and Castrill{\'o}n, Gabriel},
+    journal={Psychoneuroendocrinology},
+    volume={164},
+    pages={107003},
+    year={2024},
+    publisher={Elsevier}
+  }
+
+
+
+download: https://openneuro.org/datasets/ds004648/versions/1.0.0

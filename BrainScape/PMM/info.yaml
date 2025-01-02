@@ -1,0 +1,27 @@
+note: "Note: This README file is Auto Generated."
+
+title: Political Moralization (PMM)
+
+description: |
+  This dataset includes data from two fMRI tasks: a Political Moralization task in which participants were asked which protest cause they support more, and a clip viewing task in which participants viewed a series of short ISIS propaganda video clips.
+
+  Data from the clip viewing task are described in this manuscript (currently under review): https://osf.io/preprints/psyarxiv/2hvfe Analysis code is posted at: https://osf.io/w5qpx/
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{cohen2024intersubject,
+    title={Intersubject correlations in reward and mentalizing brain circuits separately predict persuasiveness of two types of ISIS video propaganda},
+    author={Cohen, Michael S and Leong, Yuan Chang and Ruby, Keven and Pape, Robert A and Decety, Jean},
+    journal={Scientific reports},
+    volume={14},
+    number={1},
+    pages={13455},
+    year={2024},
+    publisher={Nature Publishing Group UK London}
+  }
+
+
+download: https://openneuro.org/datasets/ds005040/versions/1.2.0

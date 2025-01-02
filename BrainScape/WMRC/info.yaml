@@ -1,0 +1,32 @@
+note: "Note: This README file is Auto Generated."
+
+title: Working Memory and Reward in Children with and without Attention Deficit Hyperactivity Disorder (ADHD)
+
+description: |
+  This experiment was implemented in E-prime following the design described in the task-_bold.json files as well as illustrated in stimuli/task_design.jpg
+
+  **Sessions**
+
+  At ses-T1 subjects competed standardized testing (located in phenotype/) as well as imaging sessions. At ses-T2 subjects only completed standardized testing.
+
+  **Defacing**
+
+  Anatomical images were defaced according to procedure described in Lytle, McNorgan, & Booth (2019) (https://doi.org/10.1038/s41597-019-0338-5)
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{lytle2020neuroimaging,
+    title={A neuroimaging dataset on working memory and reward processing in children with and without ADHD},
+    author={Lytle, Marisa N and Hammer, Rubi and Booth, James R},
+    journal={Data in Brief},
+    volume={31},
+    pages={105801},
+    year={2020},
+    publisher={Elsevier}
+  }
+
+
+download: https://openneuro.org/datasets/ds002424/versions/1.2.0

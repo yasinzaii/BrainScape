@@ -1,0 +1,23 @@
+note: "Note: This README file is Auto Generated."
+
+title: Working memory in healthy and schizophrenic individuals
+
+description: |
+  
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{repovvs2012working,
+    title={Working memory related brain network connectivity in individuals with schizophrenia and their siblings},
+    author={Repov{\v{s}}, Grega and Barch, Deanna M},
+    journal={Frontiers in human neuroscience},
+    volume={6},
+    pages={137},
+    year={2012},
+    publisher={Frontiers Research Foundation}
+  }
+
+
+download: https://openneuro.org/datasets/ds000115/versions/00001

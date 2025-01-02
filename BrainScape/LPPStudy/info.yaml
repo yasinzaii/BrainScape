@@ -1,0 +1,32 @@
+note: "Note: This README file is Auto Generated."
+
+title: Le Petit Prince - A multilingual fMRI corpus using ecological stimuli
+
+description: |
+  
+  **Participants:**
+
+  English participants were 49 young adults (30 females, mean age=21.3, SD=3.6) with no history of psychiatric, neurological or other medical illness that might compromise cognitive functions. They self-identified as native English speakers, and strictly qualified as right-handed on the Edinburgh handedness inventory. All participants were paid, and gave written informed consent prior to participation, in accordance with the IRB guidelines of Cornell University.
+
+  Chinese participants were 35 healthy, right-handed young adults (15 females, mean age=19.3, SD=1.6). They self-identified as native Chinese speakers, and had no history of psychiatric, neurological, or other medical illness that could compromise cognitive functions. All participants were paid, and gave written informed consent prior to participation, in accordance with the IRB guidelines of Jiangsu Normal University.
+
+  French participants were 28 healthy, right-handed adults (15 females, mean age=24.4, SD=4.6). They self-identified as native French speakers and had no history of psychiatric, neurological, or other medical illness that could compromise cognitive functions. All participants gave written informed consent prior to participation, in accordance with the Regional Committee for the Protection of Persons involved in Biomedical Research.
+    
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{li2022petit,
+    title={Le Petit Prince multilingual naturalistic fMRI corpus},
+    author={Li, Jixing and Bhattasali, Shohini and Zhang, Shulin and Franzluebbers, Berta and Luh, Wen-Ming and Spreng, R Nathan and Brennan, Jonathan R and Yang, Yiming and Pallier, Christophe and Hale, John},
+    journal={Scientific data},
+    volume={9},
+    number={1},
+    pages={530},
+    year={2022},
+    publisher={Nature Publishing Group UK London}
+  }
+
+download: https://openneuro.org/datasets/ds003643/versions/2.0.5

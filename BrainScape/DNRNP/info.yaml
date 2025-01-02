@@ -1,0 +1,29 @@
+note: "Note: This README file is Auto Generated."
+
+title: "Deciphering the neural responses to a naturalistic persuasive message"
+  
+description: |
+  Fifty healthy participants listened to a persuasive healthy eating call during functional magnetic resonance imaging (fMRI). Before and after the narrative, they performed a bidding task, which determined which participants were persuaded by the healthy eating call and which were not.
+
+  For more information, see the paper at https://www.pnas.org/doi/10.1073/pnas.2401317121. This fMRI study is the continuation of our previous behavioral (https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2022.926875/full) and EEG (https://www.frontiersin.org/journals/behavioral-neuroscience/articles/10.3389/fnbeh.2023.1147140/full) studies with a similar experimental design.
+
+  Code for data analysis is available at https://github.com/intoumanis/fMRI_persuasion.
+
+usage_agreement: ""
+
+
+license: "CC0"
+
+citation: |
+  @article{ntoumanis2024deciphering,
+    title={Deciphering the neural responses to a naturalistic persuasive message},
+    author={Ntoumanis, Ioannis and Sheronova, Julia and Davydova, Alina and Dolgaleva, Maria and J{\"a}{\"a}skel{\"a}inen, Iiro P and Kosonogov, Vladimir and Shestakova, Anna N and Klucharev, Vasily},
+    journal={Proceedings of the National Academy of Sciences},
+    volume={121},
+    number={43},
+    pages={e2401317121},
+    year={2024},
+    publisher={National Academy of Sciences}
+  }
+
+download: "https://openneuro.org/datasets/ds005518/versions/1.0.1"

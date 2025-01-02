@@ -1,0 +1,47 @@
+note: "Note: This README file is Auto Generated."
+
+title: "Consortium for Reliability and Reproducibility (CoRR)"
+  
+description: |
+  
+  **Note:** Some of the restest images are the same as that of the baseline. 
+  
+  The goal of CoRR was to create an open science resource for the imaging community that facilitates the assessment of test-retest reliability and reproducibility for functional and structural connectomics. In order to accomplish this, we have aggregated resting state fMRI (R-fMRI) and diffusion imaging data from laboratories around the world, and are sharing the data via the International Neuroimaging Data-sharing Initiative (INDI). This enables the:
+
+  1. Establishment of test-retest reliability and reproducibility for commonly used MR-based connectome metrics
+  2. Determination of the range of variation in the reliability and reproducibility of these metrics across imaging sites and retest study designs
+  3. Creation of a standard/benchmark test-retest dataset for the evaluation of novel metrics
+  
+  Given that this was a retrospective data collection, we have focused on basic phenotypic measures that are relatively standard in the neuroimaging field, as well as fundamental for analyses and sample characterization. Our phenotypic key is organized to reflect three classifications of variables: 1) core (i.e., minimal variables required to characterize any dataset), 2) preferred (i.e., variables that were strongly suggested for inclusion due to their relative import and/or likelihood of being collected by most sites), and 3) optional (variables that are data-set specific or only shared by a few sites).
+
+  **Dataset Info:
+
+  CoRR includes 33 datasets, of which 32 are currently available for download, consisting of:
+
+    - 1629 Subjects
+    - 3357 Anatomical Scans
+    - 5093 Resting Functional Scans
+    - 1302 Diffusion Scans
+    - 300 CBF and ASL Scans
+
+  **More INo**: https://fcon_1000.projects.nitrc.org/indi/CoRR/html/samples.html
+
+
+usage_agreement: ""
+
+
+license: "CC BY 4.0"
+
+citation: |
+  @article{zuo2014open,
+    title={An open science resource for establishing reliability and reproducibility in functional connectomics},
+    author={Zuo, Xi-Nian and Anderson, Jeffrey S and Bellec, Pierre and Birn, Rasmus M and Biswal, Bharat B and Blautzik, Janusch and Breitner, John and Buckner, Randy L and Calhoun, Vince D and Castellanos, F Xavier and others},
+    journal={Scientific data},
+    volume={1},
+    number={1},
+    pages={1--13},
+    year={2014},
+    publisher={Nature Publishing Group}
+  }
+
+download: "https://www.nitrc.org/ir/data/projects/corr"

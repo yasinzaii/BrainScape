@@ -1,0 +1,24 @@
+note: "Note: This README file is Auto Generated."
+
+title: Resting State Perfusion in Healthy Aging
+
+description: |
+  All subjects underwent an MRI resting-state scan. Subjects were instructed to lie still with their eyes open, without falling asleep. Immediately after this scan, they were asked whether they fell asleep, and none of them reported they did. The MRI examination was carried out on a 3T whole-body MRI scanner (Trio TIM), using the body coil as transmitter and a 32-channel phased-array head coil as receiver. The imaging protocol included a 3D high-resolution anatomical T1-weighted MPRAGE sequence (with inversion time (TI) = 950 ms, repetition time (TR) = 1760 ms, echo-time (TE) = 3.1 ms, resolution = 1 mm isotropic, scan time = 5:08 min). This sequence was followed by an ASL sequence that combined pseudo-continuous labeling (PCASL) with a background-suppressed 3D GRASE single-shot readout. The labeling parameters were as follows: Hanning-shaped RF pulses, B1average = 1.8 microT, RFduration = 500 micro.sec, spacing = 500 micro.sec, Gaverage = 1mT/m, Gmaximum/Gaverage = 8, labeling duration = 1600 ms, post-labeling delay = 1500 ms. The imaging parameters were as follows: TR = 3.5 sec, TE = 29 msec, resolution = 4x4x7 mm3, FOV = 250x188x112 mm3 , 16 nominal partitions with 12.5% oversampling, 5/8 slice partial Fourier, matrix size = 64x49x11, BW = 2790Hz/pixel, gradient-echo spacing = 0.4 msec (with ramp sampling), spin-echo spacing = 29 msec, read-out time = 270 msec. Details of the background suppression scheme can be found in [1]. 50 pairs of label and control images were acquired in 6 minutes. A short scan of 5 label/control pairs was performed using the same sequence without background suppression to acquire control images needed for calculation of CBF, this 10 images are allocated at the beginning of each ASL sequence, so each subject ASL sequence has 110 images.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{vidorreta2013comparison,
+    title={Comparison of 2D and 3D single-shot ASL perfusion fMRI sequences},
+    author={Vidorreta, Marta and Wang, Ze and Rodr{\'\i}guez, Ignacio and Pastor, Mar{\'\i}a A and Detre, John A and Fern{\'a}ndez-Seara, Mar{\'\i}a A},
+    journal={Neuroimage},
+    volume={66},
+    pages={662--671},
+    year={2013},
+    publisher={Elsevier}
+  }
+
+
+download: https://openneuro.org/datasets/ds000240/versions/2.0.0

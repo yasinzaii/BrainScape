@@ -1,0 +1,24 @@
+note: "Note: This README file is Auto Generated."
+
+title: Language Learning Aptitude dataset
+
+description: |
+  In this study, brain structural correlates of LLAMA test scores were explored. The dataset includes T1-weighted, PD-weighted (used to mitigate B1 inhomogeneities and eliminate PD-weighted and T2* effects), and two sets of diffusion weighted images (one single-shell with high angular resolution and one multi-shelled).
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{noven2021cortical,
+    title={Cortical and white matter correlates of language-learning aptitudes},
+    author={Nov{\'e}n, Mikael and Olsson, Hampus and Helms, Gunther and Horne, Merle and Nilsson, Markus and Roll, Mikael},
+    journal={Human brain mapping},
+    volume={42},
+    number={15},
+    pages={5037--5050},
+    year={2021},
+    publisher={Wiley Online Library}
+  }
+
+download: https://openneuro.org/datasets/ds003508/versions/1.0.0

@@ -1,0 +1,26 @@
+note: "Note: This README file is Auto Generated."
+
+title: A behavioral, clinical and brain imaging dataset with focus on emotion regulation of females with fibromyalgia
+
+description: |
+  Here we present an open dataset of 33 fibromyalgia female patients and 33 paired healthy controls recruited from a Mexican population. Dataset includes MRI data that consists of: T1w, T2w, resting state fMRI and task-fMRI sequences. The task was an emotion processing and regulation task based on visual stimuli (pictures). The MRI data consists of raw data in BIDS format.
+
+  The demographic, clinical, and behavioral data is available at Zenodo: http://doi.org/10.5281/zenodo.6554870
+
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{balducci2022behavioral,
+    title={A behavioral and brain imaging dataset with focus on emotion regulation of women with fibromyalgia},
+    author={Balducci, Thania and Rasgado-Toledo, Jalil and Valencia, Alely and van Tol, Marie-Jos{\'e} and Aleman, Andr{\'e} and Garza-Villarreal, Eduardo A},
+    journal={Scientific Data},
+    volume={9},
+    number={1},
+    pages={581},
+    year={2022},
+    publisher={Nature Publishing Group UK London}
+  }
+download: https://openneuro.org/datasets/ds004144/versions/1.0.2

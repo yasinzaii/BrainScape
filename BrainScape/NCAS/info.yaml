@@ -1,0 +1,28 @@
+note: "Note: This README file is Auto Generated."
+
+title: Neurocognitive aging data release with behavioral, structural, and multi-echo functional MRI measures
+
+description: |
+  Neurocognitive aging data release with behavioral, structural, and multi-echo functional MRI measures (https://doi.org/10.1038/s41597-022-01231-7)
+
+  Data included as part of: Age differences in the functional architecture of the human brain (https://doi.org/10.1093/cercor/bhac056)
+
+  Two 10-minute multi-echo resting-state runs were collected from 301 healthy adults (181 younger, 120 older adults) across 2 sites. Acquisition parameters are summarized below. A subset of 246 participants also have T2-FLAIR images. Pulse and respiration data are available for 233 participants. Full detail can be found in the data descriptor and empirical paper linked above. Accompanying behavioral data can be found on OSF: https://osf.io/yhzxe/ (doi: 10.17605/OSF.IO/YHZXE).
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{setton2023age,
+    title={Age differences in the functional architecture of the human brain},
+    author={Setton, Roni and Mwilambwe-Tshilobo, Laetitia and Girn, Manesh and Lockrow, Amber W and Baracchini, Giulia and Hughes, Colleen and Lowe, Alexander J and Cassidy, Benjamin N and Li, Jian and Luh, Wen-Ming and others},
+    journal={Cerebral Cortex},
+    volume={33},
+    number={1},
+    pages={114--134},
+    year={2023},
+    publisher={Oxford University Press}
+  }
+
+download: https://openneuro.org/datasets/ds003592/versions/1.0.13

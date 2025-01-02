@@ -1,0 +1,27 @@
+note: "Note: This README file is Auto Generated."
+
+title: "Bilingualism and the brain"
+  
+description: |
+  Dataset used for examining neurological effects of different individual language differences in bilingual adults. 
+
+  Dataset contains structural, diffusion, and resting state functional scans, and a series of demographic measures. NB- additional diffusion (reverse phase-encoded) scans are located in the /Bidsignore directory, which can be used in preprocessing. Additional participant demographic information can also be found in this directory.
+
+usage_agreement: ""
+
+
+license: "CC0"
+
+citation: |
+  @article{deluca2019redefining,
+    title={Redefining bilingualism as a spectrum of experiences that differentially affects brain structure and function},
+    author={DeLuca, Vincent and Rothman, Jason and Bialystok, Ellen and Pliatsikas, Christos},
+    journal={Proceedings of the National Academy of Sciences},
+    volume={116},
+    number={15},
+    pages={7565--7574},
+    year={2019},
+    publisher={National Acad Sciences}
+  }
+
+download: "https://openneuro.org/datasets/ds001796/versions/1.7.0"

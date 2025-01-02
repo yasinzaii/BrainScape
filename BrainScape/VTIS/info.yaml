@@ -1,0 +1,24 @@
+note: "Note: This README file is Auto Generated."
+
+title: Valenced tactile information is evoked by neutral visual cues following emotional learning
+
+description: |
+  This is the raw, un-preprocessed neuroimaging dataset, in BIDS format
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{ehlers2024valenced,
+    title={Valenced tactile information is evoked by neutral visual cues following emotional learning},
+    author={Ehlers, Mana R and Kryklywy, James H and Beukers, Andre O and Moore, Sarah R and Forys, Brandon J and Anderson, Adam K and Todd, Rebecca M},
+    journal={Imaging Neuroscience},
+    volume={2},
+    pages={1--16},
+    year={2024},
+    publisher={MIT Press 255 Main Street, 9th Floor, Cambridge, Massachusetts 02142, USA~…}
+  }
+
+
+download: https://openneuro.org/datasets/ds005449/versions/1.0.0

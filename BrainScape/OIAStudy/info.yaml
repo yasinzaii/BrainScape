@@ -1,0 +1,30 @@
+note: "Note: This README file is Auto Generated."
+
+title: Odour-imagery ability is linked to food craving, intake, and adiposity change in humans
+
+description: |
+  Data Collection Period: 2020 - 2021 (scans were run between the hours of 8:00am-1:00pm local time)
+
+  Study goals: Mental imagery is thought to play a key role in food craving and other forms of cue reactivity. Here we tested contributions from imagery in the olfactory domain (i.e., odor imagery). We used fMRI in the creation of a novel neural measure of odor imagery ability. Specifically, we leveraged the fact that different odors activate distinct fMRI patterns in the piriform primary olfactory cortex. We used multivariate pattern analyses to decode imagined odor patterns, and found that the resulting decoding accuracies mapped onto other subjective (i.e., self-reported) and objective (i.e., psychophysical) measures of odor imagery ability.
+
+  Contents of the Dataset: 47 participants (1 session each, 5 odor BOLD runs per session)
+
+  Variables: Our primary fMRI conditions were: smell rose, smell cookie, smell clean air, imagine rose, imagine cookie, imagine clean air. Subjects were instructed to sniff on all trials and the downsampled and normalized sniff airflow traces were used as regressors in our first level models to help control for sniffing.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{perszyk2023odour,
+    title={Odour-imagery ability is linked to food craving, intake, and adiposity change in humans},
+    author={Perszyk, Emily E and Davis, Xue S and Djordjevic, Jelena and Jones-Gotman, Marilyn and Trinh, Jessica and Hutelin, Zach and Veldhuizen, Maria G and Koban, Leonie and Wager, Tor D and Kober, Hedy and others},
+    journal={Nature Metabolism},
+    volume={5},
+    number={9},
+    pages={1483--1493},
+    year={2023},
+    publisher={Nature Publishing Group UK London}
+  }
+
+download: https://openneuro.org/datasets/ds004327/versions/1.0.3

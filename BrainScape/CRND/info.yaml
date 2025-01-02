@@ -1,0 +1,37 @@
+note: "Note: This README file is Auto Generated."
+
+title: "Cerebrovascular Reactivity Normative Dataset"
+  
+description: |
+  Fifty healthy adult subjects with no prior history of neurological or psychiatric disorder were included in this dataset.
+
+  The goal is to provide a normative dataset for the computation of maps of Cerebrovascular Reactivity Maps. For this purpose, we developed CVRmap, a BIDS-compatible pipeline to process the data. More information on CVRmap can be found on the corresponding github page:
+
+  `www.github.com/ln2t/cvrmap`.
+
+  The paper describing CVRmap and this dataset can be found [here](https://rdcu.be/dCCZW).
+
+  **Rawdata**
+
+  - Anatomical data: a standard T1w image was acquired for each subject.
+  - Functional data: each subject underwent an fMRI scan with blocs of CO2 inhalation challenges.
+  - Physiological data: breath CO2 was recorded using a capnograph during the fMRI acquisition.
+
+usage_agreement: ""
+
+
+license: "CC0"
+
+citation: |
+  @article{rovai2024cvrmap,
+    title={CVRmap—a complete cerebrovascular reactivity mapping post-processing BIDS toolbox},
+    author={Rovai, Antonin and Lolli, Valentina and Trotta, Nicola and Goldman, Serge and De Ti{\`e}ge, Xavier},
+    journal={Scientific Reports},
+    volume={14},
+    number={1},
+    pages={7252},
+    year={2024},
+    publisher={Nature Publishing Group UK London}
+  }
+
+download: "https://openneuro.org/datasets/ds004604/versions/2.0.0"

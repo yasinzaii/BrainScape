@@ -1,0 +1,23 @@
+note: "Note: This README file is Auto Generated."
+
+title: Listening task
+
+description: |
+  We tested 82 participants aged 19-81. All reported themselves to have normal hearing, to be right handed, and not have a history of neurological disease. Because the task involved spoken language, all were native speakers of American English.
+
+  Participants were randomly assigned to control (no motion feedback) or intervention (real-time motion feedback) groups.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{rogers2023real,
+    title={Real-time feedback reduces participant motion during task-based fMRI},
+    author={Rogers, Chad S and Jones, Michael S and McConkey, Sarah and McLaughlin, Drew J and Peelle, Jonathan E},
+    journal={bioRxiv},
+    year={2023},
+    publisher={Cold Spring Harbor Laboratory Preprints}
+  }
+
+download: https://openneuro.org/datasets/ds004285/versions/1.0.0

@@ -1,0 +1,25 @@
+note: "Note: This README file is Auto Generated."
+
+title: Transdiagnostic Connectome Project
+
+description: |
+  A richly phenotyped transdiagnostic dataset with behavioral and Magnetic Resonance Imaging (MRI) data from 241 individuals aged 18 to 70, comprising 148 individuals meeting diagnostic criteria for a broad range of psychiatric illnesses and a healthy comparison group of 93 individuals.
+
+  These data include high-resolution anatomical scans and 6 x resting-state, and 3 x task-based (2 x Stroop, 1 x Faces/Shapes) functional MRI runs. Participants completed over 50 psychological and cognitive questionnaires, as well as a semi-structured clinical interview.
+
+  Data was collected at the Brain Imaging Center, Yale University, New Haven, CT and McLean Hospital, Belmont, MA. This dataset will allow investigation into brain function and transdiagnostic psychopathology in a community sample. See preprint (https://www.medrxiv.org/content/10.1101/2024.06.18.24309054v1) and below for detailed information.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{chopra2024transdiagnostic,
+    title={The Transdiagnostic Connectome Project: a richly phenotyped open dataset for advancing the study of brain-behavior relationships in psychiatry},
+    author={Chopra, Sidhant and Cocuzza, Carrisa V and Lawhead, Connor and Ricard, Jocelyn A and Labache, Lo{\"\i}c and Patrick, Lauren M and Kumar, Poornima and Rubenstein, Arielle and Moses, Julia and Chen, Lia and others},
+    journal={medRxiv},
+    year={2024}
+
+
+
+download: https://openneuro.org/datasets/ds005237/versions/1.0.6

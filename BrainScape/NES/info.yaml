@@ -1,0 +1,19 @@
+note: "Note: This README file is Auto Generated."
+
+title: NeuroEngage
+
+description: |
+  Dataset of human-human and human-robot conversations with neuroimaging, eye-tracking, segmented audio, video, and behavioral data.
+
+  [The dataset is being updated. The current version contains defaced structural MRI data from both human-human and human-robot conditions. To request the data not yet uploaded, pleas contact the researchers.]
+
+  Details on the technical setup for replication can be found in the comments below.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+
+
+download: https://openneuro.org/datasets/ds004996/versions/1.0.2

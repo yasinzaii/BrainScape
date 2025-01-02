@@ -1,0 +1,32 @@
+note: "Note: This README file is Auto Generated."
+
+title: Michigan Longitudinal Study
+
+description: |
+  Uploaded onto Openn-Neuro by Michael Demidenko in relation to the project on the analytic impacts on test-retest reliability
+
+  Collected at the University of Michigan under the grant: R01AA012217. Original Owners and curators: Mary Heitzeg, PhD; Data Manager: Mary Soules. Data transferred from University of Michigan to Stanford University November 2022.
+
+  Relevant info for data:
+
+  - [NIHReporter Neuropsych Cohort](https://reporter.nih.gov/project-details/8896367)
+  - [Pub 1](https://doi.org/10.1523/JNEUROSCI.1390-11.2012)
+  - [Pub 2](https://doi.org/10.1111/j.1530-0277.2007.00605.x)
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{yau2012nucleus,
+    title={Nucleus accumbens response to incentive stimuli anticipation in children of alcoholics: relationships with precursive behavioral risk and lifetime alcohol use},
+    author={Yau, Wai-Ying Wendy and Zubieta, Jon-Kar and Weiland, Barbara J and Samudra, Preeti G and Zucker, Robert A and Heitzeg, Mary M},
+    journal={Journal of Neuroscience},
+    volume={32},
+    number={7},
+    pages={2544--2551},
+    year={2012},
+    publisher={Soc Neuroscience}
+  }
+
+download: https://openneuro.org/datasets/ds005027/versions/1.0.3

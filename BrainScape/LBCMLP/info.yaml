@@ -1,0 +1,24 @@
+note: "Note: This README file is Auto Generated."
+
+title: Longitudinal Brain Correlates of Multisensory Lexical Processing in Children
+
+description: |
+  
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{lytle2019longitudinal,
+    title={A longitudinal neuroimaging dataset on multisensory lexical processing in school-aged children},
+    author={Lytle, Marisa N and McNorgan, Chris and Booth, James R},
+    journal={Scientific Data},
+    volume={6},
+    number={1},
+    pages={329},
+    year={2019},
+    publisher={Nature Publishing Group UK London}
+  }
+
+download: https://openneuro.org/datasets/ds001894/versions/1.4.2

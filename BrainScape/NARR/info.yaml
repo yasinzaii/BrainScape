@@ -1,0 +1,21 @@
+note: "Note: This README file is Auto Generated."
+
+title: Narratives
+
+description: |
+  Narratives: fMRI data for evaluating models of naturalistic language comprehension
+
+  The "Narratives" collection aggregates auditory story-listening fMRI datasets acquired over the course of roughly seven years (2011–2018). Stimuli comprised 28 naturalistic spoken stories ranging from ~3 to ~56 minutes for a total of ~5 hours of unique audio stimuli. The collection includes 345 unique subjects participating in over 750 functional scans with accompanying anatomical data. This re-release of the dataset follows on ds002245 v.1.0.3 and fixes some issues with cropped and redundant T1w anatomical images.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{nastase2021narratives,
+    title={Narratives: fMRI data for evaluating models of naturalistic language comprehension. bioRxiv},
+    author={Nastase, Samuel A and Liu, Yun-Fei and Hillman, Hanna and Zadbood, Asieh and Hasenfratz, Liat and Keshavarzian, Neggin and Chen, Janice and Honey, Christopher J and Yeshurun, Yaara and Regev, Mor and others},
+    year={2021}
+  }
+
+download: https://openneuro.org/datasets/ds002345/versions/1.1.4

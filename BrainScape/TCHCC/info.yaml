@@ -1,0 +1,23 @@
+note: "Note: This README file is Auto Generated."
+
+title: Thalamocortical contributions to hierarchical cognitive control
+
+description: |
+  This dataset includes raw MRI data from 59 participants.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{chen2024thalamocortical,
+    title={Thalamocortical contributions to hierarchical cognitive control},
+    author={Chen, Xitong and Leach, Stephanie C and Hollis, Juniper and Cellier, Dillan and Hwang, Kai},
+    journal={bioRxiv},
+    pages={2024--06},
+    year={2024},
+    publisher={Cold Spring Harbor Laboratory}
+  }
+
+
+download: https://openneuro.org/datasets/ds005600/versions/1.1.0

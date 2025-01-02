@@ -1,0 +1,26 @@
+note: "Note: This README file is Auto Generated."
+
+title: NARPS
+
+description: |
+  Raw and preprocessed fMRI data of two versions of the mixed gambles task, from the Neuroimaging Analysis Replication and Prediction Study (NARPS: https://www.narps.info/).
+
+  In NARPS we aim to provide the first scientific evidence on the variability of results across analysis teams in neuroscience. We collected fMRI data from 108 participants during two versions of the mixed gambles task, which is often used to study decision-making under risk. For each participant, the dataset includes an anatomical (T1 weighted) scan and fMRI as well as behavioral data from four runs of the task. Data pre-processed with fMRIprep and quality control reports (based on MRIQC) are also included. This dataset can be used to study decision-making under risk and to test replicability and interpretability of previous results in the field.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{botvinik2019fmri,
+    title={fMRI data of mixed gambles from the Neuroimaging Analysis Replication and Prediction Study},
+    author={Botvinik-Nezer, Rotem and Iwanir, Roni and Holzmeister, Felix and Huber, J{\"u}rgen and Johannesson, Magnus and Kirchler, Michael and Dreber, Anna and Camerer, Colin F and Poldrack, Russell A and Schonberg, Tom},
+    journal={Scientific data},
+    volume={6},
+    number={1},
+    pages={106},
+    year={2019},
+    publisher={Nature Publishing Group UK London}
+  }
+
+download: https://openneuro.org/datasets/ds001734/versions/1.0.5

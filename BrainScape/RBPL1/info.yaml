@@ -1,0 +1,25 @@
+note: "Note: This README file is Auto Generated."
+
+title: The Reading Brain Project L1 Adults
+
+description: |
+  This dataset contains the native English speaker (L1) adult subset of the Reading Brain Project (RBP) data, focusing on 52 participants who underwent two sessions of testing: MRI scanning and behavioral tests, collected 2-3 days apart. During the first session, following the scanning of structural (T1-weighted) and resting-state data, participants performed a reading task with simultaneous eye-tracking and fMRI scanning, and the session ended with a diffusion tensor imaging (DTI) scan. The second session consisted of only behavioral tests, including five standardized tests: the Attention Network Test (ANT), Gray's Silent Reading Test (GSRT), Letter-Number Sequencing (LNS), Peabody Picture Vocabulary Test (PPVT-4), and Tower of Hanoi (ToH), followed by a survey: Reading Background Questionnaire (RBQ), which includes familiarity rating for the topics of our five reading texts. The raw data are all provided here.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{li2019reading,
+    title={Reading comprehension in L1 and L2: An integrative approach},
+    author={Li, Ping and Clariana, Roy B},
+    journal={Journal of Neurolinguistics},
+    volume={50},
+    pages={94--105},
+    year={2019},
+    publisher={Elsevier}
+  }
+
+
+
+download: https://openneuro.org/datasets/ds003974/versions/3.0.0

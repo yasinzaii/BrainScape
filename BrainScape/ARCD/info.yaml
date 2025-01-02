@@ -1,0 +1,27 @@
+note: "Note: This README file is Auto Generated."
+
+title: "Aphasia Recovery Cohort (ARC) Dataset"
+  
+description: |
+  Images from individuals with chronic stroke who have experienced speech and language impairments. Many individuals have participated in multiple sessions, allowing longitudinal studies.
+
+  Post Stork MRIs
+
+usage_agreement: ""
+
+
+license: "CC0"
+
+citation: |
+  @article{gibson2024aphasia,
+    title={The Aphasia Recovery Cohort, an open-source chronic stroke repository},
+    author={Gibson, Makayla and Newman-Norlund, Roger and Bonilha, Leonardo and Fridriksson, Julius and Hickok, Gregory and Hillis, Argye E and den Ouden, Dirk-Bart and Rorden, Christopher},
+    journal={Scientific Data},
+    volume={11},
+    number={1},
+    pages={981},
+    year={2024},
+    publisher={Nature Publishing Group UK London}
+  }
+
+download: "https://openneuro.org/datasets/ds004884/versions/1.0.2"

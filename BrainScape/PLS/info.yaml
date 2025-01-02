@@ -1,0 +1,25 @@
+note: "Note: This README file is Auto Generated."
+
+title: Pragmatic Language
+
+description: |
+  All brain MRI data were acquired in different date schedules over 4 years (2016-2019). In total, one hundred forty-five neurotypical volunteers native Mexican participants (79 females, 66 males) with Spanish native language, aged 17-35 (median 23.46). Whole descriptions for each experimental protocol are in the project descriptions folder
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{reyes2023contribution,
+    title={Contribution and functional connectivity between cerebrum and cerebellum on sub-lexical and lexical-semantic processing of verbs},
+    author={Reyes-Aguilar, Azalea and Licea-Haquet, Giovanna and Arce, Brenda I and Giordano, Magda},
+    journal={Plos one},
+    volume={18},
+    number={9},
+    pages={e0291558},
+    year={2023},
+    publisher={Public Library of Science San Francisco, CA USA}
+  }
+
+
+download: https://openneuro.org/datasets/ds003481/versions/1.0.3

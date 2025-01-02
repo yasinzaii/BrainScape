@@ -1,0 +1,35 @@
+note: "Note: This README file is Auto Generated."
+
+title: "Amsterdam Open MRI Collection (AOMIC) - AOMIC-ID1000"
+  
+description: |
+  The ID1000 dataset is part of the Amsterdam Open MRI Collection (AOMIC), a collection of multimodal 
+  (3T) MRI datasets including structural (T1-weighted), diffusion-weighted, and (resting-state and task-based) 
+  functional BOLD MRI data, as well as detailed demographics and psychometric variables from a large 
+  set of healthy participants.
+
+  This dataset contains both raw and preprocessed data (and other "derivatives"), which is available on 
+  [Openneuro](https://openneuro.org/datasets/ds003097).
+
+  The contents of this dataset are described in detail in [this preprint](https://www.biorxiv.org/content/10.1101/2020.06.16.155317v1). 
+  More general information about the AOMIC datasets, including instructions on how to download (parts of) it, 
+  check out the [AOMIC website](https://nilab-uva.github.io/AOMIC.github.io/).
+
+usage_agreement: ""
+
+
+license: "CC0"
+
+citation: |
+  @article{snoek2021amsterdam,
+    title={The Amsterdam Open MRI Collection, a set of multimodal MRI datasets for individual difference analyses},
+    author={Snoek, Lukas and van der Miesen, Maite M and Beemsterboer, Tinka and Van Der Leij, Andries and Eigenhuis, Annemarie and Steven Scholte, H},
+    journal={Scientific data},
+    volume={8},
+    number={1},
+    pages={85},
+    year={2021},
+    publisher={Nature Publishing Group UK London}
+  }
+
+download: "https://openneuro.org/datasets/ds003097/versions/1.2.1"

@@ -1,0 +1,34 @@
+note: "Note: This README file is Auto Generated."
+
+title: "Brain connectivity predicts placebo response across chronic pain clinical trials"
+  
+description: |
+  In this dataset you will find the following T1 and resting state scans for;
+
+  - 20 Healthy controls.
+
+  - 17 Osteoarthritis (OA) patients from a 2-week placebo only treatment (study 1) scanned before treatment.
+
+  - 39 OA patients from a 3-month placebo vs duloxetine treatment (study 2) scanned before treatment.
+
+  Demographics with age, gender, stratification, etc. can be found in the participants.tsv file.
+
+
+usage_agreement: ""
+
+
+license: "CC0"
+
+citation: |
+  @article{tetreault2016brain,
+    title={Brain connectivity predicts placebo response across chronic pain clinical trials},
+    author={T{\'e}treault, Pascal and Mansour, Ali and Vachon-Presseau, Etienne and Schnitzer, Thomas J and Apkarian, A Vania and Baliki, Marwan N},
+    journal={PLoS biology},
+    volume={14},
+    number={10},
+    pages={e1002570},
+    year={2016},
+    publisher={Public Library of Science San Francisco, CA USA}
+  }
+
+download: "https://openneuro.org/datasets/ds000208/versions/1.0.1"

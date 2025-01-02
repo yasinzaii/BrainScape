@@ -1,0 +1,24 @@
+note: "Note: This README file is Auto Generated."
+
+title: Neuroimaging evidence for network sampling theory of human intelligence
+
+description: |
+  Sixty adults (35 females, mean age 22.95, range 18-38 years of age), all with normal hearing and corrected to normal vision were included in the study. Participants were recruited from the University of Western Ontario and surrounding area. Whole-brain images were collected using a 3 Tesla scanner (TIM Trio, Siemens, Erlangen, Germany). FMRI data were collected across twelve runs (60 min total). During functional scans, a T2-weighted echo-planar image depicting blood oxygenation level-dependent (BOLD) contrast was acquired every 2s. The first ten images were discarded to account for equilibrium effects. Images consisted of 36*3 mm slices, with an 80 x 80 matrix, 240 x 240 mm field of view, TE=30ms, flip angle=90\degree, echo spacing=2.65ms. A 1 mm resolution MPRAGE structural scan was also collected for each participant with a 256 x 240 x 384 matrix, TI=900ms, TR=2.3s, TE=2.98ms and 9\degree flip angle
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{soreq2021neuroimaging,
+    title={Neuroimaging evidence for a network sampling theory of individual differences in human intelligence test performance},
+    author={Soreq, Eyal and Violante, Ines R and Daws, Richard E and Hampshire, Adam},
+    journal={Nature communications},
+    volume={12},
+    number={1},
+    pages={2072},
+    year={2021},
+    publisher={Nature Publishing Group UK London}
+  }
+
+download: https://openneuro.org/datasets/ds003148/versions/1.0.1

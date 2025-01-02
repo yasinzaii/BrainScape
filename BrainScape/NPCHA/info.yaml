@@ -1,0 +1,23 @@
+note: "Note: This README file is Auto Generated."
+
+title: Neuroimaging predictors of creativity in healthy adults
+
+description: |
+  
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{sunavsky2020neuroimaging,
+    title={Neuroimaging predictors of creativity in healthy adults},
+    author={Sunavsky, Adam and Poppenk, Jordan},
+    journal={Neuroimage},
+    volume={206},
+    pages={116292},
+    year={2020},
+    publisher={Elsevier}
+  }
+
+download: https://openneuro.org/datasets/ds002330/versions/1.1.0

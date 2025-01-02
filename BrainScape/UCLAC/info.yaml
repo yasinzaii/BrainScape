@@ -1,0 +1,23 @@
+note: "Note: This README file is Auto Generated."
+
+title: UCLA Consortium for Neuropsychiatric Phenomics LA5c Study
+
+description: |
+  The participants.tsv file contains subject IDs with demographic informations as well as an inventory of the scans that are included for each subject.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{gorgolewski2017preprocessed,
+    title={Preprocessed consortium for neuropsychiatric phenomics dataset},
+    author={Gorgolewski, Krzysztof J and Durnez, Joke and Poldrack, Russell A},
+    journal={F1000Research},
+    volume={6},
+    year={2017},
+    publisher={Faculty of 1000 Ltd}
+  }
+
+
+download: https://openneuro.org/datasets/ds000030/versions/1.0.0

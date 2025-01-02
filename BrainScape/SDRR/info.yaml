@@ -1,0 +1,22 @@
+note: "Note: This README file is Auto Generated."
+
+title: In silico discovery of representational relationships across visual cortex
+
+description: |
+  Each subject underwent two fMRI data collection sessions. The first session consisted of three runs of population receptive field experiment (which we used to delineate areas V1 and V4 in each subject), and 10 runs where we presented the univariate RNC controlling images. The second session consisted of 12 runs where we presented the multivariate RNC controlling images. Anatomical scans and field maps were collected at the beginning of both sessions.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{gifford2024silico,
+    title={In silico discovery of representational relationships across visual cortex},
+    author={Gifford, Alessandro T and Jastrz{\k{e}}bowska, Maya A and Singer, Johannes JD and Cichy, Radoslaw M},
+    journal={arXiv preprint arXiv:2411.10872},
+    year={2024}
+  }
+
+
+
+download: https://openneuro.org/datasets/ds005503/versions/1.1.0

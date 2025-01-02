@@ -1,0 +1,28 @@
+note: "Note: This README file is Auto Generated."
+
+title: Mapping the Connectome of Synaesthesia - An Open Access MRI Dataset
+
+description: |
+  A multi-modal MRI neuroimaging repository consisting of 102 synaesthetic brains and 25 control (non-synaesthetic) brains. We have used imaging protocols from the Human Connectome Project (HCP) based on the Development and Ageing (D/A) sequences comprising T1 and T2 weighted structural scans and around 24 minutes of resting state data.
+
+  The dataset is designed to be interoperable with other samples (normative or special) that have used this acquisition protocol and analysis pipeline, but could potentially be contrasted or combined with similar data.
+
+  Further details of the scanning protocol, pre-registration, and associated behavioral data (tasks completed outside scanner, details of types of synaesthesia) can be found in the linked Open Science Foundation site (https://osf.io/ycqgd/) 
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{racey2023open,
+    title={An open science mri database of over 100 synaesthetic brains and accompanying deep phenotypic information},
+    author={Racey, Chris and Kampoureli, Christina and Bowen-Hill, Oscar and Bauer, Mathilde and Simpson, Ivor and Rae, Charlotte and Del Rio, Magda and Simner, Julia and Ward, Jamie},
+    journal={Scientific Data},
+    volume={10},
+    number={1},
+    pages={766},
+    year={2023},
+    publisher={Nature Publishing Group UK London}
+  }
+
+download: https://openneuro.org/datasets/ds004466/versions/1.0.2

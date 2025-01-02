@@ -1,0 +1,34 @@
+note: "Note: This README file is Auto Generated."
+
+title: "Adolescent Health Risk Behavior Study: Monetary Incentive Delay (MID) task data"
+  
+description: |
+  Structural: T1w and T2w
+
+  Functional: Monetary Incentive Delay task BOLD
+
+  Collected at the University of Michigan under the grant: R01HD075806. Imaging data collected 
+  between 2017 and 2021. Original Owners and curators: Daniel P. Keating, PhD, and Edward D. Huntley, PhD. 
+  Data transferred from University of Michigan to Stanford University July 2022.
+
+  Relevant descriptions of datasets:
+  - [NIH Reporter](https://reporter.nih.gov/project-details/9497809)
+  - [Pub 1](https://doi.org/10.1007/s10964-019-01057-4)
+  - [Pub 2](https://doi.org/10.1016/j.dcn.2020.100798)
+
+usage_agreement: ""
+
+
+license: "CC0"
+
+citation: |
+  @article{demidenko2024impact,
+    title={Impact of analytic decisions on test-retest reliability of individual and group estimates in functional magnetic resonance imaging: a multiverse analysis using the monetary incentive delay task},
+    author={Demidenko, Michael I and Mumford, Jeanette A and Poldrack, Russell A},
+    journal={bioRxiv},
+    pages={2024--03},
+    year={2024},
+    publisher={Cold Spring Harbor Laboratory}
+  }
+
+download: "https://openneuro.org/datasets/ds005012/versions/1.0.3"

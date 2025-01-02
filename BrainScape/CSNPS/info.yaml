@@ -1,0 +1,38 @@
+note: "Note: This README file is Auto Generated."
+
+title: "Cross-stage neural pattern similarity in the hippocampus predicts false memory derived from post-event inaccurate information"
+  
+description: |
+  The misinformation effect occurs when people's memory of an event is altered by subsequent inaccurate information. 
+  No study has systematically tested theories about the dynamics of human hippocampal representations during the three 
+  stages of misinformation-induced false memory. This study replicates behavioral results of the misinformation effect, 
+  and investigates the cross-stage pattern similarity in the hippocampus and cortex using functional magnetic resonance 
+  imaging. 
+  
+  Results show item-speciﬁc hippocampal pattern similarity between original-event and post-event stages. During the memory 
+  test stage, hippocampal representations of original information are weakened for true memory, whereas hippocampal 
+  representations of misinformation compete with original information to create false memory. When false memory occurs, 
+  this conﬂict is resolved by the lateral prefrontal cortex. Individuals' memory traces of post-event information in the 
+  hippocampus predict false memory, whereas original information in the lateral parietal cortex predicts true memory. 
+  
+  
+  These ﬁndings support the multiple-trace model, and emphasize the reconstructive nature of human memory.
+
+usage_agreement: ""
+
+
+license: "CC0"
+
+citation: |
+  @article{shao2023cross,
+    title={Cross-stage neural pattern similarity in the hippocampus predicts false memory derived from post-event inaccurate information},
+    author={Shao, Xuhao and Li, Ao and Chen, Chuansheng and Loftus, Elizabeth F and Zhu, Bi},
+    journal={Nature Communications},
+    volume={14},
+    number={1},
+    pages={2299},
+    year={2023},
+    publisher={Nature Publishing Group UK London}
+  }
+
+download: "https://openneuro.org/datasets/ds004261/versions/2.0.0"

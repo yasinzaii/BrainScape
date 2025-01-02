@@ -1,0 +1,25 @@
+note: "Note: This README file is Auto Generated."
+
+title: Triple Dissociation Revisited
+
+description: |
+  This dataset includes raw data from all scanned participants acquired by the Siemens Trio 3T MRI scanner (12-channel head coil), with each participant consisting of the following folders: /anat, /fmap, and /func. /anat includes structural imaging data obtained from scanning in the form of .nii.gz and .json files. /fmap includes field mapping data in the form of .nii.gz and .json files. /func includes functional imaging data obtained from scanning in the form of .nii.gz and .json files, along with event.tsv files for each run (total runs = 4). Data for a total of N=53 participants is included in the present dataset.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{van2022evidence,
+    title={Evidence for a single rather than a triple dissociation in the medial temporal lobe: An fMRI recognition memory replication study},
+    author={Van, Julie and Nielsen, Sam E and Kirwan, C Brock},
+    journal={Neuroimage: Reports},
+    volume={2},
+    number={4},
+    pages={100135},
+    year={2022},
+    publisher={Elsevier}
+  }
+
+
+download: https://openneuro.org/datasets/ds004086/versions/1.2.0

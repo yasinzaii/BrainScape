@@ -1,0 +1,26 @@
+note: "Note: This README file is Auto Generated."
+
+title: Interoception during aging: The heartbeat detection task
+
+description: |
+  The dataset contains fMRI data from a heartbeat detection task in 50 participants aged 40–65 years, with no history of cardiovascular events, such as stroke or myocardial infarction, and no severe white matter hyperintensities according to structural MRI (modified Fazekas score of 2 or less), and also from 12 young healthy adults (age 18-24 years).
+
+
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{dobrushina2020ability,
+    title={The ability to understand emotions is associated with interoception-related insular activation and white matter integrity during aging},
+    author={Dobrushina, Olga R and Arina, Galina A and Dobrynina, Larisa A and Suslina, Anastasia D and Solodchik, Polina O and Belopasova, Anastasia V and Gubanova, Mariia V and Sergeeva, Anastasia N and Kremneva, Elena I and Krotenkova, Marina V},
+    journal={Psychophysiology},
+    volume={57},
+    number={5},
+    pages={e13537},
+    year={2020},
+    publisher={Wiley Online Library}
+  }
+
+download: https://openneuro.org/datasets/ds003763/versions/1.0.5

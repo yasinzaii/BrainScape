@@ -1,0 +1,25 @@
+note: "Note: This README file is Auto Generated."
+
+title: INDI NKI/Rockland Sample
+
+description: |
+  The NKI/Rockland Sample is intended to be a phenotypically rich neuroimaging sample, consisting of data obtained from individuals between the ages of 4 and 85 year-old. All individuals to be included in the sample undergo semi-structured diagnostic psychiatric interviews, and complete a battery of psychiatric, cognitive and behavioral assessments in order to provide comprehensive phenotypic information for the purpose of exploring brain/behavior relationships
+  
+  https://fcon_1000.projects.nitrc.org/indi/pro/nki.html
+
+usage_agreement: ""
+
+license: "Attribution Non-Commercial"
+
+citation: |
+  @article{nooner2012nki,
+    title={The NKI-Rockland sample: a model for accelerating the pace of discovery science in psychiatry},
+    author={Nooner, Kate Brody and Colcombe, Stanley J and Tobe, Russell H and Mennes, Maarten and Benedict, Melissa M and Moreno, Alexis L and Panek, Laura J and Brown, Shaquanna and Zavitz, Stephen T and Li, Qingyang and others},
+    journal={Frontiers in neuroscience},
+    volume={6},
+    pages={152},
+    year={2012},
+    publisher={Frontiers Media SA}
+  }
+
+download: https://www.nitrc.org/ir/data/projects/nki_rockland

@@ -1,0 +1,22 @@
+note: "Note: This README file is Auto Generated."
+
+title: "Psychosocial adversity and inhibitory control: an fMRI study of children growing up in extreme poverty"
+
+description: |
+  
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{surani2024examining,
+    title={Examining the relationship between psychosocial adversity and inhibitory control: an fMRI study of children growing up in extreme poverty},
+    author={Surani, Zoya and Turesky, Ted K and Sullivan, Eileen and Shama, Talat and Haque, Rashidul and Islam, Nazrul and Kakon, Shahria Hafiz and Yu, Xi and Petri, William A and Nelson III, Charles and others},
+    journal={bioRxiv},
+    pages={2024--02},
+    year={2024},
+    publisher={Cold Spring Harbor Laboratory}
+  }
+
+download: https://openneuro.org/datasets/ds005504/versions/1.0.0

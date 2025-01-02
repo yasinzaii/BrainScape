@@ -1,0 +1,27 @@
+note: "Note: This README file is Auto Generated."
+
+title: "Characterizing habit learning in the human brain at the individual and group levels: a multi-modal MRI study"
+  
+description: |
+  This data was collected for the study:
+  "Characterizing habit learning in the human brain at the individual and group levels: a multi-modal MRI study"
+
+  The study was submitted as a registered report to Neuroimage and was granted an in principle acceptance. For the manuscript with complete details see:
+  https://osf.io/xrg64/
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{gera2023characterizing,
+    title={Characterizing habit learning in the human brain at the individual and group levels: A multi-modal MRI study},
+    author={Gera, Rani and Or, Maya Bar and Tavor, Ido and Roll, Dana and Cockburn, Jeffrey and Barak, Segev and Tricomi, Elizabeth and O'Doherty, John P and Schonberg, Tom},
+    journal={NeuroImage},
+    volume={272},
+    pages={120002},
+    year={2023},
+    publisher={Elsevier}
+  }
+
+download: "https://openneuro.org/datasets/ds004299/versions/1.0.0"

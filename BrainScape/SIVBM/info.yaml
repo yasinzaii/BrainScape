@@ -1,0 +1,26 @@
+note: "Note: This README file is Auto Generated."
+
+title: https://openneuro.org/datasets/ds000222/versions/1.0.1
+
+description: |
+  These data comprise behaviour from 79 subjects on a probabilistic reversal task together with T1-weighted structural images. (The task is described in more detail in: FitzGerald et al. Sequential inference as a mode of cognition and its correlates in fronto-parietal and hippocampal brain regions. PLoS Computational Biology (2017))
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{fitzgerald2017sequential,
+    title={Sequential inference as a mode of cognition and its correlates in fronto-parietal and hippocampal brain regions},
+    author={FitzGerald, Thomas HB and H{\"a}mmerer, Dorothea and Friston, Karl J and Li, Shu-Chen and Dolan, Raymond J},
+    journal={PLoS computational biology},
+    volume={13},
+    number={5},
+    pages={e1005418},
+    year={2017},
+    publisher={Public Library of Science San Francisco, CA USA}
+  }
+
+
+
+download: https://openneuro.org/datasets/ds000222/versions/1.0.1

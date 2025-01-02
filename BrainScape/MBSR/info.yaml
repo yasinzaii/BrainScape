@@ -1,0 +1,24 @@
+note: "Note: This README file is Auto Generated."
+
+title: Modality-based Multitasking and Practice - fMRI
+
+description: |
+  
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{seminowicz2020enhanced,
+    title={Enhanced mindfulness-based stress reduction in episodic migraine: a randomized clinical trial with magnetic resonance imaging outcomes},
+    author={Seminowicz, David A and Burrowes, Shana AB and Kearson, Alexandra and Zhang, Jing and Krimmel, Samuel R and Samawi, Luma and Furman, Andrew J and Keaser, Michael L and Gould, Neda F and Magyari, Trish and others},
+    journal={Pain},
+    volume={161},
+    number={8},
+    pages={1837--1846},
+    year={2020},
+    publisher={LWW}
+  }
+
+download: https://openneuro.org/datasets/ds005016/versions/1.1.1

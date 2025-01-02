@@ -1,0 +1,52 @@
+note: "Note: This README file is Auto Generated."
+
+title: Emotion and Development Branch Phenotyping and DTI (2012-2017)
+
+description: |
+  A comprehensive dataset characterizing a transdiagnostic sample of youth aged 7 to 20 years using clinical assessments, structural magnetic resonance imaging (MRI), and diffusion tensor imaging (DTI).
+
+  Data was collected at the National Institute of Mental Health (NIMH), Bethesda, Maryland by the Emotion and Development Branch (EDB). The basic pre-processing scripts are shared on the study GitHub repository. This dataset will allow a wide array of investigations into brain structure and psychopathology in youth.
+
+  #### Participant Eligibility and Characteristics
+
+  ##### Inclusion Criteria
+
+  - **Age:** 7 to 20 years old
+  - **Language:** Proficient in English
+  - **Diagnoses:**
+    - Met criteria for Attention-Deficit/Hyperactivity Disorder (ADHD) **or**
+    - Disruptive Mood Dysregulation Disorder (DMDD) as assessed with the KSADS
+  - **Health Status:** Did **not** meet criteria for any other psychiatric disorder (i.e., healthy volunteer, HV) as assessed with the KSADS
+
+  ##### Exclusion Criteria
+  
+  - **Neurological Disorders:** Any diagnosed neurological condition
+  - **Pervasive Developmental Disorders:** Including Autism Spectrum Disorder
+  - **Psychiatric Conditions:**
+    - Psychosis
+    - Bipolar Disorders
+    - Substance Use Disorders
+  - **Medical Conditions:** Any condition that increases risk for MRI, such as:
+    - Pacemaker
+    - Metallic foreign body in the eye
+    - Dental braces
+  - **MRI Contraindications:**
+    - Claustrophobia
+    - Pregnancy
+  - **Cognitive Function:** Full-scale IQ below 70
+
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{mckay2024modeling,
+    title={Modeling Shared and Specific Variances of Irritability, Inattention, and Hyperactivity Yields Novel Insights Into White Matter Perturbations},
+    author={McKay, Cameron C and Scheinberg, Brooke and Xu, Ellie P and Kircanski, Katharina and Pine, Daniel S and Brotman, Melissa A and Leibenluft, Ellen and Linke, Julia O},
+    journal={Journal of the American Academy of Child \& Adolescent Psychiatry},
+    year={2024},
+    publisher={Elsevier}
+  }
+
+download: https://openneuro.org/datasets/ds004605/versions/1.0.1

@@ -1,0 +1,39 @@
+note: "Note: This README file is Auto Generated."
+
+title: "BrainMorphometry DiminishedGrowth BEAN study 2021"
+  
+description: |
+  This repository contains the dataset corresponding to the study: Brain Morphometry and Diminished Physical Growth in Bangladeshi Children Growing up in Extreme Poverty: a Longitudinal Study.
+
+  Data contained in this repository includes:
+
+  - Raw T1 MRI images in nifti format 
+  - Age at MRI (months)
+  - Sex (female=1; male=2)
+  - Frequency of C-reactive protein elevations
+  - Height-for-age
+  - Weight-for-age
+  - Weight-for-height
+  - Maternal education (years, rescaled)
+  - log(income-to-needs)
+  - Full-scale IQ
+
+  Code used to process and analyze these data is available at https://github.com/TeddyTuresky/BrainMorphometry_DiminishedGrowth_BEANstudy_2021
+
+usage_agreement: ""
+
+
+license: "CC0"
+
+citation: |
+  @article{turesky2021brain,
+    title={Brain morphometry and diminished physical growth in Bangladeshi children growing up in extreme poverty: A longitudinal study},
+    author={Turesky, Ted K and Shama, Talat and Kakon, Shahria Hafiz and Haque, Rashidul and Islam, Nazrul and Someshwar, Amala and Gagoski, Borjan and Petri Jr, William A and Nelson, Charles A and Gaab, Nadine},
+    journal={Developmental cognitive neuroscience},
+    volume={52},
+    pages={101029},
+    year={2021},
+    publisher={Elsevier}
+  }
+
+download: "https://openneuro.org/datasets/ds003877/versions/1.1.1"

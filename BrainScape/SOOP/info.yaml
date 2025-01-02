@@ -1,0 +1,25 @@
+note: "Note: This README file is Auto Generated."
+
+title: Stroke Outcome Optimization Project (SOOP)
+
+description: |
+  
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{absher2024stroke,
+    title={The stroke outcome optimization project: Acute ischemic strokes from a comprehensive stroke center},
+    author={Absher, John and Goncher, Sarah and Newman-Norlund, Roger and Perkins, Nicholas and Yourganov, Grigori and Vargas, Jan and Sivakumar, Sanjeev and Parti, Naveen and Sternberg, Shannon and Teghipco, Alex and others},
+    journal={Scientific Data},
+    volume={11},
+    number={1},
+    pages={839},
+    year={2024},
+    publisher={Nature Publishing Group UK London}
+  }
+
+
+
+download: https://openneuro.org/datasets/ds004889/versions/1.1.2

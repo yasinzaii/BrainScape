@@ -1,0 +1,26 @@
+note: "Note: This README file is Auto Generated."
+
+title: Resting state with closed eyes for patients with depression and healthy participants
+
+description: |
+  This dataset was used for the resting state network analysis. There are 51 subjects with mild depression and 21 healthy controls. A session consist of 100 dynamic scans with TR = 2.5 s and 25 slices.
+  
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{bezmaternykh2021brain,
+    title={Brain networks connectivity in mild to moderate depression: resting state fMRI study with implications to nonpharmacological treatment},
+    author={Bezmaternykh, Dmitry D and Melnikov, Mikhail Ye and Savelov, Andrey A and Kozlova, Lyudmila I and Petrovskiy, Evgeniy D and Natarova, Kira A and Shtark, Mark B},
+    journal={Neural plasticity},
+    volume={2021},
+    number={1},
+    pages={8846097},
+    year={2021},
+    publisher={Wiley Online Library}
+  }
+
+
+
+download: https://openneuro.org/datasets/ds002748/versions/1.0.5

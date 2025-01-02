@@ -1,0 +1,29 @@
+note: "Note: This README file is Auto Generated."
+
+title: Washington University 120
+
+description: |
+  These 120 MRI datasets are being released to the public along as part of the materials for “Temporal interpolation alters motion in fMRI scans: magnitudes and consequences for artifact detection” by Power et al. in PLOS ONE.
+
+  Included for each subject is a T1-weighted anatomical image (MP-RAGE) and one or more T2*-weighted scans (resting state BOLD scans)
+
+  All subjects - were “typical” young adults that reported no significant neurological or psychiatric history - were right-handed and reported that English was their first language - were scanned at Washington University in Saint Louis on a Siemens MAGNETOM Tim Trio 3T scanner with a Siemens 12-channel head coil - were scanned using interleaved ascending product sequences for T2* data - were scanned in the eyes-open resting state fixating a white crosshair on a black background
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{power2013evidence,
+    title={Evidence for hubs in human functional brain networks},
+    author={Power, Jonathan D and Schlaggar, Bradley L and Lessov-Schlaggar, Christina N and Petersen, Steven E},
+    journal={Neuron},
+    volume={79},
+    number={4},
+    pages={798--813},
+    year={2013},
+    publisher={Elsevier}
+  }
+
+
+download: https://openneuro.org/datasets/ds000243/versions/00001

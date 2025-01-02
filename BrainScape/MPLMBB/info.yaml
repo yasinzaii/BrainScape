@@ -1,0 +1,28 @@
+note: "Note: This README file is Auto Generated."
+
+title: The MPI-Leipzig Mind-Brain-Body dataset
+
+description: |
+  The MPI-Leipzig Mind-Brain-Body dataset contains MRI and behavioral data from 318 participants. Datasets for all participants include at least a structural quantitative T1-weighted image and a single 15-minute eyes-open resting-state fMRI session.
+
+  The participants took part in one or two extended protocols: Leipzig Mind-Body-Brain Interactions (LEMON) and Neuroanatomy & Connectivity Protocol (N&C). The data from LEMON protocol is included in the ‘ses-01’ subfolder; the data from N&C protocol in ‘ses-02’ subfolder.
+
+  LEMON focuses on structural imaging. 228 participants were scanned. In addition to the quantitative T1-weighted image, the participants also have a structural T2-weighted image (226 participants), a diffusion-weighted image with 64 directions (228) and a 15-minute eyes-open resting-state session (228). New imaging sequences were introduced into the LEMON protocol after data acquisition for approximately 110 participants. Before the change, a low-resolution 2D FLAIR images were acquired for clinical purposes (110). After the change, 2D FLAIR was replaced with high-resolution 3D FLAIR (117). The second addition was the acquisition of gradient-echo images (112) that can be used for Susceptibility-Weighted Imaging (SWI) and Quantitative Susceptibility Mapping (QSM).
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{babayan2019mind,
+    title={A mind-brain-body dataset of MRI, EEG, cognition, emotion, and peripheral physiology in young and old adults},
+    author={Babayan, Anahit and Erbey, Miray and Kumral, Deniz and Reinelt, Janis D and Reiter, Andrea MF and R{\"o}bbig, Josefin and Schaare, H Lina and Uhlig, Marie and Anwander, Alfred and Bazin, Pierre-Louis and others},
+    journal={Scientific data},
+    volume={6},
+    number={1},
+    pages={1--21},
+    year={2019},
+    publisher={Nature Publishing Group}
+  }
+
+download: https://openneuro.org/datasets/ds000221/versions/00002

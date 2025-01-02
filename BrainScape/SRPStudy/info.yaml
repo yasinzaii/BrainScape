@@ -1,0 +1,25 @@
+note: "Note: This README file is Auto Generated."
+
+title: "Social Reward and Nonsocial Reward Processing Across the Adult Lifespan: An Interim Multi-echo fMRI and Diffusion Dataset"
+
+description: |
+  This is a preliminary release of a dataset supported by the National Institutes of Aging and National Institutes of Health. The full dataset is described in a paper published in Data in Brief (https://doi.org/10.1016/j.dib.2024.110810). 
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{smith2024social,
+    title={Social reward and nonsocial reward processing across the adult lifespan: An interim multi-echo fMRI and diffusion dataset},
+    author={Smith, David V and Sharp, Cooper J and Dachs, Abraham and Wyngaarden, James and Sazhin, Daniel and Yang, Yi and Kos, Melanie and Tropea, Tia and Kohli, Ishika and Clithero, John A and others},
+    journal={Data in Brief},
+    volume={56},
+    pages={110810},
+    year={2024},
+    publisher={Elsevier}
+  }
+
+
+
+download: https://openneuro.org/datasets/ds005123/versions/1.1.3

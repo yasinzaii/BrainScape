@@ -1,0 +1,34 @@
+note: "Note: This README file is Auto Generated."
+
+title: Game of Thrones - A naturalistic viewing dataset
+
+description: |
+  This dataset contains fMRI movie-watching and category localiser data in 28 developmental prosopagnosics and 45 neurologically healthy controls. Participants are additionally grouped by their familiarity with the Game of Thrones television series.
+
+  In movie-watching scans, participants passively viewed a series of short audiovisual clips (ranging from 50 to 117 s duration; total duration = 12 min 58 s) taken from the Game of Thrones television series.
+
+  1. participants.tsv - List of subject IDs in control and developmental prosopagnosic groups, along with whether they were familiar or unfamiliar with Game of Thrones.
+
+  2. Subject Directories - MRI data directories for each subject:
+
+    *  anat - T1 anatomical images
+    *  fmap - Magnitude and phase difference fieldmap images
+    *  func - Movie-watching (Game of Thrones) and category localiser data
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{noad2024familiarity,
+    title={Familiarity enhances functional connectivity between visual and nonvisual regions of the brain during natural viewing},
+    author={Noad, Kira N and Watson, David M and Andrews, Timothy J},
+    journal={Cerebral Cortex},
+    volume={34},
+    number={7},
+    pages={bhae285},
+    year={2024},
+    publisher={Oxford University Press}
+  }
+
+download: https://openneuro.org/datasets/ds004848/versions/1.0.1

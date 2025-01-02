@@ -1,0 +1,31 @@
+note: "Note: This README file is Auto Generated."
+
+title: "Concrete Permuted Rule Operations"
+  
+description: |
+  This dataset contains whole brain task and resting-state fMRI data for 96 subjects during a single recording session. Subjects performed the Concrete Permuted Rule Operations task (C-PRO).
+
+  This study was designed by and the dataset collected by the Cole Neurocognition Lab at Rutgers University: https://www.colelab.org/
+
+  For a description of the task and data methods, please view the methods and task description in:
+
+  Ito, T., Kulkarni, K.R., Schultz, D.H., Mill, R.D., Chen, R.H., Solomyak, L.I., Cole, M.W., 2017. Cognitive task information is transferred between brain regions via resting-state network topology. Nature Communications. https://doi.org/10.1038/s41467-017-01000-w
+
+usage_agreement: ""
+
+
+license: "CC0"
+
+citation: |
+  @article{ito2017cognitive,
+    title={Cognitive task information is transferred between brain regions via resting-state network topology},
+    author={Ito, Takuya and Kulkarni, Kaustubh R and Schultz, Douglas H and Mill, Ravi D and Chen, Richard H and Solomyak, Levi I and Cole, Michael W},
+    journal={Nature communications},
+    volume={8},
+    number={1},
+    pages={1027},
+    year={2017},
+    publisher={Nature Publishing Group UK London}
+  }
+
+download: "https://openneuro.org/datasets/ds003701/versions/1.0.1"

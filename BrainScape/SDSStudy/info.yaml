@@ -1,0 +1,26 @@
+note: "Note: This README file is Auto Generated."
+
+title: Structural (t1) images of 136 young healthy adults
+
+description: |
+  The dataset contains structural T1-weighted magnetic resonance brain imaging data from 136 young individuals (87 females; age range from 18 to 35 years old) along with questionnaire-assessed measurements of trait-like chronotype, sleep quality and daytime sleepiness. The recruitment criteria excluded individuals with self-reported history of psychiatric or neurological conditions and current medication use. All the brain imaging sessions were performed between 5:20 PM and 8:55 PM in order to control the effect of time of day on acquired images. The data is mostly useful to scientists interested in circadian rhythmicity. It can be deployed in large-scale multicenter meta-analyses investigating the structural brain correlates of chronotypes in humans. Additionally, the data could be of use in investigations into the effects of sleeping habits and latitude on brain anatomy.
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{zareba2022late,
+    title={Late chronotype is linked to greater cortical thickness in the left fusiform and entorhinal gyri},
+    author={Zareba, Michal Rafal and Fafrowicz, Magdalena and Marek, Tadeusz and Beldzik, Ewa and Oginska, Halszka and Domagalik, Aleksandra},
+    journal={Biological Rhythm Research},
+    volume={53},
+    number={10},
+    pages={1626--1638},
+    year={2022},
+    publisher={Taylor \& Francis}
+  }
+
+
+
+download: https://openneuro.org/datasets/ds003826/versions/3.0.1

@@ -1,0 +1,25 @@
+note: "Note: This README file is Auto Generated."
+
+title: Resting-state for 34 younger and 28 older adults
+
+description: |
+  Younger adults = 10XX; Older adults = 20XX
+
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{wahlheim2021connectome,
+    title={Connectome-based Modeling of Mnemonic Discrimination in Younger and Older Adults},
+    author={Wahlheim, Christopher N and Christensen, Alexander P and Reagh, Zachariah M and Cassidy, Brittany S},
+    journal={bioRxiv},
+    pages={2021--07},
+    year={2021},
+    publisher={Cold Spring Harbor Laboratory}
+  }
+
+
+
+download: https://openneuro.org/datasets/ds003871/versions/1.0.2

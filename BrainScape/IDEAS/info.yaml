@@ -1,0 +1,54 @@
+note: "Note: This README file is Auto Generated."
+
+title: The Imaging Database for Epilepsy And Surgery (IDEAS)
+
+description: |
+  This release on OpenNeuro includes only raw T1w and FLAR scans. Fully processed data, including resection masks and other demographic information can be found at the following locations: https://www.cnnp-lab.com/ideas-data
+  
+  - **BIDS:** [https://figshare.com/s/07fca72410094bc49506](https://figshare.com/s/07fca72410094bc49506)  
+    Raw T1w and FLAIR scans organized in BIDS format. NIfTI and JSON descriptors included.
+
+  - **Masks:** [https://figshare.com/s/31ab43d1829b12ac13e8](https://figshare.com/s/31ab43d1829b12ac13e8)  
+    Resection masks for the IDEAS cohort in native and FreeSurfer `orig.mgz` space.
+
+  - **Freesurfer Brain:** [https://figshare.com/s/39b61a1df5fa8443e3c4](https://figshare.com/s/39b61a1df5fa8443e3c4)  
+    Skull-stripped brain from FreeSurfer in NIfTI format.
+
+  - **Freesurfer Orig:** [https://figshare.com/s/f13391a4161b807ce6b0](https://figshare.com/s/f13391a4161b807ce6b0)  
+    FreeSurfer `orig.mgz` converted to NIfTI format.
+
+  - **Freesurfer ZIP:** [https://figshare.com/s/b13b8bb41390d3f7a088](https://figshare.com/s/b13b8bb41390d3f7a088)  
+    FreeSurfer surface and volumetric reconstructions.
+
+  - **Tables Stats FreeSurfer:** [https://figshare.com/s/010142dd51e37ba4e4e2](https://figshare.com/s/010142dd51e37ba4e4e2)  
+    FreeSurfer thickness, volume, and surface areas for the Desikan-Kiliany parcellation.
+
+  - **Tables Metadata:** [https://figshare.com/s/bab70268afeb1071202b](https://figshare.com/s/bab70268afeb1071202b)  
+    Clinical and demographic metadata.
+
+  - **Table Resected:** [https://figshare.com/s/097ba0e254e36f0eee52](https://figshare.com/s/097ba0e254e36f0eee52)  
+    Table indicating the percentage of each brain region in the Desikan-Kiliany atlas subsequently resected by surgery.
+
+  - **Tables Z-Scores:** [https://figshare.com/s/8c086fc295a75f85e628](https://figshare.com/s/8c086fc295a75f85e628)  
+    FreeSurfer thickness, volume, and surface areas for the Desikan-Kiliany parcellation, z-scored against normative controls post-ComBat.
+
+  - **Tables Group Effect:** [https://figshare.com/s/323db205354788c4d1f0](https://figshare.com/s/323db205354788c4d1f0)  
+    Group effect size differences compared to controls.
+
+    
+
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{taylor2024imaging,
+    title={The Imaging Database for Epilepsy And Surgery (IDEAS)},
+    author={Taylor, Peter N and Wang, Yujiang and Simpson, Callum and Janiukstyte, Vytene and Horsley, Jonathan and Leiberg, Karoline and Little, Beth and Clifford, Harry and Adler, Sophie and Vos, Sjoerd B and others},
+    journal={Epilepsia},
+    year={2024},
+    publisher={Wiley Online Library}
+  }
+
+download: https://openneuro.org/datasets/ds005602/versions/1.0.0

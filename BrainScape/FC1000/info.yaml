@@ -1,0 +1,40 @@
+note: "Note: This README file is Auto Generated."
+
+title: The 1000 Functional Connectomes Project
+
+description: |
+  The "1000 Functional Connectomes" Project has announced the unrestricted public release of over 1,200 "resting state" functional MRI (R-fMRI) datasets, independently collected across 33 sites. These datasets were generously donated by principal investigators from member sites to provide the broader imaging community with comprehensive access to a large-scale functional imaging resource. Each dataset includes information on age, sex, and imaging center. In accordance with HIPAA guidelines, all datasets are anonymized and contain no protected health information. This data-sharing initiative is expected to equip researchers with the tools necessary to explore and refine R-fMRI methodologies and to foster the growing ethos of sharing and collaboration within the scientific community.
+
+  **Download Info:**
+
+  Download the Data for the 1000 Functional Connectomes  From Nitrc. 
+
+  This download should be done manullay. And the data should be placed in the download folder. 
+
+  The pattern should be 
+
+  Download/*_sub*/anat_mprage_anonymized
+
+  Link: https://www.nitrc.org/projects/fcon_1000/
+
+  Nitrc Image Repository: https://www.nitrc.org/ir/
+
+  Note: You will have to login to nitrc to be able to download the dataset. 
+
+usage_agreement: ""
+
+license: "Attribution Non-Commercial"
+
+citation: |
+  @article{biswal2010toward,
+    title={Toward discovery science of human brain function},
+    author={Biswal, Bharat B and Mennes, Maarten and Zuo, Xi-Nian and Gohel, Suril and Kelly, Clare and Smith, Steve M and Beckmann, Christian F and Adelstein, Jonathan S and Buckner, Randy L and Colcombe, Stan and others},
+    journal={Proceedings of the national academy of sciences},
+    volume={107},
+    number={10},
+    pages={4734--4739},
+    year={2010},
+    publisher={National Acad Sciences}
+  }
+
+download: https://www.nitrc.org/projects/fcon_1000/

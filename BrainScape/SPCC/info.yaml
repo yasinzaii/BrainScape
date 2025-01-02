@@ -1,0 +1,23 @@
+note: "Note: This README file is Auto Generated."
+
+title: Single-pulse TMS fMRI
+
+description: |
+  
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{glick2024concurrent,
+    title={Concurrent single-pulse (sp) TMS/fMRI to reveal the causal connectome in healthy and patient populations},
+    author={Glick, Cameron C and Gajawelli, Niharika and Sun, Yinming and Badami, Faizan and Saggar, Manish and Etkin, Amit},
+    journal={bioRxiv},
+    pages={2024--09},
+    year={2024},
+    publisher={Cold Spring Harbor Laboratory}
+  }
+
+
+
+download: https://openneuro.org/datasets/ds005498/versions/1.1.1

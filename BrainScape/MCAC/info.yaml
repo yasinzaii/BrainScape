@@ -1,0 +1,24 @@
+note: "Note: This README file is Auto Generated."
+
+title: Maturational Changes in Anterior Cingulate and Frontoparietal Recruitment Support the Development of Error Processing and Inhibitory Control (Antistate)
+
+description: |
+  
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{velanova2008maturational,
+    title={Maturational changes in anterior cingulate and frontoparietal recruitment support the development of error processing and inhibitory control},
+    author={Velanova, Katerina and Wheeler, Mark E and Luna, Beatriz},
+    journal={Cerebral cortex},
+    volume={18},
+    number={11},
+    pages={2505--2522},
+    year={2008},
+    publisher={Oxford University Press}
+  }
+
+download: https://openneuro.org/datasets/ds000119/versions/00001

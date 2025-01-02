@@ -1,0 +1,23 @@
+note: "Note: This README file is Auto Generated."
+
+title: Functional magnetic resonance imaging data for the neural dynamics underlying the acquisition of distinct auditory categories
+
+description: |
+  Sixty adult Mandarin native speakers were recruited for the fMRI experiment. They were assigned to either the RB (n = 30, 19 females) or II (n = 30, 22 females) learning task. Each task consisted of six training blocks where each consisting of 40 trials
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{feng2021neural,
+    title={Neural dynamics underlying the acquisition of distinct auditory category structures},
+    author={Feng, Gangyi and Gan, Zhenzhong and Yi, Han Gyol and Ell, Shawn W and Roark, Casey L and Wang, Suiping and Wong, Patrick CM and Chandrasekaran, Bharath},
+    journal={Neuroimage},
+    volume={244},
+    pages={118565},
+    year={2021},
+    publisher={Elsevier}
+  }
+
+download: https://openneuro.org/datasets/ds003764/versions/1.0.5
