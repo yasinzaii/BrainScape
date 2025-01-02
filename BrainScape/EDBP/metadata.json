@@ -29,6 +29,10 @@
                 "t2w": "^.*T2w.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-21651",
+            "sub-22166",
+            "sub-22803"
+        ]
     }
 }

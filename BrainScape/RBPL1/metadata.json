@@ -2,13 +2,13 @@
     "info": "Dataset Specific Settings",
     "isDownloaded": true,
     "isDatasetJsonCreated": false,
-    "isPreprocessed": false,
+    "isPreprocessed": true,
     "includeDataset": true,
     "download": {
         "isDownloadable": true,
         "plugin": "OpenNeuroDownloader",
         "profile": "",
-        "source": "s3://openneuro.org/ds005401",
+        "source": "s3://openneuro.org/ds003974",
         "include": [
             "CHANGES",
             "README",

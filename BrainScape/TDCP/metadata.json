@@ -28,6 +28,10 @@
                 "t2w": "^.*T2w.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-NDARINVAN576KX1",
+            "sub-NDARINVCK288RP2",
+            "sub-NDARINVKZ413VTU"
+        ]
     }
 }

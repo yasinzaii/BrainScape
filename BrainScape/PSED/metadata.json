@@ -29,6 +29,9 @@
                 "flair": "^.*FLAIR.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-00018",
+            "sub-00120"
+        ]
     }
 }

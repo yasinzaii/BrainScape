@@ -16,6 +16,21 @@
             "sub-*/anat/*"
         ]
     },
+    "alreadyPreprocessed": true,
+    "preprocess": {
+        "preprocessor": "brats",
+        "preprocessDirName": "preprocessed",
+        "brats": {
+            "tempDirName": "temp",
+            "skipBrainExtraction": true,
+            "modPriority": [
+                "t1w",
+                "t2w",
+                "t1ce",
+                "flair"
+            ]
+        }
+    },
     "mapping": {
         "plugin": "RegexMapper",
         "regex": {

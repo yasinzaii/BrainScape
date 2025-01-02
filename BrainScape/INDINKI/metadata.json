@@ -1,0 +1,33 @@
+{
+    "info": "Dataset Specific Settings",
+    "isDownloaded": true,
+    "isDatasetJsonCreated": false,
+    "isPreprocessed": true,
+    "includeDataset": true,
+    "download": {
+        "isDownloadable": false
+    },
+    "mapping": {
+        "plugin": "RegexMapper",
+        "regex": {
+            "subject": "^MR_.*$",
+            "session": "^\\d+$",
+            "type": ".*NIFTI",
+            "modality": {
+                "t1w": "^.*MPRAGE.*.nii.gz$"
+            }
+        },
+        "excludeSub": [
+            "MR_1534265_13de",
+            "MR_1875434_1104",
+            "MR_1898228_1b1a",
+            "MR_2494762_112f",
+            "MR_2505567_3f9e",
+            "MR_2674565_0b0c",
+            "MR_4026825_5fe8",
+            "MR_4230470_1da0",
+            "MR_5844518_0d26",
+            "MR_9421819_1328"
+        ]
+    }
+}

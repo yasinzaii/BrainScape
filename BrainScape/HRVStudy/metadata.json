@@ -30,6 +30,12 @@
                 "t1w": "^.*wholebrain_T1w.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-5051",
+            "sub-6005",
+            "sub-6057",
+            "sub-7002",
+            "sub-7017"
+        ]
     }
 }

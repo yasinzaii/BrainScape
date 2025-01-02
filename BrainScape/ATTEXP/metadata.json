@@ -28,6 +28,7 @@
                 "t2w": "^.*T2w.nii$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+        ]
     }
 }

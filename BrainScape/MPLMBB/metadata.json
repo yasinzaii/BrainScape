@@ -1,8 +1,8 @@
 {
     "info": "Dataset Specific Settings",
-    "isDownloaded": false,
+    "isDownloaded": true,
     "isDatasetJsonCreated": false,
-    "isPreprocessed": false,
+    "isPreprocessed": true,
     "includeDataset": true,
     "download": {
         "isDownloadable": true,
@@ -14,9 +14,7 @@
             "README",
             "dataset_description.json",
             "participants.tsv",
-            "sub-*/*.tsv",
-            "sub-*/ses-*/anat/*",
-            "sub-*/ses-*/*.tsv"
+            "sub-*/ses-*/anat/*"
         ]
     },
     "mapping": {
@@ -27,7 +25,8 @@
             "type": "^anat$",
             "modality": {
                 "t1w": "^.*T1w.nii.gz$",
-                "t2w": "^.*T2w.nii.gz$"
+                "t2w": "^.*T2w.nii.gz$",
+                "flair": "^.*FLAIR.nii.gz$"
             }
         },
         "excludeSub": []

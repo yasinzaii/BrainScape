@@ -4,7 +4,6 @@
     "isDatasetJsonCreated": false,
     "isPreprocessed": true,
     "includeDataset": true,
-
     "download": {
         "isDownloadable": true,
         "plugin": "OpenNeuroDownloader",
@@ -19,7 +18,6 @@
             "sub-*/ses-*/anat/*"
         ]
     },
-    
     "mapping": {
         "plugin": "RegexMapper",
         "regex": {
@@ -28,9 +26,83 @@
             "type": "^anat",
             "modality": {
                 "t1w": "^.*T1w.nii.gz$",
-                "t2w": "^.*T2w.nii.gz$"
+                "flair": "^.*T2w.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-1045",
+            "sub-1093",
+            "sub-110",
+            "sub-1141",
+            "sub-1245",
+            "sub-147",
+            "sub-1484",
+            "sub-149",
+            "sub-153",
+            "sub-1759",
+            "sub-1767",
+            "sub-1775",
+            "sub-1797",
+            "sub-1800",
+            "sub-1868",
+            "sub-1886",
+            "sub-1891",
+            "sub-1926",
+            "sub-196",
+            "sub-2058",
+            "sub-2068",
+            "sub-208",
+            "sub-2127",
+            "sub-2133",
+            "sub-253",
+            "sub-261",
+            "sub-2743",
+            "sub-2743",
+            "sub-2748",
+            "sub-2790",
+            "sub-2974",
+            "sub-2976",
+            "sub-3005",
+            "sub-3053",
+            "sub-3108",
+            "sub-3182",
+            "sub-3211",
+            "sub-3211",
+            "sub-3319",
+            "sub-3531",
+            "sub-3537",
+            "sub-361",
+            "sub-3658",
+            "sub-3660",
+            "sub-383",
+            "sub-3907",
+            "sub-3983",
+            "sub-4129",
+            "sub-4196",
+            "sub-4582",
+            "sub-466",
+            "sub-4682",
+            "sub-4684",
+            "sub-4791",
+            "sub-4800",
+            "sub-4828",
+            "sub-483",
+            "sub-4847",
+            "sub-4868",
+            "sub-4869",
+            "sub-503",
+            "sub-528",
+            "sub-532",
+            "sub-562",
+            "sub-676",
+            "sub-680",
+            "sub-684",
+            "sub-752",
+            "sub-754",
+            "sub-818",
+            "sub-833",
+            "sub-890",
+            "sub-953" 
+        ]
     }
 }

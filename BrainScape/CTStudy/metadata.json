@@ -31,6 +31,8 @@
                 "t2w": "^.*T2w.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-s629"
+        ]
     }
 }

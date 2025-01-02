@@ -2,7 +2,7 @@
     "info": "Dataset Specific Settings",
     "isDownloaded": true,
     "isDatasetJsonCreated": false,
-    "isPreprocessed": false,
+    "isPreprocessed": true,
     "includeDataset": true,
     "download": {
         "isDownloadable": true,
@@ -14,6 +14,7 @@
             "README",
             "dataset_description.json",
             "participants.tsv",
+            "T1w.json",
             "sub-*/anat/*"
         ]
     },
@@ -27,6 +28,30 @@
                 "t1w": "^.*T1w.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-10570",
+            "sub-10657",
+            "sub-14200",
+            "sub-14204",
+            "sub-14330",
+            "sub-14482",
+            "sub-14519",
+            "sub-15015",
+            "sub-15103",
+            "sub-15110",
+            "sub-15199",
+            "sub-15251",
+            "sub-16101",
+            "sub-16102",
+            "sub-16103",
+            "sub-16104",
+            "sub-16105",
+            "sub-16106",
+            "sub-16107",
+            "sub-16108",
+            "sub-16109",
+            "sub-16110",
+            "sub-16111"
+        ]
     }
 }

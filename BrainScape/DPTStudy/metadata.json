@@ -28,9 +28,16 @@
             }
         },
         "excludeSub": [
-            "sub-55",
+            "sub-20",
+            "sub-31",
+            "sub-36",
+            "sub-43",
             "sub-47",
-            "sub-43"
+            "sub-52",
+            "sub-55",
+            "sub-59",
+            "sub-76",
+            "sub-86"
         ]
     }
 }

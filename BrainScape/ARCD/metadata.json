@@ -30,6 +30,26 @@
                 "flair": "^.*FLAIR.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-M2015",
+            "sub-M2022",
+            "sub-M2023",
+            "sub-M2046",
+            "sub-M2066",
+            "sub-M2092",
+            "sub-M2105",
+            "sub-M2116",
+            "sub-M2137",
+            "sub-M2160",
+            "sub-M2191",
+            "sub-M2192",
+            "sub-M2228",
+            "sub-M2283",
+            "sub-M2295"
+        ],
+
+        "demographics":{
+            "healthy": "false"
+        }
     }
 }

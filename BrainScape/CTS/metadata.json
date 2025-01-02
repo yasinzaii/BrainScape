@@ -31,6 +31,16 @@
                 "t2w": "^.*T2w.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-dmp0153",
+            "sub-dmp0217",
+            "sub-dmp0273",
+            "sub-dmp0357",
+            "sub-dmp0755",
+            "sub-dmp0913",
+            "sub-dmp0929",
+            "sub-dmp0975",
+            "sub-dmp1165"
+        ]
     }
 }

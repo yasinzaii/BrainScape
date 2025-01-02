@@ -2,7 +2,7 @@
     "info": "Dataset Specific Settings",
     "isDownloaded": true,
     "isDatasetJsonCreated": false,
-    "isPreprocessed": false,
+    "isPreprocessed": true,
     "includeDataset": true,
     "download": {
         "isDownloadable": true,
@@ -30,6 +30,14 @@
                 "t2w": "^.*T2w.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-131",
+            "sub-138",
+            "sub-142",
+            "sub-143",
+            "sub-154",
+            "sub-156"
+
+        ]
     }
 }

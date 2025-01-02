@@ -28,6 +28,8 @@
                 "t1w": "^.*T1w.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-047EPKL011063"
+        ]
     }
 }

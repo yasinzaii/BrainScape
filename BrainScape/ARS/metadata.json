@@ -3,7 +3,7 @@
     "isDownloaded": true,
     "isDatasetJsonCreated": false,
     "isPreprocessed": true,
-    "includeDataset": true,
+    "includeDataset": false,
     "download": {
         "isDownloadable": true,
         "plugin": "OpenNeuroDownloader",

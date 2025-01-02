@@ -25,6 +25,8 @@
                 "t1w": "^.*T1w.nii$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-7058"
+        ]
     }
 }

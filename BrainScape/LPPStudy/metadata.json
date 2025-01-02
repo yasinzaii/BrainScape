@@ -28,6 +28,26 @@
                 "t1w": "^.*T1w.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-EN057",
+            "sub-EN058",
+            "sub-EN059",
+            "sub-EN061",
+            "sub-EN062",
+            "sub-EN063",
+            "sub-EN064",
+            "sub-EN065",
+            "sub-EN069",
+            "sub-EN076",
+            "sub-EN078",
+            "sub-EN081",
+            "sub-EN083",
+            "sub-EN084",
+            "sub-EN087",
+            "sub-EN091",
+            "sub-EN092",
+            "sub-EN114",
+            "sub-EN115"
+        ]
     }
 }

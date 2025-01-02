@@ -28,6 +28,10 @@
                 "t1w": "^.*T1w.nii$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-ER031",
+            "sub-ER064",
+            "sub-ER521"
+        ]
     }
 }

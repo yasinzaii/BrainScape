@@ -1,8 +1,8 @@
 {
     "info": "Dataset Specific Settings",
-    "isDownloaded": false,
+    "isDownloaded": true,
     "isDatasetJsonCreated": false,
-    "isPreprocessed": false,
+    "isPreprocessed": true,
     "includeDataset": true,
     "download": {
         "isDownloadable": true,
@@ -11,7 +11,7 @@
         "source": "s3://openneuro.org/ds003499",
         "include": [
             "CHANGES",
-            "README.md",
+            "README",
             "dataset_description.json",
             "participants.tsv",
             "sub-*/anat/*"

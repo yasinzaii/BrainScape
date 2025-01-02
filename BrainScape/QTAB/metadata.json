@@ -1,36 +1,90 @@
 {
     "info": "Dataset Specific Settings",
-    "isDownloaded": false,
-    "downloader": "OpenNeuroDownloader",
+    "isDownloaded": true,
     "isDatasetJsonCreated": false,
-    "isPreprocessed": false,
-    "datasetSource": "OpenNeuro",
+    "isPreprocessed": true,
     "includeDataset": true,
-    "downloadFrom": "s3://openneuro.org/ds004146",
-    "download": [
-        "CHANGES",
-        "README",
-        "dataset_description.json",
-        "participants.json",
-        "participants.tsv",
-        "sub-*/ses-*/anat/*"
-    ],
-    "mriDataMapping": {
+    "download": {
+        "isDownloadable": true,
+        "plugin": "OpenNeuroDownloader",
+        "profile": "",
+        "source": "s3://openneuro.org/ds004146",
+        "include": [
+            "CHANGES",
+            "README",
+            "dataset_description.json",
+            "participants.json",
+            "participants.tsv",
+            "sub-*/ses-*/anat/*"
+        ]
+    },
+    "mapping": {
+        "plugin": "RegexMapper",
         "regex": {
-            "subjects": [
-                "^sub-.*$",
-                "DIR"
-            ],
-            "sessions": [
-                "^ses-.*/anat$",
-                "DIR"
-            ],
-            "images": {
-                "T1W": [
-                    "^.*T1w.nii.gz$",
-                    "FILE"
-                ]
+            "subject": "^sub-.*$",
+            "session": "^ses-.*$",
+            "type": "^anat",
+            "modality": {
+                "t1w": "^.*UNIT1_denoised.nii.gz$",
+                "t2w": "^.*T2w.nii.gz$",
+                "flair": "^.*FLAIR.nii.gz$"
             }
-        }
+        },
+        "excludeSub": [
+            "sub-0003",
+            "sub-0009",
+            "sub-0011",
+            "sub-0013",
+            "sub-0023",
+            "sub-0027",
+            "sub-0057",
+            "sub-0075",
+            "sub-0082",
+            "sub-0083",
+            "sub-0085",
+            "sub-0096",
+            "sub-0097",
+            "sub-0099",
+            "sub-0116",
+            "sub-0119",
+            "sub-0142",
+            "sub-0143",
+            "sub-0146",
+            "sub-0147",
+            "sub-0160",
+            "sub-0162",
+            "sub-0164",
+            "sub-0168",
+            "sub-0171",
+            "sub-0173",
+            "sub-0179",
+            "sub-0180",
+            "sub-0190",
+            "sub-0191",
+            "sub-0196",
+            "sub-0205",
+            "sub-0210",
+            "sub-0226",
+            "sub-0229",
+            "sub-0233",
+            "sub-0244",
+            "sub-0259",
+            "sub-0261",
+            "sub-0268",
+            "sub-0269",
+            "sub-0271",
+            "sub-0283",
+            "sub-0289",
+            "sub-0294",
+            "sub-0295",
+            "sub-0305",
+            "sub-0309",
+            "sub-0310",
+            "sub-0316",
+            "sub-0321",
+            "sub-0325",
+            "sub-0327",
+            "sub-0332"
+        ]
     }
 }

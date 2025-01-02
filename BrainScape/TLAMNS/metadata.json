@@ -1,8 +1,8 @@
 {
     "info": "Dataset Specific Settings",
-    "isDownloaded": false,
+    "isDownloaded": true,
     "isDatasetJsonCreated": false,
-    "isPreprocessed": false,
+    "isPreprocessed": true,
     "includeDataset": true,
     "download": {
         "isDownloadable": true,
@@ -28,6 +28,8 @@
                 "t1w": "^.*T1w.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-050"
+        ]
     }
 }

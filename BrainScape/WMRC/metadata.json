@@ -28,6 +28,10 @@
                 "t1w": "^.*T1w.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-04",
+            "sub-07",
+            "sub-25"
+        ]
     }
 }

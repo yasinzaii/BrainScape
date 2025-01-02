@@ -33,6 +33,9 @@
             }
         },
         "mapFirstGroupOnly": true,
-        "excludeSub": []
+        "excludeSub": [
+            "sub-ON54886",
+            "sub-ON88555"
+        ]
     }
 }

@@ -24,12 +24,15 @@
         "plugin": "RegexMapper",
         "regex": {
             "subject": "^sub-.*$",
-            "session": "^ses-.*$",
+            "session": "^ses-3T$",
             "type": "^anat$",
             "modality": {
                 "t1w": "^.*T1w.nii$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-046",
+            "sub-063"
+        ]
     }
 }

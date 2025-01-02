@@ -17,6 +17,16 @@
                 "t1w": "^scan_mprage_anonymized.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "AnnArbor_sub04111",
+            "AnnArbor_sub53269",
+            "AnnArbor_sub87745",
+            "Beijing_sub69696",
+            "Milwaukee_sub55712",
+            "NewYork_sub29216",
+            "NewYork_sub31671",
+            "NewYork_sub38088",
+            "NewYork_sub44515"
+        ]
     }
 }

@@ -1,0 +1,26 @@
+{
+    "info": "Dataset Specific Settings",
+    "isDownloaded": true,
+    "isDatasetJsonCreated": false,
+    "isPreprocessed": true,
+    "includeDataset": true,
+    "download": {
+        "isDownloadable": false
+    },
+    "mapping": {
+        "plugin": "RegexMapper",
+        "regex": {
+            "subject": "^NDA.*$",
+            "session": "",
+            "type": "",
+            "modality": {
+                "t1w": "^acq-HCP_T1w/NIfTI-1/sub-.*_T1w.nii.gz$",
+                "t2w": "^acq-HCP_T1w/NIfTI-1/sub-.*_T1w.nii.gz$",
+                "flair": "^flair_1/NIfTI-1/flair.nii.gz$"
+            }
+        },
+        "excludeSub": [
+        ]
+    }
+}
+

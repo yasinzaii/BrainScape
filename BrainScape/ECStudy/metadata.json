@@ -30,7 +30,9 @@
                 "t1w": "^.*T1w.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-s037"
+        ]
     },
     "other": {
         "participantId": "participant_id",

@@ -1,10 +1,9 @@
 {
     "info": "Dataset Specific Settings",
-    "isDownloaded": false,
+    "isDownloaded": true,
     "isDatasetJsonCreated": false,
-    "isPreprocessed": false,
+    "isPreprocessed": true,
     "includeDataset": true,
-    
     "download": {
         "isDownloadable": true,
         "plugin": "OpenNeuroDownloader",
@@ -27,8 +26,7 @@
             "session": "",
             "type": "^anat",
             "modality": {
-                "t1w": "^.*T1w.nii.gz$",
-                "t2w": "^.*T2w.nii.gz$"
+                "t1w": "^sub-\\d+_T1w.nii.gz$"
             }
         },
         "excludeSub": []

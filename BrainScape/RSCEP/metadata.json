@@ -28,7 +28,10 @@
                 "t1w": "^.*T1w.nii.gz$"
             }
         },
-        "excludeSub": []
+        "excludeSub": [
+            "sub-45",
+            "sub-48"
+        ]
     },
     "alreadyPreprocessed": true,
     "preprocess": {
