@@ -28,12 +28,14 @@ usage_agreement: "This dataset is licensed under the [Creative Commons Zero (CC0
 license: "CC0"
 
 citation: |
-  @dataset{ds004856:1.2.0,
-    author = {Denise Park and Joseph Hennessee and Evan T. Smith and Micaela Chan and Carson Katen and Julia Bacci and Sarah Frank and Sarah Monier and Alexandra Collyer and Carol Tamminga and William Moore and Neil Rofsky and Karen Rodrigue and Kristen Kennedy and Gagan Wig},
-    title = {"The Dallas Lifespan Brain Study"},
-    year = {2024},
-    doi = {doi:10.18112/openneuro.ds004856.v1.2.0},
-    publisher = {OpenNeuro}
+  @article{mcdonough2016discrepancies,
+    title={Discrepancies between fluid and crystallized ability in healthy adults: a behavioral marker of preclinical Alzheimer's disease},
+    author={McDonough, Ian M and Bischof, G{\'e}rard N and Kennedy, Kristen M and Rodrigue, Karen M and Farrell, Michelle E and Park, Denise C},
+    journal={Neurobiology of aging},
+    volume={46},
+    pages={68--75},
+    year={2016},
+    publisher={Elsevier}
   }
 
 download: "https://openneuro.org/datasets/ds004856/versions/1.2.0"

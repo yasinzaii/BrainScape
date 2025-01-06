@@ -1,62 +1,43 @@
-# ECStudy: Dataset Detail
-Only the Anatomical T1W MRIs are extracted from this dataset.
+Note: This README file is Auto Generated.
 
-## Original Dataset: The Energetic Costs of the Human Connectome
-This dataset consists of quantitative FDG-PET, BOLD-fMRI, and DWI data from 20 right-handed, healthy individuals, 
-acquired during rest on a Siemens Biograph mMR 3T PET-MR scanner from three independent cohorts.
+# The Energetic Costs of the Human Connectome
 
-### Dataset License
-CCO
+## Description
 
-### Dataset URL
-[OpenNeuro Dataset ds004513](https://openneuro.org/datasets/ds004513)
+This dataset consists of quantitative FDG-PET, BOLD-fMRI, and DWI data from 30 right-handed, 
+healthy individuals, acquired during rest on a Siemens Biograph mMR 3T PET-MR scanner from 
+three independent cohorts:
 
-### Dataset Paper
-[The energetic costs of the human connectome](https://www.science.org/doi/10.1126/sciadv.adi7632)
+1. The raw data and derivatives of a within-subject exploration cohort (TUM.exp) with nine participants 
+  acquired across two sessions, one with their eyes open and the other with their eyes closed (participants 
+  s003 to s026; mean age = 43 years, std = 7 years; 4 females).
+
+2. The raw data and derivatives of a prospective replication cohort (TUM.rep) with eleven participants 
+  acquired with their eyes open (participants s028 to s038; mean age = 27 years, std = 5 years; 6 females).
+
+3. The derivatives of an external within-subject replication sample (VIE.rep) (Sundar et al., 2018) of 
+  ten participants acquired with their eyes open (participants HC002 to HC014; mean age = 27 years, std= 7 
+  years; 5 females). Two participants from the VIE.rep cohort had only one session.
 
 
-{
-    "info": "Dataset Specific Settings",
-    "isDownloaded": false,
-    "downloader": "OpenNeuroDownloader",
-    "isDatasetJsonCreated": false,
-    "isPreprocessed": false,
-    "datasetSource": "OpenNeuro",
-    "includeDataset": true,
-    "downloadFrom": "s3://openneuro.org/ds004513",
-    "download": [
-        "CHANGES",
-        "README",
-        "dataset_description.json",
-        "participants.json",
-        "participants.tsv",
-        "sub-*/ses-*/anat/*"
-    ],
-    "mapping": {
-        "plugin": "RegexMapper",
-        "regex": {
-            "subject": "^sub-.*$",
-            "session": "^ses-.*$",
-            "type": "^anat",
-            "modality": {
-                "t1w": "^.*T1w.nii.gz$"
-            }
-        },
-        "includeSub": [
-            "sub-s003",
-            "sub-s007"
-        ],
-        "excludeSub": []
-    },
-    "other": {
-        "participantId": "participant_id",
-        "sessionId": "session_id",
-        "age": "age",
-        "gender": "sex",
-        "handedness": "handedness",
-        "weight": "body_weight ",
-        "height": "body_height",
-        "haematocrit": "haematocrit",
-        "glucoseConcentration": "glucose_concentration"
-    }
-}
+## License
+
+CC0
+
+## Citation
+
+Castrillon, G., Epp, S., Bose, A., Fraticelli, L., Hechler, A., Belenya, R., Ranft, A., Yakushev, I., Utz, L., Sundar, L., & others. (2023). An energy costly architecture of neuromodulators for human brain evolution and cognition. Science advances, 9(50), eadi7632.
+
+## Download
+
+https://openneuro.org/datasets/ds004513/versions/1.0.4
+
+## Dataset Statistics
+
+| Statistic | Value |
+| --- | --- |
+| Number of Subjects | 19 |
+| Number of Sessions | 28 |
+| Total Number of MRIs | 28 |
+| Number of T1W MRIs | 28 |
+

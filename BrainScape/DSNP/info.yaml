@@ -11,12 +11,5 @@ usage_agreement: ""
 license: "CC0"
 
 citation: |
-  @dataset{ds002116:1.0.0,
-    author = {Celia Goffin and Michael Slipenkyj and Stephan E. Vogel and Rebecca Merkley and Daniel Ansari},
-    title = {"Development of Symbolic Number Processing"},
-    year = {2019},
-    doi = {10.18112/openneuro.ds002116.v1.0.0},
-    publisher = {OpenNeuro}
-  }
 
 download: "https://openneuro.org/datasets/ds002116/versions/1.0.0"

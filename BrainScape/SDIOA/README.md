@@ -1,0 +1,35 @@
+Note: This README file is Auto Generated.
+
+# Single Dose Intranasal Oxytocin Administration: Data from Healthy Younger and Older Adults
+
+## Description
+
+Data was collected between August 2013 and October 2014. Potential participants were first prescreened for study eligibility over the phone (~30 min), during which they completed the Telephone Interview for Cognitive Status (Brandt, Specter, & Folstein, 1988) and self-reported demographic information. Eligible participants then came to the University of Florida for an in-person screening session (~45 min) during which they completed cognitive tests (Digit Symbol Substitution Test, Weschler, 1981; Rey Auditory Verbal Learning Test, Rey, 1964) as well as provided blood and saliva samples. Participants then returned for an in-person full session (~3 hrs) during which they self-administered the intranasal spray (OT or PL; randomized, double-blind procedure) and underwent a T1-weighted (T1w) structural scan along with a resting-state fMRI scan. Neuroimaging data were collected on a 3T Philips Achieva MRI Scanner at the UF McKnight Brain Institute.
+
+**Subjects:**
+
+Generally healthy younger (n = 44; aged 18-31 years; 48% female) and older (n = 43; aged 63-81 years; 56% female) adults were recruited from the Gainesville, FL area. No participant had neurological or psychiatric disorders, and all participants were able to understand and give informed written consent for this study. All older participants scored ≥ 30 on the Telephone Interview For Cognitive Status (Brandt, Specter, & Folstein, 1988). Only white, English-speaking adults were included in this study. All older women included in the study were postmenopausal whereas all younger women were premenopausal. Individuals with contraindications for MRI or intranasal OT spray self-administration were excluded for safety. Individuals with certain metal implants or pacemakers; who were pregnant or breastfeeding; excessively smoked or drank alcohol; and/or had severe or progressive medical illness(es) were not eligible for this study. Participants were debriefed and compensated at the end of the study.
+  
+
+
+## License
+
+CC0
+
+## Citation
+
+Liu, P., Lin, T., Feifel, D., & Ebner, N. C. (2022). Intranasal oxytocin modulates the salience network in aging. NeuroImage, 253, 119045.
+
+## Download
+
+https://openneuro.org/datasets/ds004725/versions/1.0.1
+
+## Dataset Statistics
+
+| Statistic | Value |
+| --- | --- |
+| Number of Subjects | 85 |
+| Number of Sessions | 85 |
+| Total Number of MRIs | 85 |
+| Number of T1W MRIs | 85 |
+

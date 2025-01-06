@@ -10,11 +10,13 @@ usage_agreement: ""
 license: "CC0"
 
 citation: |
-  @article{bathelt2022resting,
-    title={Resting-state functional connectivity in the dorsal and ventral reading pathways correlates with individual differences in phonological decoding and lexical/semantic skill.},
-    author={Bathelt, Joe and Rastle, Kathleen and Taylor, Joanne},
-    year={2022},
-    publisher={OSF}
+  @article{bathelt2024relationship,
+    title={Relationship between resting state functional connectivity and reading-related behavioural measures in 69 adults},
+    author={Bathelt, Joe and Rastle, Kathleen and Taylor, JSH},
+    journal={Neurobiology of Language},
+    pages={1--19},
+    year={2024},
+    publisher={MIT Press 255 Main Street, 9th Floor, Cambridge, Massachusetts 02142, USA~…}
   }
 
 

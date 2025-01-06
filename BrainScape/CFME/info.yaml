@@ -7,7 +7,5 @@ description: |
 usage_agreement: ""
 
 license: "CC0"
-
-citation: |
   
-download: ""
+download: "https://openneuro.org/datasets/ds001818/versions/1.0.0"

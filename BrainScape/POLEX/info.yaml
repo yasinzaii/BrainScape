@@ -10,11 +10,5 @@ usage_agreement: ""
 license: "CC0"
 
 citation: |
-  @article{vidalgroup,
-    title={When Group Grievances Become Personal: Dissociating the Neural Correlates of Group and Personal Discrimination},
-    author={Vidal, Luis Marcos and Gil-Buitrago, Helena and Cisma, Irene and Hendricks, Rosamunde and Atran, Scott and Pretus, Clara},
-    publisher={OSF}
-  }
-
 
 download: https://openneuro.org/datasets/ds005375/versions/1.0.0

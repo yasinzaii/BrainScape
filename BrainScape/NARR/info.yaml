@@ -12,10 +12,5 @@ usage_agreement: ""
 license: "CC0"
 
 citation: |
-  @article{nastase2021narratives,
-    title={Narratives: fMRI data for evaluating models of naturalistic language comprehension. bioRxiv},
-    author={Nastase, Samuel A and Liu, Yun-Fei and Hillman, Hanna and Zadbood, Asieh and Hasenfratz, Liat and Keshavarzian, Neggin and Chen, Janice and Honey, Christopher J and Yeshurun, Yaara and Regev, Mor and others},
-    year={2021}
-  }
 
 download: https://openneuro.org/datasets/ds002345/versions/1.1.4

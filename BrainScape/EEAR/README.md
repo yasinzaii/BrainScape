@@ -1,0 +1,40 @@
+Note: This README file is Auto Generated.
+
+# Examining effects of arousal on responses to salient and non-salient stimuli in younger and older adults
+
+## Description
+
+A 'participants' text file indicates each participant's age group and sex.
+
+There are folders for each participant with their subject number (e.g., “sub-22”). Within each folder are three folders:
+
+1. anat - includes a T1 structural scan. Two participants (01 and 44) took a break in between scans and so we needed to get two T1 images for these participants. Their .json files indicate which T1s should be used for which EPI registrations.
+
+The 'anat' folder also includes hidden files. T1 neuromelanin contrast imaging files are not one of the basic image types supported by openfMRI. They suggested we include these as hidden files by adding '.' at the beginning of the file names, in order to pass the validity test (e.g., '.bidsignore_sub-17_melanin_T1w.nii.gz'). Thus, to see these files, you will need to type ls -a in the terminal or change the finder option to allow viewing of hidden files.
+
+2. dwi - diffusion imaging data
+
+3. func - all functional scans included in this folder with event timings indicated in .tsv files. Please see paper for more details. In addition, files included for associated ECG and pupil data.
+
+
+## License
+
+CC0
+
+## Citation
+
+Lee, T.-H., Greening, S. G., Ueno, T., Clewett, D., Ponzio, A., Sakaki, M., & Mather, M. (2018). Arousal increases neural gain via the locus coeruleus–noradrenaline system in younger adults but not in older adults. Nature human behaviour, 2(5), 356–366.
+
+## Download
+
+https://openneuro.org/datasets/ds001242/versions/1.0.0
+
+## Dataset Statistics
+
+| Statistic | Value |
+| --- | --- |
+| Number of Subjects | 49 |
+| Number of Sessions | 49 |
+| Total Number of MRIs | 49 |
+| Number of T1W MRIs | 49 |
+

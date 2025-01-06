@@ -41,14 +41,8 @@ description: |
   sub-OXF17_acq-func_run-02* should be used with PD and SG tasks.
 
 
-
-
 usage_agreement: ""
 
-
-license: "CC0"
-
-citation: |
-  
+license: "CC0"  
 
 download: "https://openneuro.org/datasets/ds004073/versions/1.0.1"
