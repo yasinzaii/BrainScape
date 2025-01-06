@@ -16,6 +16,8 @@ from validate.validate_manager import ValidateManager
 
 from visualizer import VisualizerManager
 
+from genInfo.generate_readme import ReadmeGeneratorManager
+
 from utils.common_utils import get_subdirectories
 
 from utils.common_utils import merge_settings
@@ -127,6 +129,24 @@ def prepare_dataset():
                                         mapping = dataset_man.get_mapping())
     
     visualizer_man.initiate_vis()
+    
+    
+    # README GENERATOR
+    readme_gen_man = ReadmeGeneratorManager(config=config, 
+                                            target_datasets=target_datasets, 
+                                            default_dataset_settings=default_dataset_settings,
+                                            mapping = dataset_man.get_mapping())
+    
+    
+    readme_gen_man.initiate_readme_generation()
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     mapping = dataset_man.get_mapping() 

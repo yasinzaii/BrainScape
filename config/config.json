@@ -4,5 +4,7 @@
     "pathDefaults": "./config/metadata.json",
     "pathOverrides": "./config/index.json", 
     "datasetSettingsJson": "metadata.json", 
+    "datasetInfoYaml": "info.yaml",
+    "datasetReadMe": "README.md",
     "datsetMriJson": "dataset.json"
 }
