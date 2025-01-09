@@ -1,0 +1,310 @@
+# ------------------------------------------------------------------------------
+# DEMOGRAPHICS SCHEMA / CONFIGURATION FILE
+# ------------------------------------------------------------------------------
+# This YAML file:
+# 1. Defines all possible demographic fields (name + aliases).
+# 2. Centralizes the "valid values" each field can accept.
+# 3. Uses anchors (&) and references (*) to avoid repeating common values (Y,N,n/a).
+# ------------------------------------------------------------------------------
+
+
+
+# ------------------------------------------------------------------------------
+# 1) GLOBAL MAPPINGS (ANCHORS)
+#    We define repeated sets of values here to avoid duplication below.
+# ------------------------------------------------------------------------------
+mappings:
+
+  # Yes,No,n/a repeated set
+  yes_no_na_values: &YES_NO_NA
+    - main_value: "Y"
+      aliases:
+        - "Yes"
+        - "1"
+    - main_value: "N"
+      aliases:
+        - "No"
+        - "0"
+    - main_value: "n/a"
+      aliases:
+        - "N/A"
+        - "na"
+
+
+# ------------------------------------------------------------------------------
+# 2) DEMOGRAPHICS FIELDS SPECIFICATION
+# ------------------------------------------------------------------------------
+demographics:
+  
+  # participant_id: 
+  #   unique ID for participant (e.g. "sub-001", "1234").
+  - name: participant_id
+    aliases:
+      - ID
+      - MR_ID
+    valid_patterns:
+      - "^sub[-_]?" # remove 'sub-' or 'sub_' and keep the rest.
+    description: >
+      Unique ID for participant (e.g. "sub-001", "1234").
+
+  # session:
+  #   session number i.e (1,2 ...)
+  - name: session
+    aliases:
+      - session_id
+    valid_patterns:
+      - "^ses[-_]?" # remove 'ses-' or 'ses_' 
+    description: >
+      Session number (1, 2, 3, ...).
+
+  # age:
+  #   age of the participant.
+  - name: age
+    aliases:
+      - Age
+    description: >
+      Age of the participant. 
+
+  # age_group: 
+  #   binned age ranges (e.g., 20-24, 25-29).
+  - name: age_group
+    aliases:
+      - age_bin
+    description: >
+      Binned age ranges (e.g., 20-25, 25-30).
+
+  # sex:
+  #   biological sex or gender. 
+  #   acceptable main values: male, female, other.
+  - name: sex
+    aliases:
+      - gender
+    description: >
+      Biological sex or gender. Acceptable main values: male, female, other.
+    valid_values:
+      - main_value: "female"
+        aliases:
+          - "f"
+          - "0"
+          - "Woman" # SNRP dataset
+      - main_value: "male"
+        aliases:
+          - "m"
+          - "1"
+          - "Man"
+      - main_value: "other"
+        aliases:
+          - "o"
+          - "2"
+      - main_value: "n/a"
+        aliases:
+          - "n/a"
+          - "U"
+
+
+  # race:
+  #   race or ethnicity. 
+  #   each code is mapped to a canonical label or code.
+  #   
+  #   1: White,
+  #   2: Black or African American,
+  #   3: Asian,
+  #   4: American Indian or Alaska Native,
+  #   5: Native Hawaiian or Other Pacific Islander,
+  #   6: Middle Eastern or North African,
+  #   7: Two or More Races,
+  #   8: Other
+  #   n/a: Not Available
+  - name: race
+    aliases:
+      - ethnicity
+    description: >
+      Race or ethnicity. Each code is mapped to a canonical label or code.
+    valid_values:
+      - main_value: "1"
+        aliases:
+          - "White"
+          - "Caucasian"
+      - main_value: "2"
+        aliases:
+          - "Black"
+          - "Black or African American"
+      - main_value: "3"
+        aliases:
+          - "Asian"
+      - main_value: "4"
+        aliases:
+          - "American Indian or Alaska Native"
+      - main_value: "5"
+        aliases:
+          - "Native Hawaiian or Other Pacific Islander"
+      - main_value: "6"
+        aliases:
+          - "Middle Eastern or North African"
+      - main_value: "7"
+        aliases:
+          - "Two or More Races"
+      - main_value: "8"
+        aliases:
+          - "Other"
+      - main_value: "n/a"
+        aliases:
+          - "na"
+
+  # handedness:
+  #   dominant hand. Mapped to L, R, or A.
+  - name: handedness
+    aliases:
+      - hand
+    description: >
+      Dominant hand. Mapped to L, R, or A.
+    valid_values: 
+      - main_value: "L"
+        aliases:
+          - "left"
+      - main_value: "R"
+        aliases:
+          - "right"
+      - main_value: "A"
+        aliases:
+          - "ambidextrous"
+          - "Ambi"
+          
+      - main_value: "n/a"
+        aliases:
+          - "na"
+
+  # height:
+  #   Stature or height of participant.
+  - name: height
+    description: >
+      Stature or height of participant (if recorded).
+
+  # weight:
+  #   Weight of participant.
+  - name: weight
+    description: >
+      Weight of participant (if recorded).
+
+  # BMI:
+  #   Body Mass Index value.
+  - name: BMI
+    description: >
+      Calculated Body Mass Index (if available).
+
+  # education:
+  #   participant's education level. Mapped to low, medium, or high.
+  #
+  #   low: primary, highschool
+  #   medium: - college, diploma, Associate's Degree
+  #   high: - bachelors, masters, PhD
+
+  - name: education
+    aliases:
+      - highest_education
+    description: >
+      Participant's education level. Mapped to low, medium, or high.
+    valid_values:
+      - main_value: "low"
+        aliases:
+          - "primary"
+          - "highschool"
+      - main_value: "medium"
+        aliases:
+          - "college"
+          - "diploma"
+          - "Associate's Degree"
+      - main_value: "high"
+        aliases:
+          - "bachelors"
+          - "masters"
+          - "PhD"
+      - main_value: "n/a"
+        aliases:
+          - "n/a"
+
+  # socio_economic:
+  #   socioeconomic status: low, medium, high. 
+  - name: socio_economic
+    aliases:
+      - SES
+      - socioeconomic_status
+    description: >
+      Socioeconomic status: low, medium, high. 
+    valid_values:
+      - main_value: "low"
+      - main_value: "medium"
+      - main_value: "high"
+
+  # ----------------------------------------------------------------
+  # Clinical / Condition Fields (All reference the same Y,N,n/a set)
+  
+  - name: stroke
+    description: >
+      Indicates whether the participant has had a stroke.
+    valid_values: *YES_NO_NA
+
+  - name: schizophrenia
+    description: >
+      Diagnosed with schizophrenia.
+    valid_values: *YES_NO_NA
+
+  - name: depression
+    description: >
+      Diagnosed with depression.
+    valid_values: *YES_NO_NA
+
+  - name: ADHD
+    description: >
+      Diagnosed with Attention-Deficit/Hyperactivity Disorder.
+    valid_values: *YES_NO_NA
+
+  - name: BIPOLAR
+    description: >
+      Diagnosed with Bipolar disorder.
+    valid_values: *YES_NO_NA
+
+  - name: prosopagnosia
+    description: >
+      Diagnosed with developmental prosopagnosia.
+    valid_values: *YES_NO_NA
+
+  - name: epilepsy
+    description: >
+      Diagnosed with epilepsy.
+    valid_values: *YES_NO_NA
+
+  - name: tumor
+    description: >
+      Tumor Detected.
+    valid_values: *YES_NO_NA
+
+  - name: acuteischaemicstroke
+    description: >
+      Diagnosed with Acute ischemic stroke.
+    valid_values: *YES_NO_NA
+
+  - name: FCD
+    description: >
+      Diagnosed with Focal Cortical Dysplasia.
+    valid_values: *YES_NO_NA
+
+  - name: HS
+    description: >
+      Diagnosed with Hippocampal Sclerosis.
+    valid_values: *YES_NO_NA
+
+  - name: DNT
+    description: >
+      Diagnosed with Dysembryoplastic Neuroepithelial Tumor.
+    valid_values: *YES_NO_NA
+
+  - name: GL
+    description: >
+      Diagnosed with Gliosis.
+    valid_values: *YES_NO_NA
+
+  - name: aneurysm
+    description: >
+      Diagnosed with Brain or cerebral aneurysm.
+    valid_values: *YES_NO_NA
