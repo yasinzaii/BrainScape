@@ -12,3 +12,8 @@ TODO.txt
 *.ini
 *.zip
 *_backup/
+demographics/*/*.csv
+demographics/*/*.txt
+demographics/*/*.py
+demographics/*/*.json
+demographics/*/*.xlsx

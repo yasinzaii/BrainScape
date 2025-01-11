@@ -126,11 +126,15 @@ class DatasetManager:
             for entry in self.mapping[dataset_name]:
                 entry[preprocessed_dir_name] = {}
                 for mri in entry['mris'].keys():
+                    
+                    # Modality pattern to match with. 
+                    mod_pattern = f"*{mri}.nii.gz"
+                    
                     prep_mod_mri_dir = preprocessed_dir_path / f"{entry['subject']}.{entry['session']}.{entry['type']}.{entry['group']}"
                     prep_mod_mri_dir = prep_mod_mri_dir / "norm_bet"
-                    prep_mod_mri_imgs = list(prep_mod_mri_dir.rglob(f"*{mri}.nii*"))
+                    prep_mod_mri_imgs = list(prep_mod_mri_dir.rglob(mod_pattern))
                     if len(prep_mod_mri_imgs) != 1:
-                        self.logger.error("Preprocessed Mapping - MRIs Image Expectation and Actuality Mismatch")
+                        self.logger.error(f"Preprocessed Mapping - MRIs Image Expectation and Actuality Mismatch. Dataset:{dataset_path.name}")
                         raise
                     else:
                         relative_path = prep_mod_mri_imgs[0].relative_to(preprocessed_dir_path)
@@ -139,3 +143,78 @@ class DatasetManager:
             
             self.logger.info(f"Preprocessed Mapping - Finished Mapping, Dataset:{dataset_name}")
 
+
+    def demographic_mapping(self):
+        """
+        Applies DemographicMapper plugin to integrate participant 
+        demographic data into the existing mappings in self.mapping.
+        """
+        for dataset_name in self.target_datasets:
+            self.logger.info(f"Demographic Mapping - Dataset: {dataset_name}")
+
+            # Load the dataset settings
+            dataset_path = Path(self.config.pathDataset) / dataset_name
+            dataset_settings_path = dataset_path / self.config.datasetSettingsJson
+            dataset_settings = JsonHandler(dataset_settings_path)
+            final_settings = merge_settings(
+                defaults=self.default_dataset_settings,
+                overrides=dataset_settings.get_data()
+            )
+            
+            # Dataset demographics Schema and Data Paths
+            demogr_dir = Path(self.config.demographicsDir)
+            dataset_demogr_dir = demogr_dir / dataset_name
+            demographics_data_path = dataset_demogr_dir / self.config.demographicsTSV
+            demographics_schema_path = demogr_dir / self.config.demographicsMappingYaml
+            
+            # Issue warning if dataset demographics dir emtry - Missing demographics
+            if dataset_demogr_dir.exists() and dataset_demogr_dir.is_dir():
+                if not any(dataset_demogr_dir.iterdir()):
+                    self.logger.warning(f"Demographic Mapping - Demographics Dir is Empty for Dataset: {dataset_name}, Missing participants.tsv file. Skipping Mapping")  
+                    continue  
+            else:
+                self.logger.warning(f"Demographic Mapping - Missing Demographics Dir for Dataset: {dataset_name}, Skipping Mapping")  
+                continue  
+
+            # Determine if we want to do demographics on this dataset now
+            #if not final_settings.get("isDemographicsReady", False):
+            #    self.logger.info(f"Dataset '{dataset_name}' not marked for demographics. Skipping.")
+            #   continue
+            
+            
+            # We assume the plugin name is stored in settings, or we can hard-code "DemographicMapper"
+            try:
+                mapper_name = final_settings['demographicsPlugin']
+            except KeyError:
+                self.logger.warning(f"No 'demographics_plugin' specified for dataset '{dataset_name}'. Skipping.")
+                continue
+
+            # Retrieve plugin class
+            mapper_cls = self.plugin_loader.get_plugin_by_name(mapper_name)
+            if not mapper_cls:
+                self.logger.error(f"Demographic plugin '{mapper_name}' not found for dataset '{dataset_name}'.")
+                continue
+            
+            mapper = mapper_cls(
+                    dataset_settings=final_settings, 
+                    dataset_name = dataset_name,
+                    demogr_schema_path = str(demographics_schema_path), 
+                    demogr_data_path = str(demographics_data_path))
+
+            
+            existing_map = self.mapping.get(dataset_name)
+            try:
+                updated_map = mapper.map(existing_map)  
+                # Store updated map in the manager
+                self.mapping[dataset_name] = updated_map
+            
+                 # Mark the dataset or update settings to indicate success
+                 #dataset_dict['isDemographicsIncluded'] = True
+                 #dataset_settings.update_json(dataset_dict).save_json()
+                self.logger.info(f"Demographic Mapping - Completed for dataset '{dataset_name}'")
+
+            
+            except Exception as e:
+                self.logger.error(f"Demographic Mapping failed for dataset '{dataset_name}': {e}")
+                #dataset_dict['isDemographicsIncluded'] = False
+                #dataset_settings.update_json(dataset_dict).save_json()
