@@ -17,13 +17,13 @@ all: pdf
 pdf:
 	@echo "Starting compilation process..."
 	@mkdir -p $(BUILD_DIR) $(LOGS_DIR)
-	@$(TEX) -interaction=nonstopmode -output-directory=$(BUILD_DIR) -aux-directory=$(BUILD_DIR) $(MAIN).tex > $(LOGS_DIR)/$(MAIN).log 2>&1
+	@$(TEX) -interaction=nonstopmode -output-directory=$(BUILD_DIR) $(MAIN).tex > $(LOGS_DIR)/$(MAIN).log 2>&1
 	@echo "Running Biber..."
 	@$(BIBER) --output-directory=$(BUILD_DIR) $(MAIN) >> $(LOGS_DIR)/$(MAIN).log 2>&1
 	@echo "Re-running pdflatex (2nd pass)..."
-	@$(TEX) -interaction=nonstopmode -output-directory=$(BUILD_DIR) -aux-directory=$(BUILD_DIR) $(MAIN).tex >> $(LOGS_DIR)/$(MAIN).log 2>&1
+	@$(TEX) -interaction=nonstopmode -output-directory=$(BUILD_DIR) $(MAIN).tex >> $(LOGS_DIR)/$(MAIN).log 2>&1
 	@echo "Re-running pdflatex (3rd pass)..."
-	@$(TEX) -interaction=nonstopmode -output-directory=$(BUILD_DIR) -aux-directory=$(BUILD_DIR) $(MAIN).tex >> $(LOGS_DIR)/$(MAIN).log 2>&1
+	@$(TEX) -interaction=nonstopmode -output-directory=$(BUILD_DIR) $(MAIN).tex >> $(LOGS_DIR)/$(MAIN).log 2>&1
 	@echo "Compilation finished. PDF is located in the '$(BUILD_DIR)' directory."
 
 
