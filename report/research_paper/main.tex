@@ -1,0 +1,64 @@
+\documentclass[]{imag-ms-template}
+
+% For multi-page tables
+\usepackage{longtable}  
+
+\usepackage[utf8]{inputenc} % For handling UTF-8 encoding
+\usepackage[T1]{fontenc}    % For better font encoding
+\usepackage{csquotes}       % Recommended with BibLaTeX
+\usepackage[backend=biber, style=apa]{biblatex}
+
+
+% Loading Variables
+\input{data/variables.tex}
+\input{data/demographics.tex}
+
+\DeclareUnicodeCharacter{0301}{*************************************}
+\DeclareUnicodeCharacter{0308}{*************************************}
+
+
+\title{BrainScape: An Open-Source Framework for Integrating and Preprocessing Anatomical Datasets} 
+
+\author{Muhammad Nabi Yasinzai,$^{1\ast}$ Remika Mito,$^{2}$ Mangor Pedersen$^{1}$\\
+{\small $^{1}$Psychology \& Neuroscience Department, Auckland University of Technology,}\\
+{\small Auckland, New Zealand}\\
+{\small $^{2}$Florey Institute of Neuroscience and Mental Health, Heidelberg, Victoria 3084, Australia.}\\
+{\small $^\ast$Correspondence: name@wherever.edu}
+}
+
+
+\addbibresource{bibliography/supplementary_references.bib}
+\addbibresource{bibliography/main_references.bib}
+
+
+
+\begin{document} 
+
+
+\maketitle 
+
+\begin{abstract}
+    \input{sections/1_abstract.tex}
+\end{abstract}
+
+
+
+\section{Introduction}
+\input{sections/2_introduction.tex}
+
+
+\section{Methodology}
+\input{sections/5_methodology.tex}
+
+
+\section{Discussion}
+\input{sections/8_discussion.tex}
+
+\section{Supplementary Material}
+\input{sections/9_supplementary_material.tex}
+
+
+\printbibliography
+
+
+\end{document}

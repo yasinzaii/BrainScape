@@ -1,0 +1,33 @@
+% Supplementary Material
+
+To ensure transparency, we provide a detailed table summarizing essential metadata for each dataset included in this data integration framework. 
+Table \ref{suppDataTable} presents a comprehensive inventory of all \NumDatasets\ MRI studies and datasets currently included in this framework.
+As the project evolves, additional datasets will be incorporated, further expanding this list. This table provides in-depth 
+information on each source dataset whose anatomical scans are included in the framework. The following sections provide a detailed description 
+of the columns and their significance:
+
+\begin{enumerate}
+    \item \textbf{Identifier}: Each dataset is assigned a unique identifier (e.g., ``AOMIC'', ``QTAB'') to facilitate referencing within this framework and its source. 
+    All MRI scans and associated metadata for each dataset are organized in dedicated folders named after their identifiers, ensuring traceability to the original source or study. 
+    Hyperlinks embedded in the identifier column provide direct access to the corresponding repository, allowing immediate access to the source dataset.
+    It is important to note that some datasets may require authorization or the completion of specific user agreements for access.
+
+    \item \textbf{Dataset Name}: This column lists the name of the dataset or study from which the anatomical MRI scans were obtained. 
+    When applicable, a citation is included to acknowledge the contributions of the original dataset creators.
+
+    \item \textbf{License}: This column specifies the licensing terms under which each dataset is made available. 
+    Many datasets obtained through OpenNeuro \cite{markiewicz2021openneuro} are distributed under a CC0 license, allowing unrestricted reuse.
+    However, some data sources (e.g., ABIDE \cite{di2014autism}, ABIDE2, ADHD200 \cite{adhd2012adhd}, CORR \cite{zuo2014open}, CMIHBN, INDINKI \cite{nooner2012nki}) are governed by CC-BY-NC or licenses with similar restrictions.
+    These licenses often require a signed user agreement, an approved access application, or both. Users are responsible for reviewing and complying with all applicable licensing conditions before utilizing the data. 
+    
+    \item \textbf{Subjects}:  This column reports the number of participants whose anatomical scans are included in this study.
+    In some instances, the total may be lower than the number of participants in the original dataset, because scans failing visual quality inspections were excluded.
+    Records of these excluded subjects are maintained in the corresponding dataset metadata, allowing researchers to re-evaluate or reverse exclusion decisions if necessary.
+
+    \item \textbf{T1w, T2w, and FLAIR}: These columns display the quantity of each MRI modality available for each dataset. 
+    It is important to note that individual subjects may undergo multiple scanning sessions, which can result in scan counts exceeding the total number of subjects. 
+\end{enumerate}
+
+
+% Inputting the Generated Suplimentary Table
+\input{tables/supp_datasets_details_table.tex}

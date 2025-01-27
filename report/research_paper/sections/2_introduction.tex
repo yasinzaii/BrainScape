@@ -1,0 +1,107 @@
+Magnetic resonance imaging (MRI) has revolutionized our understanding of the human brain by providing 
+non-invasive insights into both its macroscale organization and its microstructural properties. From 
+macro-level assessments using diffusion tractography and functional connectivity analyses to more 
+fine-grained techniques like quantitative T1 (qT1) relaxation mapping, MRI offers a versatile window 
+into the architecture and function of neural systems (\cite{sereno2013mapping}, \cite{park2013structural},
+\cite{honey2009predicting}).
+For instance, qT1 mapping can effectively distinguish heavily myelinated from lightly myelinated cortical 
+regions, consistent with early post-mortem myeloarchitectonic findings (\cite{nieuwenhuys2013myeloarchitectonic, shams2019comparison}), 
+and thereby enables in vivo profiling of cortical microstructure. This non-invasive approach offers a 
+significant advantage by permitting direct comparison between histological myeloarchitecture and in vivo 
+microstructural measures.
+Moreover, when qT1-based metrics are integrated with anatomical distance measures (e.g., geodesic 
+distances along the cortical surface or wiring cost principles), these techniques provide new 
+insights into how local cortical regions are organized within large-scale brain networks, 
+thereby advancing our comprehension of the brain's structural and functional architecture.
+\cite{hong2018multidimensional, ecker2013intrinsic, paquola2020multi}.
+
+Neuroscience research has significantly advanced through the adoption of open science practices, especially 
+with the sharing of open data (\cite{snoek2021amsterdam, van2013wu, miller2016multimodal, di2014autism}).
+Despite significant advancements in MRI acquisition and analysis, neuroscience research continues to face 
+fundamental obstacles in gathering, curating, and harmonizing neuroimaging datasets for robust, 
+data-driven discoveries. 
+
+The vast majority of shared datasets are small, are often distributed across scattered repositories 
+and stored in incompatible formats. This fragmentation hinders the efforts of data pooling, for curating enriched
+multicentric datasets (\cite{dishner2024survey}). On the other hand, there are also numerous and 
+widely used data sharing initiatives for multimodal MRI data, such as the Human Connectome Project
+(\cite{van2013wu}), UK BioBank (\cite{miller2016multimodal}), CORR (\cite{gorgolewski2017preprocessed}), ABIDE 
+(\cite{di2014autism}), FC1000 (\cite{biswal2010toward}). However, access to some of these datasets 
+requires fees or submission of an application, and the majority of these datasets have extensive 
+user agreements, which makes it challenging for an average researcher to access and further pool them.
+Furthermore, the collection of new MRI data is hampered by ethical and logistical complexities, 
+including the necessity for institutional review board approvals, patient privacy protections, 
+and significant imaging costs, all of which limit the volume of data that can be readily assembled
+(\cite{white2022data, sardanelli2018share}).
+Additionally, variability across multiple sites and scanners introduces biases that can significantly 
+impact downstream analyses, such as voxel-based morphometry and diffusion metrics 
+(\cite{takao2014effects}), lesion volumes (\cite{shinohara2017volumetric}), and DTI measurements (\cite{zhu2011quantification}). 
+Compounding this issue is the absence of standardized metadata on demographics and clinical variables, 
+which complicates the merging of smaller specialized collections in a reproducible manner (\cite{pomponio2019harmonization}).
+
+On the other hand, the demand for machine learning and artificial intelligence applications in 
+neuroimaging has rapidly increased. State-of-the-art deep learning methods require large, diverse, 
+and well-annotated datasets to effectively train models capable of generalizing across populations, 
+scanners, and clinical conditions (\cite{dishner2024survey}). However, data fragmentation, data access limitations 
+restrictive licensing, regulatory barriers, and inconsistent annotation protocols often hinder achieving the necessary 
+scale and pooling of the different datasets (\cite{goldfarb2022ai}). Furthermore, integrating data from multiple sources, 
+each with varying acquisition parameters, demographic coverage, and consent restrictions, remains a significant challenge 
+(\cite{pomponio2019harmonization}).
+
+Several open neuroimaging platforms, including OpenNeuro and the NeuroImaging Tools and Resources Collaboratory (NITRC),
+have emerged to facilitate data sharing and standardization (\cite{markiewicz2021openneuro, buccigrossi2008neuroimaging}).
+OpenNeuro (\url{https://openneuro.org/}) has become one of the largest repositories, hosting more than 1200 public 
+datasets with free access and most datasets under Creative Commons Zero licensing. This makes it an ideal choice for 
+pooling datasets to increase their size and heterogeneity. 
+Furthermore, OpenNeuro utilizes the robust Brain Imaging Data Structure (BIDS) format, which standardizes data 
+organization and supports reproducible workflows, thereby reducing manual labor in data handling (\cite{markiewicz2021openneuro}). 
+Researchers aiming to combine smaller, specialized repositories with larger, well-established databases often must 
+resort to ad hoc scripts to reconcile directory structures, manage irregular metadata, and ensure consistent preprocessing 
+steps, such as skull stripping, normalization, or anatomical registration.
+
+
+To address these practical hurdles and accelerate data-driven investigations, we propose an open-source Python framework 
+that streamlines the collection, integration, and preprocessing of anatomical MRI data from \NumDatasets\ different datasets. 
+This framework automates typical data handling processes and enforces standardized methods to ensure reproducibility.
+Moreover, this framework allows dynamic customization, enabling researchers to incorporate new datasets, demographic information, 
+and specialized preprocessing modules without the overhead of reworking an entire codebase.
+This framework is built upon a plugin-based architecture, designed to:
+
+
+\begin{itemize}
+    
+    \item \textbf{Automate Data Handling:} 
+    Automatically download raw MRI scans, regardless of format, and map them into a standardized structure via a mapping plugin. 
+    This hands-free workflow minimizes manual intervention and reduces human error.
+
+    \item \textbf{Incorporate Demographic Metadata:}
+    Employ a YAML-based schema to attach relevant demographic fields (e.g., age, sex, race, handedness, clinical status) to each subject, 
+    enabling more comprehensive, population-specific analyses.
+
+    \item \textbf{Promote Reproducibility:}
+    Enforce transparent and traceable data processing pipelines through configurable default and data specific parameters, ensuring 
+    that the all operations are traceable and same operations are applied uniformly across multiple datasets.
+
+    \item \textbf{Facilitate Extensibility:}
+    A modular design enables researchers to easily integrate new data sources, demographic fields, or specialized preprocessing workflows 
+    without overhauling the existing codebase. The configurations for each dataset are saved in individual configuration files, allowing 
+    for tailored updates and corrections specific to each dataset.
+
+\end{itemize}
+
+
+
+
+By consolidating multiple open datasets and enforcing standardized practices, the framework 
+reduces fragmentation and supports large-scale MRI-based research. Its automated procedures 
+alleviate the burden of repetitive tasks, freeing researchers to focus on higher-level analyses 
+such as structural biomarker discovery, group-level comparisons of clinical populations, 
+or advanced machine learning modeling.
+Furthermore, we also have kept track licensing and usage permissions of every individual dataset, 
+to ensures that ethical standards are upheld and proprietary data is respected when aggregating 
+resources from various repositories.
+In this paper, we detail the architecture, functionalities of this framework.
+% We also present several use cases illustrating how the platform simplifies the process of acquiring, preprocessing, and assembling anatomical MRI scans from diverse sources. 
+Ultimately, we aim to empower the neuroscience community to build more inclusive, large-scale datasets 
+that fuel robust computational models and advance our knowledge of brain structure and function.
+

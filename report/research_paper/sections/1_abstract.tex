@@ -1,0 +1,24 @@
+Anatomical MRI data is essential for investigating neurological disorders and understanding brain function. 
+However, progress is often hindered by challenges related to data accessibility, small dataset sizes, 
+data fragmentation, and inconsistencies across publicly available datasets. Although thousands of high-quality, 
+open-source MRI datasets are available for download, their limited size and heterogeneous organization hinder 
+effective pooling efforts. Additionally, repackaging and repooling datasets can result in the loss of original 
+source information and introduce biases through duplicated images. 
+To address these issues, we introduce an open-source Python framework that automates the collection, integration, 
+and standardized preprocessing of anatomical MRI scans from \NumDatasets\ diverse datasets, encompassing a total 
+of \TotalSubjectsIncludedAfterInspectionCount\ subjects after quality control. The system leverages a plugin-based 
+architecture featuring distinct modules for data downloading, file mapping, validation, preprocessing, and demographics 
+attachment. The framework supports dataset-specific configurations and, to date, has accommodated \NumDatasets\ 
+different datasets, each varying in size, modality, structure, and demographic information, while also facilitating 
+the seamless integration of new datasets. Furthermore, each MRI image can be traced back to its original source project 
+and repository. Any subjects excluded from datasets are documented in dedicated dataset-specific configuration files, ensuring transparent 
+and reproducible exclusion criteria. This unified workflow not only reduces manual labor but also significantly reduces 
+the risk of duplication and biases.
+We demonstrate the effectiveness of our framework in aggregating multiple MRI modalities (T1w, T2w, and FLAIR) from 
+many different sources and integrating essential demographic fields (age, sex, handedness, etc.) for large-scale 
+studies. By providing automated, transparent, and configurable workflows, our framework addresses critical challenges 
+in open science, accelerates data-driven investigations, and promotes inclusivity and reproducibility in neuroscience research.
+
+
+
+
