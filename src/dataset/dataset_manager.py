@@ -32,8 +32,12 @@ class DatasetManager:
 
         # Mapping Record 
         self.mapping = {}
+        
+        # Output Mapping Handler
+        self.outDatasetJsonPath = Path(self.config.pathDataset) / self.config.datsetMriJson
+        self.outDatasetJson = JsonHandler(self.outDatasetJsonPath, create_if_missing=True)
 
-
+    # Download Mapping
     def initiate_mapping(self):
         for dataset_name in self.target_datasets:
 
@@ -51,7 +55,7 @@ class DatasetManager:
             try:
                 mapper_name = final_settings['mapping']['plugin']
             except KeyError as e:
-                self.logger.error(f"Mapper type (Key: 'mapping.plugin') missing from dataset '{dataset_name}' settings, skipping mapping job. Error: {e}")
+                self.logger.error(f"Download Mapping - Mapper type (Key: 'mapping.plugin') missing from dataset '{dataset_name}' settings, skipping mapping job. Error: {e}")
                 continue  # Skipping
 
             # Path of the download directory
@@ -59,18 +63,18 @@ class DatasetManager:
 
             # Check if the dataset has been downloaded
             if not final_settings.get("isDownloaded"):
-                self.logger.error(f"Dataset '{dataset_name}' has not been downloaded yet. Skipping mapping job.")
+                self.logger.warning(f"Download Mapping - Dataset '{dataset_name}' has not been downloaded yet. Skipping mapping (downloaded MRIs) job for {dataset_name}.")
                 continue  # Skipping
 
             # Check if dataset JSON has already been created
             if final_settings.get("isDatasetJsonCreated"):
-                self.logger.info(f"Dataset JSON for '{dataset_name}' already created. Skipping mapping job.")
+                self.logger.info(f"Download Mapping - Dataset JSON for '{dataset_name}' already created. Skipping mapping job.")
                 continue  # Skipping
 
             # Dynamically load the correct mapper plugin based on 'mapper' setting
             mapper_cls = self.plugin_loader.get_plugin_by_name(mapper_name)
             if not mapper_cls:
-                self.logger.error(f"Requested mapper plugin '{mapper_name}' not found. Skipping mapping for dataset '{dataset_name}'.")
+                self.logger.error(f"Download Mapping - Requested mapper plugin '{mapper_name}' not found. Skipping mapping for dataset '{dataset_name}'.")
                 continue  # Skipping
 
             # Instantiate the mapper
@@ -80,7 +84,7 @@ class DatasetManager:
             try:
                 dataset_mapping = mapper.map()
             except Exception as e:
-                self.logger.error(f"Mapping failed for dataset '{dataset_name}'. Error: {e}")
+                self.logger.error(f"Download Mapping - Mapping failed for dataset '{dataset_name}'. Error: {e}")
                 dataset_settings.update_json({"isDatasetJsonCreated": False}).save_json()
                 continue  # Skipping
 
@@ -90,6 +94,9 @@ class DatasetManager:
 
     def get_mapping(self):
         return self.mapping
+    
+    def save_mapping(self):
+        self.outDatasetJson.set_data(self.mapping).save_json()
     
     
     # TODO - This following code is hardcoded fix it.
@@ -111,9 +118,9 @@ class DatasetManager:
             preprocessed_dir_name = final_settings["preprocess"]["preprocessDirName"]
             preprocessed_dir_path = dataset_path / preprocessed_dir_name
 
-            # Check if the dataset has been downloaded
+            # Check if the dataset has been preprocessed
             if not final_settings.get("isPreprocessed"):
-                self.logger.error(f"Dataset '{dataset_name}' is not Preprocessed yet. Skipping preprocessing job.")
+                self.logger.warning(f"Dataset '{dataset_name}' is not Preprocessed yet. Skipping mapping (preprocessed MRIs) job.")
                 continue  # Skipping
             
             """
@@ -167,7 +174,7 @@ class DatasetManager:
             demographics_data_path = dataset_demogr_dir / self.config.demographicsTSV
             demographics_schema_path = demogr_dir / self.config.demographicsMappingYaml
             
-            # Issue warning if dataset demographics dir emtry - Missing demographics
+            # Issue warning if dataset demographics dir empty - Missing demographics
             if dataset_demogr_dir.exists() and dataset_demogr_dir.is_dir():
                 if not any(dataset_demogr_dir.iterdir()):
                     self.logger.warning(f"Demographic Mapping - Demographics Dir is Empty for Dataset: {dataset_name}, Missing participants.tsv file. Skipping Mapping")  

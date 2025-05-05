@@ -1,6 +1,5 @@
 # src/dataset/mapper/demographics_mapper.py
 
-import os
 import re
 import csv
 import random
@@ -263,7 +262,7 @@ class DemographicsMapper(DatasetMapperPlugin):
                 f"from '{original_value}'."
             )
             raise ValueError(
-                f"Cannot standardize field '{original_value}': all content removed by patterns."
+                f"DemographicsMapper - Cannot standardize field '{original_value}': all content removed by patterns."
             )
         return value
 

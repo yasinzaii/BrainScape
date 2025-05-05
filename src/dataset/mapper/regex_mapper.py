@@ -43,7 +43,7 @@ class RegexMapper(DatasetMapperPlugin):
 
     def _compile_regex_patterns(self, patterns: Dict[str, Any], context: str = "") -> Tuple[Dict[str, Any], bool]:
         """
-        Recursively compiles regex patterns from a nested dictionary.
+        Recursively compiles regex patterns from a dictionary.
 
         Args:
             patterns (Dict[str, Any]): The dictionary containing regex patterns.
@@ -78,7 +78,7 @@ class RegexMapper(DatasetMapperPlugin):
                         logger.error(f"RegexMapper - Error compiling regex for pattern '{current_context}': {value} | Error: {e}")
                         is_successful = False
             else:
-                logger.error(f"Unsupported type at '{current_context}': Expected dict or str, got {type(value).__name__}")
+                logger.error(f"RegexMapper - Unsupported type at '{current_context}': Expected dict or str, got {type(value).__name__}")
                 is_successful = False
 
         return compiled_patterns, is_successful
@@ -154,15 +154,15 @@ class RegexMapper(DatasetMapperPlugin):
                 subject = matched_subject
                 path_index = new_path_index
             else:
-                logger.info(f"Skipping '{file_path}': as it does not match 'subject' pattern '{regex_compiled['subject'].pattern}'.")
+                logger.info(f"RegexMapper - {dataset_name} - Skipping '{file_path}': as it does not match 'subject' pattern '{regex_compiled['subject'].pattern}'.")
                 continue
 
             # Check includeSub and excludeSub - Supports simple wildcard matching
             if include_subs and not any(fnmatch.fnmatch(subject, pattern) for pattern in include_subs):
-                logger.info(f"Subject '{subject}' not in includeSub list; Skipping.")
+                logger.info(f"RegexMapper - {dataset_name} - Subject '{subject}' not in includeSub list; Skipping.")
                 continue
             if exclude_subs and any(fnmatch.fnmatch(subject, pattern) for pattern in exclude_subs):
-                logger.info(f"Subject '{subject}' in excludeSub list; Skipping.")
+                logger.info(f"RegexMapper - {dataset_name} - Subject '{subject}' in excludeSub list; Skipping.")
                 continue
             
             # Match Session if regex is provided
@@ -172,10 +172,10 @@ class RegexMapper(DatasetMapperPlugin):
                     session = matched_session
                     path_index = new_path_index
                 else:
-                    logger.info(f"Skipping '{file_path}': as it does not match 'session' pattern {regex_compiled['session'].pattern}.")
+                    logger.info(f"RegexMapper - {dataset_name} - Skipping '{file_path}': as it does not match 'session' pattern {regex_compiled['session'].pattern}.")
                     continue
             else: 
-                logger.debug(f"Regex pattern for session is empty - session = '' ")
+                logger.debug(f"RegexMapper - {dataset_name} - Regex pattern for session is empty - session = '' ")
                 session = "" 
 
             
@@ -186,15 +186,15 @@ class RegexMapper(DatasetMapperPlugin):
                     type_ = matched_type
                     path_index = new_path_index
                 else:
-                    logger.info(f"Skipping '{file_path}': as it does not match 'type' pattern {regex_compiled['type'].pattern}.")
+                    logger.info(f"RegexMapper - {dataset_name} - Skipping '{file_path}': as it does not match 'type' pattern {regex_compiled['type'].pattern}.")
                     continue
             else: 
-                logger.debug(f"Regex pattern for type is empty - type = '' ")
+                logger.debug(f"RegexMapper - {dataset_name} - Regex pattern for type is empty - type = '' ")
                 type_ = ""     
             
             # Ensure path_index is within bounds before accessing file_name
             if path_index >= len(path_parts):
-                logger.error(f"Skipping '{file_path}': insufficient path parts for 'modality' matching.")
+                logger.error(f"RegexMapper - {dataset_name} - Skipping '{file_path}': insufficient path parts for 'modality' matching.")
                 continue
 
             # Match modalities
@@ -212,17 +212,16 @@ class RegexMapper(DatasetMapperPlugin):
                     grouped[subject][session][type_][modality].append(str(file_path))
 
                     image_matched = True
-                    logger.debug(f"Matched modality '{modality}' for file '{file_path}'.")
+                    logger.debug(f"RegexMapper - {dataset_name} - Matched modality '{modality}' for file '{file_path}'.")
                     
                     # Verifying if the combination of subject/session and pathParts[-1] rebuilds the path
                     if os.path.join(subject, session, type_, rem_path_file_name) != file_path:
-                        logger.error(f"Invalid Grouping/Mapping of MRI for Subject='{subject}', Session='{session}', Modality='{modality}', FilePath={file_path}")
+                        logger.error(f"RegexMapper - {dataset_name} - Invalid Grouping/Mapping of MRI for Subject='{subject}', Session='{session}', Modality='{modality}', FilePath={file_path}")
                     break # Stop after matching the first modality
                     
             if not image_matched:
-                logger.debug(f"Unable to Match the File, Dataset: {dataset_name},  Subject='{subject}', Session='{session}', FilePath={file_path}")
+                logger.debug(f"RegexMapper - Unable to Match the File, Dataset: {dataset_name},  Subject='{subject}', Session='{session}', FilePath={file_path}")
 
-        
         # Max Number of MRI per Modality (for Grouping MRI's)
         max_mri_mod = 0
         for sub_data in grouped.values():
@@ -231,11 +230,10 @@ class RegexMapper(DatasetMapperPlugin):
                     for mod_data in type_data.values():
                         max_mri_mod = max(max_mri_mod, len(mod_data))
         if max_mri_mod == 0:
-            logger.error(f"Missing MRI data in the Mapped Modalities, Dataset: {dataset_name}")
+            logger.error(f"RegexMapper - Missing MRI data in the Mapped Modalities, Dataset: {dataset_name}")
         elif max_mri_mod > 1:
-            logger.info(f"Multiple MRI's per Modality found in the Mapped Dataset. Will be further divided into groups of one MRI per modality")
+            logger.info(f"RegexMapper - {dataset_name} - Multiple MRI's per Modality found in the Mapped Dataset. Will be further divided into groups of one MRI per modality")
 
-            
         # Extracting & Returning Mappings
         dataset_mapping = []
         for subject, subject_data in grouped.items():
@@ -263,19 +261,14 @@ class RegexMapper(DatasetMapperPlugin):
                                 entry['mris'][modality] = Path(modality_list[group_indx]).name
                                 entry_flag = True 
                         
-                        
                         # Check if mapFirstGroupOnly is Set. Will have to skip adding the group into Mapping.
                         if map_first_group_only and entry_flag and group_indx > 0:
-                            logger.warning(f"RegexMapper - Skipping Group:{group_indx}, sub:{entry['subject']}, ses:{entry['session']}, type:{entry['type']}, MRIs:{entry['mris']}")
+                            logger.warning(f"RegexMapper - {dataset_name} - Skipping Group:{group_indx}, sub:{entry['subject']}, ses:{entry['session']}, type:{entry['type']}, MRIs:{entry['mris']}")
                             continue
-                            
                             
                         # Appending The Entry to the Dataset Mapping
                         if entry_flag:
                             dataset_mapping.append(entry)
 
-                            
-
-                        
         logger.info(f"RegexMapper - Completed creating dataset JSON for {dataset_name} Dataset.")
         return dataset_mapping

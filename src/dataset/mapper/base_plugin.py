@@ -1,7 +1,7 @@
 # src/dataset/mapper/base.py
 
-from typing import List
 from abc import ABC, abstractmethod
+from typing import List, Optional, Dict, Any
 
 class DatasetMapperPlugin(ABC):
     
@@ -14,16 +14,15 @@ class DatasetMapperPlugin(ABC):
         return cls.plugin_name
     
     @abstractmethod
-    def map(self, final_settings: dict, dataset_path: str) -> dict:
+    def map(self, existing_mapping: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """
-        Maps and saves the Subject-Session-MRI Modality paths into a JSON file.
+        Maps Paths/Info for datasets into a JSON object.
 
         Args:
-            final_settings (dict): Dataset-specific settings.
-            dataset_path (str): Path to the dataset directory.
-            mapping (dict): Dataset Mapping - Aquired from Mapper Module
+            existing_mapping (dict): Existing mapping which will be updated.
 
         Returns:
-            Dict[str, List[obj]]: A mapping of dataset names to lists of MRI file paths.
+            List[Dict[str, Any]]: A mapping for the dataset containing 
+            subject/session/modality/download-paths etc info.
         """
         pass
