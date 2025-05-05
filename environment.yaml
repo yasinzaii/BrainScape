@@ -1,4 +1,4 @@
-name: dat
+name: bs
 channels:
   - defaults
   - conda-forge  
