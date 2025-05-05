@@ -1,107 +1,201 @@
-Magnetic resonance imaging (MRI) has revolutionized our understanding of the human brain by providing 
-non-invasive insights into both its macroscale organization and its microstructural properties. From 
-macro-level assessments using diffusion tractography and functional connectivity analyses to more 
-fine-grained techniques like quantitative T1 (qT1) relaxation mapping, MRI offers a versatile window 
-into the architecture and function of neural systems (\cite{sereno2013mapping}, \cite{park2013structural},
-\cite{honey2009predicting}).
-For instance, qT1 mapping can effectively distinguish heavily myelinated from lightly myelinated cortical 
-regions, consistent with early post-mortem myeloarchitectonic findings (\cite{nieuwenhuys2013myeloarchitectonic, shams2019comparison}), 
-and thereby enables in vivo profiling of cortical microstructure. This non-invasive approach offers a 
-significant advantage by permitting direct comparison between histological myeloarchitecture and in vivo 
-microstructural measures.
-Moreover, when qT1-based metrics are integrated with anatomical distance measures (e.g., geodesic 
-distances along the cortical surface or wiring cost principles), these techniques provide new 
-insights into how local cortical regions are organized within large-scale brain networks, 
-thereby advancing our comprehension of the brain's structural and functional architecture.
-\cite{hong2018multidimensional, ecker2013intrinsic, paquola2020multi}.
+Magnetic resonance imaging (MRI) has revolutionized our understanding of brain structure and function,
+enabling non-invasive studies of brain development, plasticity, and pathology in healthy and clinical cohorts (\cite{katti2011magnetic, mills2014methods}).
+%MRI is a non-invasive imaging technique that uses non-ionizing electromagnetic radiation to generate high-resolution, 
+%three-dimensional images of internal brain structures.
+%This imaging technique is versatile as it allows the customization of acquisition and analysis protocols to emphasize specific anatomical features, 
+%such as white matter tracts, lesions, and arteries (\cite{katti2011magnetic}).
+%Unlike historical reliance on post-mortem histology, MRI offers a safe and non-invasive way to explore both healthy and diseased brains.
+%Its versatility in clinical diagnostics enables the identification of structural abnormalities such as lesions and atrophy, facilitating early intervention in neurodegenerative diseases.
+MRI research has advanced through the adoption of open science practices, especially 
+with the open sharing of MRI data (\cite{snoek2021amsterdam, van2013wu, miller2016multimodal, di2014autism}).
+Large-scale initiatives are valuable resources for population-level analyses 
+and have contributed to big data efforts in neuroimaging, with some examples including the 
+Human Connectome Project (HCP; \cite{van2013wu}), CORR (\cite{gorgolewski2017preprocessed}), 
+FC1000 (\cite{biswal2010toward}), ABCD (\cite{casey2018adolescent}), GSP (\cite{holmes2015brain}), ADNI (\cite{mueller2005alzheimer}), 
+and UK Biobank (\cite{miller2016multimodal}) 
+%However, small, specialized datasets are crucial for capturing diseases and specific phenotypes, such as schizophrenia, 
+% epilepsy and prosopagnosia (\cite{soler2022brain, taylor2024imaging, noad2024familiarity} ).
+% While large-scale consortia enable the detection of subtle yet meaningful associations at the population level, 
+% smaller, specialized studies are particularly effective in examining targeted hypotheses through controlled experimental designs, 
+% within-subject manipulations, or in clinical populations (\cite{gratton2022brain}).
+Thanks to the open science ethos within the neuroimaging community, thousands of MRI datasets are now publicly available, 
+facilitating research across various aspects of health and disease. 
+Large-scale consortia are valued for their consistent acquisition protocols, 
+enriched demographic details, and broad population coverage, 
+while, smaller specialized datasets remain critical for studying neurological and psychiatric disorders 
+(\cite{soler2022brain, fajardo2024functional, gibson2024aphasia}). 
+%These smaller datasets can be difficult to aggregate into large-scale analyses due to challenges with data fragmentation and organisation, and are often underutilised.
 
-Neuroscience research has significantly advanced through the adoption of open science practices, especially 
-with the sharing of open data (\cite{snoek2021amsterdam, van2013wu, miller2016multimodal, di2014autism}).
-Despite significant advancements in MRI acquisition and analysis, neuroscience research continues to face 
-fundamental obstacles in gathering, curating, and harmonizing neuroimaging datasets for robust, 
-data-driven discoveries. 
 
-The vast majority of shared datasets are small, are often distributed across scattered repositories 
-and stored in incompatible formats. This fragmentation hinders the efforts of data pooling, for curating enriched
-multicentric datasets (\cite{dishner2024survey}). On the other hand, there are also numerous and 
-widely used data sharing initiatives for multimodal MRI data, such as the Human Connectome Project
-(\cite{van2013wu}), UK BioBank (\cite{miller2016multimodal}), CORR (\cite{gorgolewski2017preprocessed}), ABIDE 
-(\cite{di2014autism}), FC1000 (\cite{biswal2010toward}). However, access to some of these datasets 
-requires fees or submission of an application, and the majority of these datasets have extensive 
-user agreements, which makes it challenging for an average researcher to access and further pool them.
-Furthermore, the collection of new MRI data is hampered by ethical and logistical complexities, 
-including the necessity for institutional review board approvals, patient privacy protections, 
-and significant imaging costs, all of which limit the volume of data that can be readily assembled
-(\cite{white2022data, sardanelli2018share}).
-Additionally, variability across multiple sites and scanners introduces biases that can significantly 
-impact downstream analyses, such as voxel-based morphometry and diffusion metrics 
-(\cite{takao2014effects}), lesion volumes (\cite{shinohara2017volumetric}), and DTI measurements (\cite{zhu2011quantification}). 
-Compounding this issue is the absence of standardized metadata on demographics and clinical variables, 
-which complicates the merging of smaller specialized collections in a reproducible manner (\cite{pomponio2019harmonization}).
+Large neuroimaging datasets require substantial time and resource burden. 
+For example, \cite{horien2021hitchhiker} found that two or three researchers typically 
+require about six to nine months to download and process raw data from thousands of participants. 
+Without an automated framework, researchers often invest considerable effort in downloading, 
+ad hoc organizing, preprocessing, and performing quality control. 
+This manual process can also tie investigators to previously preprocessed pipelines, 
+restricting the scope of subsequent studies, as re-processing large datasets again 
+requires enormous effort (\cite{horien2021hitchhiker}). 
+Additionally, careful organization and comprehensive documentation of every processing step is essential for reproducibility. 
+By adopting widely accepted standards like the Brain Imaging Data Structure (BIDS) and 
+maintaining detailed records of software versions, code, and workflow decisions, 
+researchers can ensure that other investigators can precisely replicate their study pipeline (\cite{white2022data, horien2021hitchhiker}). 
+% Furthermore, before sharing any derivative datasets, investigators must check data usage agreements (DUAs) of the original dataset 
+% to ensure compliance with the data-sharing terms and consult their local institutional review board (IRB) or human investigation committee (HIC) 
+% to uphold ethical and legal guidelines (\cite{horien2021hitchhiker}).
 
-On the other hand, the demand for machine learning and artificial intelligence applications in 
-neuroimaging has rapidly increased. State-of-the-art deep learning methods require large, diverse, 
-and well-annotated datasets to effectively train models capable of generalizing across populations, 
-scanners, and clinical conditions (\cite{dishner2024survey}). However, data fragmentation, data access limitations 
-restrictive licensing, regulatory barriers, and inconsistent annotation protocols often hinder achieving the necessary 
-scale and pooling of the different datasets (\cite{goldfarb2022ai}). Furthermore, integrating data from multiple sources, 
-each with varying acquisition parameters, demographic coverage, and consent restrictions, remains a significant challenge 
-(\cite{pomponio2019harmonization}).
+%While there are numerous large-scale multimodal MRI data-sharing initiatives, 
+%with richly characterized cohorts such as UK Biobank, ABCD, ADNI, GSP, 
+%these resources may require access fees or administrative approvals 
+%(\cite{miller2016multimodal, casey2018adolescent, mueller2005alzheimer,   holmes2015brain}). 
+Large-scale consortia provide extensive sample sizes, offering the statistical 
+power necessary to ensure the replicability of research findings, 
+thereby effectively reducing false positives and minimizing inflated effect 
+sizes in studies of brain-behavior associations and phenotype predictions (\cite{marek2024replicability}). 
+While reproducibility establishes an essential baseline for validating findings, 
+it alone does not ensure clinical utility or true generalizability (\cite{kiar2024experimental}). 
+Furthermore, these large datasets may lack generalizability due to demographic biases 
+and over-representing specific populations, limiting their applicability in broader clinical 
+and real-world contexts (\cite{marek2024replicability, yang2024limits}).
+In addition, many large consortium neuroimaging initiatives intentionally 
+minimize dataset variability, creating harmonization that 
+does not exist in real-world scenarios (\cite{adkinson2024brain}). 
+Moreover some large-scale MRI data-sharing initiatives such as UK Biobank, ABCD, ADNI, and GSP 
+may require access fees or administrative approvals (\cite{miller2016multimodal, casey2018adolescent, mueller2005alzheimer,   holmes2015brain}). 
+These policies are intended to ensure responsible data use, 
+protect participant confidentiality, and uphold ethical standards (\cite{white2022data}). 
+However, while they help safeguard personal information, they may also create accessibility barriers 
+for researchers with limited administrative support or funding.
+%Although these large-scale datasets provide richly characterized cohorts, 
+%they may have inherent sampling biases (particularly when focusing on normative data), and may 
+%often overlook diverse clinical populations and rare phenotypes. 
+Another concern is data decay, which occurs when the repeated analysis 
+of the same high-profile datasets leads to overfitting and reduces 
+the generalizability of findings over time (\cite{thompson2020dataset, horien2021hitchhiker}).
+
+Meanwhile, thousands of smaller, specialized, and openly accessible datasets 
+provide an alternate source of MRI data for neuroscientists 
+who may not otherwise have the resources to acquire data or access data from large-scale repositories. 
+These MRI datasets are typically defaced and exclude sensitive demographic or genetic details, 
+thereby minimizing privacy concerns.
+While they generally lack the richly characterized cohorts found in many of the large-scale repositories, 
+such smaller datasets are still valuable in augmenting larger datasets for data-driven analyses. 
+%Consequently, there is often a trade-off between the depth of available data versus the ease of access.
+These smaller, specialized ``boutique'' datasets usually focus on specific brain disorders and targeted research studies. 
+A promising way forward lies in open-science collaborations that combine diverse, 
+heterogeneous datasets, enhancing both sample diversity and statistical power, 
+and thereby improving reproducibility and generalizability 
+of predictive brain-behavior associations (\cite{marek2024replicability, adkinson2024brain, yang2024limits}).
+%Pooling these datasets with large-scale consortia can enhance the dataset's clinical relevance, 
+%while enabling more advanced, data-driven analyses of diverse neurological conditions. 
+%Moreover, integrating these smaller datasets with widely used large-scale datasets helps mitigate data decay, 
+%prevent overfitting, and improve the generalizability of research analyses (\cite{horien2021hitchhiker}).
+Pooling these specialized datasets with large-scale consortia can broaden clinical relevance, 
+mitigate data decay, prevent overfitting, and improve generalizability, 
+thus enabling more advanced, data-driven analyses for diverse neurological conditions
+(\cite{horien2021hitchhiker, marek2024replicability, adkinson2024brain, yang2024limits}).
+Both \cite{kiar2024experimental} and \cite{adkinson2024brain} emphasize the importance 
+of embracing dataset variability, including differences in demographics, 
+scanner hardware, clinical status, and acquisition protocols, to build more 
+robust and transferable models. 
+
+However, these resources are dispersed across multiple repositories and stored in incompatible formats, 
+leading to fragmentation that complicates data pooling, for curating enriched multicentric datasets (\cite{dishner2024survey}). 
+%In addition, the collection of new MRI data requires strict adherence to ethical guidelines, the safeguarding of participant privacy, 
+%and the management of substantial imaging costs, all of which limit the volume of data that can be readily assembled (\cite{white2022data, sardanelli2018share}).
+Furthermore, variability across multiple sites and scanners introduces biases that can significantly 
+impact downstream analyses. 
+%such as voxel-based morphometry (\cite{takao2014effects}), diffusion metrics (\cite{zhu2011quantification}), 
+%and lesion volumes (\cite{shinohara2017volumetric}). 
+Reducing multi-site scanner variability in MRI datasets is an active area of research, 
+with harmonization techniques like ComBat increasingly employed to mitigate these differences 
+and enhance the reliability of multi-site studies (\cite{fortin2017harmonization, fortin2018harmonization}).
+Although harmonization techniques are increasingly employed to remove these differences, 
+they can also remove real-world variability, which is often present in clinical settings. 
+\cite{adkinson2024brain}, for example, demonstrated that unharmonized developmental samples 
+can produce robust cross-dataset predictions, occasionally outperforming models trained 
+within a single harmonized dataset. 
+Compounding these challenges is the lack of standardized metadata on demographics and clinical variables, 
+which complicates the merging of smaller specialized datasets in a reproducible manner (\cite{pomponio2019harmonization}).
+
+On the other hand, the demand for machine learning and artificial intelligence applications in neuroimaging has rapidly increased. 
+Advanced deep learning models require large, diverse, and well-annotated datasets to effectively train models capable of generalizing across populations, 
+scanners, and clinical conditions (\cite{dishner2024survey}). 
+Models trained on narrowly selected samples risk shortcut learning, 
+where the model captures associations between brain and unintended confounding 
+variables rather than underlying brain-behavior relationships (\cite{marek2024replicability, yang2024limits}). 
+Additionally, distribution shifts across populations and imaging protocols can undermine an AI model's 
+fairness and generalizability, particularly when models rely on demographic shortcuts, 
+leading to biased and unreliable predictions (\cite{yang2024limits}). 
+Pooling data from multiple datasets is a promising strategy to meet these requirements, 
+enabling researchers to leverage cutting-edge artificial intelligence and deep learning approaches with enhanced generalizability.
+However, assembling and integrating such datasets remains challenging due to data fragmentation, 
+limited data access, inconsistent annotation protocols, heterogeneous acquisition parameters, 
+and demographic variability (\cite{goldfarb2022ai, pomponio2019harmonization}).
 
 Several open neuroimaging platforms, including OpenNeuro and the NeuroImaging Tools and Resources Collaboratory (NITRC),
 have emerged to facilitate data sharing and standardization (\cite{markiewicz2021openneuro, buccigrossi2008neuroimaging}).
 OpenNeuro (\url{https://openneuro.org/}) has become one of the largest repositories, hosting more than 1200 public 
-datasets with free access and most datasets under Creative Commons Zero licensing. This makes it an ideal choice for 
+datasets with free access and most datasets under Creative Commons Zero (CC0) licensing. This makes it an ideal choice for 
 pooling datasets to increase their size and heterogeneity. 
 Furthermore, OpenNeuro utilizes the robust Brain Imaging Data Structure (BIDS) format, which standardizes data 
 organization and supports reproducible workflows, thereby reducing manual labor in data handling (\cite{markiewicz2021openneuro}). 
-Researchers aiming to combine smaller, specialized repositories with larger, well-established databases often must 
+Researchers aiming to collate these smaller, specialized repositories often must 
 resort to ad hoc scripts to reconcile directory structures, manage irregular metadata, and ensure consistent preprocessing 
 steps, such as skull stripping, normalization, or anatomical registration.
 
-
-To address these practical hurdles and accelerate data-driven investigations, we propose an open-source Python framework 
-that streamlines the collection, integration, and preprocessing of anatomical MRI data from \NumDatasets\ different datasets. 
-This framework automates typical data handling processes and enforces standardized methods to ensure reproducibility.
+To overcome these challenges and enhance data-driven research, we have developed an open-source Python framework called BrainScape, 
+which automates the collation, integration, and preprocessing of anatomical MRI data from \NumDatasets\ different datasets. 
+Our approach directly addresses the objective of improving reproducibility and 
+generalizability highlighted by \cite{marek2024replicability}, \cite{yang2024limits}, \cite{kiar2024experimental}, and \cite{adkinson2024brain}.
+%BrainScape offers a scalable solution to manage the variability and heterogeneity found in both healthy and clinical cohorts. 
+BrainScape allows combining smaller, specialized datasets with large-scale collations, 
+allowing generalizing across diverse populations as well as clinical cohorts. 
+BrainScape maintains the integrity of each source dataset's structure and metadata, ensuring no original information is lost or any bias is introduced from duplicate images. 
+It keeps every MRI image linked to its original source, retains a record of excluded subjects, 
+and enforces standardized methods to ensure reproducibility. 
+BrainScape significantly reduces the typical workload associated with downloading, 
+organizing, and preprocessing MRI data from thousands of participants, 
+by automating the entire workflow for integrating and preprocessing datasets. 
+This framework offers researchers a rapid start while still allowing complete workflow control.
 Moreover, this framework allows dynamic customization, enabling researchers to incorporate new datasets, demographic information, 
-and specialized preprocessing modules without the overhead of reworking an entire codebase.
+and specialized preprocessing modules without the overhead of reworking the codebase.
+Researchers can share their BrainScape workflow configurations and associated plugins, 
+allowing others to replicate and recreate preprocessed images locally. 
+This approach avoids redistributing derivative datasets, 
+while ensuring reproducible pipelines across different research groups. 
 This framework is built upon a plugin-based architecture, designed to:
-
 
 \begin{itemize}
     
-    \item \textbf{Automate Data Handling:} 
+    \item \textbf{Automate data handling:} 
     Automatically download raw MRI scans, regardless of format, and map them into a standardized structure via a mapping plugin. 
     This hands-free workflow minimizes manual intervention and reduces human error.
 
-    \item \textbf{Incorporate Demographic Metadata:}
+    \item \textbf{Demographic metadata integration:}
     Employ a YAML-based schema to attach relevant demographic fields (e.g., age, sex, race, handedness, clinical status) to each subject, 
-    enabling more comprehensive, population-specific analyses.
+    enabling comprehensive, population-specific analyses.
 
-    \item \textbf{Promote Reproducibility:}
-    Enforce transparent and traceable data processing pipelines through configurable default and data specific parameters, ensuring 
-    that the all operations are traceable and same operations are applied uniformly across multiple datasets.
+    \item \textbf{Reproducibility:}
+    Enforce transparent and traceable data processing pipelines through configurable default and dataset-specific parameters, ensuring 
+    that all operations are traceable and the same operations are applied uniformly across multiple datasets.
 
-    \item \textbf{Facilitate Extensibility:}
-    A modular design enables researchers to easily integrate new data sources, demographic fields, or specialized preprocessing workflows 
-    without overhauling the existing codebase. The configurations for each dataset are saved in individual configuration files, allowing 
-    for tailored updates and corrections specific to each dataset.
+    \item \textbf{Extensibility:}
+    Maintain a modular design that allows the integration of new data sources, demographic fields, and specialized workflows for data handling and preprocessing 
+    without overhauling the existing codebase. 
+    Each dataset's configuration is stored separately, allowing for tailored updates and corrections.
 
 \end{itemize}
 
 
-
-
-By consolidating multiple open datasets and enforcing standardized practices, the framework 
-reduces fragmentation and supports large-scale MRI-based research. Its automated procedures 
-alleviate the burden of repetitive tasks, freeing researchers to focus on higher-level analyses 
-such as structural biomarker discovery, group-level comparisons of clinical populations, 
-or advanced machine learning modeling.
-Furthermore, we also have kept track licensing and usage permissions of every individual dataset, 
-to ensures that ethical standards are upheld and proprietary data is respected when aggregating 
-resources from various repositories.
-In this paper, we detail the architecture, functionalities of this framework.
-% We also present several use cases illustrating how the platform simplifies the process of acquiring, preprocessing, and assembling anatomical MRI scans from diverse sources. 
-Ultimately, we aim to empower the neuroscience community to build more inclusive, large-scale datasets 
-that fuel robust computational models and advance our knowledge of brain structure and function.
-
+By consolidating multiple open datasets and enforcing standardized methods, BrainScape reduces fragmentation, 
+supports large-scale MRI research, and automates repetitive data-handling tasks. 
+Its enables researchers to focus on higher-level analyses such as structural biomarker discovery, 
+or machine learning applications.
+Furthermore, we have kept track of the licensing and usage permissions of every dataset to ensure that ethical 
+standards are upheld and proprietary data is respected when aggregating resources from various repositories.
+To properly credit each source dataset included in BrainScape, we maintain a dedicated ``README'' file 
+that identifies each dataset's source, cites relevant publications, and provides direct links to original resources.
+In this paper, we describe the framework's architecture and functionalities, 
+aiming to empower the neuroscience community to build inclusive, 
+large-scale datasets that facilitate robust computational approaches 
+and advance our understanding of brain structure and function.

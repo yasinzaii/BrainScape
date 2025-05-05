@@ -1,56 +1,98 @@
+In this paper, we introduce BrainScape, an easy-to-use tool for the management, aggregation, 
+and preprocessing of open-source anatomical MRI datasets.
+BrainScape addresses known challenges associated with aggregating multimodal MRI datasets, 
+including the fragmentation of specialized clinical data, incompatible dataset formats and organization, 
+lack of automated data-handling workflows, and inconsistencies in demographic and clinical metadata.
+BrainScape integrates heterogeneous MRI datasets while preserving each dataset's original structure, subject organization, and licensing details.
+This design choice minimizes the risks of duplication, data loss, and inadvertent bias, enabling researchers to easily and reliably merge data from multiple sources 
+for more comprehensive analyses.
+
+A key motivation for pooling diverse datasets is to improve generalizability, 
+bridging the gap between replicable findings and real-world clinical applicability 
+(\cite{marek2024replicability, adkinson2024brain, yang2024limits}).
+Although many large-scale consortia provide extensive datasets that support reproducibility, 
+they often exhibit limited demographic representation and constrained dataset variability, 
+reducing their broader generalizability. 
+Such constraints can lead to shortcut learning in machine learning models, 
+whereby models inadvertently capture patterns associated with confounding variables 
+rather than true brain-behavior relationships (\cite{marek2024replicability, yang2024limits}). 
+Another motivation behind BrainScape's design is the recognition that 
+numerous specialized MRI datasets likely remain underutilized 
+compared to the widely-used large-scale consortia datasets. 
+Although these datasets often contain valuable information on rare phenotypes and specific clinical conditions, 
+they are underutilized in pooling efforts due to complexities in data aggregation. 
+By systematically integrating these diverse datasets, BrainScape promotes 
+dataset heterogeneity, facilitating the development of robust, transferable models 
+that accurately reflect the true variability observed in both healthy and clinical populations.
+
+One of the strengths of BrainScape is its flexibility and scalability. 
+The configurable and modular plugin-based architecture enables 
+seamless integration of new data sources, imaging modalities, and preprocessing pipelines without requiring any modifications to the core codebase.
+Researchers can add new multimodal MRI datasets by including new configuration files for those datasets.
+Additionally, BrainScape provides the flexibility to include plugins for downloading data from other open-source MRI databases, 
+as well as specialized preprocessing plugins for specific studies which may include custom preprocessing pipelines.
+This design facilitates an environment of continuous improvement and customization.
+We integrate \NumDatasets\ diverse datasets demonstrating the framework's scalability 
+and capability to handle large-scale data aggregation.
+Furthermore, BrainScape's ability to trace each file back to its source and maintain 
+dataset-specific configurations demonstrates reproducibility by ensuring that the inclusion criteria, 
+quality-control outcomes, and plugin parameters are recorded in a transparent and standardized manner.
+
+By automating data downloading, mapping, validation, and preprocessing, BrainScape reduces the 
+manual labor required for large-scale, multi-site data pooling. Researchers can therefore shift 
+their focus away from tedious preparation tasks and concentrate on analysis, interpretation, and theory development. 
+This is particularly helpful for deep learning and machine learning applications, where model 
+performance benefits from the diversity and volume of training data (\cite{dishner2024survey}). Beyond aggregating diverse MRI scans, 
+BrainScape also supports attaching demographic fields (such as age, sex, handedness, and clinical status), enabling 
+researchers to build inclusive datasets that capture control and patient cohorts. 
+This diversity is particularly crucial for rare phenotypes and targeted clinical cohorts, 
+which may be overlooked in large-scale aggregated datasets yet offer critical insights into neurological function and pathology (\cite{thompson2014enigma}).
+
+Despite its strengths, BrainScape has some limitations that also reflect wider issues in science.
+First, there is an uneven coverage of demographic and clinical metadata across datasets, 
+which may constrain the generalizability of analyses and introduce sampling biases. 
+This fragmented demographic information likely arises because BrainScape aggregates resources from individual researchers 
+with varying funding levels and research targets. 
+As a result, we cannot expect the same level of annotations as found in multi-million-dollar projects 
+such as HCP and UK Biobank (\cite{van2013wu, miller2016multimodal}).
+Furthermore, the distribution of demographic variables does not fully reflect real-world populations. 
+For instance, the current age distribution skews toward individuals between 5-30 years, with fewer participants above 30.
+Similarly, most participants self-identify as White, while other racial or ethnic groups are comparatively underrepresented. 
+Educational levels also exhibit an imbalance with more than half of the participants reporting high-level education (bachelor's, master's, or PhD).
+Although these demographic imbalances mean the integrated dataset may not yet comprehensively represent 
+the broader population, BrainScape's community-driven aggregation approach aims to progressively reduce 
+these limitations by incorporating more diverse, heterogeneous datasets over time.
+Potential reasons for the current bias include the nature of volunteer-based studies, 
+recruitment from university populations, and missing demographic fields across datasets. 
+Ongoing integration of additional datasets, particularly those emphasizing broader demographic 
+and clinical diversity, will further enhance generalizability. 
 
 
-The development and implementation of our open-source framework mark a significant advancement in the 
-management and preprocessing of anatomical MRI datasets within the neuroscience research community. 
-By addressing critical challenges such as data fragmentation, limited accessibility, and the complexity 
-of integrating diverse demographic and clinical information, our framework provides a robust solution 
-that enhances both the efficiency and reproducibility of neuroimaging studies.
+Second, the distribution of MRI modalities is skewed, with a relatively high number of T1w images compared to T2w and FLAIR scans. 
+This imbalance might limit the scope of studies that require multimodal MRI data for effective analysis, such as automated lesion segmentation (\cite{menze2014multimodal, spitzer2022interpretable}). 
+Over time, community-driven contributions should address this imbalance by integrating additional datasets containing richer multimodal MRIs. 
+Furthermore, licensing restrictions remain a concern; reliance on publicly available data means that the framework is subject to existing licensing restrictions 
+and access barriers inherent in some proprietary datasets.
+Although BrainScape tracks licensing terms and usage permissions, researchers must be aware of 
+data use agreements and privacy regulations to ensure responsible collaboration. 
+Additionally, downloading and preprocessing large-scale MRI data requires significant time and computational resources, 
+potentially extending the overall study timeline and requiring access to high-performance computing resources.
 
-One of the primary strengths of our framework lies in its modular architecture, which allows researchers 
-to easily incorporate new datasets, preprocessing modules, and demographic variables without altering the 
-core system. This flexibility not only accommodates the heterogeneous nature of existing MRI datasets but 
-also fosters an environment of continuous improvement and customization. The successful integration of 
-approximately \NumDatasets\ (to-date) diverse datasets underscores the framework's scalability and its ability to handle 
-large-scale data aggregation effectively.
+Looking ahead, BrainScape can be extended to incorporate diffusion-weighted imaging (DWI), resting-state fMRI, 
+and other specialized MRI sequences, enhancing the dataset capability to support multimodal analyses 
+of structural and functional connectivity (\cite{van2013wu}). 
+Furthermore, including an automated quality control module into the pipeline, such as machine-learning-based artifact detection 
+may make it easier to include additional open-source datasets by reducing the need for manual quality control, which is labor-intensive and time-consuming. 
+Such a module may also automatically detect poor-quality MRIs overlooked during manual review. 
+Another key improvement is parallelizing the workflow; currently, BrainScape processes datasets sequentially, 
+but enabling concurrent dataset handling could significantly reduce the overall processing time. 
+Additionally, integrating new open-source brain datasets targeted at specialized analyses and rare phenotypes will further enrich the pooled dataset 
+and expand the dataset utility for even more studies. 
+Finally, BrainScape can be enhanced with new preprocessing plugins designed to implement specialized pipelines for targeted research studies.
 
-Our framework's emphasis on automated workflows significantly reduces the manual labor and potential for 
-human error associated with traditional data handling processes. By automating steps such as data downloading, 
-mapping, preprocessing, and validation, we ensure a higher degree of consistency and reliability across 
-different datasets. This automation is particularly beneficial for large-scale studies that require the 
-integration of multiple data sources, enabling researchers to allocate more time to data analysis and 
-interpretation rather than data preparation.
-
-% The incorporation of a demographics mapping system using a YAML-based schema is another noteworthy feature. 
-% This system standardizes demographic and clinical variables across datasets, facilitating comprehensive 
-% statistical analyses and enabling the generation of insightful visualizations. The ability to accurately 
-% map and visualize demographic information enhances the framework's utility in studying population-specific 
-% brain characteristics and in developing machine learning models that generalize well across diverse groups.
-
-Despite these strengths, our framework does encounter certain limitations. The reliance on publicly available 
-data means that the framework cannot overcome existing licensing restrictions or data access barriers inherent 
-to some proprietary datasets. Additionally, the computational demands of preprocessing large-scale MRI data 
-can be substantial, potentially limiting accessibility for researchers without access to high-performance 
-computing resources. Furthermore, the completeness and consistency of demographic information vary across 
-datasets, which may constrain the depth of demographic analyses and limit the framework's applicability in 
-studies requiring comprehensive demographic coverage.
-
-In comparison to existing neuroinformatics tools and platforms, our framework offers a more integrated and 
-customizable approach to MRI data management. While platforms like OpenNeuro and NITRC provide valuable 
-resources for data sharing and standardization, our framework extends these capabilities by automating the 
-entire data integration pipeline and by offering extensive customization options through its plugin-based 
-system. This positions our framework as a complementary tool that can enhance the functionality of existing 
-platforms by addressing specific needs related to data preprocessing and demographic integration.
-
-The implications of our findings are profound for the future of neuroscience research. By streamlining data 
-integration and preprocessing, our framework accelerates the pace at which researchers can assemble and analyze 
-large, diverse MRI datasets. This acceleration is crucial for advancing our understanding of complex neurological 
-conditions, cognitive functions, and brain development processes. Moreover, the framework's ability to manage 
-and standardize demographic information supports the creation of more inclusive and representative datasets, 
-which are essential for developing machine learning models that are both robust and generalizable.
-
-In conclusion, our open-source framework represents a pivotal tool for neuroscience research, addressing key 
-challenges in MRI data management and preprocessing. Its modular design, automated workflows, and comprehensive 
-demographics integration not only enhance the efficiency and reproducibility of neuroimaging studies but also 
-support the development of more inclusive and robust machine learning models. While certain limitations exist, 
-the framework's strengths and potential for future enhancements position it as a valuable asset for advancing 
-neuroscience research and fostering a collaborative, open science environment.
+In conclusion, our open-source framework addresses bottlenecks in MRI data aggregation and preprocessing by 
+collecting datasets of diverse origins, automating workflows, and preserving original dataset integrity. 
+It will serve as an effective tool for the neuroscience community by enabling the creation of more comprehensive, representative, and robust datasets.
+While challenges such as inconsistent demographic data and licensing restrictions persist, 
+BrainScape's flexible, transparent design allows for ongoing improvements through active community collaboration.
+We believe that BrainScape contributes significantly to open science and enhances our understanding of brain structure and function.

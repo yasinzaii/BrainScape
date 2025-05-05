@@ -8,6 +8,8 @@
 \usepackage{csquotes}       % Recommended with BibLaTeX
 \usepackage[backend=biber, style=apa]{biblatex}
 
+% For FloatBarrier command
+\usepackage{placeins}
 
 % Loading Variables
 \input{data/variables.tex}
@@ -17,13 +19,13 @@
 \DeclareUnicodeCharacter{0308}{*************************************}
 
 
-\title{BrainScape: An Open-Source Framework for Integrating and Preprocessing Anatomical Datasets} 
+\title{BrainScape: An Open-Source Framework for Integrating and Preprocessing Anatomical MRI Datasets} 
 
-\author{Muhammad Nabi Yasinzai,$^{1\ast}$ Remika Mito,$^{2}$ Mangor Pedersen$^{1}$\\
-{\small $^{1}$Psychology \& Neuroscience Department, Auckland University of Technology,}\\
-{\small Auckland, New Zealand}\\
-{\small $^{2}$Florey Institute of Neuroscience and Mental Health, Heidelberg, Victoria 3084, Australia.}\\
-{\small $^\ast$Correspondence: name@wherever.edu}
+\author{Muhammad Nabi Yasinzai,$^{1}$ Remika Mito,$^{2}$ Mangor Pedersen$^{1\ast}$\\
+{\small $^{1}$Department of Psychology \& Neuroscience, Auckland University of Technology,}\\
+{\small Auckland, New Zealand.}\\
+{\small $^{2}$Department of Psychiatry, University of Melbourne, Melbourne, Victoria 3053, Australia.}\\
+{\small $^\ast$Correspondence: mangor.pedersen@aut.ac.nz}
 }
 
 
@@ -42,20 +44,28 @@
 \end{abstract}
 
 
-
+\FloatBarrier
 \section{Introduction}
 \input{sections/2_introduction.tex}
 
-
+\FloatBarrier
 \section{Methodology}
 \input{sections/5_methodology.tex}
 
+\FloatBarrier
+\section{Results}
+\input{sections/7_results.tex}
 
+\FloatBarrier
 \section{Discussion}
 \input{sections/8_discussion.tex}
 
+\FloatBarrier
+\input{sections/9_other_sections.tex}
+
+\FloatBarrier
 \section{Supplementary Material}
-\input{sections/9_supplementary_material.tex}
+\input{sections/10_supplementary_material.tex}
 
 
 \printbibliography
