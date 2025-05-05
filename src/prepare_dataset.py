@@ -14,7 +14,8 @@ from preprocess.preprocess_manager import PreprocessManager
 
 from validate.validate_manager import ValidateManager
 
-from visualizer import VisualizerManager
+from visualize.visualize_manager import VisualizerManager
+#from visualizer import VisualizerManager
 
 from genInfo.generate_readme import ReadmeGeneratorManager
 
@@ -60,7 +61,6 @@ def prepare_dataset():
         target_datasets =  all_datasets   
     
     
-    
     # Getting the Default Settings for all Datasets
     default_dataset_settings = JsonHandler(config.pathDefaults).get_data()
     if not default_dataset_settings:
@@ -80,8 +80,7 @@ def prepare_dataset():
             overrides=dataset_settings.get_data()
         )
         if not final_settings["includeDataset"]:
-            logger.info(f"includeDataset flag is not set for {dataset_name} Dataset")
-            logger.warning(f"Removing Dataset:{dataset_name} from target datasets list")
+            logger.warning(f"includeDataset flag is not set for {dataset_name} - Removing Dataset:{dataset_name} from target datasets list")
             screened_target_datasets.remove(dataset_name)
     target_datasets = screened_target_datasets
         
@@ -118,20 +117,22 @@ def prepare_dataset():
     preprocess_man.initiate_preprocessing()
     
     
-    # TODO - Preprocessed Mapping Hardcoded Fixit
+    # TODO - Preprocessed Mapping Hardcoded Fix it
     dataset_man.preprocessed_mapping()
     
     
-    # TODO - Cleanup the Visualizer Manager
+    dataset_man.demographic_mapping()
+    
+    
     visualizer_man = VisualizerManager(config=config, 
                                         target_datasets=target_datasets, 
                                         default_dataset_settings=default_dataset_settings,
                                         mapping = dataset_man.get_mapping())
     
-    visualizer_man.initiate_vis()
+    visualizer_man.initiate_visualization()
     
     
-    # README GENERATOR
+    # Generating README.md for all datasets
     readme_gen_man = ReadmeGeneratorManager(config=config, 
                                             target_datasets=target_datasets, 
                                             default_dataset_settings=default_dataset_settings,
@@ -141,16 +142,13 @@ def prepare_dataset():
     readme_gen_man.initiate_readme_generation()
     
     
-    
-    
-    
-    
-    
-    
-    
-    
     mapping = dataset_man.get_mapping() 
     pass
+
+    # Save Dataset Mapping at the END
+    dataset_man.save_mapping()
+    
+
 
 
 if __name__ == "__main__":
