@@ -1,5 +1,7 @@
+import os
 import json
 import logging
+
 
 class JsonHandler:
     """
@@ -20,9 +22,17 @@ class JsonHandler:
         self.create_if_missing = create_if_missing
         self.logger = logging.getLogger(__name__)
         
-        self.data = self.load_json()
-
-
+        self.data = {}
+        if os.path.exists(self.json_path):
+            self.data = self.load_json()
+        else:
+            if create_if_missing:
+                self.logger.info(f"JsonHandler - Json File: {self.json_path} does not exist. Loading Empty Dict.")
+            else:
+                self.logger.error(f"JsonHandler - Json File: {self.json_path} does not exist.")
+                raise FileNotFoundError(f"The JSON file at '{self.json_path}' does not exist.")
+            
+            
     def load_json(self) -> dict:
         """
         Load JSON data from the specified file.

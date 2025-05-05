@@ -5,7 +5,7 @@ import argparse
 
 def str2bool(v):
     """
-    Convert a string representation of truth to True or False.
+    Convert a string representation of boolean to boolean True or False.
 
     Args:
         v (str or bool): The value to convert to a boolean.
@@ -34,6 +34,7 @@ def get_parser(**parser_kwargs):
     # Initialize the parser with any provided keyword arguments
     parser = argparse.ArgumentParser(**parser_kwargs)
     
+    # Caution - This will force redownload all datasets - Not recommended.
     # Argument to remove and re-download all datasets
     parser.add_argument(
         "-rd",
@@ -45,6 +46,7 @@ def get_parser(**parser_kwargs):
         help="Removes and Re-downloads all Datasets",
     )
     
+    # Update: Depricated - This argument is not used anymore.
     # Argument to remove and re-process all datasets
     parser.add_argument(
         "-rp",
@@ -75,6 +77,7 @@ def get_parser(**parser_kwargs):
     )
     
     
+    # Update: This argument is not used any more - Now the downlaod files are always checked.
     # Argument to validate all downloaded files with corresponding source files
     parser.add_argument(
         "-cd",
