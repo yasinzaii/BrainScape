@@ -13,5 +13,7 @@ dependencies:
     - httpx==0.27.2
     - PyYAML==6.0.2
     - pybtex==0.24.0
+    - synapseclient==4.7.0
     - git+https://github.com/yasinzaii/pybtex-apa7-style.git
+    - brainles-preprocessing
 

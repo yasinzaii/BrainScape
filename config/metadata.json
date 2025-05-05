@@ -5,6 +5,8 @@
     "alreadyPreprocessed": false,
     
     "downloadDirName": "Download",
+
+    "demographicsPlugin": "DemographicsMapper",
     
     "preprocess": {
         "preprocessor": "brats",

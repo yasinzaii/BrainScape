@@ -1,8 +1,10 @@
 {
     "info": "Overrides Dataset inclusion|exclusion Settings, [Overides 'includeDataset' Key of Individual Dataset metadata.json]",
-    
-    
-    "exclude": [
-        "AOMIC"
+
+    "include": [
+        "ECStudy"
+    ],
+    "exclude": [   
+        
     ]
 }

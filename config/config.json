@@ -6,5 +6,12 @@
     "datasetSettingsJson": "metadata.json", 
     "datasetInfoYaml": "info.yaml",
     "datasetReadMe": "README.md",
-    "datsetMriJson": "dataset.json"
+    "datsetMriJson": "dataset.json",
+    "demographicsDir":"./demographics",
+    "demographicsTSV": "participants.tsv",
+    "demographicsMappingYaml":"mapping.yaml",
+    "visualizeDirName": "visualize"
+    
 }
+
+
