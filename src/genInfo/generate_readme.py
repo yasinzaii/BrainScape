@@ -1,6 +1,4 @@
-import os
 import yaml
-import json
 import logging
 
 from pathlib import Path
@@ -12,15 +10,9 @@ from utils.common_utils import merge_settings
 
 # Requires pybtex-apa7-style plugins.
 from pybtex.plugin import find_plugin
-from pybtex.database import parse_file
+from pybtex.database import parse_string
 APA = find_plugin('pybtex.style.formatting', 'apa7')()
 PLAINTEXT = find_plugin('pybtex.backends', 'plaintext')()
-
-# Depricated
-# For BibTeX to APA conversion
-from pybtex.database import parse_string
-# For latex-to-unicode conversion
-#from pylatexenc.latex2text import LatexNodes2Text
 
 
 class ReadmeGeneratorManager:
@@ -40,7 +32,7 @@ class ReadmeGeneratorManager:
         
     def initiate_readme_generation(self):
         for dataset_name in self.target_datasets:
-            self.logger.info(f"Readme Generator - Generating readme.md for dataset: {dataset_name}")
+            self.logger.info(f"ReadmeGeneratorManager - Generating readme.md for dataset: {dataset_name}")
 
             # Merging Default Settings with Dataset Settings.
             dataset_path = Path(self.config.pathDataset) / dataset_name
@@ -49,7 +41,21 @@ class ReadmeGeneratorManager:
                 defaults=self.default_dataset_settings,
                 overrides=dataset_settings.get_data()
             )
-
+            
+            # Checking isReadmeGenerated Flag and Readme File.
+            is_readme_file_generated = final_settings.get("isReadmeGenerated", False)
+            readme_file = dataset_path / self.config.datasetReadMe
+            if is_readme_file_generated:
+                self.logger.info(f"ReadmeGeneratorManager - 'isReadmeGenerated' flag set to True in dataset:{dataset_name} metadata.")
+                if readme_file.exists() and readme_file.is_file():
+                    self.logger.info(f"ReadmeGeneratorManager - dataset:{dataset_name} readme file exists - path:{str(readme_file)} - Skipping Readme Generation.")
+                    continue
+                else:
+                    self.logger.info(f"ReadmeGeneratorManager - 'isReadmeGenerated' flag set to True for dataset:{dataset_name} yet Readme File missing from Path:{str(readme_file)} - Generating Readme again.")
+                    # Updating dataset metadata and unsetting 'isReadmeGenerated' flag
+                    dataset_settings.update_json({'isReadmeGenerated':False}).save_json()
+                    
+                    
             # Acquiring the Mapping
             dataset_mapping = self.mapping[dataset_name]
 
@@ -62,10 +68,11 @@ class ReadmeGeneratorManager:
             )
 
             success = readme_generator.run()
+            dataset_settings.update_json({"isReadmeGenerated": success}).save_json()
             if success:
-                self.logger.info(f"Readme generation completed for dataset '{dataset_name}'.")
+                self.logger.info(f"ReadmeGeneratorManager - Readme generation completed for dataset '{dataset_name}'.")
             else:
-                self.logger.error(f"Readme generation failed for dataset '{dataset_name}'.")
+                self.logger.error(f"ReadmeGeneratorManager - Readme generation failed for dataset '{dataset_name}'.")
 
 
 class ReadmeGenerator:
@@ -91,9 +98,8 @@ class ReadmeGenerator:
         
         # Check if Info File is present, Else Skip.
         if not self.info_yaml_file.exists():
-            self.logger.warning(f"-ReadmeGenerator - info.yaml file Missing for Dataset:{self.dataset_path.name}")
+            self.logger.warning(f"ReadmeGenerator - info.yaml file Missing for Dataset:{self.dataset_path.name}")
             return False
-        
         
         try:
             # Load info.yaml
