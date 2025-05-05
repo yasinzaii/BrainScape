@@ -35,7 +35,10 @@
             "sub-35",
             "sub-41",
             "sub-76",
-            "sub-77"         
+            "sub-77"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

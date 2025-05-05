@@ -31,5 +31,8 @@
         "excludeSub": [
             "sub-050"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

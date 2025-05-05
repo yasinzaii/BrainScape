@@ -34,5 +34,8 @@
             "sub-007",
             "sub-008"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

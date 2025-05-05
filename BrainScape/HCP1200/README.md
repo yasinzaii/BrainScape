@@ -52,6 +52,10 @@ Create an account on Human Connectome DB wesbite.
 
 Van Essen, D. C., Smith, S. M., Barch, D. M., Behrens, T. E., Yacoub, E., Ugurbil, K., Consortium, W.-M. H., & others. (2013). The wu-minn human connectome project: an overview. Neuroimage, 80, 62–79.
 
+## Download
+
+https://www.humanconnectome.org/study/hcp-young-adult
+
 ## Dataset Statistics
 
 | Statistic | Value |
@@ -59,6 +63,6 @@ Van Essen, D. C., Smith, S. M., Barch, D. M., Behrens, T. E., Yacoub, E., Ugurbi
 | Number of Subjects | 1113 |
 | Number of Sessions | 1113 |
 | Total Number of MRIs | 2226 |
-| Number of T2W MRIs | 1113 |
 | Number of T1W MRIs | 1113 |
+| Number of T2W MRIs | 1113 |
 

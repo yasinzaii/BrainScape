@@ -31,5 +31,8 @@
         "excludeSub": [
             "sub-047EPKL011063"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

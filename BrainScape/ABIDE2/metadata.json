@@ -28,12 +28,14 @@
             "GU_28776_1",
             "GU_28781_1",
             "GU_28782_1",
+            "GU_28783_1",
             "GU_28784_1",
             "GU_28794_1",
             "GU_28799_1",
             "GU_28802_1",
             "GU_28807_1",
             "GU_28816_1",
+            "GU_28817_1",
             "GU_28818_1",
             "GU_28819_1",
             "GU_28823_1",
@@ -82,5 +84,8 @@
             "UCLA_51234_followup",
             "UCLA_51292_followup"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

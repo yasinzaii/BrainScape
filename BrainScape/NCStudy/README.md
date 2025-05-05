@@ -1,6 +1,6 @@
 Note: This README file is Auto Generated.
 
-# https://openneuro.org/datasets/ds005364/versions/1.0.0
+# neuroCOVID MRI dWI and fMRI with reversal learning
 
 ## License
 
@@ -17,6 +17,6 @@ https://openneuro.org/datasets/ds005364/versions/1.0.0
 | Number of Subjects | 100 |
 | Number of Sessions | 100 |
 | Total Number of MRIs | 200 |
-| Number of T2W MRIs | 100 |
 | Number of T1W MRIs | 100 |
+| Number of T2W MRIs | 100 |
 

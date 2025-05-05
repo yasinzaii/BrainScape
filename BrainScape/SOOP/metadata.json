@@ -256,5 +256,8 @@
             "sub-999",
             "sub-99"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

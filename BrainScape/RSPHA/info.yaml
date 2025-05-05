@@ -12,7 +12,7 @@ license: "CC0"
 citation: |
   @article{vidorreta2013comparison,
     title={Comparison of 2D and 3D single-shot ASL perfusion fMRI sequences},
-    author={Vidorreta, Marta and Wang, Ze and Rodr{\'\i}guez, Ignacio and Pastor, Mar{\'\i}a A and Detre, John A and Fern{\'a}ndez-Seara, Mar{\'\i}a A},
+    author={Vidorreta, Marta and Wang, Ze and Rodr\'{i}guez, Ignacio and Pastor, Mar\'{i}a A and Detre, John A and Fern{\'a}ndez-Seara, Mar\'{i}a A},
     journal={Neuroimage},
     volume={66},
     pages={662--671},

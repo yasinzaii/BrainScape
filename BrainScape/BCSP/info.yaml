@@ -20,7 +20,7 @@ license: "CC0"
 citation: |
   @article{soler2022brain,
     title={Brain correlates of speech perception in schizophrenia patients with and without auditory hallucinations},
-    author={Soler-Vidal, Joan and Fuentes-Claramonte, Paola and Salgado-Pineda, Pilar and Ramiro, Nuria and Garc{\'\i}a-Le{\'o}n, Mar{\'\i}a {\'A}ngeles and Torres, Mar{\'\i}a Llanos and Ar{\'e}valo, Antonio and Guerrero-Pedraza, Amalia and Munuera, Josep and Sarr{\'o}, Salvador and others},
+    author={Soler-Vidal, Joan and Fuentes-Claramonte, Paola and Salgado-Pineda, Pilar and Ramiro, Nuria and Garc\'{i}a-Le{\'o}n, Mar\'{i}a {\'A}ngeles and Torres, Mar\'{i}a Llanos and Ar{\'e}valo, Antonio and Guerrero-Pedraza, Amalia and Munuera, Josep and Sarr{\'o}, Salvador and others},
     journal={PloS one},
     volume={17},
     number={12},

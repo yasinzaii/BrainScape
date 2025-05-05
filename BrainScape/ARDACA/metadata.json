@@ -28,7 +28,9 @@
                 "t2w": "^.*T2w.nii.gz$"
             }
         },
-        "excludeSub": [
-        ]
-    }
+        "excludeSub": []
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

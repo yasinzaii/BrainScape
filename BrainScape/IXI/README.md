@@ -50,6 +50,6 @@ https://www.nitrc.org/ir/data/projects/ixi
 | Number of Subjects | 401 |
 | Number of Sessions | 401 |
 | Total Number of MRIs | 797 |
-| Number of T2W MRIs | 397 |
 | Number of T1W MRIs | 400 |
+| Number of T2W MRIs | 397 |
 

@@ -8,9 +8,9 @@ This dataset contains the raw 3 Tesla fMRI data and T1 structural images of 54 h
 
 This dataset was used for the preprint "Grössinger, D., Fischmeister, F. P. S., Witte, M., Koschutnig, K., Ninaus, M., Neuper, C., Kober, S.E. & Wood, G. (2021). The role of superstition of cognitive control during neurofeedback training. bioRxiv, 2021-09. https://doi.org/10.1101/2021.09.14.460252"
 
-The task employed in the present study was comparable to procedures adopted during real-time fMRI neurofeedback training, except that the feedback presented to participants was sham. Participants were told that their brain activity was directly coupled to the bar movements and that in some conditions, they should control the position of the bar while not moving their body or eyes. In this active experimental condition, “control moving bars”, participants were asked to increase the middle bar presented on the visual display while keeping the two outer bars low. In the two other conditions, participants were asked to monitor the bars, only. In the high-level control condition “monitor moving bars”, participants were asked not to interfere with the middle bar movements but to monitor them passively. In the low-level control condition “monitor static bars”, participants were asked again just to observe the bars, which remained static for the duration of the block.
+The task employed in the present study was comparable to procedures adopted during real-time fMRI neurofeedback training, except that the feedback presented to participants was sham. Participants were told that their brain activity was directly coupled to the bar movements and that in some conditions, they should control the position of the bar while not moving their body or eyes. In this active experimental condition, "control moving bars", participants were asked to increase the middle bar presented on the visual display while keeping the two outer bars low. In the two other conditions, participants were asked to monitor the bars, only. In the high-level control condition "monitor moving bars", participants were asked not to interfere with the middle bar movements but to monitor them passively. In the low-level control condition "monitor static bars", participants were asked again just to observe the bars, which remained static for the duration of the block.
 
-Each trial started with a cross-hair presented for about 18.5s (random jitter from 17 to 20s). Participants then received the instructional cue words “control” or “monitor” for another 3s before the bar display was visible. The feedback-bar was presented for 20s. Immediately following the active control task, participants were asked to rate their level of control on a 5-point rating scale with the anchor words “no control” and “full control”. Each condition was repeated five times, the order of presentation of the three experimental conditions was randomized per subject. 
+Each trial started with a cross-hair presented for about 18.5s (random jitter from 17 to 20s). Participants then received the instructional cue words "control" or "monitor" for another 3s before the bar display was visible. The feedback-bar was presented for 20s. Immediately following the active control task, participants were asked to rate their level of control on a 5-point rating scale with the anchor words "no control" and "full control". Each condition was repeated five times, the order of presentation of the three experimental conditions was randomized per subject. 
 
 The codes of the participants included in the analysis are listed hereafter:
 
@@ -92,6 +92,6 @@ https://openneuro.org/datasets/ds004556/versions/1.0.1
 | Number of Subjects | 53 |
 | Number of Sessions | 53 |
 | Total Number of MRIs | 106 |
-| Number of T2W MRIs | 53 |
 | Number of T1W MRIs | 53 |
+| Number of T2W MRIs | 53 |
 

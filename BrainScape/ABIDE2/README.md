@@ -20,6 +20,13 @@ with ASD and 593 controls (age range: 5-64 years). These data have been openly r
 In accordance with HIPAA guidelines and 1000 Functional Connectomes Project / INDI protocols, all datasets are anonymous, 
 with no protected health information included.
 
+**Note:**
+
+These two patterns are also exclued in subject name:
+
+-  "ONRC_*",
+- "*_baseline",
+
 
 ## Usage Agreement
 
@@ -35,7 +42,7 @@ CC BY-NC-SA 3.0
 
 ## Citation
 
-Di Martino, A., O’connor, D., Chen, B., Alaerts, K., Anderson, J., Assaf, M., Balsters, J., Baxter, L., Beggiato, A., Bernaerts, S., & others,  (2017). Enhancing studies of the connectome in autism using the autism brain imaging data exchange II. Scientific data, 4(1), 1--15.
+Di Martino, A., O’connor, D., Chen, B., Alaerts, K., Anderson, J. S., Assaf, M., Balsters, J. H., Baxter, L., Beggiato, A., Bernaerts, S., & others. (2017). Enhancing studies of the connectome in autism using the autism brain imaging data exchange ii. Scientific data, 4(1), 1–15.
 
 ## Download
 
@@ -45,9 +52,9 @@ https://www.nitrc.org/ir/data/projects/ABIDE_II
 
 | Statistic | Value |
 | --- | --- |
-| Number of Subjects | 591 |
-| Number of Sessions | 591 |
-| Total Number of MRIs | 591 |
-| Number of flair MRIs | 49 |
-| Number of t1w MRIs | 591 |
+| Number of Subjects | 588 |
+| Number of Sessions | 588 |
+| Total Number of MRIs | 637 |
+| Number of T1W MRIs | 588 |
+| Number of FLAIR MRIs | 49 |
 

@@ -42,5 +42,8 @@
             "sub-dmp0975",
             "sub-dmp1165"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

@@ -47,5 +47,8 @@
             "sub-MIC044",
             "sub-MIC047"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

@@ -21,12 +21,9 @@
             "KKI_50779",
             "KKI_50785",
             "KKI_50787",
-            "KKI_50794",
-            "KKI_50795",
             "KKI_50815",
             "KKI_50818",
             "KKI_50825",
-            "KKI_50826",
             "KKI_50826",
             "MaxMun_51348",
             "MaxMun_51352",
@@ -90,5 +87,8 @@
             "USM_50511",
             "Yale_50618"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

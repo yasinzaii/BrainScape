@@ -1,0 +1,48 @@
+{
+    "info": "Dataset Specific Settings",
+    "isDownloaded": true,
+    "isReadmeGenerated": true,
+    "isDatasetJsonCreated": false,
+    "isPreprocessed": true,
+    "includeDataset": true,
+    "download": {
+        "isDownloadable": true,
+        "plugin": "SynapseDownloader",
+        "profile": "synapse",
+        "source": "synapse.org",
+        "verifyFiles": false,
+        "include": [
+            {
+                "dataset": "syn51514132",
+                "type": "training"
+            },
+            {
+                "dataset": "syn51514110",
+                "type": "validation"
+            }
+        ]
+    },
+    "mapping": {
+        "plugin": "RegexMapper",
+        "regex": {
+            "subject": "^.*-BraTS-.*$",
+            "session": "",
+            "type": "",
+            "modality": {
+                "t1w": "^.*t1n.nii.gz$",
+                "t2w": "^.*t2w.nii.gz$",
+                "t1ce": "^.*t1c.nii.gz$",
+                "flair": "^.*t2f.nii.gz$",
+                "seg": "^.*seg.nii.gz$"
+            }
+        },
+        "excludeSub": []
+    },
+    "preprocess": {
+        "preprocessor": "identity",
+        "preprocessDirName": "preprocessed",
+        "alreadyPreprocessed": true
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true
+}

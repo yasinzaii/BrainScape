@@ -35,7 +35,10 @@
             "sub-029",
             "sub-034",
             "sub-077",
-            "sub-082" 
+            "sub-082"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

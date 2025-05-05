@@ -4,7 +4,6 @@
     "isDatasetJsonCreated": false,
     "isPreprocessed": true,
     "includeDataset": true,
-    
     "download": {
         "isDownloadable": true,
         "plugin": "OpenNeuroDownloader",
@@ -19,7 +18,6 @@
             "sub-*/anat/*"
         ]
     },
-
     "mapping": {
         "plugin": "RegexMapper",
         "regex": {
@@ -45,5 +43,8 @@
         "height": "body_height",
         "haematocrit": "haematocrit",
         "glucoseConcentration": "glucose_concentration"
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

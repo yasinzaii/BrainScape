@@ -4,7 +4,6 @@
     "isDatasetJsonCreated": false,
     "isPreprocessed": true,
     "includeDataset": true,
-    
     "download": {
         "isDownloadable": true,
         "plugin": "OpenNeuroDownloader",
@@ -19,7 +18,6 @@
             "sub-*/ses-*/anat/*"
         ]
     },
-    
     "mapping": {
         "plugin": "RegexMapper",
         "regex": {
@@ -67,5 +65,8 @@
             "sub-1277",
             "sub-1284"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

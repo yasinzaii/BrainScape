@@ -31,5 +31,8 @@
         "excludeSub": [
             "sub-P111774"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

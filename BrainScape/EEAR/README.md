@@ -6,7 +6,7 @@ Note: This README file is Auto Generated.
 
 A 'participants' text file indicates each participant's age group and sex.
 
-There are folders for each participant with their subject number (e.g., “sub-22”). Within each folder are three folders:
+There are folders for each participant with their subject number (e.g., "sub-22"). Within each folder are three folders:
 
 1. anat - includes a T1 structural scan. Two participants (01 and 44) took a break in between scans and so we needed to get two T1 images for these participants. Their .json files indicate which T1s should be used for which EPI registrations.
 

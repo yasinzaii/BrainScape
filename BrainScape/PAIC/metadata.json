@@ -32,5 +32,8 @@
             "sub-64",
             "sub-65"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

@@ -24,7 +24,7 @@ Root-mean-square (RMS) amplitude of the stimuli was equated across
 recordings. Out of the full set of words, 75 words were vocoded using a
 single channel with white noise as a carrier signal using jp_vocode.m
 from <http://github.com/jpeelle/jp_matlab>. These stimuli were used for
-an unintelligible baseline “noise” condition. The remaining 300 words
+an unintelligible baseline "noise" condition. The remaining 300 words
 were divided into 5 lists of 60 words, using MATCH software (Van
 Casteren and Davis, 2007), and were balanced for word frequency (as
 measured by the log of the Hyperspace Analogue to Language dataset;
@@ -34,7 +34,7 @@ word repetition task practice outside of the scanner. The remaining four
 lists of 60 words served as the critical items inside the scanner, with
 half of the lists used for passive listening and the other half for word
 repetition. Word lists were counterbalanced participants such that each
-word was presented in both “listen” and “repeat” conditions across
+word was presented in both "listen" and "repeat" conditions across
 participants.
 
 **Participants:**

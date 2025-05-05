@@ -30,6 +30,6 @@ https://openneuro.org/datasets/ds004466/versions/1.0.2
 | Number of Subjects | 127 |
 | Number of Sessions | 127 |
 | Total Number of MRIs | 254 |
-| Number of T2W MRIs | 127 |
 | Number of T1W MRIs | 127 |
+| Number of T2W MRIs | 127 |
 

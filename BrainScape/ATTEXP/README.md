@@ -13,7 +13,7 @@ CC0
 
 ## Citation
 
-Penalver, J. M., González-García, C., Palenciano, A. F., Lopez-Garcia, D., & Ruz, M. (2024). Context-dependent neural preparation for information relevance vs. probability. Imaging Neuroscience, 2, 1–21.
+Penalver, J. M., González-García, C., Palenciano, A. F., Lopez-García, D., & Ruz, M. (2024). Context-dependent neural preparation for information relevance vs. probability. Imaging Neuroscience, 2, 1–21.
 
 ## Download
 

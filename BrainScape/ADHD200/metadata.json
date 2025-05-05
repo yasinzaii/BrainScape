@@ -86,5 +86,8 @@
             "WashU_15046_1",
             "WashU_15056_1"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

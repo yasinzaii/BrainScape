@@ -44,8 +44,8 @@ https://www.nitrc.org/ir/data/projects/ABIDE
 
 | Statistic | Value |
 | --- | --- |
-| Number of Subjects | 1032 |
-| Number of Sessions | 1032 |
-| Total Number of MRIs | 1032 |
-| Number of T1W MRIs | 1032 |
+| Number of Subjects | 1034 |
+| Number of Sessions | 1034 |
+| Total Number of MRIs | 1034 |
+| Number of T1W MRIs | 1034 |
 

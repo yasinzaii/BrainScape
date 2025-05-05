@@ -44,5 +44,8 @@
                 "flair"
             ]
         }
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

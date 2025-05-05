@@ -53,5 +53,8 @@
             "sub-16110",
             "sub-16111"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

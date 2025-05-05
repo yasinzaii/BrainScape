@@ -14,13 +14,16 @@
             "session": "",
             "type": "",
             "modality": {
-                "t1w": "^acq-HCP_T1w/NIfTI-1/sub-.*_T1w.nii.gz$",
-                "t2w": "^acq-HCP_T1w/NIfTI-1/sub-.*_T1w.nii.gz$",
-                "flair": "^flair_1/NIfTI-1/flair.nii.gz$"
+                "t1w": "^acq-HCP.*_T1w/NIfTI-1/sub-.*_T1w.nii.gz$",
+                "t2w": "^acq-HCP.*_T2w/NIfTI-1/sub-.*_T2w.nii.gz$",
+                "flair": "^FLAIR/NIfTI-1/sub-.*_FLAIR.nii.gz$"
             }
         },
         "excludeSub": [
+            "NDARUW904FMQ"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }
-

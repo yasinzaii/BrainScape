@@ -31,5 +31,8 @@
             "sub-child04",
             "sub-teen15"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

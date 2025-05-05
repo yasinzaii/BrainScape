@@ -47,9 +47,11 @@
             "sub-M2283",
             "sub-M2295"
         ],
-
-        "demographics":{
+        "demographics": {
             "healthy": "false"
         }
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

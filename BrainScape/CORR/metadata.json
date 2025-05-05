@@ -89,5 +89,8 @@
             "UPSM_25238_baseline",
             "UWM_27277_retest_1"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

@@ -4,11 +4,11 @@ Note: This README file is Auto Generated.
 
 ## Description
 
-These 120 MRI datasets are being released to the public along as part of the materials for “Temporal interpolation alters motion in fMRI scans: magnitudes and consequences for artifact detection” by Power et al. in PLOS ONE.
+These 120 MRI datasets are being released to the public along as part of the materials for "Temporal interpolation alters motion in fMRI scans: magnitudes and consequences for artifact detection" by Power et al. in PLOS ONE.
 
 Included for each subject is a T1-weighted anatomical image (MP-RAGE) and one or more T2*-weighted scans (resting state BOLD scans)
 
-All subjects - were “typical” young adults that reported no significant neurological or psychiatric history - were right-handed and reported that English was their first language - were scanned at Washington University in Saint Louis on a Siemens MAGNETOM Tim Trio 3T scanner with a Siemens 12-channel head coil - were scanned using interleaved ascending product sequences for T2* data - were scanned in the eyes-open resting state fixating a white crosshair on a black background
+All subjects - were "typical" young adults that reported no significant neurological or psychiatric history - were right-handed and reported that English was their first language - were scanned at Washington University in Saint Louis on a Siemens MAGNETOM Tim Trio 3T scanner with a Siemens 12-channel head coil - were scanned using interleaved ascending product sequences for T2* data - were scanned in the eyes-open resting state fixating a white crosshair on a black background
 
 
 ## License

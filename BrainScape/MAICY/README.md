@@ -4,7 +4,7 @@ Note: This README file is Auto Generated.
 
 ## Description
 
-A comprehensive dataset for the data included in the manuscript entitled “Multivariate Assessment of Inhibitory Control in Youth: Links with Psychopathology and Brain Funciton”. This dataset contains demographic variables, parent-reported clinical symptoms, behavior from four canonical cognitive function neuropsychological tests, along with structural and resting state functional magnetic resonance imaging (MRI) data.
+A comprehensive dataset for the data included in the manuscript entitled "Multivariate Assessment of Inhibitory Control in Youth: Links with Psychopathology and Brain Funciton". This dataset contains demographic variables, parent-reported clinical symptoms, behavior from four canonical cognitive function neuropsychological tests, along with structural and resting state functional magnetic resonance imaging (MRI) data.
 
 **Participant Eligibility:**
 

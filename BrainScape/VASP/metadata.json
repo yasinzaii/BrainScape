@@ -14,7 +14,7 @@
             "README",
             "dataset_description.json",
             "participants.tsv",
-            "sub-*/anat/*"
+            "sub-*/anat/*nii.gz"
         ]
     },
     "mapping": {
@@ -29,5 +29,8 @@
             }
         },
         "excludeSub": []
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

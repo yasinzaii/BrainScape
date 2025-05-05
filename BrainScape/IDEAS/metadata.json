@@ -206,5 +206,8 @@
             "sub-96",
             "sub-97"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

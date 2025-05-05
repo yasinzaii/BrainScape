@@ -30,5 +30,8 @@
         "excludeSub": [
             "sub-control01"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

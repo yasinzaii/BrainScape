@@ -201,5 +201,8 @@
             "66_Guys",
             "72_HH"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

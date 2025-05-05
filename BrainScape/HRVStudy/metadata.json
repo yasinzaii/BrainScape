@@ -4,7 +4,6 @@
     "isDatasetJsonCreated": false,
     "isPreprocessed": true,
     "includeDataset": true,
-
     "download": {
         "isDownloadable": true,
         "plugin": "OpenNeuroDownloader",
@@ -37,5 +36,8 @@
             "sub-7002",
             "sub-7017"
         ]
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

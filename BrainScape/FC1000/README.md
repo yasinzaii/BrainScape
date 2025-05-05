@@ -25,7 +25,7 @@ Note: You will have to login to nitrc to be able to download the dataset.
 
 ## License
 
-Attribution Non-Commercial
+CC BY-NC 4.0
 
 ## Citation
 

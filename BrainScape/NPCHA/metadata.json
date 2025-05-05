@@ -31,5 +31,8 @@
             }
         },
         "excludeSub": []
-    }
+    },
+    "isValidationCheckDone": true,
+    "isVisualized": true,
+    "isReadmeGenerated": true
 }

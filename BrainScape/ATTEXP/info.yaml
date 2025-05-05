@@ -13,12 +13,12 @@ license: "CC0"
 citation: |
   @article{penalver2024context,
     title={Context-dependent neural preparation for information relevance vs. probability},
-    author={Penalver, Jose MG and Gonz{\'a}lez-Garc{\'\i}a, Carlos and Palenciano, Ana F and Lopez-Garcia, David and Ruz, Mar{\'\i}a},
+    author={Penalver, Jose MG and Gonz{\'a}lez-Garc\'{i}a, Carlos and Palenciano, Ana F and Lopez-Garc\'{i}a, David and Ruz, Mar\'{i}a},
     journal={Imaging Neuroscience},
     volume={2},
     pages={1--21},
     year={2024},
-    publisher={MIT Press 255 Main Street, 9th Floor, Cambridge, Massachusetts 02142, USA~…}
+    publisher={MIT Press 255 Main Street, 9th Floor, Cambridge, Massachusetts 02142, USA}
   }
 
 download: "https://openneuro.org/datasets/ds005386/versions/1.0.0"
