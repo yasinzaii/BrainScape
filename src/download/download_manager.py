@@ -1,6 +1,5 @@
 # src/download/download_manager.py
 
-import os
 import shutil
 import logging
 
@@ -43,28 +42,26 @@ class DownloadManager:
                 overrides=dataset_settings.get_data()
             )
             
+            # Path of the download directory
+            download_dir_path = dataset_path / final_settings["downloadDirName"]
             
             # Check if Dataset is downloadable...
             if not final_settings["download"]["isDownloadable"]:
                 if Path(download_dir_path).is_dir() and any(Path(download_dir_path).iterdir()):
-                    self.logger.info(f"'{dataset_path}' Dataset is not downloadable and but already downloaded skipping download/Check job")
+                    self.logger.info(f"DownloadManager - '{dataset_path}' Dataset is not downloadable and but already downloaded skipping download/Check job")
+                    if not final_settings["isDownloaded"]:
+                        self.logger.info(f"DownloadManager - The 'isDownlaoded' flag not set for {dataset_path}, setting Dataset 'isDownlaoded' Flag to True")
+                        dataset_settings.update_json({"isDownloaded":True}).save_json() 
                 else :
-                    self.logger.error(f"'{dataset_path}' Dataset is not downloadable and the download folder is empty, skipping download Job")
+                    self.logger.error(f"DownloadManager - '{dataset_path}' Dataset is not downloadable and the download folder is empty, skipping download Job")
                 continue
             
-            
-            # Acquiring Plugin Downloader Name
-            # TO-DO
-            # Move it to confgurtion File
+            # Acquiring Downloader Plugin Name
             try:
                 downloader_name = final_settings["download"]["plugin"]
             except Exception as e:
-                self.logger.error(f"Downloader (Key:'plugin') Missing from Dataset:{dataset_name} Settings, Skipping Download Job, Error: {e}")
+                self.logger.error(f"DownloadManager - Downloader (Key:'plugin') Missing from Dataset:{dataset_name} Settings, Skipping Download Job, Error: {e}")
                 continue # Skipping
-            
-            
-            # Path of the download directory
-            download_dir_path = dataset_path / final_settings["downloadDirName"]
             
             # If 'isDownloaded' Flag Set - Datset Settings.
             if final_settings["isDownloaded"]: 
@@ -73,50 +70,47 @@ class DownloadManager:
                 if  not download_dir_path.is_dir() or not any(download_dir_path.iterdir()):
                     
                     # Flag incorrectly set. Reset Flags & Redownload...
-                    self.logger.error(f"{dataset_path} Dataset 'isDownloaded' settings set to True, yet Download folder ('{download_dir_path}') is Missing or Empty")
-                    self.logger.warning(f"Resetting 'isDownloaded' of '{dataset_path}' Dataset to False and Redownloading")
+                    self.logger.error(f"DownloadManager - {dataset_path} Dataset 'isDownloaded' settings set to True, yet Download folder ('{download_dir_path}') is Missing or Empty")
+                    self.logger.warning(f"DownloadManager - Resetting 'isDownloaded' flag of '{dataset_path}' Dataset to False and Redownloading!")
                     dataset_settings.update_json({"isDownloaded":False, "isDatasetJsonCreated": False}).save_json() 
                     final_settings["isDownloaded"] = False
                 
                 # Falg is set correctly as dataset is in download directory
                 else:
-                    self.logger.info(f"'{dataset_path}' Dataset already downloaded skipping download job")
+                    self.logger.info(f"DownloadManager - '{dataset_path}' Dataset already downloaded skipping download job")
                     continue 
                 
-            
-            
-
-            
-            # Creating download directory if not Present...
+            # Deciding to Redownload/Skip based on download dir existance and contents.
             if download_dir_path.exists():
                 
+                # re-download argument when set will force redownload all datasets.
                 if self.config.re_download:
-                    self.logger.critical(f"Dataset Download Folder '{dataset_path}' already exists and not empty yet 'isDownloaded' Flag not set, Force Redownload On, Redownloading!")
+                    self.logger.critical(f"DownloadManager - Dataset Download Folder '{dataset_path}' already exists and not empty yet 'isDownloaded' Flag not set, Force Redownload On, Redownloading!")
                     try:
                         shutil.rmtree(download_dir_path)
                         download_dir_path.mkdir(parents=True, exist_ok=True)    
                     except Exception as e:
-                        self.logger.error(f"Failed to Remove and Recreate the Download Directory: {download_dir_path}")
+                        self.logger.error(f"DownloadManager - Failed to Remove and Recreate the Download Directory: {download_dir_path}")
                 
                 elif any(download_dir_path.iterdir()):
-                    self.logger.critical(f"Dataset Download Folder '{dataset_path}' already exists and not empty yet 'isDownloaded' Flag not set, Skipping Download")
+                    self.logger.critical(f"DownloadManager - Dataset Download Folder '{dataset_path}' already exists and not empty yet 'isDownloaded' Flag not set, Skipping Download")
                     continue 
                 else: 
-                    self.logger.warning(f"'{dataset_path}' exists but is empty. Proceeding with download.")
+                    self.logger.warning(f"DownloadManager - '{dataset_path}' exists but is empty. Proceeding with download.")
             else:
                 # Create a download directory
                 try: 
                     download_dir_path.mkdir(parents=True, exist_ok=True)
-                    self.logger.info(f"Created download directory: '{download_dir_path}'")
+                    self.logger.info(f"DownloadManager - Created download directory: '{download_dir_path}'")
                 except Exception as e:
-                    self.logger.error(f"Error creating download directory '{download_dir_path}': {e}")
+                    self.logger.error(f"DownloadManager - Error creating download directory '{download_dir_path}': {e}")
                     return False
             
             
             # Dynamically load correct downloader plugin based on 'downloader' Dataset Setting.
             downloader_cls = self.plugin_loader.get_plugin_by_name(downloader_name)
             if not downloader_cls:
-                self.logger.error(f"Requested Downloader Plugin '{downloader_name}' not found, skipping download for dataset '{dataset_name}'")
+                self.logger.error(f"DownloadManager - Requested Downloader Plugin '{downloader_name}' not found, skipping download for dataset '{dataset_name}'")
                 continue  # Skipping Download
             
             
@@ -127,40 +121,37 @@ class DownloadManager:
             )
             
             if not downloader:
-                self.logger.error(f"Requested Dowloader Plugin:{downloader_name} Not Found, Skipping Download! Dataset: {dataset_path}")
+                self.logger.error(f"DownloadManager - Requested Dowloader Plugin:{downloader_name} Not Found, Skipping Download! Dataset: {dataset_path}")
                 continue # Skipping Download
             
             # Download the Dataset
             success, outputs = downloader.download()
             
+            # Validate The Downloaded Files
             if success:
                 
-                self.logger.info(f"Download Job Completed for Dataset: '{dataset_path}', Verifying Downlaoded Contents.")
+                self.logger.info(f"DownloadManager - Download Job Completed for Dataset: '{dataset_path}', Verifying Downlaoded Contents.")
                 
-                
-                # Validate The Downloaded Files
-                
-                # Getting The List of Valid Source Files, Passing Wildcard Pattern
+                # Getting The List of Valid Source Files and Downloaded files.
                 source_files = set(downloader.get_source_file_list())
                 downloaded_files = set([str(p.relative_to(download_dir_path)) for p in download_dir_path.rglob('*') if p.is_file()])
                 
                 if source_files == downloaded_files:
-                    self.logger.info(f"The Source and Downloaded File Match for Dataset: '{dataset_path}', Verification Completed, setting Dataset 'isDownlaoded' Flag")
+                    self.logger.info(f"DownloadManager - The Source and Downloaded File Match for Dataset: '{dataset_path}', Verification Completed, setting Dataset 'isDownlaoded' Flag to True")
                     dataset_settings.update_json({"isDownloaded":True}).save_json() 
                 
                 else:
                     missing_files =  source_files - downloaded_files
                     extra_files = downloaded_files - source_files
                     if missing_files:
-                        self.logger.error(f"The Source and Downloaded File Match failed, Missing Files: {missing_files}")
+                        self.logger.error(f"DownloadManager - The Source and Downloaded File Match failed, Missing Files: {missing_files}")
                     if extra_files:
-                        self.logger.error(f"The Source and Downloaded File Match Failed, Extra Files: {extra_files}") 
+                        self.logger.error(f"DownloadManager - The Source and Downloaded File Match Failed, Extra Files: {extra_files}") 
 
             else:
-                self.logger.error(f"Download Failed for {dataset_path} Dataset.")
+                self.logger.error(f"DownloadManager - Download Failed for {dataset_path} Dataset. Removing Download Directory.")
                 dataset_settings.update_json({"isDownloaded":False, "isDatasetJsonCreated":False}).save_json()
                 try:
                     shutil.rmtree(download_dir_path)    
                 except Exception as e:
-                    self.logger.error(f"Failed to Remove the Download Directory: {download_dir_path}")
-            
+                    self.logger.error(f"DownloadManager - Failed to Remove the Download Directory: {download_dir_path}")

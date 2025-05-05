@@ -3,6 +3,7 @@
 import os
 import logging
 import subprocess
+
 from pathlib import Path
 from typing import List, Tuple, Any, Dict
 from download.downloader.base_plugin import DownloaderPlugin
@@ -11,7 +12,6 @@ from download.utils import (
     filter_files_by_glob_patterns,
     execute_in_parallel
 )
-
 
 logger = logging.getLogger(__name__)
 
@@ -63,7 +63,7 @@ class OpenNeuroDownloader(DownloaderPlugin):
             subprocess.run(["aws", "--version"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             return True
         except FileNotFoundError:
-            logger.error("- OpenNeuro DL - AWS CLI is not installed. Please install AWS CLI to download datasets requiring it.")
+            logger.error("OpenNeuroDownloader - AWS CLI is not installed. Please install AWS CLI to download datasets requiring it.")
             return False
     
     
@@ -89,21 +89,19 @@ class OpenNeuroDownloader(DownloaderPlugin):
         else:
             aws_download_command.append('--no-sign-request')
 
-        
-        
         return aws_download_command
     
     
     def _set_aws_profiles(self):
         # Verify that the profiles file exists
         if not os.path.isfile(self.credential_path):
-            logger.error(f"The specified profiles file does not exist: {self.credential_path}")
+            logger.error(f"OpenNeuroDownloader - The specified profiles file does not exist: {self.credential_path}")
             return False
 
         # Set the AWS_SHARED_CREDENTIALS_FILE environment variable
         abs_path = os.path.abspath(self.credential_path)
         os.environ['AWS_SHARED_CREDENTIALS_FILE'] = abs_path
-        logger.info(f"AWS_SHARED_CREDENTIALS_FILE set to: {abs_path}")
+        logger.info(f"OpenNeuroDownloader - AWS_SHARED_CREDENTIALS_FILE set to: {abs_path}")
 
     
     def download(self) -> Tuple[bool, List[str]]:
@@ -114,11 +112,11 @@ class OpenNeuroDownloader(DownloaderPlugin):
             Tuple[bool, List[str]]: A tuple containing the success status and a list of outputs from each download command.
         """
         
-        logger.info(f"Starting download for dataset:{self.dataset_path.name}, from '{self.download_from}'")
+        logger.info(f"OpenNeuroDownloader - Starting download for dataset:{self.dataset_path.name}, from '{self.download_from}'")
         
         # open neuro datasets require AWS CLI
         if not self._check_aws_cli_installed():
-            logger.critical("- OpenNeuro DL - AWS CLI is not installed. Cannot download OpenNeuro datasets.")
+            logger.critical("OpenNeuroDownloader - AWS CLI is not installed. Cannot download OpenNeuro datasets.")
             return False, []
         
         
@@ -132,9 +130,9 @@ class OpenNeuroDownloader(DownloaderPlugin):
             status, output = execute_command(download_command) 
             outputs.append(output)
             if not status:
-                logger.error(f"- OpenNeuro DL - Download failed for pattern: '{pattern}', Dataset: '{self.dataset_path}'.")
-
+                logger.error(f"OpenNeuroDownloader - Download failed for pattern: '{pattern}', Dataset: '{self.dataset_path}'.")
                 return False, outputs
+            logger.info(f"OpenNeuroDownloader - Download Completed for pattern: '{pattern}', Dataset: '{self.dataset_path}'.")
         return True, outputs
     
     
@@ -157,7 +155,6 @@ class OpenNeuroDownloader(DownloaderPlugin):
         """
         aws_list_command = ["aws", "s3", "ls", path]
 
-         
         if recursive: 
             aws_list_command.append("--recursive")
         
@@ -191,17 +188,17 @@ class OpenNeuroDownloader(DownloaderPlugin):
             if "PRE" in line: # Contains Directory Path
                 parts = line.strip().split()
                 if len(parts) != 2: # Spaces in Name
-                    logger.warning(f"- OpenNeuro DL - List AWS Dir - Spaces Detected in Dir Path: {line}, Dataset: {self.dataset_path}, Command: {' '.join(list_command)}")
+                    logger.warning(f"OpenNeuroDownloader - List AWS Dir - Spaces Detected in Dir Path: {line}, Dataset: {self.dataset_path}, Command: {' '.join(list_command)}")
                 ret_output.append(" ".join(parts[1:])) # If Space in Path Join and Append, else Append.
                 
             else: # Contains File Path
                 parts = line.strip().split()
                 if len(parts) != 4: # Spaces in Name
-                    logger.warning(f"- OpenNeuro DL - List AWS Dir - Spaces Detected in File Path: {line}, Dataset: {self.dataset_path}, Command: {' '.join(list_command)}")
+                    logger.warning(f"OpenNeuroDownloader - List AWS Dir - Spaces Detected in File Path: {line}, Dataset: {self.dataset_path}, Command: {' '.join(list_command)}")
                 ret_output.append(" ".join(parts[3:])) # If Space in Path Join and Append, else Append.
         
         if not status:
-            logger.error(f"- OpenNeuro DL - List AWS Dir - Unable to List AWS S3 directory contents for '{path}': {output}")
+            logger.error(f"OpenNeuroDownloader - List AWS Dir - Unable to List AWS S3 directory contents for '{path}': {output}")
             return [] 
         return ret_output
     
@@ -218,14 +215,12 @@ class OpenNeuroDownloader(DownloaderPlugin):
         # Download Manager expects an actual list of File which were supposed to be downloaded.
         # This is possible for Open Neuro Dataset. Furthermore, The Human Connectome Project 
         # is also using open Neuro Downloader. But I have disabled the download check by passing 
-        # the actually downloaded files which is what the download manager compares with. So if the
-        # if the verifyFiles key is false in the metadata.json for the dataset. The check will be off.
+        # the actually downloaded files which is what the download manager compares with. So if
+        # the verifyFiles key is false in the metadata.json for the dataset. The check will be off.
         # else if verifyFiles == true or not provided (defaults to true) then it will skip checking
         verify_downlaoded_files = self.dataset_settings["download"].get("verifyFiles", True)
         if not verify_downlaoded_files:
             return [str(p.relative_to(self.download_dir_path)) for p in self.download_dir_path.rglob('*') if p.is_file()]
-        
-        
         
         # Just List The Parent Diretory Content
         main_dir_contents = self._list_aws_dir_contents(path=self.download_from, recursive=False)
