@@ -1,0 +1,25 @@
+note: "Note: This README file is Auto Generated."
+
+title: Visual and audiovisual speech perception associated with increased functional connectivity between sensory and motor regions
+
+description: |
+  We collected data from 65 adults aged 18-34 years. Of these, we excluded fMRI data from 5 participants. The remaining 60 participants ranged in age from 18-34 years (M = 22.42, SD = 3.24). All were right-handed. Where available, pure-tone thresholds are given for the left and right ear (L_250 = threshold for left ear at 250 Hz in dB, and so on).
+
+usage_agreement: ""
+
+license: "CC0"
+
+citation: |
+  @article{peelle2022increased,
+    title={Increased connectivity among sensory and motor regions during visual and audiovisual speech perception},
+    author={Peelle, Jonathan E and Spehar, Brent and Jones, Michael S and McConkey, Sarah and Myerson, Joel and Hale, Sandra and Sommers, Mitchell S and Tye-Murray, Nancy},
+    journal={Journal of neuroscience},
+    volume={42},
+    number={3},
+    pages={435--442},
+    year={2022},
+    publisher={Soc Neuroscience}
+  }
+
+
+download: https://openneuro.org/datasets/ds003717/versions/1.1.0
