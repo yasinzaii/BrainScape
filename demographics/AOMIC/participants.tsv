@@ -115,7 +115,7 @@ sub-0113	23.5	male	right	31	low	low
 sub-0114	23.75	male	right	22	high	high
 sub-0115	24.25	male	right	27	high	medium
 sub-0116	23.75	male	left	20	high	high
-sub-0117	20.25	female	right	0	high	high
+sub-0117	20.25	female	right	n/a	high	high
 sub-0118	23.25	female	right	22	medium	high
 sub-0119	24	male	right	17	medium	medium
 sub-0120	25.5	male	right	25	high	high
@@ -359,7 +359,7 @@ sub-0357	21.25	female	right	29	medium	low
 sub-0358	23	female	right	18	medium	high
 sub-0359	20.5	female	right	18	medium	high
 sub-0360	21.5	female	right	23	medium	medium
-sub-0361	20.25	male	right	0	medium	high
+sub-0361	20.25	male	right	n/a	medium	high
 sub-0362	21	male	left	21	medium	high
 sub-0363	21.25	female	right	19	medium	medium
 sub-0364	24.25	female	right	23	low	low
@@ -463,7 +463,7 @@ sub-0461	22	male	right	29	low	low
 sub-0462	23	male	right	21	high	high
 sub-0463	22	male	right	28	medium	low
 sub-0464	22	male	right	20	high	medium
-sub-0465	22.25	male	right	0	low	low
+sub-0465	22.25	male	right	n/a	low	low
 sub-0466	22.25	male	right	22	low	low
 sub-0467	20.25	female	right	20	medium	medium
 sub-0468	23.5	female	right	23	high	high
@@ -560,7 +560,7 @@ sub-0558	23.25	female	right	23	high	high
 sub-0559	20.25	male	right	19	high	medium
 sub-0560	24.75	male	right	25	high	low
 sub-0561	22.25	male	right	27	medium	medium
-sub-0562	20.25	male	right	0	medium	medium
+sub-0562	20.25	male	right	n/a	medium	medium
 sub-0563	20.75	female	right	28	medium	low
 sub-0564	22.5	male	right	24	high	low
 sub-0565	25	male	right	17	medium	low
@@ -739,7 +739,7 @@ sub-0737	22.75	female	right	28	high	low
 sub-0738	24	female	left	24	high	high
 sub-0739	21.25	male	left	21	high	high
 sub-0740	25.5	female	right	18	high	low
-sub-0741	24.25	male	right	0	medium	low
+sub-0741	24.25	male	right	n/a	medium	low
 sub-0742	22.75	male	right	35	high	high
 sub-0743	21.5	male	right	23	high	high
 sub-0744	23.5	male	right	23	high	high

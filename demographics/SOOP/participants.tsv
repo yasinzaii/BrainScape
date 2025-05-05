@@ -1,4 +1,4 @@
-participant_id	sex	age	race	stroke	bmi
+participant_id	sex	age	race	acuteischaemicstroke	bmi
 sub-2	M	78	1	Y	22.84
 sub-3	F	87	1	Y	19.23
 sub-5	M	58	1	Y	37.29

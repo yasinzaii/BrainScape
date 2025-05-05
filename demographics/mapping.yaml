@@ -66,7 +66,7 @@ demographics:
       Age of the participant. 
 
   # age_group: 
-  #   binned age ranges (e.g., 20-24, 25-29).
+  #   binned age ranges (e.g., 20-25, 25-30).
   - name: age_group
     aliases:
       - age_bin
@@ -274,15 +274,13 @@ demographics:
       Diagnosed with epilepsy.
     valid_values: *YES_NO_NA
 
-  - name: tumor
-    description: >
-      Tumor Detected.
-    valid_values: *YES_NO_NA
-
-  - name: acuteischaemicstroke
-    description: >
-      Diagnosed with Acute ischemic stroke.
-    valid_values: *YES_NO_NA
+  # - name: focal_epilepsy
+  #   description: >
+  #     Diagnosed with Focal epilepsy.
+  #   aliases:
+  #     - FCD # Diagnosed with Focal Cortical Dysplasia. (Focal Epilepsy)
+  #     - HS  # Diagnosed with Hippocampal Sclerosis (Focal Epilepsy).
+  #   valid_values: *YES_NO_NA
 
   - name: FCD
     description: >
@@ -293,6 +291,17 @@ demographics:
     description: >
       Diagnosed with Hippocampal Sclerosis.
     valid_values: *YES_NO_NA
+  
+  - name: tumor
+    description: >
+      Tumor Detected.
+    valid_values: *YES_NO_NA
+
+  - name: acuteischaemicstroke
+    description: >
+      Diagnosed with Acute ischemic stroke.
+    valid_values: *YES_NO_NA
+
 
   - name: DNT
     description: >
