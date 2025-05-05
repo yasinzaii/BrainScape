@@ -9,10 +9,10 @@ from PIL import Image, ImageOps
 def generate_dropped_mris_figure(datasetDir, out_figure_path):
     """Generate and save figure of problematic MRIs."""
     label_mris = [
-        {"label": "Motion Artifacts",       "path": datasetDir / "ABIDE/Download/UM_50309/anat/NIfTI/mprage.nii.gz",       "slice_index": 62 , "y_center": 180},
-        {"label": "Truncation Artifacts",   "path": datasetDir / "ABIDE2/Download/GU_28823_1/anat_1/NIfTI-1/anat.nii.gz", "slice_index": 158, "y_center": 180},
+        {"label": "Motion Artifact",       "path": datasetDir / "ABIDE/Download/UM_50309/anat/NIfTI/mprage.nii.gz",       "slice_index": 62 , "y_center": 180},
+        {"label": "Gibbs Ringing Artifact",   "path": datasetDir / "ABIDE2/Download/GU_28823_1/anat_1/NIfTI-1/anat.nii.gz", "slice_index": 158, "y_center": 180},
         {"label": "Poorly Extracted Brain", "path": datasetDir / "ADHD200/Download/WashU_15002_1/anat_1/NIfTI/rest.nii.gz","slice_index": 139, "y_center": 180},
-        {"label": "Poorly defaced Images",  "path": datasetDir / "SDIOA/Download/sub-12034/anat/sub-12034_T1w.nii",       "slice_index": 123, "y_center": 190},
+        {"label": "Poorly defaced MRI",  "path": datasetDir / "SDIOA/Download/sub-12034/anat/sub-12034_T1w.nii",       "slice_index": 123, "y_center": 190},
         {"label": "Voids",                 "path": datasetDir / "OIAStudy/Download/sub-2509/anat/sub-2509_T1w.nii.gz",    "slice_index": 170, "y_center": 180}
     ]
 

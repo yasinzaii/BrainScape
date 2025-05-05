@@ -72,12 +72,6 @@ def gen_demographics(data_dict, out_data_path, out_figure_path):
     total_subjects_with_age = 0
     total_subjects_with_agegroup = 0
     total_subjects_with_sex = 0
-    total_with_hand = 0
-    total_with_bmiinfo = 0
-    total_subjects_with_demographics = 0
-    total_subjects_without_demographics = 0
-    total_subjects_included_after_inspection = 0
-    
     
     age_vector_for_mean_std_age = []
     mean_age_value = 0.0
@@ -90,10 +84,16 @@ def gen_demographics(data_dict, out_data_path, out_figure_path):
     total_other_sex_count = 0
     total_sex_with_no_age = 0
     
+    # BMI
+    total_with_bmiinfo = 0
+    
+    # Total
+    total_subjects_with_demographics = 0
+    total_subjects_without_demographics = 0
+    total_subjects_included_after_inspection = 0
     
     # Disorder Counters
     total_disorders_count = 0
-    
     stroke_count = 0
     schizophrenia_count = 0
     depression_count = 0
@@ -235,10 +235,7 @@ def gen_demographics(data_dict, out_data_path, out_figure_path):
                 elif sex_val == "other":
                     total_other_sex_count += 1
                 else:
-                    print("Unexpected socio_economic Value")
-            else:
-                # if there's no sex but there's an age => maybe increment total_sex_with_no_age?
-                pass
+                    print("Unexpected sex Value")
             
             # If there is sex value but no age value 
             if not (age_val or age_group_val) and sex_val: 
@@ -318,7 +315,6 @@ def gen_demographics(data_dict, out_data_path, out_figure_path):
     # --------------------------------------------------------------------------
     
     # For race:
-    # If total_subjects_with_race == 0, to avoid dividing by zero, handle carefully:
     if total_subjects_with_race > 0:
         white_pct = 100.0 * white_race_count / total_subjects_with_race
         black_pct = 100.0 * black_race_count / total_subjects_with_race
@@ -384,8 +380,10 @@ def gen_demographics(data_dict, out_data_path, out_figure_path):
     # Create lists for each sex category
     male_vals   = [age_sex_bins[(start, end)]["male"]   for (start, end) in canonical_bins]
     female_vals = [age_sex_bins[(start, end)]["female"] for (start, end) in canonical_bins]
-    other_vals  = [age_sex_bins[(start, end)]["other"]  for (start, end) in canonical_bins]
-    na_vals     = [age_sex_bins[(start, end)]["n/a"]    for (start, end) in canonical_bins]
+    # Update - 'other' gender type was added beside sex  - In Publication we are reporting sex only 
+    # Merging Other gender with n/a
+    #other_vals  = [age_sex_bins[(start, end)]["other"]  for (start, end) in canonical_bins]
+    na_vals     = [age_sex_bins[(start, end)]["n/a"] +  age_sex_bins[(start, end)]["other"]   for (start, end) in canonical_bins]
     
     plt.style.use('default')
     fig, ax = plt.subplots(figsize=(10, 6), facecolor='white')
@@ -399,17 +397,18 @@ def gen_demographics(data_dict, out_data_path, out_figure_path):
     ax.bar(x_positions, female_vals, bottom=bottom_female, label="Female", color="red") # Second stack: female (goes on top of male)
     
     bottom_other = [m + f for m, f in zip(male_vals, female_vals)]
-    ax.bar(x_positions, other_vals, bottom=bottom_other, label="Other", color="green") # Third stack: other
+    #ax.bar(x_positions, other_vals, bottom=bottom_other, label="Other", color="green") # Third stack: other
 
-    bottom_na = [mo + o for mo, o in zip(bottom_other, other_vals)]
-    ax.bar(x_positions, na_vals, bottom=bottom_na, label="N/A", color="gray") # Fourth stack: n/a
+    bottom_na = [m + f for m, f in zip(male_vals, female_vals)]
+    #bottom_na = [mo + o for mo, o in zip(bottom_other, other_vals)]
+    ax.bar(x_positions, na_vals, bottom=bottom_na, label="N/A", color="green") # Fourth stack: n/a
     
     ax.set_xticks(list(x_positions))
     ax.set_xticklabels(bin_labels, rotation=90, color='black') 
     
     ax.set_xlabel("Age Bin (years)", color='black')
     ax.set_ylabel("Number of Participants", color='black')
-    ax.set_title("Age Group & Sex Distribution", color='black')
+    ax.set_title("Age Range & Sex Distribution", color='black')
     
     ax.tick_params(axis='x', colors='black')
     ax.tick_params(axis='y', colors='black')
@@ -472,11 +471,12 @@ def gen_demographics(data_dict, out_data_path, out_figure_path):
     # Age, Age-Group Sex.
     content_lines.append(r"\newcommand\TotalSubjectsWithAgeAgeGroupSexCount{" + f"{total_age_agegroup_sex_count}" + "}")
     content_lines.append(r"\newcommand\TotalSubjectsMeanAgeValue{" + f"{mean_age_value:.2f}" + "}")
-    content_lines.append(r"\newcommand\TotalSubjectsStandardDevValue{" + f"{std_dev_age_value:.2f}" + "}")
+    content_lines.append(r"\newcommand\TotalSubjectsStandardDevAgeValue{" + f"{std_dev_age_value:.2f}" + "}")
     content_lines.append(r"\newcommand\TotalSubjectsMedianAgeGroupValue{" + f"{median_age_group}" + "}")
     content_lines.append(r"\newcommand\TotalSubjectsWithSexCountWithoutAgeInfo{" + f"{total_sex_with_no_age}" + "}")
     content_lines.append(r"\newcommand\TotalSubjectsWithMaleSexCount{" + f"{total_male_count}" + "}")
     content_lines.append(r"\newcommand\TotalSubjectsWithFemaleCount{" + f"{total_female_count}" + "}")
+    content_lines.append(r"\newcommand\TotalSubjectsWithMalePlusFemaleCount{" + f"{total_male_count+total_female_count}" + "}")
     content_lines.append(r"\newcommand\TotalSubjectsWithOtherSexCount{" + f"{total_other_sex_count}" + "}")
     
     content_lines.append(r"\newcommand\TotalSubjectsWithAgeCount{" + f"{total_subjects_with_age}" + "}")
@@ -508,6 +508,8 @@ def gen_demographics(data_dict, out_data_path, out_figure_path):
     content_lines.append(r"\newcommand\SubjectsWithDNTCount{" + f"{dnt_count}" + "}")
     content_lines.append(r"\newcommand\SubjectsWithGLCount{" + f"{gl_count}" + "}")
     content_lines.append(r"\newcommand\SubjectsWithAneurysmCount{" + f"{aneurysm_count}" + "}")
+    content_lines.append(r"\newcommand\SubjectsWithFocalEpilepsyCount{" + f"{fcd_count+hs_count}" + "}")
+    
     
     
     # --------------------------------------------------------------------------

@@ -64,19 +64,29 @@ supplimentary_bibliography(
 # Generate Data file for LaTeX;
 from gen_data_file import gen_data
 out_data_path = Path(PAPER_DIR) / "data" / "variables.tex"
+
 gen_data(
     data_dict=data_dict,
     out_data_path=out_data_path
 )
 
 
-# Import the new function
+# Generate the Dropped Subjects Figure
 from gen_dropped_subjects_fig import generate_dropped_mris_figure
 out_figure_path = Path(PAPER_DIR) / "figures" / "dropped_subjects.png"
 generate_dropped_mris_figure(
     datasetDir=datasetDir, 
     out_figure_path=out_figure_path
-    )
+)
+
+# Generate the Example Figure
+from gen_example_fig import generate_multimodal_figure
+out_figure_path = Path(PAPER_DIR) / "figures" / "example_multimodal_mri.png"
+generate_multimodal_figure(
+    datasetDir=datasetDir, 
+    out_figure_path=out_figure_path
+)
+
 
 
 # Generate Demographcis File as well as figure
