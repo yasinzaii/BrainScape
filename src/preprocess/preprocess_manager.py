@@ -38,26 +38,46 @@ class PreprocessManager:
                 overrides=dataset_settings.get_data()
             )
             
+            # Check if the dataset has been downloaded
+            if not final_settings.get("isDownloaded"):
+                self.logger.warning(f"PreprocessManager - Dataset '{dataset_name}' has not been downloaded yet. Skipping preprocessing job for {dataset_name}.")
+                continue  # Skipping
+            
             # Acquiring the Mapping 
             mapping = self.mapping[dataset_name]
+            
+            # Acquiring Preprocessed Diretcory
+            preprocess_dir_name =  final_settings.get("preprocessedDirName", "preprocessed")
+            preprocess_dir_path = dataset_path / preprocess_dir_name
 
 
             # Acquiring Preprocessor Plugin Name
             try:
                 preprocessor_name = final_settings['preprocess']['preprocessor']
             except KeyError as e:
-                self.logger.error(f"Preprocessor (Key: 'preprocessor') missing from dataset '{dataset_name}' settings. Skipping preprocessing. Error: {e}")
+                self.logger.error(f"PreprocessManager - Preprocessor (Key: 'preprocessor') missing from dataset '{dataset_name}' settings. Skipping preprocessing. Error: {e}")
                 continue  # Skip to the next dataset
 
             # Check if preprocessing is already done
             if final_settings.get("isPreprocessed", False):
-                self.logger.info(f"Dataset '{dataset_name}' is already preprocessed. Skipping.")
-                continue
+                self.logger.info(f"PreprocessManager - Dataset:{dataset_name} 'isPreprocessed' already set - Checking if Preprocessed dir is present and not empty.")
+                
+                # Check if the Preprocessed dir exist.
+                if preprocess_dir_path.exists():
+                    # Check if the Preprocessed dir is not empty
+                    if any(preprocess_dir_path.iterdir()):
+                        self.logger.info(f"PreprocessManager - Dataset:{dataset_name} Preprocessed dir is present and not empty - Skipping Preprocessing.")
+                        continue 
+                    else:
+                        self.logger.error(f"PreprocessManager - Dataset:{dataset_name} 'isPreprocessed' already set but Preprocessed dir is empty - Preprocessing Again.")     
+                else:
+                    self.logger.error(f"PreprocessManager - Dataset:{dataset_name} 'isPreprocessed' already set but Preprocessed dir missing - Preprocessing Again.")
+
 
             # Get the preprocessor plugin class
             preprocessor_cls = self.plugin_loader.get_plugin_by_name(preprocessor_name)
             if not preprocessor_cls:
-                self.logger.error(f"Requested preprocessor plugin '{preprocessor_name}' not found. Skipping dataset '{dataset_name}'.")
+                self.logger.error(f"PreprocessManager - Requested preprocessor plugin '{preprocessor_name}' not found. Skipping dataset '{dataset_name}'.")
                 continue
 
             # Initialize the preprocessor
@@ -66,10 +86,10 @@ class PreprocessManager:
             # Perform preprocessing
             success = preprocessor.run()
             if success:
-                self.logger.info(f"Preprocessing completed for dataset '{dataset_name}'. Updating 'isPreprocessed' flag.")
+                self.logger.info(f"PreprocessManager - Preprocessing completed for dataset '{dataset_name}'. Updating 'isPreprocessed' flag.")
                 dataset_settings.update_json({"isPreprocessed": True}).save_json()
             else:
-                self.logger.error(f"Preprocessing failed for dataset '{dataset_name}'.")
+                self.logger.error(f"PreprocessManager - Preprocessing failed for dataset '{dataset_name}'.")
                 dataset_settings.update_json({"isPreprocessed": False}).save_json()
 
 

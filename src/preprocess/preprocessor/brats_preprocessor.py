@@ -54,7 +54,7 @@ class BratsPreprocessor(PreprocessorPlugin):
         self.brats_config = self.dataset_settings["preprocess"].get("brats", {})
         
         # Settings for skipping brain extraction. 
-        self.skip_brain_extraction = self.brats_config.get("skipBrainExtraction", "False")
+        self.skip_brain_extraction = self.brats_config.get("skipBrainExtraction", False)
         
 
     def run(self) -> bool:
@@ -62,10 +62,10 @@ class BratsPreprocessor(PreprocessorPlugin):
         # Loop through entries in mapping
         for entry in self.mapping:
             
-            # Get avaliable modalities
+            # Get available modalities
             modalities = entry['mris'].keys()
 
-            # Aquire the ceter modality based on preference
+            # Acquire the center modality based on preference
             center_mod_name = None
             for mod_pref in self.brats_config["modPriority"]:
                 if mod_pref in modalities:
@@ -79,13 +79,13 @@ class BratsPreprocessor(PreprocessorPlugin):
             entry_out_dir = self.output_dir / f"{entry['subject']}.{entry['session']}.{entry['type']}.{entry['group']}"
             #raw_bet = entry_out_dir / "raw_bet"  # Raw Brain Extracted MRI
             
-            # Note: Same file name is used for Dataset which skips brain extaction.
+            # Note: Same file name is used for Dataset which skips brain extraction.
             # TODO: This should be improved.
-            norm_bet = entry_out_dir / "norm_bet"  # Nomalized Brain Extracted MRI
+            norm_bet = entry_out_dir / "norm_bet"  # Normalized Brain Extracted MRI
             #raw_skull = entry_out_dir / "raw_skull"  # Raw with Skull MRI
             #norm_skull = entry_out_dir / "norm_skull" # Normalized with Skull MRI
             
-            temp_dir = entry_out_dir / "temp" # Temperor Directory
+            temp_dir = entry_out_dir / "temp" # Temporary Directory
              
             # Initialize normalizer
             percentile_normalizer = PercentileNormalizer(
@@ -148,7 +148,7 @@ class BratsPreprocessor(PreprocessorPlugin):
             )
             
             # Preprocessor File Logging
-            self.preprocessor_logger.info(f"Processing Subject: {entry['subject']}, Session: {entry['session']}")
+            self.preprocessor_logger.info(f"BratsPreprocessor - Processing Subject: {entry['subject']}, Session: {entry['session']}")
             
             
             # Preprocessor Run   
@@ -185,18 +185,18 @@ class BratsPreprocessor(PreprocessorPlugin):
             temp_dir (Path): Path to the temporary directory.
         """
         if not temp_dir.exists():
-            self.preprocessor_logger.warning(f"Temporary directory {temp_dir} does not exist. Skipping cleanup.")
+            self.preprocessor_logger.warning(f"BratsPreprocessor - Temporary directory {temp_dir} does not exist. Skipping cleanup.")
             return
 
-        self.preprocessor_logger.info(f"Cleaning up temporary directory: {temp_dir}")
+        self.preprocessor_logger.info(f"BratsPreprocessor - Cleaning up temporary directory: {temp_dir}")
         nii_files = list(temp_dir.rglob("*.nii.gz"))
 
         if not nii_files:
-            self.preprocessor_logger.info("No .nii.gz files found in temporary directory.")
+            self.preprocessor_logger.info("BratsPreprocessor - No .nii.gz files found in temporary directory.")
             return
 
         for nii_file in nii_files:
             try:
                 nii_file.unlink()
             except Exception as e:
-                self.preprocessor_logger.error(f"Failed to remove temporary file {nii_file}: {e}")
+                self.preprocessor_logger.error(f"BratsPreprocessor - Failed to remove temporary file {nii_file}: {e}")

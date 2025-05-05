@@ -35,13 +35,19 @@ class IdentityPreprocessor(PreprocessorPlugin):
         
         # Preprocessor settings 
         self.plugin_config = self.dataset_settings["preprocess"].get("identity", {})
-        
+    
+    def _replace_extension(self, filename: str, suffix: str) -> str:
+        if filename.endswith('.nii.gz'):
+            return filename[:-7] + '_' + suffix + '.nii.gz'
+        else:
+            self.logger.error(f"IdentityPreprocessor - Invalid MRI Modality file name: {filename}")
+            return filename # Return the original filename if it doesn't end with.nii.gz    
                 
     def run(self) -> bool:
         
         # Check if the dataset is marked as already preprocessed
-        if not self.dataset_settings.get("alreadyPreprocessed", False):
-            error_msg = "Dataset is not marked as already preprocessed. Aborting identity preprocessing."
+        if not self.dataset_settings["preprocess"].get("alreadyPreprocessed", False):
+            error_msg = "IdentityPreprocessor - Dataset is not marked as already preprocessed. Aborting identity preprocessing."
             self.logger.error(error_msg)
             self.preprocessor_logger.error(error_msg)
             return False
@@ -63,9 +69,15 @@ class IdentityPreprocessor(PreprocessorPlugin):
                 # Preprocessed Image Path Structure - Intermediate Structure - Same as BRATS Plugin.
                 out_inter_path = f"{entry['subject']}.{entry['session']}.{entry['type']}.{entry['group']}"
                 
+                # TODO
+                # Preprocessed Mod image name should have modality at the end
+                # Required for current Preprocessing Mapper - Should be updated
+                prep_mod_image_name = self._replace_extension(filename=mod_image_name, suffix=modality)
+                
+                
                 # TODO Move out 'norm_bet' from here.
                 # Absolute path in the preprocessed directory
-                preprocessed_file_path = self.preprocess_dir / out_inter_path / 'norm_bet' / mod_image_name
+                preprocessed_file_path = self.preprocess_dir / out_inter_path / 'norm_bet' / prep_mod_image_name
 
                 # Ensure the destination directory exists
                 preprocessed_file_path.parent.mkdir(parents=True, exist_ok=True)
@@ -85,7 +97,7 @@ class IdentityPreprocessor(PreprocessorPlugin):
 
             # Update the entry with preprocessed MRI paths
             entry['preprocessed'] = preprocessed_mris
-            self.preprocessor_logger.info(f"Added Preprocessed mapping for subject: {subject}, session: {session}, type: {type}, group: {group}  with preprocessed paths.")
+            self.preprocessor_logger.info(f"IdentityPreprocessor - Added Preprocessed mapping for subject: {subject}, session: {session}, type: {type}, group: {group}  with preprocessed paths.")
 
-        self.logger.info(f"Preprocesed Mapping for all of the subjects has been added. Dataset: {self.dataset_path.name}")
+        self.logger.info(f"IdentityPreprocessor - Preprocesed Mapping for all of the subjects has been added. Dataset: {self.dataset_path.name}")
         return True
