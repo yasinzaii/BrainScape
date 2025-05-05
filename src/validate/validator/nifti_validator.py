@@ -4,7 +4,7 @@ import nibabel as nib
 import numpy as np
 import logging
 from pathlib import Path
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Tuple
 
 from .base_validator import Validator
 from utils.logging_setup import configure_session_logging
@@ -53,9 +53,9 @@ class NiftiValidator(Validator):
         if self.dataset_log_file.exists():
             try:
                 self.dataset_log_file.unlink()
-                self.main_logger.info(f"Deleted existing log file: {self.dataset_log_file}")
+                self.main_logger.info(f"NiftiValidator - Deleted existing log file: {self.dataset_log_file}")
             except Exception as e:
-                self.main_logger.error(f"Failed to delete log file: {e}")
+                self.main_logger.error(f"NiftiValidator - Failed to delete log file: {e}")
                 
         self.logger = configure_session_logging(
             session_log_file=self.dataset_log_file,
@@ -64,7 +64,7 @@ class NiftiValidator(Validator):
         )
         
 
-    def run(self) -> bool:
+    def run(self) -> Tuple[bool,bool]:
         """
         Run the NIfTI validation.
 
@@ -113,7 +113,8 @@ class NiftiValidator(Validator):
                         entry['niftiInfo'][mod_name]['downloadVoxelSizes'] = hdr.get_zooms()[:3]    
                     else:
                         raise ValueError("File Header Empty, check function returned None.")
-        return all_files_valid
+        val_check_completed = True
+        return all_files_valid, val_check_completed
 
     def has_errors(self):
         """Return True if any errors were found."""
@@ -162,10 +163,6 @@ class NiftiValidator(Validator):
         # Returning header to save some info in mapping
         return hdr
         
-        
-        
-
-
 
     def check_data_shape(self, hdr):
         """Check the data shape and dimensionality."""
@@ -245,7 +242,7 @@ class NiftiValidator(Validator):
         try:
             data = nii_img.get_fdata()
         except Exception as e:
-            error_string = f"Error reading NIfTI data, Dataset:{self.dataset_path}, file: {file_path}: {e}"
+            error_string = f"NiftiValidator - Error reading NIfTI data, Dataset:{self.dataset_path}, file: {file_path}: {e}"
             self.main_logger.error(error_string)
             self.errors.append(error_string)
             return
@@ -290,7 +287,7 @@ class NiftiValidator(Validator):
         try:
             data = nii_img.get_fdata()
         except Exception as e:
-            error_string = f"Error reading NIfTI data, Dataset:{self.dataset_path}, file: {file_path}: {e}"
+            error_string = f"NiftiValidator - Error reading NIfTI data, Dataset:{self.dataset_path}, file: {file_path}: {e}"
             self.main_logger.error(error_string)
             self.errors.append(error_string)
             return
@@ -304,7 +301,7 @@ class NiftiValidator(Validator):
         try:
             data = nii_img.get_fdata()
         except Exception as e:
-            error_string = f"Error reading NIfTI data, Dataset:{self.dataset_path}, file: {file_path}: {e}"
+            error_string = f"NiftiValidator - Error reading NIfTI data, Dataset:{self.dataset_path}, file: {file_path}: {e}"
             self.main_logger.error(error_string)
             self.errors.append(error_string)
             return

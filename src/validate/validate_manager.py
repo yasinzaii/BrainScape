@@ -12,8 +12,6 @@ from utils.common_utils import merge_settings
 from validate.validator.nifti_validator import NiftiValidator
 
 
-
-
 class ValidateManager:
     def __init__(
         self,
@@ -73,7 +71,7 @@ class ValidateManager:
         - validator_cls: The validator class to instantiate and use.
         """
         for dataset_name in self.target_datasets:
-            self.logger.info(f"Starting validation for dataset '{dataset_name}'")
+            self.logger.info(f"ValidateManager - Starting validation for dataset '{dataset_name}'")
 
             # Merging Default Settings with Dataset Settings.
             dataset_path = Path(self.config.pathDataset) / dataset_name
@@ -82,17 +80,33 @@ class ValidateManager:
                 defaults=self.default_dataset_settings,
                 overrides=dataset_settings.get_data()
             )
-
-            # Acquiring the Mapping
+            
+            # Check if Validation Check is already Completed for the dataset
+            validation_check_performed = final_settings.get("isValidationCheckDone", False)
+            if validation_check_performed:
+                self.logger.info(f"ValidateManager - Validation check already done for dataset:'{dataset_name}', Skipping!")
+                continue
+            
+            # Retrieve the dataset-specific mapping
             mapping = self.mapping.get(dataset_name)
             if not mapping:
                 self.logger.error(f"Mapping not found for dataset '{dataset_name}'. Skipping.")
                 continue  # Skip to the next dataset
 
-
+            
+            # Update Expected Values based on the info in metadata.json
+            dataset_expected_values = self.expected_values
+           
+            """
+            # Expect sform_code == 1 if data is alreadyPreprocessed. 
+            if final_settings["alreadyPreprocessed"]:
+                dataset_expected_values['sform_code'] = 2 # ALIGNED_ANAT: Coordinates aligned to another file, or to the "truth" 
+                self.logger.info(f"Updating Expected 'sform_code' for dataset '{dataset_name}' to 2(ALIGNED_ANAT).")
+            """
+            
             # Instantiate the validator
             validator = validator_cls(
-                expected_values=self.expected_values,
+                expected_values=dataset_expected_values,
                 dataset_settings=final_settings,
                 dataset_path=dataset_path,
                 mapping=mapping,
@@ -101,18 +115,17 @@ class ValidateManager:
             )
             
             # Run validator
-            status = validator.run()
+            status, validation_completed = validator.run()
             if status:
-                self.logger.info(f"Dataset '{dataset_name}' passed {validator_cls.__name__} validation.")
+                self.logger.info(f"ValidateManager - Dataset '{dataset_name}' passed {validator_cls.__name__} validation.")
             else:
-                self.logger.warning(f"Dataset '{dataset_name}' failed {validator_cls.__name__} validation.")
+                self.logger.warning(f"ValidateManager - Dataset '{dataset_name}' failed {validator_cls.__name__} validation.")
             
             
-            """
             # Update dataset settings based on validation result
-            dataset_settings.update_json({"isValidated": status}).save_json()
-            if status:
-                self.logger.info(f"Dataset '{dataset_name}' passed validation.")
+            dataset_settings.update_json({"isValidationCheckDone": validation_completed}).save_json()
+            if validation_completed:
+                self.logger.info(f"ValidateManager - Dataset '{dataset_name}' validation check completed.")
             else:
-                self.logger.warning(f"Dataset '{dataset_name}' failed validation.")
-            """
+                self.logger.warning(f"ValidateManager - Dataset '{dataset_name}' validation check failed.")
+            
