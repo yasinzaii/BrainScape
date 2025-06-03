@@ -15,7 +15,8 @@
 6. [Quick Start](#quick-start)
 7. [Configuration Guide](#configuration-guide)
 8. [Adding a New Dataset](#adding-a-new-dataset)
-9. [License](#license)
+9. [Resetting Status Flags for all datasets](#resetting-status-flags-for-all-datasets)
+10. [License](#license)
 
 ---
 
@@ -154,6 +155,19 @@ Note: Assuming downloading from OpenNeuro as the download plugin for OpenNeuro i
 
 3. Add `demographics/<DatasetID>/participants.tsv` if available.
 4. Run `python src/prepare_dataset.py` – BrainScape will take it from there.
+
+---
+
+## Resetting Status Flags for all datasets
+BrainScape keeps status record of every pipeline stage for each dataset.
+For each dataset the status flags are included in the Dataset-specific metadata.json file.
+
+These Flags include `isDownloaded`, `isPreprocessed`, `isValidationCheckDone`, `isVisualized`, `isReadmeGenerated`. It is a recommended to reset these flags for all of the datasets, before starting BrainScape pipeline. You can utilize the `src/reset_status_flags.py` script for this task. 
+
+```bash
+# Run the script to reset target flags (e.g. isValidationCheckDone and isVisualized) for all datasets
+python src/reset_status_flags.py -k "isValidationCheckDone" "isVisualized" --dry-run False
+```
 
 ---
 
