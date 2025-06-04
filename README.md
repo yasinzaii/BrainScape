@@ -166,8 +166,10 @@ These Flags include `isDownloaded`, `isPreprocessed`, `isValidationCheckDone`, `
 
 ```bash
 # Run the script to reset target flags (e.g. isValidationCheckDone and isVisualized) for all datasets
-python src/reset_status_flags.py -k "isValidationCheckDone" "isVisualized" --dry-run False
+python src/reset_status_flags.py -k "isValidationCheckDone" "isVisualized" --dry-run 
 ```
+
+Note: Using `--dry-run` prevents writing to metadata files and lets you preview which flags would be changed.
 
 ---
 

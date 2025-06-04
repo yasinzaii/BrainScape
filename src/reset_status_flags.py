@@ -49,7 +49,7 @@ def build_parser() -> argparse.ArgumentParser:
     
     parser.add_argument(
         "--dry-run",
-        default=True,
+        action="store_true",
         help="Show what would change but do not write files (default: %(default)s)",
     )
     
