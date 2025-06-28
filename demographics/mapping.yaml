@@ -317,3 +317,8 @@ demographics:
     description: >
       Diagnosed with Brain or cerebral aneurysm.
     valid_values: *YES_NO_NA
+
+  - name: ASD
+    description: >
+      Autism Spectrum Disorder.
+    valid_values: *YES_NO_NA
