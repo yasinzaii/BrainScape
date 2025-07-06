@@ -98,3 +98,11 @@ gen_demographics(
     out_data_path=out_demographics_path,
     out_figure_path = out_figure_path
 )
+
+# Generate MRI scanner summary table and latex table
+from gen_scanner_summary import scanner_summary
+out_table_path = Path(PAPER_DIR) / "tables" / "supp_scanner_summary.tex"
+scanner_summary(
+    data_dict=data_dict,
+    out_table_path=out_table_path
+)
