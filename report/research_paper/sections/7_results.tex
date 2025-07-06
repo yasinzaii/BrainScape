@@ -1,6 +1,9 @@
 \subsection{Overall Dataset Composition}
 
-BrainScape integrates a total of \NumDatasets\ datasets from diverse open-source repositories and individual research studies. 
+
+BrainScape dataset include four common anatomical MRI contrasts i.e. T1-weighted (T1w), T2-weighted (T2w), 
+gadolinium-enhanced T1-weighted (T1Gd), and fluid-attenuated inversion recovery (FLAIR).
+Furthermore it integrates a total of \NumDatasets\ datasets from diverse open-source repositories and individual research studies. 
 After quality-control and visual inspection (e.g., excluding MRIs with artifacts, corrupted and poor quality scans), 
 \TotalNumSubjects\ unique subjects remain in the database, yielding \TotalNumMRIs\ MRI scans overall. 
 Among these, \TotalTOneMRIs\ are T1w, \TotalTTwoMRIs\ are T2w, \TotalTOneGdMRIs\ are T1Gd, and \TotalFlairMRIs\ are FLAIR. 
@@ -46,17 +49,17 @@ applications where multi-contrast data are essential (e.g., lesion analysis, tis
     
 As shown in Table~\ref{TableMriModDistribution}, T1w scans are substantially more common than T2w, T1Gd and FLAIR scans.
 Among the \NumDatasets\ datasets included in BrainScape, only one dataset (BRATS) provides T1Gd MRI scans. 
-T2-weighted (T2w) MRI scans are available in \NumDatasetsWithTTwoScans\ datasets, 
-fluid-attenuated inversion recovery (FLAIR) scans in \NumDatasetsWithTFlairScans\, 
-and T1-weighted (T1w) scans in \NumDatasetsWithTToneScans\ datasets.
+T2w MRI scans are available in \NumDatasetsWithTTwoScans\ datasets, 
+FLAIR scans in \NumDatasetsWithTFlairScans\, 
+and T1w scans in \NumDatasetsWithTToneScans\ datasets.
 On the other hand, the number of sessions per subject also varies, 
 ranging from a single scan per subject to multiple scans per subject. BrainScape 
 retains session information and the original dataset structures, ensuring flexibility 
 for downstream analyses. For complete details of each individual dataset and the available
 MRI modalities, refer to the Supplementary Material (Table~\ref{suppDataTable}).
 
-Since T1-weighted (T1w) scans are more common than other modalities, 
-analyses relying primarily on T2-weighted (T2w), gadolinium-enhanced T1-weighted (T1Gd), or FLAIR scans may include fewer subjects. 
+Since T1w scans are more common than other modalities, 
+analyses relying primarily on T2w, T1Gd, or FLAIR scans may include fewer subjects. 
 However, the availability of multimodal MRI scans remains valuable for specialized clinical studies or advanced modeling tasks such as lesion segmentation. 
 Researchers can leverage BrainScape's flexibility to utilize the entire dataset or a subset of the dataset, depending on the specific requirements of the study.
 
@@ -73,6 +76,19 @@ Researchers can leverage BrainScape's flexibility to utilize the entire dataset 
     }
     \label{fig:ExampleMultimodal}
 \end{figure}
+
+MRI scans aggregated within BrainScape dataset originate from diverse scanner hardware, manufacturers, and magnetic field strengths. 
+Among the \TotalNumMRIs\ MRIs included, MRI scanner metadata was available for 24508 scans (52.61\%), 
+while scanner information for the remaining 22075 scans (47.39\%) was missing (see Supplementary Table \ref{tab:scanner_info}). 
+Furthermore amoung the 24508 MRIs with scanner information, 22089 MRIs had magnetic field strengths information available.
+MRI data originated primarily from three major manufacturers including Siemens, Philips, and GE, 
+with Siemens scanners being the most prevalent across all modalities. 
+The dataset predominantly include 3.0 Tesla (T) MRI scanners (18147 scans), followed by 1.5T (2584 scans), 
+4.0T (1301 scans), and a small subset from 7.0T scanners (57 scans). 
+This diverse scanner landscape ensures the captured data realistically represent the variability encountered in clinical and research imaging scenarios, 
+making BrainScape highly suitable for training robust and generalizable artificial intelligence models.
+Furthermore, the scanner information including Manufacturer, Model and Field strength is also 
+added in the BrainScape JSON record. 
 
 Figure~\ref{fig:ExampleMultimodal} illustrates how BrainScape integrates multimodal MRI data 
 from diverse heterogeneous datasets, with varying participant demographics and clinical profiles. 
@@ -194,26 +210,26 @@ totaling \TotalSubjectsWithMalePlusFemaleCount\ subjects.
     \begin{threeparttable}
         \caption{Distribution of Demographic Variables}
         \label{additional_demographics}
-        \begin{tabular}{@{}lccc@{}}
+        \begin{tabular}{@{}lcccc@{}}
             \toprule
-            \textbf{Variable} & \textbf{Category/Level} & \textbf{Count (n)} & \textbf{Percentage (\%)} \\
+            \textbf{Variable} & \textbf{Category/Level} & \textbf{Count (n)} & \textbf{Percentage (\%)} & \textbf{Total (n)} \\
             \midrule
-            \textbf{Race}   & White & \TotalSubjectsWithWhiteRaceCount & \TotalSubjectsWithWhiteRacePercentage \\
-                            & Black & \TotalSubjectsWithBlackRaceCount & \TotalSubjectsWithBlackRacePercentage \\
-                            & Asian & \TotalSubjectsWithAsianRaceCount & \TotalSubjectsWithAsianRacePercentage \\
-                            & American Indian/Alaska Native & \TotalSubjectsWithAmericanIndianAlaskanRaceCount & \TotalSubjectsWithAmericanIndianAlaskanRacePercentage \\
-                            & Hawaiian/Pacific Islander & \TotalSubjectsWithHawaiianPacificIslanderRaceCount & \TotalSubjectsWithHawaiianPacificIslanderRacePercentage \\
-                            & Two or More Races & \TotalSubjectsWithTwoOrMoreRaceCount & \TotalSubjectsWithTwoOrMoreRacePercentage \\
-                            & Other & \TotalSubjectsWithOtherRaceCount & \TotalSubjectsWithOtherRacePercentage \\
-            \textbf{Handedness} & Right (R) & \TotalSubjectsWithRightHandednessCount & \TotalSubjectsWithRightHandednessPercentage \\
-                                & Left (L) & \TotalSubjectsWithLeftHandednessCount & \TotalSubjectsWithLeftHandednessPercentage \\
-                                & Ambidextrous (A) & \TotalSubjectsWithAmbidextrousHandednessCount & \TotalSubjectsWithAmbidextrousHandednessPercentage \\
-            \textbf{Education} & Low (Primary/HS) & \TotalSubjectsWithLowEducationCount & \TotalSubjectsWithLowEducationPercentage \\
-                               & Medium (College) & \TotalSubjectsWithMediumEducationCount & \TotalSubjectsWithMediumEducationPercentage \\
-                               & High ($\geq$ Masters) & \TotalSubjectsWithHighEducationCount & \TotalSubjectsWithHighEducationPercentage \\
-            \textbf{Socio-Economic Status}  & Low & \TotalSubjectsWithLowEconomicCount & \TotalSubjectsWithLowEconomicPercentage \\
-                                            & Medium & \TotalSubjectsWithMediumEconomicCount & \TotalSubjectsWithMediumEconomicPercentage \\
-                                            & High & \TotalSubjectsWithHighEconomicCount & \TotalSubjectsWithHighEconomicPercentage \\
+            \textbf{Race}   & White & \TotalSubjectsWithWhiteRaceCount & \TotalSubjectsWithWhiteRacePercentage & \TotalSubjectsWithRaceCount \\
+                            & Black & \TotalSubjectsWithBlackRaceCount & \TotalSubjectsWithBlackRacePercentage & \\
+                            & Asian & \TotalSubjectsWithAsianRaceCount & \TotalSubjectsWithAsianRacePercentage & \\
+                            & American Indian/Alaska Native & \TotalSubjectsWithAmericanIndianAlaskanRaceCount & \TotalSubjectsWithAmericanIndianAlaskanRacePercentage & \\
+                            & Hawaiian/Pacific Islander & \TotalSubjectsWithHawaiianPacificIslanderRaceCount & \TotalSubjectsWithHawaiianPacificIslanderRacePercentage & \\
+                            & Two or More Races & \TotalSubjectsWithTwoOrMoreRaceCount & \TotalSubjectsWithTwoOrMoreRacePercentage & \\
+                            & Other & \TotalSubjectsWithOtherRaceCount & \TotalSubjectsWithOtherRacePercentage & \\
+            \textbf{Handedness} & Right (R) & \TotalSubjectsWithRightHandednessCount & \TotalSubjectsWithRightHandednessPercentage & \TotalSubjectsWithHandednessCount \\
+                                & Left (L) & \TotalSubjectsWithLeftHandednessCount & \TotalSubjectsWithLeftHandednessPercentage & \\
+                                & Ambidextrous (A) & \TotalSubjectsWithAmbidextrousHandednessCount & \TotalSubjectsWithAmbidextrousHandednessPercentage &  \\
+            \textbf{Education} & Low (Primary/HS) & \TotalSubjectsWithLowEducationCount & \TotalSubjectsWithLowEducationPercentage & \TotalSubjectsWithEducationCount\\ 
+                               & Medium (College) & \TotalSubjectsWithMediumEducationCount & \TotalSubjectsWithMediumEducationPercentage & \\
+                               & High ($\geq$ Bachelors) & \TotalSubjectsWithHighEducationCount & \TotalSubjectsWithHighEducationPercentage & \\
+            \textbf{Socio-Economic Status}  & Low & \TotalSubjectsWithLowEconomicCount & \TotalSubjectsWithLowEconomicPercentage & \TotalSubjectsWithSocioEconomicCount\\
+                                            & Medium & \TotalSubjectsWithMediumEconomicCount & \TotalSubjectsWithMediumEconomicPercentage & \\
+                                            & High & \TotalSubjectsWithHighEconomicCount & \TotalSubjectsWithHighEconomicPercentage & \\
             \bottomrule
         \end{tabular}
         \begin{tablenotes}[flushleft]\footnotesize
@@ -222,32 +238,44 @@ totaling \TotalSubjectsWithMalePlusFemaleCount\ subjects.
     \end{threeparttable}
 \end{table}
 
-Beyond age and sex, the dataset includes additional demographic information such as race, handedness, education level, and socio-economic status, as listed in Table~\ref{additional_demographics}.
-Table~\ref{additional_demographics} shows that out of the total \TotalSubjectsWithRaceCount\ subjects with race information,
-\TotalSubjectsWithWhiteRaceCount\ participants (\TotalSubjectsWithWhiteRacePercentage\%) self-identified 
-as White, \TotalSubjectsWithBlackRaceCount\ (\TotalSubjectsWithBlackRacePercentage\%) as Black or African American, \TotalSubjectsWithAsianRaceCount\
-(\TotalSubjectsWithAsianRacePercentage\%) as Asian, and so forth. Furthermore, the majority of participants were right-handed 
-(\TotalSubjectsWithRightHandednessCount\ subjects, \TotalSubjectsWithRightHandednessPercentage\%), with smaller proportions of left-handed 
-(\TotalSubjectsWithLeftHandednessCount\ subjects, \TotalSubjectsWithLeftHandednessPercentage\%) and ambidextrous individuals 
-(\TotalSubjectsWithAmbidextrousHandednessCount\ subjects, \TotalSubjectsWithAmbidextrousHandednessPercentage\%). 
+Beyond age and sex, additional demographic information such as race, handedness, education level, 
+and socio-economic status was available only for subsets of participants, 
+with notable variability across datasets (see Table~\ref{additional_demographics}). 
+Out of \TotalSubjectsWithRaceCount\ subjects with available race information, 
+the majority identified as White (\TotalSubjectsWithWhiteRaceCount; \TotalSubjectsWithWhiteRacePercentage\%), 
+followed by Black or African American (\TotalSubjectsWithBlackRaceCount; \TotalSubjectsWithBlackRacePercentage\%) 
+and Asian (\TotalSubjectsWithAsianRaceCount; \TotalSubjectsWithAsianRacePercentage\%). 
+Handedness information, available for \TotalSubjectsWithHandednessCount\ subjects, 
+indicated a majority were right-handed (\TotalSubjectsWithRightHandednessCount; \TotalSubjectsWithRightHandednessPercentage\%), 
+while left-handed (\TotalSubjectsWithLeftHandednessCount; \TotalSubjectsWithLeftHandednessPercentage\%) 
+and ambidextrous (\TotalSubjectsWithAmbidextrousHandednessCount; \TotalSubjectsWithAmbidextrousHandednessPercentage\%) participants were less common.
 
-Educational information of \TotalSubjectsWithEducationCount\ subjects from different datasets is classified into three categories: low, medium, and high. 
-Low educational attainment (\TotalSubjectsWithLowEducationCount\ subjects, \TotalSubjectsWithLowEducationPercentage\%) comprises of primary and high school education, 
-medium (\TotalSubjectsWithMediumEducationCount\ subjects, \TotalSubjectsWithMediumEducationPercentage\%) includes college, diploma, or Associate's Degree, 
-and high (\TotalSubjectsWithHighEducationCount\ subjects, \TotalSubjectsWithHighEducationPercentage\%) involves participants with bachelor's, master's, or PhD degrees. 
+Educational information for \TotalSubjectsWithEducationCount\ subjects were categorized into three distinct groups: low, medium, and high. 
+The low education group (\TotalSubjectsWithLowEducationCount\ subjects, \TotalSubjectsWithLowEducationPercentage\%) includes participants 
+who completed primary education or obtained a high school diploma as their highest education level. 
+The medium education group (\TotalSubjectsWithMediumEducationCount\ subjects, \TotalSubjectsWithMediumEducationPercentage\%) consists 
+of participants who completed some form of post-secondary education below a four-year degree, such as college, a diploma, or an Associate's Degree. 
+The high education category (\TotalSubjectsWithHighEducationCount\ subjects, \TotalSubjectsWithHighEducationPercentage\%) comprises individuals 
+who have completed at least a Bachelor's degree, including Master's or doctoral degrees (PhD). 
 Similarly, socio-economic status is categorized into low (\TotalSubjectsWithLowEconomicCount\ subjects, \TotalSubjectsWithLowEconomicPercentage\%), 
 medium (\TotalSubjectsWithMediumEconomicCount\ subjects, \TotalSubjectsWithMediumEconomicPercentage\%), and high (\TotalSubjectsWithHighEconomicCount\ subjects, 
 \TotalSubjectsWithHighEconomicPercentage\%) groups.
 
-
+% Educational information for \TotalSubjectsWithEducationCount\ subjects were categorized into three distinct groups: low, medium, and high. 
+% The \textit{low} education group (\TotalSubjectsWithLowEducationCount\ subjects, \TotalSubjectsWithLowEducationPercentage\%) includes participants 
+% who completed primary education or obtained a high school diploma as their highest education level. 
+% The \textit{medium} education group (\TotalSubjectsWithMediumEducationCount\ subjects, \TotalSubjectsWithMediumEducationPercentage\%) consists 
+% of participants who completed some form of post-secondary education below a four-year degree, such as college without degree completion, a diploma, or an Associate's Degree. 
+% The \textit{high} education category (\TotalSubjectsWithHighEducationCount\ subjects, \TotalSubjectsWithHighEducationPercentage\%) comprises individuals 
+% who have completed at least a Bachelor's degree, including Master's or doctoral degrees (PhD). 
 
 
 \subsubsection{Participants from clinical cohorts}
 
 A total of \TotalSubjectsWithDisordersCount\ participants that are part of the aggregate dataset have been diagnosed with disorders.
-These disorders include Neurological disorder (Stroke, Prosopagnosia, DNT, Gliosis, Epilepsy), Psychiatric disorder (Depression, Schizophrenia)
-and Developmental disorder (ADHD). 
-Table~\ref{mental_disorders} lists the number of subjects diagnosed with each disorder among 
+These disorders include Neurological disorders (Stroke, Prosopagnosia, Dysembryoplastic Neuroepithelial Tumor(DNT), Gliosis, and Epilepsy), Psychiatric disorder (Depression, and Schizophrenia)
+and Developmental disorder (Attention-Deficit/Hyperactivity Disorder(ADHD) and Autism Spectrum Disorder (ASD)). 
+Table~\ref{brain_disorders} lists the number of subjects diagnosed with each disorder among 
 the overall \TotalSubjectsIncludedAfterInspectionCount\ individuals. 
 
 
@@ -255,7 +283,7 @@ the overall \TotalSubjectsIncludedAfterInspectionCount\ individuals.
     \centering
     \begin{threeparttable}
         \caption{Number of Subjects with specific Disorders}
-        \label{mental_disorders}
+        \label{brain_disorders}
         \begin{tabular}{@{}lc@{}}
             \toprule
             \textbf{Disorder} & \textbf{Number of Subjects} \\
@@ -265,6 +293,7 @@ the overall \TotalSubjectsIncludedAfterInspectionCount\ individuals.
             Schizophrenia & \SubjectsWithSchizophreniaCount\ \\
             Depression & \SubjectsWithDepressionCount\ \\
             ADHD & \SubjectsWithADHDCount\ \\
+            ASD & \SubjectsWithASDCount\ \\
             Bipolar Disorder & \SubjectsWithBIPOLARCount\ \\
             Prosopagnosia & \SubjectsWithProsopagnosiaCount\ \\
             Epilepsy & \SubjectsWithEpilepsyCount\ \\
@@ -285,7 +314,7 @@ the overall \TotalSubjectsIncludedAfterInspectionCount\ individuals.
 %     \centering
 %     \begin{threeparttable}
 %         \caption{Number of Subjects with specific Disorders}
-%         \label{mental_disorders}
+%         \label{brain_disorders}
 %         \begin{tabular}{@{}lc@{}}
 %             \toprule
 %             \textbf{Disorder} & \textbf{Number of Subjects} \\
@@ -294,6 +323,7 @@ the overall \TotalSubjectsIncludedAfterInspectionCount\ individuals.
 %             Schizophrenia & \SubjectsWithSchizophreniaCount\ \\
 %             Depression & \SubjectsWithDepressionCount\ \\
 %             ADHD & \SubjectsWithADHDCount\ \\
+%             ASD & \SubjectsWithASDCount\ \\
 %             Bipolar Disorder & \SubjectsWithBIPOLARCount\ \\
 %             Prosopagnosia & \SubjectsWithProsopagnosiaCount\ \\
 %             Epilepsy & \SubjectsWithEpilepsyCount\ \\
@@ -314,11 +344,11 @@ the overall \TotalSubjectsIncludedAfterInspectionCount\ individuals.
 
 
 \noindent
-Table~\ref{mental_disorders} highlights that \SubjectsWithStrokeCount\ participants have been 
+Table~\ref{brain_disorders} highlights that \SubjectsWithStrokeCount\ participants have been 
 diagnosed with stroke, \SubjectsWithEpilepsyCount\ with epilepsy, and so on. 
 The \SubjectsWithFocalEpilepsyCount\ subjects with focal epilepsy consist of \SubjectsWithFCDCount\ subjects 
 with focal cortical dysplasia and \SubjectsWithHSCount\ subjects with hippocampal sclerosis.
-In total, \TotalSubjectsWithDisordersCount\ participants have at least one mental disorder.
+In total, \TotalSubjectsWithDisordersCount\ participants have at least one neurological, psychiatric, or developmental disorder.
 
 
 
@@ -331,9 +361,14 @@ traceability, any scan failing visual quality checks is listed in the correspond
 revisit, or reverse these exclusions if required.
 
 This process has thus far resulted in the removal of \TotalNumSubjectsRemoved\ subjects across \TotalNumDatasetsWithSubjectsRemoved\ datasets 
-from the total of \NumDatasets\ included in the repository. Additionally, \NumDatasetsAlreadySkullStripped\ datasets out of the total \NumDatasets\ 
-have brain MRIs that were already skull-stripped. However, subjects with poorly skull-stripped MRIs were also excluded. Figure~\ref{dropped_subject} 
-illustrates examples of the excluded MRI scans, highlighting the types of artifacts and issues that led to their removal. By making the exclusion 
+from the total of \NumDatasets\ included in the repository. 
+Additionally, \NumDatasetsAlreadySkullStripped\ datasets out of the total \NumDatasets\ have brain MRIs that were already skull-stripped. 
+However, we opted to exclude scans with incomplete skull stripping, such as those illustrated in Figure \ref{dropped_subject}. 
+Reprocessing dataset containing full and incomplete skull stripped MRI with the default BRATS preprocessing plugin,
+which utilizes the HD-BET extraction (\cite{isensee2019automated}) results in poor brain extraction with over-erosion of brain tissue.
+We decided to drop incomplete skull stripped scans from such datasets to keep a single default BRATS pipeline for the BrainScape dataset release, 
+and because this issue affected only a small subset of subjects (approximately 130 subjects).
+Figure~\ref{dropped_subject} illustrates examples of the excluded MRI scans, highlighting the types of artifacts and issues that led to their removal. By making the exclusion 
 criteria explicit and open to re-evaluation by the neuroscience community, we reduce the risk of perpetuating errors and encourage collaborative quality assurance, 
 ultimately enhancing the overall integrity and reproducibility of the dataset.
 
@@ -365,8 +400,11 @@ of 24.78\% throughout the entire workflow.
 Incorporating additional datasets is expected to proportionally increase wall-clock time and CPU time.
 
 We also evaluated the pipeline's environmental impact by considering local grid emission factors in New Zealand. 
-Over the entire run on the VASP dataset, the pipeline consumed an estimated 0.07065\,kWh of electricity, corresponding to 
-0.00796\,kg of CO\textsubscript{2}eq emissions. As more datasets are included, the energy consumption and 
+Over the entire run on the VASP dataset, the pipeline consumed an estimated 0.07065 kilowatt-hours (kWh) of electricity, corresponding to 
+0.00796\,kg of CO\textsubscript{2}eq emissions. 
+0.07065 kWh is roughly the energy needed to keep a 10 W LED lamp on for seven hours, 
+or to run a typical 1.5 kW space heater for a little under three minutes.
+As more datasets are included, the energy consumption and 
 carbon footprint may rise proportionally; however, workflow parallelization can help maintain 
 reasonable total run times and minimize ecological impact. By documenting these performance metrics, we highlight 
 the computational overhead and the opportunity to reduce processing times and emissions through concurrent dataset handling. 

@@ -117,6 +117,8 @@ within a single harmonized dataset.
 Compounding these challenges is the lack of standardized metadata on demographics and clinical variables, 
 which complicates the merging of smaller specialized datasets in a reproducible manner (\cite{pomponio2019harmonization}).
 
+
+
 On the other hand, the demand for machine learning and artificial intelligence applications in neuroimaging has rapidly increased. 
 Advanced deep learning models require large, diverse, and well-annotated datasets to effectively train models capable of generalizing across populations, 
 scanners, and clinical conditions (\cite{dishner2024survey}). 
@@ -143,12 +145,19 @@ Researchers aiming to collate these smaller, specialized repositories often must
 resort to ad hoc scripts to reconcile directory structures, manage irregular metadata, and ensure consistent preprocessing 
 steps, such as skull stripping, normalization, or anatomical registration.
 
-To overcome these challenges and enhance data-driven research, we have developed an open-source Python framework called BrainScape, 
-which automates the collation, integration, and preprocessing of anatomical MRI data from \NumDatasets\ different datasets. 
+
+To overcome these challenges and enhance data-driven research, we introduce BrainScape,
+which consists of two linked components: 
+(i) the \emph{BrainScape framework}, an open-source, plugin-based Python workflow, and 
+(ii) the \emph{BrainScape dataset}, a curated collection of \NumDatasets\ publicly available MRI repositories distributed as dataset-specific configuration files.
+Each dataset is represented by a comprehensive configuration file that specifies precise instructions 
+required by the framework for downloading, organizing, preprocessing, and demographic annotation. 
+By integrating this flexible software framework with dataset-specific configurations, 
+BrainScape enables researchers to reproduce analysis-ready datasets through a consistent and transparent workflow.
 Our approach directly addresses the objective of improving reproducibility and 
 generalizability highlighted by \cite{marek2024replicability}, \cite{yang2024limits}, \cite{kiar2024experimental}, and \cite{adkinson2024brain}.
 %BrainScape offers a scalable solution to manage the variability and heterogeneity found in both healthy and clinical cohorts. 
-BrainScape allows combining smaller, specialized datasets with large-scale collations, 
+BrainScape framework allows combining smaller, specialized datasets with large-scale collations, 
 allowing generalizing across diverse populations as well as clinical cohorts. 
 BrainScape maintains the integrity of each source dataset's structure and metadata, ensuring no original information is lost or any bias is introduced from duplicate images. 
 It keeps every MRI image linked to its original source, retains a record of excluded subjects, 
@@ -156,14 +165,14 @@ and enforces standardized methods to ensure reproducibility.
 BrainScape significantly reduces the typical workload associated with downloading, 
 organizing, and preprocessing MRI data from thousands of participants, 
 by automating the entire workflow for integrating and preprocessing datasets. 
-This framework offers researchers a rapid start while still allowing complete workflow control.
-Moreover, this framework allows dynamic customization, enabling researchers to incorporate new datasets, demographic information, 
+BrainScape framework offers researchers a rapid start while still allowing complete workflow control.
+Moreover, the software framework allows dynamic customization, enabling researchers to incorporate new datasets, demographic information, 
 and specialized preprocessing modules without the overhead of reworking the codebase.
 Researchers can share their BrainScape workflow configurations and associated plugins, 
 allowing others to replicate and recreate preprocessed images locally. 
 This approach avoids redistributing derivative datasets, 
 while ensuring reproducible pipelines across different research groups. 
-This framework is built upon a plugin-based architecture, designed to:
+BrainScape framework is built upon a plugin-based architecture, designed to:
 
 \begin{itemize}
     
@@ -189,13 +198,14 @@ This framework is built upon a plugin-based architecture, designed to:
 
 By consolidating multiple open datasets and enforcing standardized methods, BrainScape reduces fragmentation, 
 supports large-scale MRI research, and automates repetitive data-handling tasks. 
-Its enables researchers to focus on higher-level analyses such as structural biomarker discovery, 
+This enables researchers to focus on higher-level analyses such as structural biomarker discovery, 
 or machine learning applications.
 Furthermore, we have kept track of the licensing and usage permissions of every dataset to ensure that ethical 
 standards are upheld and proprietary data is respected when aggregating resources from various repositories.
-To properly credit each source dataset included in BrainScape, we maintain a dedicated ``README'' file 
+To properly credit each source repository included in BrainScape's dataset, we maintain a dedicated ``README'' file 
 that identifies each dataset's source, cites relevant publications, and provides direct links to original resources.
-In this paper, we describe the framework's architecture and functionalities, 
+In this paper, we describe the BrainScape framework's architecture and functionalities, 
+along with details on the BrainScape dataset, 
 aiming to empower the neuroscience community to build inclusive, 
 large-scale datasets that facilitate robust computational approaches 
 and advance our understanding of brain structure and function.

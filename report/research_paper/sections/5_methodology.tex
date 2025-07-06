@@ -1,15 +1,42 @@
-In this section, we describe the plugin-based architecture of our framework, designed to systematically 
+In this section, we describe the plugin-based architecture of BrainScape's framework, designed to systematically 
 collect, standardize, and preprocess anatomical MRI data. We discuss its modular structure by explaining 
 the functions and interdependencies of each module.
 
 
 \subsection{Overall Framework Design}
 
-Our framework is developed in Python and employs a configurable plugin-based architecture to allow flexible 
-substitution of plugins without the need for updating the codebase. Each module, 
-or plugin, is responsible for a specific task, such as downloading MRI data from a given repository, 
+BrainScape framework is developed in Python and employs a configurable plugin-based architecture to allow flexible 
+substitution of plugins without the need for updating the codebase. 
+Each core operation such as dataset downloading, file mapping and preprocessing is encapsulated in an independent plugin that can be configured or replaced at runtime.
+BrainScape includes a curated set of dataset-specific configuration files for \NumDatasets\ diverse datasets, 
+each specifying the exact combination of downloader, mapper, and preprocessing plugins required for a given dataset, along with all necessary parameter settings.
+This design allows datasets with diverse sources, file structures, and acquisition protocols to be seamlessly integrated into a unified workflow.
+
+Each plugin, is responsible for a specific task, such as downloading MRI data from a given repository, 
 performing MRI preprocessing, or mapping the downloaded files to a standardized JSON record (Figure~\ref{fig:SystemArchitecture}).
-This design allows researchers to easily swap out or introduce new plugins (e.g., new preprocessing pipelines) customized to meet their specific research needs.
+Every pipeline stage (downloading, mapping, and preprocessing) has an associated abstract base class that exposes a minimal, stage-specific API 
+(e.g., download(), map(), or preprocess()).
+Concrete implementations such as ``OpenNeuroDownloader'' and ``SynapseDownloader'' inherit from the ``DownloaderPlugin'' base class and override these methods. 
+Plugins for each stage are organized into dedicated directories, containing the base class and its associated plugins; 
+For instance, all downloader plugins reside in ``download/downloader/'' alongside the downloader base class.
+
+At run time BrainScape employs a ``PluginLoader'' for dynamic class loading.
+At the start of every workflow stage, the plugin loader scans the designated directories 
+and registers each available plugin under its declared name.
+(e.g., ``OpenNeuroDownloader'' or ``SynapseDownloader'' for downloader plugins).
+When the workflow enters a particular stage, it consults the dataset-specific JSON configuration, 
+instantiates the plugin whose declared name matches the configuration entry, passes the relevant parameters, 
+and invokes the plugin's API method. 
+Plugin selection is performed independently for each dataset 
+and is driven entirely by its dataset-specific configuration, 
+so introducing or switching plugins requires no changes to the core code.
+
+This architecture makes BrainScape framework intrinsically extensible and adding a new plugin
+is as simple as creating a Python file that subclasses the appropriate base class 
+and placing it in the correct plugin directory. 
+The new plugin will then be discovered automatically and 
+researchers can easily swap out or introduce new plugins (e.g., new preprocessing pipelines) 
+customized to meet their specific research needs.
 Key objectives of the framework include: 
 \begin{description}
     \item[Automation:] Minimizing manual labor by automating dataset downloads, file mapping and organization, demographics attachment, and data preprocessing in a single pipeline.
@@ -21,7 +48,7 @@ Key objectives of the framework include:
 
 \subsection{Plugin-Based Architecture}
 
-Figure~\ref{fig:SystemArchitecture} illustrates the framework architecture of BrainScape. 
+Figure~\ref{fig:SystemArchitecture} illustrates the architecture of BrainScape framework. 
 At the core of this framework is a pipeline workflow that handles the sequential execution of the modules, 
 such as downloading, mapping, and preprocessing (depicted by the red arrows in Figure~\ref{fig:SystemArchitecture}). 
 This framework allows flexible selection and configuration of the plugins for each step, which can be tailored for 
@@ -48,15 +75,60 @@ accommodating differences in dataset structure, organization, file formats, and 
 dataset-specific configuration settings.
 \textbf{Validator Plugins}, such as the NIfTI Validator, check each MRI file from all of the datasets 
 to detect potential errors early, thereby helping the workflow maintain high data-quality standards.
-\textbf{Preprocessor Plugins} (e.g., BRATS, Identity, Smriprep) then employ preprocessing pipelines
-that consist of specialized tasks, such as MRI registration, brain extraction, and intensity normalization. 
-For instance, the BRATS plugin uses the \href{https://github.com/BrainLesion/preprocessing}{BrainLes-Preprocessing} tool, 
-following the Brain Tumor Segmentation (BRATS) pipeline (\cite{menze2014multimodal}). 
-In the BRATS pipeline, multiple MRI modalities are co-registered to a central modality (e.g., T1w), 
-then mapped to the SR24 atlas (\cite{rohlfing2010sri24}), followed by skull stripping and image intensity normalization. 
-Datasets already preprocessed or skull-stripped can opt for simpler pipelines, 
-such as the ``Identity'' preprocessor, which applies no additional operations. 
-Other preprocessing pipelines can also be introduced as needed, maintaining the flexibility and modularity.
+
+At the next stage of the pipeline, MRI preprocessing is carried out by configurable \textbf{Preprocessor Plugins}, 
+each specialized for distinct imaging scenarios and requirements.
+Currently, BrainScape framework supports three primary preprocessing plugins: BRATS, Smriprep, and Identity. 
+The BRATS preprocessor plugin implements a preprocessing pipeline closely aligned with the standardized 
+Brain Tumor Segmentation (BRATS) preprocessing protocol (\cite{menze2014multimodal}) by 
+employing the BrainLes-Preprocessing Python package (v0.4.0), publicly available at \url{https://github.com/BrainLesion/preprocessing}. 
+This pipeline consists of sequential preprocessing steps, including modality co-registration 
+(aligning modalities such as T2-weighted and FLAIR images to a central T1-weighted modality), 
+rigid-body registration to the SRI-24 (\cite{rohlfing2010sri24}) atlas, skull stripping, and intensity normalization. 
+The BrainLes-Preprocessing python package utilizes the Advanced Normalization Tools (ANTs) 
+for atlas registration and modality co-registration (\cite{tustison2021antsx}). 
+Given the heterogeneous nature of datasets aggregated in BrainScape, 
+we implemented a configurable priority-based selection of the central modality, 
+with the default priority order set as \texttt{[T1w, T2w, T1Gd, FLAIR]}. 
+For brain extraction within the BRATS pipeline, BrainLes-Preprocessing employs ``HD-BET'' (\cite{isensee2019automated}), 
+an artificial neural network-based tool known for robust, rapid brain extraction across diverse 
+clinical MRI sequences (including T1w, T1Gd, T2w, and FLAIR modalities), pathologies, and scanner parameters. 
+HD-BET tool is utilized for brain extraction due to 
+its superior accuracy and speed (typically less than 5 seconds per MRI sequence on a GPU) 
+compared to widely used tools such as FSL's BET and AFNI's 3dSkullStrip(\cite{isensee2019automated, smith2000bet}).
+The Smriprep plugin wraps the latest containerized version of the well-established sMRIPrep anatomical MRI preprocessing pipeline (\cite{esteban2021smriprep}), 
+openly accessible at \url{https://www.nipreps.org/smriprep/}. 
+Within sMRIPrep, anatomical images are non-linearly aligned using ANTs' antsRegistration algorithm, 
+enabling spatial normalization to standard templates such as MNI152 \cite{avants2008symmetric,avants2011reproducible}.
+BrainScape Smriprep plugin runs the latest stable sMRIPrep Docker image (nipreps/smriprep:latest) with its default ANTs-based skull-stripping workflow, 
+while disabling FreeSurfer surface reconstruction, Multimodal Surface Matching (MSM), and sub-millimeter reconstructions 
+\cite{esteban2021smriprep}.
+Lastly, the Identity preprocessor plugin serves as a pass-through solution designed explicitly for datasets that 
+have already undergone preprocessing or skull stripping. 
+This approach ensures previously processed data remain unaltered, significantly simplifying the integration of diverse, 
+pre-curated datasets into BrainScape.
+
+All preprocessing plugins currently available handle MRI sessions independently; 
+longitudinal pipelines were deliberately omitted because our primary goal is to prepare 
+individual T1w, T2w, FLAIR, and T1Gd volumes for downstream deep-learning models.
+The Smriprep plugin is added because sMRIPrep is one of the most widely used and 
+popular structural-MRI pipelines, 
+while the BRATS and Identity plugins align directly with our subsequent studies on brain-tumour segmentation.
+Nevertheless, BrainScape's modular, plugin-based architecture supports addition of longitudinal or 
+other specialized preprocessing pipelines based on the research requirements. 
+To facilitate and encourage community-driven extensibility, we provide comprehensive tutorials 
+on the BrainScape GitHub repository (\url{https://github.com/yasinzaii/BrainScape}), 
+illustrating how researchers can develop custom plugins to meet diverse research requirements.
+
+% \textbf{Preprocessor Plugins} (e.g., BRATS, Identity, Smriprep) then employ preprocessing pipelines
+% that consist of specialized tasks, such as MRI registration, brain extraction, and intensity normalization. 
+% For instance, the BRATS plugin uses the \href{https://github.com/BrainLesion/preprocessing}{BrainLes-Preprocessing} tool, 
+% following the Brain Tumor Segmentation (BRATS) pipeline (\cite{menze2014multimodal}). 
+% In the BRATS pipeline, multiple MRI modalities are co-registered to a central modality (e.g., T1w), 
+% then mapped to the SR24 atlas (\cite{rohlfing2010sri24}), followed by skull stripping and image intensity normalization. 
+% Datasets already preprocessed or skull-stripped can opt for simpler pipelines, 
+% such as the ``Identity'' preprocessor, which applies no additional operations. 
+% Other preprocessing pipelines can also be introduced as needed, maintaining the flexibility and modularity.
 After preprocessing, \textbf{Mapper plugins} (e.g., RegexMapper) update the standardized JSON record 
 with the preprocessed MRI files. The \textbf{Demographics Mapper} plugin then appends relevant demographic 
 and clinical fields (e.g., age, sex, diagnosis) to each subject record, thereby producing a unified 
@@ -90,4 +162,22 @@ Currently, the pipeline is designed to process datasets sequentially.
 Nevertheless, its modular design and configurable workflow support running multiple datasets in parallel 
 which will be effective in reducing the overall wall-clock time.
 
+
+\subsection{Hardware and Software Requirements}
+
+BrainScape is designed to run on standard 64-bit Linux distributions and has been tested on Ubuntu 22.04 and newer. 
+Additionally, it supports Windows 10 and 11 through the \href{https://learn.microsoft.com/en-gb/windows/wsl}{Windows Subsystem for Linux 2 (WSL2)}.
+Essential software prerequisites include \href{https://www.anaconda.com/docs/getting-started/miniconda/main}{Miniconda} for managing 
+a dedicated Python (version 3.11) environment, 
+and \href{https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html}{AWS CLI v2} for accessing and 
+downloading MRI datasets from Amazon S3-hosted repositories, such as \href{https://openneuro.org/}{OpenNeuro} datasets. 
+A GPU is recommended to accelerate the computationally intensive preprocessing task of skull stripping 
+performed by the HD-BET brain-extraction tool (\cite{isensee2019automated}) in the BRATS plugin. 
+However, it is not mandatory, and CPU-only systems can still run the pipeline, though they will take longer to preprocess.
+Furthermore, BrainScape has been successfully deployed and tested on the 
+\href{https://www.nesi.org.nz/}{New Zealand eScience Infrastructure (NeSI)} 
+high-performance computing (HPC) platform, demonstrating its scalability and compatibility with cluster computing environments. 
+NeSI compute nodes run Rocky Linux, a widely-used Red Hat-compatible operating system common across large-scale HPC facilities. 
+Detailed installation instructions, configuration guidelines, and execution documentation are available on
+the \href{https://github.com/yasinzaii/BrainScape}{BrainScape GitHub} repository.
 

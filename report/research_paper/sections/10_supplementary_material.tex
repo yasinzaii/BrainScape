@@ -1,12 +1,13 @@
 % Supplementary Material
+\subsection{Overview of Datasets Included in BrainScape}
 
 We provide a detailed table summarizing essential metadata for each dataset included in BrainScape. 
-Table \ref{suppDataTable} provides information on the \NumDatasets\ MRI studies and datasets currently included in this framework.
+Table \ref{suppDataTable} provides information on the \NumDatasets\ MRI studies and datasets currently included in the BrainScape dataset.
 As the project evolves, additional datasets will be added, further expanding this list. 
 The following section describes the columns of the table.
 
 \begin{enumerate}
-    \item \textbf{Identifier}: Each dataset is assigned a unique identifier (e.g., ``AOMIC'', ``QTAB'') to facilitate referencing within this framework. 
+    \item \textbf{Identifier}: Each dataset is assigned a unique identifier (e.g., ``AOMIC'', ``QTAB'') to facilitate referencing within BrainScape. 
     All MRI scans and associated metadata for each dataset are organized in dedicated folders named after their identifiers, ensuring traceability to the original source or study. 
     Hyperlinks embedded in the identifier column provide direct access to the corresponding source dataset repository.
     Some datasets may require authorization or the completion of specific user agreements for access.
@@ -32,3 +33,14 @@ Note: gadolinium-enhanced T1-weighted (T1Gd) MRIs are only provided by the BRATS
 
 % Inputting the Generated Suplimentary Table
 \input{tables/supp_datasets_details_table.tex}
+
+\subsection{Scanner Hardware and Magnetic Field Strengths}
+
+Supplementary Table~\ref{tab:scanner_info} summarizes detailed information about the MRI scanner hardware 
+used across the \NumDatasets\ datasets added to BrainScape dataset. 
+The table provides comprehensive statistics for each imaging modality (T1w, T2w, FLAIR), organized by MRI scanner manufacturer, 
+scanner model, and magnetic field strength (Tesla). 
+The scanner details show the heterogeneity in the hardware diversity of the included datasets, 
+facilitating downstream studies interested in evaluating generalization across different scanning hardware. 
+
+\input{tables/supp_scanner_summary.tex}
