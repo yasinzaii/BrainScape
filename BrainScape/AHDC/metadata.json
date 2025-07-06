@@ -1,0 +1,22 @@
+{
+    "info": "Dataset Specific Settings",
+    "isDownloaded": true,
+    "isDatasetJsonCreated": false,
+    "isPreprocessed": false,
+    "isValidationCheckDone": false,
+    "includeDataset": true,
+    "download": {
+        "isDownloadable": true,
+        "plugin": "OpenNeuroDownloader",
+        "profile": "",
+        "source": "s3://openneuro.org/ds005896",
+        "include": [
+            "CHANGES",
+            "README",
+            "dataset_description.json",
+            "participants.json",
+            "participants.tsv",
+            "sub-*/anat/*"
+        ]
+    }
+}
