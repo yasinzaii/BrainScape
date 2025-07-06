@@ -225,3 +225,44 @@ class DatasetManager:
                 self.logger.error(f"Demographic Mapping failed for dataset '{dataset_name}': {e}")
                 #dataset_dict['isDemographicsIncluded'] = False
                 #dataset_settings.update_json(dataset_dict).save_json()
+
+
+
+    def scanner_mapping(self):
+        """
+        Runs a scanner information mapper (default = ScannerMapper)
+        that enriches each mapping entry with manufacturer & model data.
+        """
+        for dataset_name in self.target_datasets:
+            self.logger.info(f"Scanner Mapping - Dataset: {dataset_name}")
+
+            # Load the dataset settings
+            dataset_path = Path(self.config.pathDataset) / dataset_name
+            dataset_settings_path = dataset_path / self.config.datasetSettingsJson
+            dataset_settings = JsonHandler(dataset_settings_path)
+            final_settings = merge_settings(
+                defaults=self.default_dataset_settings,
+                overrides=dataset_settings.get_data()
+            )
+            
+
+            # Aquire desired plugin or use default ScannerMapper
+            plugin_name = final_settings.get("scannerPlugin", "ScannerMapper")
+
+            # Retrieve plugin class
+            mapper_cls = self.plugin_loader.get_plugin_by_name(plugin_name)
+            if not mapper_cls:
+                self.logger.error(f"scannerPlugin plugin '{plugin_name}' not found for dataset '{dataset_name}' - skipped..")
+                continue
+            
+            mapper = mapper_cls(dataset_settings=final_settings, dataset_path=str(dataset_path))
+
+            existing_map = self.mapping.get(dataset_name)
+            try:
+                updated_map = mapper.map(existing_map)  
+                # Store updated map in the manager
+                self.mapping[dataset_name] = updated_map
+            except Exception as e:
+                self.logger.error(f"Scanner Mapping failed for Dataset:{dataset_name} : {e}")
+
+                
