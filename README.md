@@ -13,10 +13,11 @@
 4. [Prerequisites](#prerequisites)
 5. [Installation](#installation)
 6. [Quick Start](#quick-start)
-7. [Configuration Guide](#configuration-guide)
-8. [Adding a New Dataset](#adding-a-new-dataset)
-9. [Resetting Status Flags for all datasets](#resetting-status-flags-for-all-datasets)
-10. [License](#license)
+7. [Tutorials](https://github.com/yasinzaii/BrainScape/tree/main/tutorials)
+8. [Configuration Guide](#configuration-guide)
+9. [Adding a New Dataset](#adding-a-new-dataset)
+10. [Resetting Status Flags for all datasets](#resetting-status-flags-for-all-datasets)
+11. [License](#license)
 
 ---
 
@@ -107,6 +108,10 @@ Add or exclude datasets by editing `config/index.json`:
   Omit `include` key from `config/index.json` to process **all** of the remaining datasets.
 
 ---
+
+## Tutotials
+
+TODO - Adding tutorial links
 
 ## Configuration Guide
 | File | Purpose |
