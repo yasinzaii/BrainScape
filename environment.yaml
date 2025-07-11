@@ -1,6 +1,5 @@
 name: bs
 channels:
-  - defaults
   - conda-forge  
 dependencies:
   - python=3.11.10
@@ -16,4 +15,6 @@ dependencies:
     - synapseclient==4.7.0
     - git+https://github.com/yasinzaii/pybtex-apa7-style.git
     - brainles-preprocessing
-
+    - bibtexparser
+    - pylatexenc
+    - tabulate

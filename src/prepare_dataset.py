@@ -107,6 +107,8 @@ def prepare_dataset():
                                     mapping = dataset_man.get_mapping())
     validate_man.validate_nifti()
     
+    # Attach Scanner Details
+    dataset_man.scanner_mapping()
     
     # Preprocessing Datasets via "preprocess" Module 
     preprocess_man = PreprocessManager(config=config, 
@@ -143,7 +145,7 @@ def prepare_dataset():
     
     
     mapping = dataset_man.get_mapping() 
-    pass
+
 
     # Save Dataset Mapping at the END
     dataset_man.save_mapping()
