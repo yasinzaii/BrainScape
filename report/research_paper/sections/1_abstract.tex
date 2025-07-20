@@ -23,14 +23,14 @@ Nevertheless, effectively integrating these diverse resources remains a signific
 Inconsistencies in organization, data formatting, acquisition protocols, 
 and metadata remain, especially for smaller, site-specific datasets, despite ongoing efforts 
 within the neuroimaging community to standardize data sharing practices. 
-%Although thousands of high-quality, open-source MRI datasets are currently available, ranging from large-scale consortia to smaller and more specialized clinical cohorts, 
+%Although thousands of high-quality, open source MRI datasets are currently available, ranging from large-scale consortia to smaller and more specialized clinical cohorts, 
 %their heterogeneous organization, incompatible formats, variable acquisition protocols, and scattered demographics and clinical metadata may impede effective data aggregation.
 %Still, integrating both large-scale population-based datasets and small-scale clinical datasets is essential for fully capturing the intricate relationships among brain structure, behavior, and disorders.
 %Furthermore, repackaging and reintegrating datasets can lead to loss of original source information and introduce bias through duplicated images.
 To address these issues, we introduce BrainScape: a curated collection of \NumDatasets\ publicly available MRI datasets 
 packaged with an open-source, plugin-based Python framework that automates their download, organization, preprocessing, and demographic attachment. 
 Each individual dataset includes a detailed configuration file capturing all dataset-specific parameters, 
-enabling other researcher to regenerate the entire BrainScape dataset in a fully reproducible manner. 
+enabling other researchers to regenerate the entire BrainScape dataset in a fully reproducible manner. 
 The current BrainScape dataset integrates \NumDatasets\ datasets,
 encompassing a total of \TotalSubjectsIncludedAfterInspectionCount\ subjects and \TotalNumMRIs\ multimodal MRI scans after quality control. 
 BrainScape framework's pipeline effectively aggregates these heterogeneous datasets while preserving the original dataset structure and demographic details.
