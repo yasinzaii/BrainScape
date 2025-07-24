@@ -32,7 +32,7 @@ and is driven entirely by its dataset-specific configuration,
 so introducing or switching plugins requires no changes to the core code.
 
 This architecture makes the BrainScape framework intrinsically extensible. Adding a new plugin
-is as simple as creating a Python file that subclasses the appropriate base class 
+is as simple as creating a Python file that inherits the appropriate base class 
 and placing it in the correct plugin directory. 
 The new plugin will then be discovered automatically, and 
 researchers can easily swap out or introduce new plugins (e.g., new preprocessing pipelines) 
