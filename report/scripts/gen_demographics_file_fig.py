@@ -98,6 +98,7 @@ def gen_demographics(data_dict, out_data_path, out_figure_path):
     schizophrenia_count = 0
     depression_count = 0
     adhd_count = 0
+    asd_count = 0
     bipolar_count = 0
     prosopagnosia_count = 0
     epilepsy_count = 0
@@ -108,7 +109,7 @@ def gen_demographics(data_dict, out_data_path, out_figure_path):
     dnt_count = 0
     gl_count = 0
     aneurysm_count = 0
-
+    
     
     # Age_group/Age sex Histogram
     canonical_bins = [
@@ -272,7 +273,7 @@ def gen_demographics(data_dict, out_data_path, out_figure_path):
 
             # Counting individual disorders and total disorders
             has_disorder = False  
-            for disorder_field in ["stroke", "schizophrenia", "depression", "ADHD", "BIPOLAR",
+            for disorder_field in ["stroke", "schizophrenia", "depression", "ADHD", "ASD", "BIPOLAR",
                        "prosopagnosia", "epilepsy", "tumor", "acuteischaemicstroke",
                        "FCD", "HS", "DNT", "GL", "aneurysm"]:
 
@@ -286,6 +287,8 @@ def gen_demographics(data_dict, out_data_path, out_figure_path):
                         depression_count += 1
                     elif disorder_field == "ADHD":
                         adhd_count += 1
+                    elif disorder_field == "ASD":
+                        asd_count += 1
                     elif disorder_field == "BIPOLAR":
                         bipolar_count += 1
                     elif disorder_field == "prosopagnosia":
@@ -498,6 +501,7 @@ def gen_demographics(data_dict, out_data_path, out_figure_path):
     content_lines.append(r"\newcommand\SubjectsWithSchizophreniaCount{" + f"{schizophrenia_count}" + "}")
     content_lines.append(r"\newcommand\SubjectsWithDepressionCount{" + f"{depression_count}" + "}")
     content_lines.append(r"\newcommand\SubjectsWithADHDCount{" + f"{adhd_count}" + "}")
+    content_lines.append(r"\newcommand\SubjectsWithASDCount{" + f"{asd_count}" + "}")
     content_lines.append(r"\newcommand\SubjectsWithBIPOLARCount{" + f"{bipolar_count}" + "}")
     content_lines.append(r"\newcommand\SubjectsWithProsopagnosiaCount{" + f"{prosopagnosia_count}" + "}")
     content_lines.append(r"\newcommand\SubjectsWithEpilepsyCount{" + f"{epilepsy_count}" + "}")

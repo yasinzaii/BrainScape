@@ -106,13 +106,13 @@ class NiftiValidator(Validator):
                     # Include Valuable Niti Info to the Mapping.
                     if hdr:
                         # Including Voxel Sizes to the mapping info
-                        if 'niftiInfo' not in entry:
-                            entry['niftiInfo'] = {}
-                        if mod_name not in entry['niftiInfo']:
-                            entry['niftiInfo'][mod_name] = {}
-                        entry['niftiInfo'][mod_name]['downloadVoxelSizes'] = hdr.get_zooms()[:3]    
+                        entry.setdefault('niftiInfo', {}) \
+                            .setdefault(mod_name, {})['downloadVoxelSizes'] = [
+                                float(v) for v in hdr.get_zooms()[:3]
+                            ]
                     else:
                         raise ValueError("File Header Empty, check function returned None.")
+                        
         val_check_completed = True
         return all_files_valid, val_check_completed
 

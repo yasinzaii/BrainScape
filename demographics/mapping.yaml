@@ -75,20 +75,23 @@ demographics:
 
   # sex:
   #   biological sex or gender. 
-  #   acceptable main values: male, female, other.
+  #   acceptable main values: male, female,
   - name: sex
     aliases:
+      - Sex
       - gender
     description: >
-      Biological sex or gender. Acceptable main values: male, female, other.
+      Biological sex. Acceptable main values: male, female.
     valid_values:
       - main_value: "female"
         aliases:
+          - "F"
           - "f"
           - "0"
           - "Woman" # SNRP dataset
       - main_value: "male"
         aliases:
+          - "M"
           - "m"
           - "1"
           - "Man"
@@ -177,14 +180,16 @@ demographics:
   # height:
   #   Stature or height of participant.
   - name: height
+    aliases:
+      - Size # for AHDC
     description: >
-      Stature or height of participant (if recorded).
+      Stature or height of participant (if recorded) in meters.
 
   # weight:
   #   Weight of participant.
   - name: weight
     description: >
-      Weight of participant (if recorded).
+      Weight of participant (if recorded) in kg.
 
   # BMI:
   #   Body Mass Index value.

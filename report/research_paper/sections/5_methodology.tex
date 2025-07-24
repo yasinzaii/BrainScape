@@ -5,11 +5,11 @@ the functions and interdependencies of each module.
 
 \subsection{Overall Framework Design}
 
-BrainScape framework is developed in Python and employs a configurable plugin-based architecture to allow flexible 
-substitution of plugins without the need for updating the codebase. 
-Each core operation such as dataset downloading, file mapping and preprocessing is encapsulated in an independent plugin that can be configured or replaced at runtime.
+The BrainScape framework is developed in Python and employs a configurable plugin-based architecture to allow flexible 
+substitution of plugins without updating the codebase. 
+Each core operation, such as dataset downloading, file mapping and preprocessing is encapsulated in an independent plugin that can be configured or replaced at runtime.
 Meanwhile, the BrainScape dataset includes a curated set of dataset-specific configuration files for \NumDatasets\ diverse datasets, 
-each specifying the exact combination of downloader, mapper, and preprocessing plugins required for a given dataset, along with all necessary parameter settings.
+each specifying the combination of downloader, mapper, and preprocessing plugins required for a given dataset, along with all necessary parameter settings.
 This design allows datasets with diverse sources, file structures, and acquisition protocols to be seamlessly integrated into a unified workflow.
 
 Each plugin is responsible for a specific task, such as downloading MRI data from a given repository, 
@@ -20,7 +20,7 @@ Concrete implementations such as ``OpenNeuroDownloader'' and ``SynapseDownloader
 Plugins for each stage are organized into dedicated directories, containing the base class and its associated plugins; 
 For instance, all downloader plugins reside in ``download/downloader/'' alongside the downloader base class.
 
-At run time BrainScape employs a ``PluginLoader'' for dynamic class loading.
+At run time, BrainScape employs a ``PluginLoader'' for dynamic class loading.
 At the start of every workflow stage, the plugin loader scans the designated directories 
 and registers each available plugin under its declared name.
 (e.g., ``OpenNeuroDownloader'' or ``SynapseDownloader'' for downloader plugins).
@@ -31,10 +31,10 @@ Plugin selection is performed independently for each dataset
 and is driven entirely by its dataset-specific configuration, 
 so introducing or switching plugins requires no changes to the core code.
 
-This architecture makes BrainScape framework intrinsically extensible and adding a new plugin
+This architecture makes the BrainScape framework intrinsically extensible. Adding a new plugin
 is as simple as creating a Python file that subclasses the appropriate base class 
 and placing it in the correct plugin directory. 
-The new plugin will then be discovered automatically and 
+The new plugin will then be discovered automatically, and 
 researchers can easily swap out or introduce new plugins (e.g., new preprocessing pipelines) 
 customized to meet their specific research needs.
 Key objectives of the BrainScape framework include: 
@@ -52,9 +52,9 @@ Figure~\ref{fig:SystemArchitecture} illustrates the architecture of the BrainSca
 At the core of this framework is a pipeline workflow that handles the sequential execution of the modules, 
 such as downloading, mapping, and preprocessing (depicted by the red arrows in Figure~\ref{fig:SystemArchitecture}). 
 This framework allows flexible selection and configuration of the plugins for each step, which can be tailored for 
-each individual dataset via dataset-specific configuration files.
+each dataset via specific configuration files.
 The Configurations integrate both default settings and dataset-specific overrides, maintaining consistency 
-across datasets while allowing the flexibility to individually customize the pipeline for each dataset.
+across datasets while allowing the flexibility to customize the pipeline for each dataset individually.
 
 \begin{figure}[htbp]\begin{center}\includegraphics[width=\linewidth]{figures/architecture.png}
     \caption{
@@ -78,7 +78,7 @@ to detect potential errors early, thereby helping the workflow maintain high dat
 
 At the next stage of the pipeline, MRI preprocessing is carried out by configurable \textbf{Preprocessor Plugins}, 
 each specialized for distinct imaging scenarios and requirements.
-Currently, BrainScape framework supports three primary preprocessing plugins: BraTS, sMRIPrep, and Identity. 
+Currently, the BrainScape framework supports three primary preprocessing plugins: BraTS, sMRIPrep, and Identity. 
 The BraTS preprocessor plugin implements a preprocessing pipeline closely aligned with the well-known 
 Brain Tumor Segmentation challenge (BraTS) dataset preprocessing protocol (\cite{menze2014multimodal}) by 
 employing the BrainLes-Preprocessing Python package (v0.4.0), publicly available at \url{https://github.com/BrainLesion/preprocessing}. 
@@ -108,9 +108,9 @@ have already undergone preprocessing or skull stripping.
 This approach ensures previously processed data remain unaltered, significantly simplifying the integration of diverse, 
 pre-curated datasets into BrainScape.
 For each dataset within the BrainScape dataset collation, 
-a dataset-specific configuration file selects the appropriate preprocessing plugin 
-and supplies all necessary parameters for that plugin, 
-enabling each dataset to be preprocessed independently as needed.
+a dataset-specific configuration file selects the appropriate preprocessing plugin. 
+It also supplies all necessary parameters for that plugin, 
+enabling each dataset to be preprocessed independently.
 
 All preprocessing plugins currently available handle MRI sessions independently; 
 longitudinal pipelines were deliberately omitted because our primary goal is to prepare 
@@ -145,9 +145,9 @@ BrainScape's pipeline workflow and configurable plugins provide a robust, adapta
 
 \subsection{Experimental Setup and Performance Measurement}
 
-We conducted our experiments on a local workstation equipped with a 13th Generation Intel Core i9-13900K CPU 
+We conducted experiments on a local workstation equipped with a 13th Generation Intel Core i9-13900K CPU 
 and an NVIDIA GeForce RTX 4070 Ti GPU (12GB VRAM). 
-The CPU has 24 physical cores running at speeds of up to 5.8\,GHz. 
+The CPU has 24 physical cores running at a speed of up to 5.8\,GHz. 
 The pipeline was tested using Python 3.11 on Ubuntu 22.04.
 To evaluate the BrainScape framework pipeline, 
 we selected the publicly available \href{https://openneuro.org/datasets/ds003717}{VASP dataset} (\cite{peelle2022increased}) from OpenNeuro, 
@@ -180,7 +180,7 @@ However, a GPU is not mandatory; CPU-only systems can still run the pipeline, th
 Furthermore, BrainScape has been successfully deployed and tested on the 
 \href{https://www.nesi.org.nz/}{New Zealand eScience Infrastructure (NeSI)} 
 high-performance computing (HPC) platform, demonstrating its scalability and compatibility with cluster computing environments. 
-NeSI compute nodes run Rocky Linux, a widely used Red Hat-compatible operating system common across large-scale HPC facilities. 
+NeSI compute nodes run Rocky Linux, a widely used Red Hat-compatible operating system standard across large-scale HPC facilities. 
 Detailed installation instructions, configuration guidelines, and execution documentation are available on
 the \href{https://github.com/yasinzaii/BrainScape}{BrainScape GitHub} repository.
 

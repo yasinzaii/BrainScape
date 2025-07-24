@@ -13,13 +13,13 @@ enabling researchers to easily and reliably merge data from multiple sources
 for more comprehensive analyses.
 
 One of the strengths of BrainScape is its flexibility and scalability. 
-The configurable and modular plugin-based architecture of BrainScape framework enables 
+The configurable and modular plugin-based architecture of the BrainScape framework enables 
 seamless integration of new data sources, imaging modalities, and preprocessing pipelines without requiring any modifications to the core codebase.
-Researchers can add new multimodal MRI datasets by including new configuration files for those datasets.
-Additionally, BrainScape framework provides the flexibility to include plugins for downloading data from other open source MRI databases, 
-as well as specialized preprocessing plugins for specific studies which may include custom preprocessing pipelines.
+Researchers can add new multimodal MRI datasets by including new configuration files. 
+Additionally, the BrainScape framework provides the flexibility to include plugins for downloading data from other open source MRI databases and, 
+specialized preprocessing plugins for specific studies that may consist of custom preprocessing pipelines.
 This design facilitates an environment of continuous improvement and customization.
-We integrate \NumDatasets\ diverse datasets demonstrating the framework's scalability 
+We integrate \NumDatasets\ diverse datasets, demonstrating the framework's scalability 
 and capability to handle large-scale data aggregation.
 Furthermore, BrainScape's ability to trace each file back to its source and maintain 
 dataset-specific configurations demonstrates reproducibility by ensuring that the inclusion criteria, 
@@ -44,13 +44,14 @@ The BrainScape framework also integrates with containerized plugin implementatio
 For example, its sMRIPrep plugin retrieves and runs the official \href{https://www.nipreps.org/smriprep/}{nipreps/smriprep} Docker image, 
 with the resulting preprocessed MRI data subsequently remapped to their corresponding JSON records through the RegexMapper. 
 The framework also goes well with the open neuroimaging repositories
-The currently available Downloder plugins automates downloads from resources such as \href{https://openneuro.org/}{OpenNeuro}, 
+The currently available Downloader plugins automate downloads from resources such as \href{https://openneuro.org/}{OpenNeuro}, 
 the Human Connectome Project's \href{https://wiki.humanconnectome.org/docs/Using%20ConnectomeDB%20data%20on%20Amazon%20S3.html}{Amazon S3 data bucket}, 
 and \href{https://www.synapse.org}{Synapse}. 
 
-BrainScape framework currently does not implement data harmonization within its pipeline to reduce variability across imaging sites. 
-Our primary objective was to preserve the natural heterogeneity and variability across diverse MRI datasets to better support 
-downstream deep learning applications. Harmonization often reduces real-world variability critical for training robust and 
+BrainScape framework does not implement data harmonization within its pipeline to reduce variability across imaging sites. 
+Our primary objective was to preserve the natural heterogeneity and variability across diverse MRI datasets to support 
+downstream deep learning applications, and to allow users to implement their own harmonization approaches. 
+Harmonization often reduces real-world variability critical for training robust and 
 generalizable AI models (\cite{adkinson2024brain}).
 Therefore, we decided to exclude the harmonization step to preserve each dataset's original characteristics.
 
@@ -82,10 +83,10 @@ such as HCP and UK Biobank (\cite{van2013wu, miller2016multimodal}).
 Furthermore, the distribution of demographic variables does not fully reflect real-world populations. 
 For instance, the current age distribution skews toward individuals between 5-30 years, with fewer participants above 30.
 Similarly, most participants self-identify as White, while other racial or ethnic groups are comparatively underrepresented. 
-Educational levels also exhibit an imbalance with more than half of the participants reporting high-level education (bachelor's, master's, or PhD).
+Educational levels also exhibit an imbalance, with more than half of the participants reporting high-level education (bachelor's, master's, or PhD).
 Although these demographic imbalances mean the integrated dataset may not yet comprehensively represent 
 the broader population. We aim to progressively reduce 
-these limitations by incorporating more diverse, heterogeneous repositories into the BrainScape dataset over time.
+these limitations by incorporating more diverse, heterogeneous repositories into the BrainScape dataset. 
 Potential reasons for the current bias include the nature of volunteer based studies, 
 recruitment from university populations, and missing demographic fields across datasets. 
 Ongoing integration of additional datasets, particularly those emphasizing broader demographic 
@@ -102,16 +103,17 @@ Additionally, downloading and preprocessing large-scale MRI data requires signif
 potentially extending the overall study timeline and requiring access to high-performance computing resources.
 
 BrainScape dataset currently includes \NumDatasets\ diverse brain MRI datasets and will continue to grow as new data are added. 
-Although there is no predefined schedule for identifying and integrating additional datasets, 
-we are actively managing the repository and incorporating new open source datasets. 
+Although no predefined schedule exists for identifying and integrating additional datasets, 
+we actively manage the repository and incorporate new open source datasets. 
 We also hope future upgrades will come through community collaboration on the BrainScape GitHub repository, 
+which includes detailed tutorials for developing new plugins and integrating additional datasets.
 
 Looking ahead, BrainScape can be extended to incorporate diffusion-weighted imaging (DWI), resting-state fMRI, 
 and other specialized MRI sequences, enhancing the dataset capability to support multimodal analyses 
 of structural and functional connectivity (\cite{van2013wu}). 
 Furthermore, including an automated quality control module into the pipeline, such as machine learning based artifact detection 
-may make it easier to include additional open source datasets by reducing the need for manual quality control, which is labor intensive and time consuming. 
-Such a module may also automatically detect poor quality MRIs overlooked during manual review. 
+makes it easier to include additional open source datasets by reducing the need for manual quality control, which is labor-intensive and time-consuming. 
+Such a module may also automatically detect poor-quality MRIs overlooked during manual review. 
 Another key improvement is parallelizing the workflow; currently, BrainScape framework processes datasets sequentially, 
 but enabling concurrent dataset handling could significantly reduce the overall processing time. 
 Furthermore, the BrainScape framework can be enhanced with new preprocessing plugins designed to implement specialized pipelines for targeted research studies.
@@ -123,5 +125,5 @@ In conclusion, BrainScape addresses bottlenecks in MRI data aggregation and prep
 collecting datasets of diverse origins, automating workflows, and preserving original dataset integrity. 
 It will serve as an effective tool for the neuroscience community by enabling the creation of more comprehensive, representative, and robust datasets.
 While challenges such as inconsistent demographic data and licensing restrictions persist, 
-BrainScape flexible and transparent design allows for ongoing improvements through active community collaboration.
-We believe that BrainScape contributes significantly to open science and enhances our understanding of brain structure and function.
+the BrainScape flexible and transparent design allows for ongoing improvements through active community collaboration.
+We believe that BrainScape contributes positively to open science, to enhance our understanding of the brain.

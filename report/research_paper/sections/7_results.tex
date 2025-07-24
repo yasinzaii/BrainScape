@@ -1,9 +1,9 @@
 \subsection{Overall Dataset Composition}
 
 
-The BrainScape dataset include four common anatomical MRI contrasts i.e. T1-weighted (T1w), T2-weighted (T2w), 
+The BrainScape dataset includes four anatomical MRI contrasts, i.e. T1-weighted (T1w), T2-weighted (T2w), 
 gadolinium-enhanced T1-weighted (T1Gd), and fluid-attenuated inversion recovery (FLAIR).
-Furthermore it integrates a total of \NumDatasets\ datasets from diverse open source repositories and individual research studies. 
+Furthermore, it integrates \NumDatasets\ datasets from diverse open source repositories and individual research studies. 
 After quality-control and visual inspection (e.g., excluding MRIs with artifacts, corrupted and poor quality scans), 
 \TotalNumSubjects\ unique subjects remain in the database, yielding \TotalNumMRIs\ MRI scans overall. 
 
@@ -86,10 +86,10 @@ MRI data originated primarily from three major manufacturers (Siemens, Philips, 
 with Siemens scanners being the most prevalent across all modalities. 
 The dataset predominantly includes 3.0 Tesla (T) MRI scanners (18147 scans), followed by 1.5T (2584 scans), 
 4.0T (1301 scans), and a small subset from 7.0T scanners (57 scans). 
-The BrainScape dataset contains scans from a wide range of manufacturers, models, and field strengths, 
+The BrainScape dataset contains scans from various manufacturers, models, and field strengths, 
 mirroring the variability seen in clinical and research imaging. 
 This diversity makes BrainScape dataset an excellent resource for training AI models that are both robust and generalizable.
-Additionally, scanner metadata, including the manufacturer name, model details, and field strength information, is stored in the BrainScape JSON record.
+Scanner metadata, including the manufacturer name, model details, and field strength information, is stored in the BrainScape JSON record.
 
 Figure~\ref{fig:ExampleMultimodal} illustrates how BrainScape integrates multimodal MRI data 
 from diverse heterogeneous datasets, with varying participant demographics and clinical profiles. 
@@ -256,7 +256,7 @@ The low education group (\TotalSubjectsWithLowEducationCount\ subjects, \TotalSu
 who completed primary education or obtained a high school diploma as their highest education level. 
 The medium education group (\TotalSubjectsWithMediumEducationCount\ subjects, \TotalSubjectsWithMediumEducationPercentage\%) consists 
 of participants who completed some form of post-secondary education below a four-year degree, such as college, a diploma, or an Associate's Degree. 
-The high education category (\TotalSubjectsWithHighEducationCount\ subjects, \TotalSubjectsWithHighEducationPercentage\%) comprises individuals 
+The higher education category (\TotalSubjectsWithHighEducationCount\ subjects, \TotalSubjectsWithHighEducationPercentage\%) comprises individuals 
 who have completed at least a Bachelor's degree, including Master's or doctoral degrees (PhD). 
 Similarly, socioeconomic status, available for \TotalSubjectsWithSocioEconomicCount\ subjects, is categorized into 
 low (\TotalSubjectsWithLowEconomicCount\ subjects, \TotalSubjectsWithLowEconomicPercentage\%), 
@@ -275,8 +275,8 @@ medium (\TotalSubjectsWithMediumEconomicCount\ subjects, \TotalSubjectsWithMediu
 \subsubsection{Participants from clinical cohorts}
 
 A total of \TotalSubjectsWithDisordersCount\ participants that are part of the BrainScape dataset have been diagnosed with disorders.
-These disorders include Neurological disorders (Stroke, Prosopagnosia, Dysembryoplastic Neuroepithelial Tumor(DNT), Gliosis, and Epilepsy), Psychiatric disorder (Depression, and Schizophrenia)
-and Developmental disorder (Attention-Deficit/Hyperactivity Disorder(ADHD) and Autism Spectrum Disorder (ASD)). 
+These disorders include Neurological disorders (Stroke, Prosopagnosia, Dysembryoplastic Neuroepithelial Tumor (DNT), Gliosis, and Epilepsy), Psychiatric disorder (Depression and Schizophrenia)
+and Developmental disorders (Attention-Deficit/Hyperactivity Disorder(ADHD) and Autism Spectrum Disorder (ASD)). 
 Table~\ref{brain_disorders} lists the number of subjects diagnosed with each disorder among 
 the overall \TotalSubjectsIncludedAfterInspectionCount\ individuals. 
 
@@ -367,8 +367,8 @@ from the total of \NumDatasets\ included in the repository.
 Additionally, \NumDatasetsAlreadySkullStripped\ datasets out of the total \NumDatasets\ have brain MRIs that were already skull-stripped. 
 However, we opted to exclude scans with incomplete skull stripping, such as those illustrated in Figure \ref{dropped_subject}. 
 Reprocessing datasets that contain both fully and partially skull-striped MRIs with the default BraTS preprocessing plugin, 
-which uses HD-BET brain-extraction tool (\cite{isensee2019automated}) results in over-erosion of brain tissue during brain extraction.
-We decided to drop incomplete skull stripped scans from such datasets to keep a single default BraTS preprocessing pipeline for the BrainScape dataset release, 
+which uses HD-BET brain-extraction tool (\cite{isensee2019automated}), results in over-erosion of brain tissue during brain extraction.
+We decided to drop incomplete skull-stripped scans from such datasets to keep a single default BraTS preprocessing pipeline for the BrainScape dataset release, 
 and because this issue affected only a small subset of subjects (approximately 130 subjects).
 Figure~\ref{dropped_subject} illustrates examples of the excluded MRI scans, highlighting the types of artifacts and issues that led to their removal. By making the exclusion 
 criteria explicit and open to re-evaluation by the neuroscience community, we reduce the risk of perpetuating errors and encourage collaborative quality assurance, 
