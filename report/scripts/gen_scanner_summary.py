@@ -117,6 +117,10 @@ def scanner_summary(data_dict, out_table_path):
         for entry in entries:                     # each mapping row
             scanner_blk = entry.get("scanner", {})
             for modality in entry.get("mris", {}):
+                
+                if (modality == "seg"):
+                    continue
+                
                 total_by_mod[modality] += 1
 
                 scan_info = scanner_blk.get(modality, {})
