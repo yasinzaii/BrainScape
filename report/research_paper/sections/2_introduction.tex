@@ -12,7 +12,7 @@ Large-scale initiatives are valuable resources for population-level analyses
 and have contributed to big data efforts in neuroimaging, with some examples including the 
 Human Connectome Project (HCP; \cite{van2013wu}), CORR (\cite{gorgolewski2017preprocessed}), 
 FC1000 (\cite{biswal2010toward}), ABCD (\cite{casey2018adolescent}), GSP (\cite{holmes2015brain}), ADNI (\cite{mueller2005alzheimer}), 
-and UK Biobank (\cite{miller2016multimodal}) 
+and UK Biobank (\cite{miller2016multimodal}). 
 %However, small, specialized datasets are crucial for capturing diseases and specific phenotypes, such as schizophrenia, 
 % epilepsy and prosopagnosia (\cite{soler2022brain, taylor2024imaging, noad2024familiarity} ).
 % While large-scale consortia enable the detection of subtle yet meaningful associations at the population level, 
@@ -22,12 +22,12 @@ Thanks to the open science ethos within the neuroimaging community, thousands of
 facilitating research across various aspects of health and disease. 
 Large-scale consortia are valued for their consistent acquisition protocols, 
 enriched demographic details, and broad population coverage, 
-while, smaller specialized datasets remain critical for studying neurological and psychiatric disorders 
+while smaller specialized datasets remain critical for studying neurological and psychiatric disorders 
 (\cite{soler2022brain, fajardo2024functional, gibson2024aphasia}). 
 %These smaller datasets can be difficult to aggregate into large-scale analyses due to challenges with data fragmentation and organisation, and are often underutilised.
 
 
-Large neuroimaging datasets require substantial time and resource burden. 
+Large neuroimaging datasets require substantial time and resources. 
 For example, \cite{horien2021hitchhiker} found that two or three researchers typically 
 require about six to nine months to download and process raw data from thousands of participants. 
 Without an automated framework, researchers often invest considerable effort in downloading, 
@@ -54,12 +54,12 @@ sizes in studies of brain-behavior associations and phenotype predictions (\cite
 While reproducibility establishes an essential baseline for validating findings, 
 it alone does not ensure clinical utility or true generalizability (\cite{kiar2024experimental}). 
 Furthermore, these large datasets may lack generalizability due to demographic biases 
-and over-representing specific populations, limiting their applicability in broader clinical 
+and over-representation of specific populations, limiting their applicability in broader clinical 
 and real-world contexts (\cite{marek2024replicability, yang2024limits}).
 In addition, many large consortium neuroimaging initiatives intentionally 
 minimize dataset variability, creating harmonization that 
 does not exist in real-world scenarios (\cite{adkinson2024brain}). 
-Moreover some large-scale MRI data-sharing initiatives such as UK Biobank, ABCD, ADNI, and GSP 
+Moreover, some large-scale MRI data-sharing initiatives such as UK Biobank, ABCD, ADNI, and GSP 
 may require access fees or administrative approvals (\cite{miller2016multimodal, casey2018adolescent, mueller2005alzheimer,   holmes2015brain}). 
 These policies are intended to ensure responsible data use, 
 protect participant confidentiality, and uphold ethical standards (\cite{white2022data}). 
@@ -158,21 +158,21 @@ Our approach directly addresses the objective of improving reproducibility and
 generalizability highlighted by \cite{marek2024replicability}, \cite{yang2024limits}, \cite{kiar2024experimental}, and \cite{adkinson2024brain}.
 %BrainScape offers a scalable solution to manage the variability and heterogeneity found in both healthy and clinical cohorts. 
 BrainScape framework allows combining smaller, specialized datasets with large-scale collations, 
-allowing generalizing across diverse populations as well as clinical cohorts. 
+allowing generalization across diverse populations as well as clinical cohorts. 
 BrainScape maintains the integrity of each source dataset's structure and metadata, ensuring no original information is lost or any bias is introduced from duplicate images. 
 It keeps every MRI image linked to its original source, retains a record of excluded subjects, 
 and enforces standardized methods to ensure reproducibility. 
 BrainScape significantly reduces the typical workload associated with downloading, 
 organizing, and preprocessing MRI data from thousands of participants, 
 by automating the entire workflow for integrating and preprocessing datasets. 
-BrainScape framework offers researchers a rapid start while still allowing complete workflow control.
+The BrainScape framework offers researchers a rapid start while still allowing complete workflow control.
 Moreover, the software framework allows dynamic customization, enabling researchers to incorporate new datasets, demographic information, 
 and specialized preprocessing modules without the overhead of reworking the codebase.
 Researchers can share their BrainScape workflow configurations and associated plugins, 
 allowing others to replicate and recreate preprocessed images locally. 
 This approach avoids redistributing derivative datasets, 
 while ensuring reproducible pipelines across different research groups. 
-BrainScape framework is built upon a plugin-based architecture, designed to:
+The BrainScape framework is built upon a plugin-based architecture, designed to:
 
 \begin{itemize}
     

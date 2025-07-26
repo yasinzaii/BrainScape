@@ -7,7 +7,7 @@ the functions and interdependencies of each module.
 
 The BrainScape framework is developed in Python and employs a configurable plugin-based architecture to allow flexible 
 substitution of plugins without updating the codebase. 
-Each core operation, such as dataset downloading, file mapping and preprocessing is encapsulated in an independent plugin that can be configured or replaced at runtime.
+Each core operation, such as dataset downloading, file mapping, and preprocessing, is encapsulated in an independent plugin that can be configured or replaced at runtime.
 Meanwhile, the BrainScape dataset includes a curated set of dataset-specific configuration files for \NumDatasets\ diverse datasets, 
 each specifying the combination of downloader, mapper, and preprocessing plugins required for a given dataset, along with all necessary parameter settings.
 This design allows datasets with diverse sources, file structures, and acquisition protocols to be seamlessly integrated into a unified workflow.
@@ -16,9 +16,9 @@ Each plugin is responsible for a specific task, such as downloading MRI data fro
 performing MRI preprocessing, or mapping the downloaded files to a standardized JSON record (Figure~\ref{fig:SystemArchitecture}).
 Every pipeline stage (downloading, mapping, and preprocessing) has an associated abstract base class that exposes a minimal, stage-specific API 
 (e.g., download(), map(), or preprocess()).
-Concrete implementations such as ``OpenNeuroDownloader'' and ``SynapseDownloader'' inherit from the ``DownloaderPlugin'' base class and override these methods. 
+Concrete implementations, such as ``OpenNeuroDownloader'' and ``SynapseDownloader'' inherit from the ``DownloaderPlugin'' base class and override these methods. 
 Plugins for each stage are organized into dedicated directories, containing the base class and its associated plugins; 
-For instance, all downloader plugins reside in ``download/downloader/'' alongside the downloader base class.
+for instance, all downloader plugins reside in ``download/downloader/'' alongside the downloader base class.
 
 At run time, BrainScape employs a ``PluginLoader'' for dynamic class loading.
 At the start of every workflow stage, the plugin loader scans the designated directories 
@@ -39,7 +39,7 @@ researchers can easily swap out or introduce new plugins (e.g., new preprocessin
 customized to meet their specific research needs.
 Key objectives of the BrainScape framework include: 
 \begin{description}
-    \item[Automation:] Minimizing manual labor by automating dataset downloads, file mapping and organization, demographics attachment, and data preprocessing in a single pipeline.
+    \item[Automation:] Minimizing manual labor by automating dataset downloads, file mapping, and organization, demographics attachment, and data preprocessing in a single pipeline.
     \item[Standardization:] Maintaining a common mapping record and a standardized preprocessing pipeline across all datasets, while allowing users the flexibility to incorporate dataset-specific preprocessing or other customized plugins as needed.
     \item[Extensibility:] Facilitating seamless integration of new data sources, additional preprocessing pipelines, and integration of new modules or plugins. 
     \item[Reproducibility:] Ensuring consistent execution and traceability by recording dataset-specific download, mapping, and processing parameters in JSON configuration files, thus facilitating accurate and reliable replication of the workflow.
@@ -53,7 +53,7 @@ At the core of this framework is a pipeline workflow that handles the sequential
 such as downloading, mapping, and preprocessing (depicted by the red arrows in Figure~\ref{fig:SystemArchitecture}). 
 This framework allows flexible selection and configuration of the plugins for each step, which can be tailored for 
 each dataset via specific configuration files.
-The Configurations integrate both default settings and dataset-specific overrides, maintaining consistency 
+The configurations integrate both default settings and dataset-specific overrides, maintaining consistency 
 across datasets while allowing the flexibility to customize the pipeline for each dataset individually.
 
 \begin{figure}[htbp]\begin{center}\includegraphics[width=\linewidth]{figures/architecture.png}
@@ -64,7 +64,7 @@ across datasets while allowing the flexibility to customize the pipeline for eac
 \end{figure}
 
 The pipeline workflow coordinates each module's tasks, ensuring a structured flow of data and synchronized processing. 
-\textbf{Downloader Plugins}, such as the OpenNeuro downloader and Synapse downloader are used to download MRI 
+\textbf{Downloader Plugins}, such as the OpenNeuro downloader and Synapse downloader, are used to download MRI 
 data from target MRI databases and repositories.
 The OpenNeuro downloader uses the \href{https://docs.aws.amazon.com/cli/latest/reference/s3/}{Amazon S3 CLI tool} to download datasets 
 from OpenNeuro (\cite{markiewicz2021openneuro}) and other large-scale databases like the Human Connectome Project (HCP) (\cite{van2013wu}).
@@ -114,7 +114,7 @@ enabling each dataset to be preprocessed independently.
 
 All preprocessing plugins currently available handle MRI sessions independently; 
 longitudinal pipelines were deliberately omitted because our primary goal is to prepare 
-individual T1w, T2w, FLAIR, and T1Gd volumes for downstream deeplearning models.
+individual T1w, T2w, FLAIR, and T1Gd volumes for downstream deep learning models.
 The sMRIPrep plugin was included because sMRIPrep is one of the most widely used structural MRI preprocessing pipelines, 
 while the BraTS and Identity plugins align directly with our subsequent studies on AI-based brain tumour segmentation.
 Nevertheless, BrainScape's modular, plugin-based architecture supports the addition of longitudinal or 
@@ -162,13 +162,13 @@ We utilized several Python packages to capture performance metrics:
 using the carbon intensity data from New Zealand's local electricity grid.
 
 Currently, the pipeline is designed to process datasets sequentially. 
-Nevertheless, its modular design and configurable workflow support running multiple datasets in parallel 
+Nevertheless, its modular design and configurable workflow support running multiple datasets in parallel, 
 which will be effective in reducing the overall wall-clock time.
 
 
 \subsection{Hardware and Software Requirements}
 
-BrainScape framework is designed to run on standard 64-bit Linux distributions and has been tested on Ubuntu 22.04. 
+The BrainScape framework is designed to run on standard 64-bit Linux distributions and has been tested on Ubuntu 22.04. 
 Additionally, it supports Windows 10 and 11 through the \href{https://learn.microsoft.com/en-gb/windows/wsl}{Windows Subsystem for Linux 2 (WSL2)}.
 Essential software prerequisites include \href{https://www.anaconda.com/docs/getting-started/miniconda/main}{Miniconda} for managing 
 a dedicated Python (version 3.11) environment  

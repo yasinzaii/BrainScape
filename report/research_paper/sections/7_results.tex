@@ -1,10 +1,10 @@
 \subsection{Overall Dataset Composition}
 
 
-The BrainScape dataset includes four anatomical MRI contrasts, i.e. T1-weighted (T1w), T2-weighted (T2w), 
+The BrainScape dataset includes four anatomical MRI contrasts, i.e., T1-weighted (T1w), T2-weighted (T2w), 
 gadolinium-enhanced T1-weighted (T1Gd), and fluid-attenuated inversion recovery (FLAIR).
-Furthermore, it integrates \NumDatasets\ datasets from diverse open source repositories and individual research studies. 
-After quality-control and visual inspection (e.g., excluding MRIs with artifacts, corrupted and poor quality scans), 
+Furthermore, it integrates \NumDatasets\ datasets from diverse open-source repositories and individual research studies. 
+After quality control and visual inspection (e.g., excluding MRIs with artifacts, corrupted and poor-quality scans), 
 \TotalNumSubjects\ unique subjects remain in the database, yielding \TotalNumMRIs\ MRI scans overall. 
 
 Among these, \TotalTOneMRIs\ are T1w, \TotalTTwoMRIs\ are T2w, \TotalTOneGdMRIs\ are T1Gd, and \TotalFlairMRIs\ are FLAIR. 
@@ -51,13 +51,13 @@ applications where multi-contrast data are essential (e.g., lesion analysis, tis
 As shown in Table~\ref{TableMriModDistribution}, T1w scans are substantially more common than T2w, T1Gd and FLAIR scans.
 Among the \NumDatasets\ datasets included in BrainScape, only one dataset (BRATS) provides T1Gd MRI scans. 
 T2w MRI scans are available in \NumDatasetsWithTTwoScans\ datasets, 
-FLAIR scans in \NumDatasetsWithTFlairScans\, 
+FLAIR scans in \NumDatasetsWithTFlairScans\ datasets, 
 and T1w scans in \NumDatasetsWithTToneScans\ datasets.
 On the other hand, the number of sessions per subject also varies, 
-ranging from a single scan per subject to multiple scans per subject. BrainScape dataset 
+ranging from a single scan per subject to multiple scans per subject. The BrainScape dataset 
 retains session information and the original dataset structures, ensuring flexibility 
 for downstream analyses. For complete details of each individual dataset and the available
-MRI modalities, refer to the Supplementary Material (Table~\ref{suppDataTable}).
+MRI modalities, refer to the Supplementary Material (Table 1).
 
 Since T1w scans are more common than other modalities, 
 analyses relying primarily on T2w, T1Gd, or FLAIR scans may include fewer subjects. 
@@ -80,15 +80,15 @@ Researchers can leverage BrainScape's flexibility to utilize the entire dataset 
 
 The MRI scans aggregated in the BrainScape dataset originate from scanners with diverse hardware, manufacturers, and magnetic field strengths.
 Among the \TotalNumMRIs\ MRIs included, MRI scanner metadata was available for 24508 scans (52.61\%), 
-while scanner information for the remaining 22075 scans (47.39\%) was missing (see Supplementary Table \ref{tab:scanner_info}). 
-Furthermore, among the 24508 MRIs with scanner information, 22089 MRIs had magnetic field strengths information available.
+while scanner information for the remaining 22075 scans (47.39\%) was missing (see Supplementary Table 2). 
+Furthermore, among the 24508 MRIs with scanner information, 22089 MRIs had magnetic field strength information available.
 MRI data originated primarily from three major manufacturers (Siemens, Philips, and GE), 
 with Siemens scanners being the most prevalent across all modalities. 
 The dataset predominantly includes 3.0 Tesla (T) MRI scanners (18147 scans), followed by 1.5T (2584 scans), 
 4.0T (1301 scans), and a small subset from 7.0T scanners (57 scans). 
 The BrainScape dataset contains scans from various manufacturers, models, and field strengths, 
 mirroring the variability seen in clinical and research imaging. 
-This diversity makes BrainScape dataset an excellent resource for training AI models that are both robust and generalizable.
+This diversity makes the BrainScape dataset an excellent resource for training AI models that are both robust and generalizable.
 Scanner metadata, including the manufacturer name, model details, and field strength information, is stored in the BrainScape JSON record.
 
 Figure~\ref{fig:ExampleMultimodal} illustrates how BrainScape integrates multimodal MRI data 
@@ -275,8 +275,8 @@ medium (\TotalSubjectsWithMediumEconomicCount\ subjects, \TotalSubjectsWithMediu
 \subsubsection{Participants from clinical cohorts}
 
 A total of \TotalSubjectsWithDisordersCount\ participants that are part of the BrainScape dataset have been diagnosed with disorders.
-These disorders include Neurological disorders (Stroke, Prosopagnosia, Dysembryoplastic Neuroepithelial Tumor (DNT), Gliosis, and Epilepsy), Psychiatric disorder (Depression and Schizophrenia)
-and Developmental disorders (Attention-Deficit/Hyperactivity Disorder(ADHD) and Autism Spectrum Disorder (ASD)). 
+These disorders include Neurological disorders (Stroke, Prosopagnosia, Dysembryoplastic Neuroepithelial Tumor (DNT), Gliosis, and Epilepsy), Psychiatric disorders (Depression and Schizophrenia)
+and Developmental disorders (Attention-Deficit/Hyperactivity Disorder (ADHD) and Autism Spectrum Disorder (ASD)). 
 Table~\ref{brain_disorders} lists the number of subjects diagnosed with each disorder among 
 the overall \TotalSubjectsIncludedAfterInspectionCount\ individuals. 
 
@@ -366,7 +366,7 @@ This process has thus far resulted in the removal of \TotalNumSubjectsRemoved\ s
 from the total of \NumDatasets\ included in the repository. 
 Additionally, \NumDatasetsAlreadySkullStripped\ datasets out of the total \NumDatasets\ have brain MRIs that were already skull-stripped. 
 However, we opted to exclude scans with incomplete skull stripping, such as those illustrated in Figure \ref{dropped_subject}. 
-Reprocessing datasets that contain both fully and partially skull-striped MRIs with the default BraTS preprocessing plugin, 
+Reprocessing datasets that contain both fully and partially skull-stripped MRIs with the default BraTS preprocessing plugin, 
 which uses HD-BET brain-extraction tool (\cite{isensee2019automated}), results in over-erosion of brain tissue during brain extraction.
 We decided to drop incomplete skull-stripped scans from such datasets to keep a single default BraTS preprocessing pipeline for the BrainScape dataset release, 
 and because this issue affected only a small subset of subjects (approximately 130 subjects).

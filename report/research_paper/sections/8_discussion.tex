@@ -16,7 +16,7 @@ One of the strengths of BrainScape is its flexibility and scalability.
 The configurable and modular plugin-based architecture of the BrainScape framework enables 
 seamless integration of new data sources, imaging modalities, and preprocessing pipelines without requiring any modifications to the core codebase.
 Researchers can add new multimodal MRI datasets by including new configuration files. 
-Additionally, the BrainScape framework provides the flexibility to include plugins for downloading data from other open source MRI databases and, 
+Additionally, the BrainScape framework provides the flexibility to include plugins for downloading data from other open source MRI databases and  
 specialized preprocessing plugins for specific studies that may consist of custom preprocessing pipelines.
 This design facilitates an environment of continuous improvement and customization.
 We integrate \NumDatasets\ diverse datasets, demonstrating the framework's scalability 
@@ -35,7 +35,7 @@ researchers to build inclusive datasets that capture control and patient cohorts
 This diversity is particularly crucial for rare phenotypes and targeted clinical cohorts, 
 which may be overlooked in large-scale aggregated datasets yet offer critical insights into neurological function and pathology (\cite{thompson2014enigma}).
 
-BrainScape framework is designed to interoperate seamlessly with the broader neuroinformatics ecosystem, 
+The BrainScape framework is designed to interoperate seamlessly with the broader neuroinformatics ecosystem, 
 complementing existing tools rather than seeking to replace them. 
 At the level of data organization, BrainScape adopts the Brain Imaging Data Structure (BIDS), 
 preserving each dataset's native subject, session, and modality hierarchy. 
@@ -109,17 +109,16 @@ We also hope future upgrades will come through community collaboration on the Br
 which includes detailed tutorials for developing new plugins and integrating additional datasets.
 
 Looking ahead, BrainScape can be extended to incorporate diffusion-weighted imaging (DWI), resting-state fMRI, 
-and other specialized MRI sequences, enhancing the dataset capability to support multimodal analyses 
+and other specialized MRI sequences, enhancing the dataset's capability to support multimodal analyses 
 of structural and functional connectivity (\cite{van2013wu}). 
-Furthermore, including an automated quality control module into the pipeline, such as machine learning based artifact detection 
+Furthermore, including an automated quality control module into the pipeline, such as machine learning based artifact detection, 
 makes it easier to include additional open source datasets by reducing the need for manual quality control, which is labor-intensive and time-consuming. 
 Such a module may also automatically detect poor-quality MRIs overlooked during manual review. 
-Another key improvement is parallelizing the workflow; currently, BrainScape framework processes datasets sequentially, 
+Another key improvement is parallelizing the workflow; currently, the BrainScape framework processes datasets sequentially, 
 but enabling concurrent dataset handling could significantly reduce the overall processing time. 
 Furthermore, the BrainScape framework can be enhanced with new preprocessing plugins designed to implement specialized pipelines for targeted research studies.
-Meanwhile, BrainScape dataset can also be enhanced by integrating new open source brain datasets 
+Meanwhile, the BrainScape dataset can also be enhanced by integrating new open source brain datasets 
 targeted at specialized analyses and rare phenotypes.
-and expand the dataset utility for even more studies. 
 
 In conclusion, BrainScape addresses bottlenecks in MRI data aggregation and preprocessing by 
 collecting datasets of diverse origins, automating workflows, and preserving original dataset integrity. 
