@@ -1,14 +1,4 @@
 MRI has revolutionized our ability to investigate and understand brain structure and function in health and disease. 
-%Although big data approaches are increasingly used to capture variability and heterogeneity of large-scale healthy and clinical cohorts, 
-%it is still important to consider smaller, specialized datasets that offer powerful insights, particularly for rare brain disorders.
-%Nevertheless, progress is often hindered by challenges related to data accessibility, small dataset sizes, and inconsistencies across publicly available datasets.
-%Numerous large-scale MRI datasets have facilitated data-driven methodologies, such as statistical analysis and deep learning, 
-%to capture the variability and heterogeneity of both healthy and clinical cohorts. 
-%By pooling these diverse datasets, disparate data sources can be collated into a single, comprehensive repository, 
-%thus improving the generalizability and applicability of advanced research methodologies. 
-%Additionally, incorporating smaller, specialized 'boutique' datasets focused on specific brain disorders 
-%and clinical phenotypes will enrich the collated data, broadening the research scope and enhancing overall generalizability.
-%Nevertheless, progress in data pooling is often hindered by challenges related to data accessibility, significant variability in dataset sizes, and inconsistencies across publicly available datasets. 
 A large amount of MRI data is widely available to researchers, 
 both from large-scale multi-site consortia and smaller site-specific datasets. 
 This wealth of MRI data offers opportunities to advance our understanding of the brain, 
@@ -19,14 +9,9 @@ but reproducibility alone does not ensure clinical relevance or broad generaliza
 due to narrow demographic representations and minimized dataset variability. 
 Recent work highlights the need to embrace dataset variability and open-science collaborations for pooling heterogeneous datasets. 
 Nevertheless, effectively integrating these diverse resources remains a significant challenge. 
-%One of the key challenges is navigating and pooling these resources. 
 Inconsistencies in organization, data formatting, acquisition protocols, 
 and metadata remain, especially for smaller, site-specific datasets, despite ongoing efforts 
 within the neuroimaging community to standardize data sharing practices. 
-%Although thousands of high-quality, open source MRI datasets are currently available, ranging from large-scale consortia to smaller and more specialized clinical cohorts, 
-%their heterogeneous organization, incompatible formats, variable acquisition protocols, and scattered demographics and clinical metadata may impede effective data aggregation.
-%Still, integrating both large-scale population-based datasets and small-scale clinical datasets is essential for fully capturing the intricate relationships among brain structure, behavior, and disorders.
-%Furthermore, repackaging and reintegrating datasets can lead to loss of original source information and introduce bias through duplicated images.
 To address these issues, we introduce BrainScape: a curated collection of \NumDatasets\ publicly available MRI datasets 
 packaged with an open-source, plugin-based Python framework that automates the download, organization, preprocessing, and demographic attachment of the MRI data. 
 Each individual dataset includes a detailed configuration file capturing all dataset-specific parameters, 
@@ -36,8 +21,6 @@ encompassing a total of \TotalSubjectsIncludedAfterInspectionCount\ subjects and
 The BrainScape framework's pipeline effectively aggregates these heterogeneous datasets while preserving the original dataset structure and demographic details.
 Its modular design allows integration into data pipelines, supporting large-scale studies involving diverse cohorts and targeted research on rare phenotypes. 
 BrainScape framework employs an easy-to-use plugin-based architecture with distinct modules for data downloading, file mapping, validation, preprocessing, and demographics attachment. 
-%This framework supports dataset-specific configurations, accommodating \NumDatasets\ diverse and open datasets that vary in size, modality, structure, and demographic information 
-%while also facilitating the seamless integration of new datasets.
 Furthermore, each MRI image can be traced to its source project and repository, and subjects excluded from datasets are documented in dedicated dataset-specific configuration files, 
 providing transparent and reproducible exclusion criteria.
 BrainScape dataset includes multiple MRI modalities such as T1-weighted (T1w), T2-weighted (T2w), 

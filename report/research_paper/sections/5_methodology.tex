@@ -2,7 +2,6 @@ In this section, we describe the plugin-based architecture of BrainScape's frame
 collect, standardize, and preprocess anatomical MRI data. We discuss its modular structure by explaining 
 the functions and interdependencies of each module.
 
-
 \subsection{Overall Framework Design}
 
 The BrainScape framework is developed in Python and employs a configurable plugin-based architecture to allow flexible 
@@ -123,15 +122,6 @@ To facilitate and encourage community-driven extensibility, we provide comprehen
 on the BrainScape GitHub repository (\url{https://github.com/yasinzaii/BrainScape}), 
 illustrating how researchers can develop custom plugins to meet diverse research requirements.
 
-% \textbf{Preprocessor Plugins} (e.g., BraTS, Identity, sMRIPrep) then employ preprocessing pipelines
-% that consist of specialized tasks, such as MRI registration, brain extraction, and intensity normalization. 
-% For instance, the BraTS plugin uses the \href{https://github.com/BrainLesion/preprocessing}{BrainLes-Preprocessing} tool, 
-% following the Brain Tumor Segmentation (BraTS) pipeline (\cite{menze2014multimodal}). 
-% In the BraTS pipeline, multiple MRI modalities are co-registered to a central modality (e.g., T1w), 
-% then mapped to the SR24 atlas (\cite{rohlfing2010sri24}), followed by skull stripping and image intensity normalization. 
-% Datasets already preprocessed or skull-stripped can opt for simpler pipelines, 
-% such as the ``Identity'' preprocessor, which applies no additional operations. 
-% Other preprocessing pipelines can also be introduced as needed, maintaining the flexibility and modularity.
 After preprocessing, \textbf{Mapper plugins} (e.g., RegexMapper) update the standardized JSON record 
 with the preprocessed MRI files. The \textbf{Demographics Mapper} plugin then appends relevant demographic 
 and clinical fields (e.g., age, sex, diagnosis) to each subject record, thereby producing a unified 

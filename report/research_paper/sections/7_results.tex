@@ -1,6 +1,5 @@
 \subsection{Overall Dataset Composition}
 
-
 The BrainScape dataset includes four anatomical MRI contrasts, i.e., T1-weighted (T1w), T2-weighted (T2w), 
 gadolinium-enhanced T1-weighted (T1Gd), and fluid-attenuated inversion recovery (FLAIR).
 Furthermore, it integrates \NumDatasets\ datasets from diverse open-source repositories and individual research studies. 
@@ -12,22 +11,6 @@ As summarized in Table~\ref{TableMriModDistribution}, the distribution of modali
 with T1w scans representing a larger share of the total MRIs. 
 Yet, the inclusion of T2w and FLAIR scans extends the framework's utility to 
 applications where multi-contrast data are essential (e.g., lesion analysis, tissue segmentation).
-
-
-% \begin{table}[htbp]
-%     \centering
-%     \caption{High-Level MRI Statistics.}
-%     \label{TableMainSummary}
-%     \begin{tabular}{lc}
-%         \hline
-%         \textbf{Statistic} & \textbf{Value} \\
-%         \hline
-%         Datasets Included & \NumDatasets\ \\
-%         Subjects (After QC) & \TotalNumSubjects\ \\
-%         Total MRI Scans & \TotalNumMRIs\ \\
-%         \hline
-%     \end{tabular}
-% \end{table}
 
 \begin{table}
     \centering
@@ -46,7 +29,6 @@ applications where multi-contrast data are essential (e.g., lesion analysis, tis
         \end{tabular}
     \end{threeparttable}   
 \end{table}
-
     
 As shown in Table~\ref{TableMriModDistribution}, T1w scans are substantially more common than T2w, T1Gd and FLAIR scans.
 Among the \NumDatasets\ datasets included in BrainScape, only one dataset (BRATS) provides T1Gd MRI scans. 
@@ -100,41 +82,6 @@ to readily filter or subgroup images by attributes like age, sex, or clinical di
 This flexibility supports a wide range of analyses, from large-scale population studies 
 to more focused clinical investigations.
 
-% \begin{table}[htbp]
-%     \centering
-%     \caption{
-%         High-Level Statistics of the Integrated MRI Resource.
-%         Detailed, per-dataset information (e.g., licensing and exact scan counts) 
-%         is provided in the Supplementary Material (Table~\ref{tab:suppDataTable}).
-%     }
-%     \label{tab:MainSummary}
-%     \begin{tabular}{lcccccc}
-%     \hline
-%     \textbf{Statistic} & \textbf{Value/Range} & \textbf{T1w (\%)} & \textbf{T2w (\%)} & \textbf{FLAIR (\%)} & \textbf{Min--Max Sessions} \\
-%     \hline
-%     Datasets Included      & \NumDatasets       & --  & -- & -- & -- \\
-%     Subjects (After QC)    & \TotalNumSubjects  & --  & -- & -- & -- \\
-%     Total MRI Scans        & \TotalNumMRIs      & --  & -- & -- & -- \\
-%     \vspace{-6pt} & & & & & \\
-%     \hline
-%     \textbf{Modality Distribution} & & & & & \\
-%     \hspace{1em}T1w  & \TotalT1wMRIs       & \TOnePercent & -- & -- & -- \\
-%     \hspace{1em}T2w  & \TotalT2wMRIs       & -- & \TTwoPercent & -- & -- \\
-%     \hspace{1em}FLAIR & \TotalFlairMRIs    & -- & -- & \FlairPercent & -- \\
-%     \hline
-%     \end{tabular}
-% \end{table}
-
-
-% BrainScapes integrates a total of \NumDatasets\ datasets from different open source repositories and studies. 
-% The total number of subjects after quality-control resulted in \TotalNumSubjects\. BrainScapes has also 
-% retained and includes the session information and because of that the total number of MRI scans was found to be 
-% \TotalNumMRIs\. 
-% Among these, we subject and sessions BrainScape retained a total of \TotalT1wMRIs\ T1w, \TotalT2wMRIs\ T2w, and \TotalFlairMRIs\ FLAIR scans.
-% It should be noted that distribution of the MRIs are uneven as there are more T1w MRI compared to T2w and Flair modalities.
-% Table~\ref{tab:MainSummary} provides an aggregate overview, including the range of sessions per subject and the distribution of MRI modalities. 
-% Detailed per-dataset information (e.g., unique identifiers, dataset names, licensing, exact T1w/T2w/FLAIR counts) 
-% is available in the Supplementary Material (Table~\ref{tab:suppDataTable}). 
 
 \subsubsection{Demographics Information}
 
@@ -144,8 +91,6 @@ have demographic information, while \TotalSubjectsWithoutDemographicsInfoCount\
 subjects lack any recorded demographic details. The demographic data include age, sex, race, handedness, education level, 
 socio-economic status, body mass index, and brain disorders. Table~\ref{DemographicsOverviewTable} provides a comprehensive 
 overview of the availability of each demographic field across all of the datasets.
-
-
 
 \begin{table}[h!]
     \centering
@@ -177,12 +122,10 @@ overview of the availability of each demographic field across all of the dataset
     \end{threeparttable}
 \end{table}
 
-
 It is evident that age (or age range) and sex are among the most crucial and commonly analyzed demographics. 
 According to Table~\ref{DemographicsOverviewTable}, \TotalSubjectsWithAgeCount\ subjects have an explicit age value, 
 \TotalSubjectsWithAgeGroupCount\ subjects include a recorded age range label, and \TotalSubjectsWithSexCount\ subjects have sex information. 
 Of these, \TotalSubjectsWithAgeAgeGroupSexCount\ subjects possess both age (or age range) and sex information.
-
 
 \begin{figure}[ht]
     \centering
@@ -191,13 +134,11 @@ Of these, \TotalSubjectsWithAgeAgeGroupSexCount\ subjects possess both age (or a
     \label{HistogramAgeSexFigure}
 \end{figure}
 
-
 \noindent
 Figure~\ref{HistogramAgeSexFigure} presents a histogram illustrating how the dataset's age distribution is subdivided by sex categories. 
 Specifically, the histogram organizes age (or age range) into bins along the horizontal axis, whereas the vertical bars 
 representing the participants count, color-coded to indicate the sex categories: ``male'', ``female'', and ``n/a''. Note: \TotalSubjectsWithSexCountWithoutAgeInfo\ 
 subjects who have only sex information and lack age or age range information are omitted from the histogram.
-
 
 Overall, the mean age (excluding entries with only age range data) is \TotalSubjectsMeanAgeValue\ (SD = \TotalSubjectsStandardDevAgeValue{}). 
 By categorizing individual ages into bins, as illustrated in Figure~\ref{HistogramAgeSexFigure}, the median age range is determined to be \TotalSubjectsMedianAgeGroupValue\ years.
@@ -263,14 +204,6 @@ low (\TotalSubjectsWithLowEconomicCount\ subjects, \TotalSubjectsWithLowEconomic
 medium (\TotalSubjectsWithMediumEconomicCount\ subjects, \TotalSubjectsWithMediumEconomicPercentage\%), and high (\TotalSubjectsWithHighEconomicCount\ subjects, 
 \TotalSubjectsWithHighEconomicPercentage\%) groups.
 
-% Educational information for \TotalSubjectsWithEducationCount\ subjects were categorized into three distinct groups: low, medium, and high. 
-% The \textit{low} education group (\TotalSubjectsWithLowEducationCount\ subjects, \TotalSubjectsWithLowEducationPercentage\%) includes participants 
-% who completed primary education or obtained a high school diploma as their highest education level. 
-% The \textit{medium} education group (\TotalSubjectsWithMediumEducationCount\ subjects, \TotalSubjectsWithMediumEducationPercentage\%) consists 
-% of participants who completed some form of post-secondary education below a four-year degree, such as college without degree completion, a diploma, or an Associate's Degree. 
-% The \textit{high} education category (\TotalSubjectsWithHighEducationCount\ subjects, \TotalSubjectsWithHighEducationPercentage\%) comprises individuals 
-% who have completed at least a Bachelor's degree, including Master's or doctoral degrees (PhD). 
-
 
 \subsubsection{Participants from clinical cohorts}
 
@@ -279,7 +212,6 @@ These disorders include Neurological disorders (Stroke, Prosopagnosia, Dysembryo
 and Developmental disorders (Attention-Deficit/Hyperactivity Disorder (ADHD) and Autism Spectrum Disorder (ASD)). 
 Table~\ref{brain_disorders} lists the number of subjects diagnosed with each disorder among 
 the overall \TotalSubjectsIncludedAfterInspectionCount\ individuals. 
-
 
 \begin{table}[ht]
     \centering
@@ -312,46 +244,12 @@ the overall \TotalSubjectsIncludedAfterInspectionCount\ individuals.
     \end{threeparttable}
 \end{table}
 
-% \begin{table}[ht]
-%     \centering
-%     \begin{threeparttable}
-%         \caption{Number of Subjects with specific Disorders}
-%         \label{brain_disorders}
-%         \begin{tabular}{@{}lc@{}}
-%             \toprule
-%             \textbf{Disorder} & \textbf{Number of Subjects} \\
-%             \midrule
-%             Stroke & \SubjectsWithStrokeCount\ \\
-%             Schizophrenia & \SubjectsWithSchizophreniaCount\ \\
-%             Depression & \SubjectsWithDepressionCount\ \\
-%             ADHD & \SubjectsWithADHDCount\ \\
-%             ASD & \SubjectsWithASDCount\ \\
-%             Bipolar Disorder & \SubjectsWithBIPOLARCount\ \\
-%             Prosopagnosia & \SubjectsWithProsopagnosiaCount\ \\
-%             Epilepsy & \SubjectsWithEpilepsyCount\ \\
-%             Tumor & \SubjectsWithTumorCount\ \\
-%             Acute Ischemic Stroke & \SubjectsWithAcuteIschemicStrokeCount\ \\
-%             Focal Epilepsy(Focal Cortical Dysplasia) & \SubjectsWithFCDCount\ \\
-%             Focal Epilepsy(Hippocampal Sclerosis) & \SubjectsWithHSCount\ \\
-%             DNT & \SubjectsWithDNTCount\ \\
-%             Gliosis & \SubjectsWithGLCount\ \\
-%             Aneurysm & \SubjectsWithAneurysmCount\ \\
-%             \bottomrule
-%         \end{tabular}
-%         \begin{tablenotes}[flushleft]\footnotesize
-%             \item[${a}$] Only participants who tested \texttt{Y} (Yes) for each disorder are counted here.
-%         \end{tablenotes}
-%     \end{threeparttable}
-% \end{table}
-
-
 \noindent
 Table~\ref{brain_disorders} highlights that \SubjectsWithStrokeCount\ participants have been 
 diagnosed with stroke, \SubjectsWithEpilepsyCount\ with epilepsy, and so on. 
 The \SubjectsWithFocalEpilepsyCount\ subjects with focal epilepsy consist of \SubjectsWithFCDCount\ subjects 
 with focal cortical dysplasia and \SubjectsWithHSCount\ subjects with hippocampal sclerosis.
 In total, \TotalSubjectsWithDisordersCount\ participants have at least one neurological, psychiatric, or developmental disorder.
-
 
 
 \subsubsection{Quality Control and Visual Inspection}
@@ -411,5 +309,3 @@ carbon footprint may rise proportionally; however, workflow parallelization can 
 reasonable total run times and minimize ecological impact. By documenting these performance metrics, we highlight 
 the computational overhead and the opportunity to reduce processing times and emissions through concurrent dataset handling. 
 We anticipate that implementing parallel dataset processing pipelines will improve BrainScape's computational performance and carbon footprint.
-
-
